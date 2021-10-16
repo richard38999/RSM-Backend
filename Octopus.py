@@ -119,7 +119,7 @@ class Report():
         origin_folderName = dirName
         zip_dir = Path_SPID
         zip_path = Path_SPID + '\\' + zipName
-        zipPassword = 'eftPay@{0}!'.format(time.strftime("%Y", time.localtime()))
+        zipPassword = 'EFT{0}'.format(str(SPID)[1:])
         # print('Zip Password: {0}'.format(zipPassword))
         # zipDir(zip_path,dir_path,zipPassword)
         enCrypt(origin_dir, origin_folderName, zip_dir, zipName, zipPassword, deleteSource=True)

@@ -1111,6 +1111,13 @@ def VMP_Transaction(TransactionType):
     current_app.logger.debug(returnmessage)
     return jsonify(returnmessage)
 
+@app.route("/download/<string:filename>", methods=['GET'])
+def imagedownload(filename):
+    currentlyPath = os.getcwd()
+    if (os.path.isfile(os.path.join(currentlyPath,filename))):
+        return send_from_directory(currentlyPath,filename, as_attachment=True)
+    pass
+
 if __name__ == '__main__':
     Config = Configuration.loadConfig()
     app.run(host='0.0.0.0', port=5000)
