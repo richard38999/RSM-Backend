@@ -708,6 +708,7 @@ def VMP_Transaction(TransactionType):
             EOPG_req.api_version = '2.9.5'
             EOPG_req.redirect = redirect
             RawRequest = VMP.packGetMsg(EOPG_req, URL)
+            # teustubg
         elif str(TransactionType).upper() == 'QUERY':
             URL += '/VMP/eopg/ForexCheckQuery'
             EOPG_req = VMP.EOPG_Request()
