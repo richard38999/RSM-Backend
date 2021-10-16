@@ -1,0 +1,360 @@
+import sqlite3
+import requests
+db_name = 'param.db'
+
+def getResultMessage(iRet):
+    if iRet == '0':
+        return 'Success'
+    if iRet == '-1':
+        return 'Other operation in progress.'
+    if iRet == '-2':
+        return 'Invalid amount'
+    if iRet == '-3':
+        return 'Invalid barcode'
+    if iRet == '-4':
+        return 'Invalid ECR reference number'
+    if iRet == '-5':
+        return 'No such record'
+    if iRet == '-6':
+        return 'No such transaction request'
+    if iRet == '-7':
+        return 'Waiting for response'
+    if iRet == '-8':
+        return 'Invalid TID'
+    if iRet == '-9':
+        return 'Invalid MID'
+    if iRet == '-10':
+        return 'Invalid Trace'
+    if iRet == '-11':
+        return 'Reversal Pending'
+    if iRet == '-12':
+        return 'Connection problem'
+    if iRet == '-13':
+        return 'Transaction already voided'
+    if iRet == '-14':
+        return 'Transaction Timeout or Communication Error'
+    if iRet == '-15':
+        return 'UPLOAD_REJECT'
+    if iRet == '-16':
+        return 'Invalid RRN'
+    if iRet == '-17':
+        return 'Invalid Approval Code'
+    if iRet == '-90':
+        return 'OP_NOT_SUPPORT'
+    if iRet == '-98':
+        return 'Unknown error'
+
+def getTransactionRecord(tr):
+    returndata = {'paymentType': tr.paymentType,
+                  'transType': tr.transType,
+                  'merchantID': tr.merchantID,
+                  'terminalID': tr.terminalID,
+                  'respondCode': tr.respondCode,
+                  'approvalCode': tr.approvalCode,
+                  'ECRReferenceNumber': tr.ECRReferenceNumber,
+                  'barcode': tr.barcode,
+                  'amount': tr.amount,
+                  'transactionDateTime': tr.transactionDateTime,
+                  'cutOffDay': tr.cutOffDay,
+                  'traceNum': tr.traceNum,
+                  'debitInCurrency': tr.debitInCurrency,
+                  'debitInAmount': tr.debitInAmount,
+                  'OrderNumber': tr.OrderNumber,
+                  'hostMessage': tr.hostMessage,
+                  'voided': tr.voided,
+                  'originalTraceNum': tr.originalTraceNum,
+                  'originalOrderNumber': tr.originalOrderNumber,
+                  'RRN': tr.RRN,
+                  'hostDateTime': tr.hostDateTime,
+                  'discountAmount': tr.discountAmount,
+                  'couponAmount': tr.couponAmount,
+                  'paymentAmount': tr.paymentAmount,
+                  'oriTID': tr.oriTID,
+                  'buyerAccountID': tr.buyerAccountID,
+                  'LogoUrl': tr.LogoUrl,
+                  'open_id': tr.open_id,
+                  'respondText': tr.respondText}
+    return returndata
+
+def getXmlResp(tr, RawRequest, RawResponse):
+    returndata = {'merchantID': tr.MID,
+                  'terminalID': tr.TID,
+                  'RRN': tr.RefNo,
+                  # 'TransType': tr.TransType,
+                  'hostDateTime': tr.TransDate + tr.TransTime,
+                  'ECRReferenceNumber': tr.ERCRFN,
+                  'open_id': tr.PayID,
+                  'couponAmount': tr.CouponAMT,
+                  'paymentAmount': tr.NetAMT,
+                  'discountAmount': tr.OffsetAMT,
+                  'originalOrderNumber': tr.Status,
+                  'TotalSaleAMT': tr.TotalSaleAMT,
+                  'TotalSaleCNT': tr.TotalSaleCNT,
+                  'TotalRefundAMT': tr.TotalRefundAMT,
+                  'TotalRefundCNT': tr.TotalRefundCNT,
+                  'originalTraceNum': tr.OrgTraceNo,
+                  'traceNum': tr.TraceNo,
+                  'Rate': tr.Rate,
+                  'LogoUrl': tr.LogoUrl,
+                  'respondText': tr.respondText,
+                  'RawRequest': RawRequest,
+                  'RawResponse': RawResponse
+                  }
+    returndata['amount'] = None
+    if tr.Amount != None:
+        returndata['amount'] = tr.Amount
+    if tr.TransactionAmount != None:
+        returndata['amount'] = tr.TransactionAmount
+    returndata['respondCode'] = None
+    if tr.RespCode != None:
+        returndata['respondCode'] = tr.RespCode
+    if tr.TransactionRespondCode != None:
+        returndata['respondCode'] = tr.TransactionRespondCode
+
+    returndata['barcode'] = None
+    if tr.CardNo != None:
+        returndata['barcode'] = tr.CardNo
+    if tr.PAN != None:
+        returndata['barcode'] = tr.PAN
+    if tr.ApproCode != None:
+        returndata['approvalCode'] = tr.ApproCode
+    if tr.ApprovedNo != None:
+        returndata['approvalCode'] = tr.ApprovedNo
+    if tr.TransID != None:
+        returndata['OrderNumber'] = tr.TransID
+    if tr.VoucherNo != None:
+        returndata['OrderNumber'] = tr.VoucherNo
+
+    return returndata
+
+def get_login_account():
+    conn = sqlite3.connect(db_name)
+    cursor = conn.cursor()
+    cursor.execute('select * FROM users;')
+    values = cursor.fetchall()
+    cursor.close()
+    conn.close()
+    return values
+
+def userView(username):
+    returnmessage = []
+    data = []
+    conn = sqlite3.connect(db_name)
+    cursor = conn.cursor()
+    command = 'select * from users where username = "{0}";'.format(username)
+    cursor.execute(command)
+    id = cursor.fetchall()[0][0]  # for get user ID
+    command = 'select * from users_role where user_id = {0};'.format(id)
+    cursor.execute(command)
+    temp = cursor.fetchall()
+    chooseKey = []
+    for i in temp:
+        chooseKey.append(i[1])
+    command = 'select * from Menus where level = 1;'
+    cursor.execute(command)
+    LevelONEvalues = cursor.fetchall()  # menus level one values
+    command = 'select * from Menus where level = 2;'
+    cursor.execute(command)
+    LevelTWOvalues = cursor.fetchall()  # menus level two values
+    command = 'select * from Menus where level = 3;'
+    cursor.execute(command)
+    LevelTHREEvalues = {}
+    if len(cursor.fetchall()) > 0:
+        LevelTHREEvalues = cursor.fetchall()  # menus level three values
+    for i in LevelONEvalues:
+        twomessage = []
+        for j in LevelTWOvalues:
+            threemessage = []
+            if j[4] == None: # parent id 有就代表是二级菜单
+                continue
+            elif j[4] != i[0]: # parent id 不等于 level one 的 id
+                continue
+            else: # parent id 等于 level one 的 id
+                for k in LevelTHREEvalues:
+                    if k[4] == None:
+                        continue
+                    elif k[4] != j[0]:
+                        continue
+                    else:
+                        threemessage.append({'id': k[0], 'authName': k[1], 'path': k[2], 'level': k[3], 'parent_id': k[4], 'icon': k[6], 'children': []})
+            twomessage.append({'id': j[0], 'authName': j[1], 'path': j[2], 'level': j[3], 'parent_id': j[4], 'icon': j[6], 'children': threemessage})
+        data.append({'id': i[0], 'authName': i[1], 'path': i[2], 'level': i[3], 'parent_id': i[4], 'icon': i[6], 'children': twomessage})
+    returnmessage = {'chooseKey': chooseKey, 'data': data}
+    cursor.close()
+    conn.close()
+    return returnmessage
+
+def get_Menu(username):
+    returnmessage = []
+    conn = sqlite3.connect(db_name)
+    cursor = conn.cursor()
+    command = 'select * from users where username = "{0}";'.format(username)
+    cursor.execute(command)
+    id = cursor.fetchall()[0][0]  # for get user ID
+    command = 'select DISTINCT * from users_role ur LEFT JOIN Menus p on ur.role_id where ur.user_id = "{0}" and ur.role_id = p.id and p.level = 1 order by sort;'.format(id)
+    cursor.execute(command)
+    LevelONEvalues = cursor.fetchall()  # menus level one values
+    command = 'select DISTINCT * from users_role ur LEFT JOIN Menus p on ur.role_id where ur.user_id = "{0}" and ur.role_id = p.id and p.level = 2;'.format(id)
+    cursor.execute(command)
+    LevelTWOvalues = cursor.fetchall()  # menus level two values
+    command = 'select DISTINCT * from users_role ur LEFT JOIN Menus p on ur.role_id where ur.user_id = "{0}" and ur.role_id = p.id and p.level = 3;'.format(id)
+    cursor.execute(command)
+    LevelTHREEvalues = {}
+    if len(cursor.fetchall()) > 0:
+        LevelTHREEvalues = cursor.fetchall()  # menus level three values
+    for i in LevelONEvalues:
+        twomessage = []
+        for j in LevelTWOvalues:
+            threemessage = []
+            if j[6] == None: # parent id 有就代表是二级菜单
+                continue
+            elif j[6] != i[2]: # parent id 不等于 level one 的 id
+                continue
+            else: # parent id 等于 level one 的 id
+                for k in LevelTHREEvalues:
+                    if k[6] == None:
+                        continue
+                    elif k[6] != j[2]:
+                        continue
+                    else:
+                        threemessage.append({'id': k[2], 'authName': k[3], 'path': k[4], 'level': k[5], 'parent_id': k[6], 'icon': k[8], 'children': []})
+            twomessage.append({'id': j[2], 'authName': j[3], 'path': j[4], 'level': j[5], 'parent_id': j[6], 'icon': j[8], 'children': threemessage})
+        returnmessage.append({'id': i[2], 'authName': i[3], 'path': i[4], 'level': i[5], 'parent_id': i[6], 'icon': i[8], 'children': twomessage})
+
+    cursor.close()
+    conn.close()
+    return returnmessage
+
+def get_userlist(pagenum, pagesize):
+    returnmessage = []
+    userlist = []
+    conn = sqlite3.connect(db_name)
+    cursor = conn.cursor()
+    cursor.execute('select * FROM users;')
+    values = cursor.fetchall()
+    cursor.close()
+    conn.close()
+    for i in range((pagenum - 1) * pagesize, pagenum * pagesize):
+        if (i >= len(values)):
+            break
+        if (values[i][4] == 1):
+            status = True
+        else:
+            status = False
+        userlist.append({
+            'username': values[i][1],
+            'roles': values[i][3],
+            'status': status,
+            'createdatetime': values[i][5],
+            'lastlogindatetime': values[i][6]
+        })
+
+    returnmessage = {'userlist': userlist,'total': len(values)}
+    return returnmessage
+
+def update_lastlogindatetime(nowdatetime, username):
+    conn = sqlite3.connect(db_name)
+    cursor = conn.cursor()
+    cursor.execute('update users set lastlogindatetime="{0}" where username="{1}";'.format(nowdatetime, username))
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+def update_AccountStatus(username, status):
+    try:
+        if(status == 'true'):
+            vaule = 1
+        else:
+            vaule = 0
+        conn = sqlite3.connect(db_name)
+        cursor = conn.cursor()
+        cursor.execute('update users set status={0} where username="{1}";'.format(vaule, username))
+        conn.commit()
+        cursor.close()
+        conn.close()
+        returnmessage = {'UpdateResult': True}
+        return returnmessage
+    except Exception as err:
+        print(err)
+        returnmessage = {'UpdateResult': False}
+        return returnmessage
+
+
+def delete_Account(username):
+    try:
+        conn = sqlite3.connect(db_name)
+        cursor = conn.cursor()
+        cursor.execute('DELETE from users where username="{0}"'.format(username))
+        conn.commit()
+        cursor.close()
+        conn.close()
+        returnmessage = {'DeleteResult': True}
+        return returnmessage
+    except Exception as err:
+        print(err)
+        returnmessage = {'DeleteResult': False}
+        return returnmessage
+
+def convertToCardNo(maskedCardNo):
+    returnmessage = ''
+    for i in maskedCardNo:
+        if i == 'a' or i == 'b' or i == 'c' or i == 'd' or i == 'e':
+            returnmessage += '0'
+        elif i == 'f' or i == 'g' or i == 'h' or i == 'i' or i == 'j':
+            returnmessage += '1'
+        elif i == 'k' or i == 'l' or i == 'm' or i == 'n' or i == 'o':
+            returnmessage += '2'
+        elif i == 'p' or i == 'q' or i == 'r' or i == 's' or i == 't':
+            returnmessage += '3'
+        elif i == 'u' or i == 'v' or i == 'w' or i == 'x' or i == 'y':
+            returnmessage += '4'
+        elif i == 'z' or i == 'A' or i == 'B' or i == 'C' or i == 'D':
+            returnmessage += '5'
+        elif i == 'E' or i == 'F' or i == 'G' or i == 'H' or i == 'I':
+            returnmessage += '6'
+        elif i == 'J' or i == 'K' or i == 'L' or i == 'M' or i == 'N':
+            returnmessage += '7'
+        elif i == 'O' or i == 'P' or i == 'Q' or i == 'R' or i == 'S':
+            returnmessage += '8'
+        elif i == 'T' or i == 'U' or i == 'V' or i == 'W' or i == 'X':
+            returnmessage += '9'
+    return returnmessage
+
+def ChangePassword(username, oldPassword, newPassword):
+    try:
+        returnmessage = ''
+        conn = sqlite3.connect(db_name)
+        cursor = conn.cursor()
+        cursor.execute('select * FROM users where username="{0}";'.format(username))
+        vaules = cursor.fetchall()[0][2]
+        if oldPassword == vaules:
+        #     password match, update password
+            cursor.execute('update users set password="{0}" where username="{1}";'.format(newPassword, username))
+            conn.commit()
+            returnmessage = {'status': 'Success', 'msg': 'Change Password Success'}
+        else:
+            # Password Not match
+            returnmessage = {'status': 'Failed', 'msg': 'Password Not Match'}
+        cursor.close()
+        conn.close()
+        return returnmessage
+    except Exception as err:
+        print(err)
+        returnmessage = {'status': 'Failed', 'msg': "{0}".format(err)}
+        return returnmessage
+
+def PostToHost(url, data, timeout):
+    try:
+        req = requests.post(url, data=data, timeout=timeout)
+    except Exception as err:
+        print(err)
+    finally:
+        return req
+
+def GetToHost(url, timeout):
+    try:
+        req = requests.get(url, timeout=timeout)
+    except Exception as err:
+        print(err)
+    finally:
+        return req

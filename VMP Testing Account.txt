@@ -1,0 +1,11 @@
+QR Code Testing Account:
+S0002811
+100683cbe5b31b06d28a5e158a1071cf
+
+JSAPI Testing Account:
+S0002816
+4a4fd471dd24bfe2037c9d6d5fd1b00e
+
+APP/WEB/EOPG Testing Account:
+S0002575
+95a4197ef475c6b6bb2ae46131cd0410
