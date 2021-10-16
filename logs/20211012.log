@@ -1,0 +1,994 @@
+2021-10-12 18:34:59,649 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-10-12 18:34:59,649 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-10-12 18:35:07,236 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 18:35:07] "[37mOPTIONS /login HTTP/1.1[0m" 200 -
+2021-10-12 18:35:07,236 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 18:35:07] "[37mOPTIONS /login HTTP/1.1[0m" 200 -
+2021-10-12 18:35:07,239 DEBUG main.py:44 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 86
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer null
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: null
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 18:35:07,239 DEBUG main.py:44 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 86
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer null
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: null
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 18:35:07,240 DEBUG main.py:45 BODY: b'{"username":"richard","password":"6ae199a93c381bf6d5de27491139d3f9","version":"1.0.4"}'
+2021-10-12 18:35:07,240 DEBUG main.py:45 BODY: b'{"username":"richard","password":"6ae199a93c381bf6d5de27491139d3f9","version":"1.0.4"}'
+2021-10-12 18:35:07,276 DEBUG main.py:74 {'meta': {'status': 'SUCCESS', 'msg': 'LOGIN SUCCESS'}, 'data': {'username': 'richard', 'password': '6ae199a93c381bf6d5de27491139d3f9', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk'}}
+2021-10-12 18:35:07,276 DEBUG main.py:74 {'meta': {'status': 'SUCCESS', 'msg': 'LOGIN SUCCESS'}, 'data': {'username': 'richard', 'password': '6ae199a93c381bf6d5de27491139d3f9', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk'}}
+2021-10-12 18:35:07,277 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 18:35:07] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-10-12 18:35:07,277 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 18:35:07] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-10-12 18:35:07,292 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 18:35:07] "[37mOPTIONS /menus?username=richard HTTP/1.1[0m" 200 -
+2021-10-12 18:35:07,292 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 18:35:07] "[37mOPTIONS /menus?username=richard HTTP/1.1[0m" 200 -
+2021-10-12 18:35:07,304 DEBUG main.py:106 Host: 127.0.0.1:5000
+Connection: keep-alive
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 18:35:07,304 DEBUG main.py:106 Host: 127.0.0.1:5000
+Connection: keep-alive
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 18:35:07,305 DEBUG main.py:107 BODY: b''
+2021-10-12 18:35:07,305 DEBUG main.py:107 BODY: b''
+2021-10-12 18:35:07,307 DEBUG main.py:112 {'meta': {'status': 200, 'msg': 'SUCCESS'}, 'data': [{'id': 101, 'authName': '§@≤M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1011, 'authName': 'Transaction', 'path': '1C_Gateway_Transaction', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1012, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1013, 'authName': 'Batch Process', 'path': '1C_Gateway_BatchProcess', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}]}, {'id': 102, 'authName': '§G≤M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1021, 'authName': 'Transaction', 'path': '2C_Gateway_Transaction', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1022, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1023, 'authName': 'Batch Process', 'path': '2C_Gateway_BatchProcess', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}]}, {'id': 103, 'authName': 'ª»¡pQR Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1031, 'authName': 'Transaction', 'path': 'UnionPayQR_Gateway_Transaction', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1032, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1033, 'authName': 'Batch Process', 'path': 'UnionPayQR_Gateway_BatchProcess', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1034, 'authName': 'Batch_CardNo', 'path': 'UnionPayQR_Gateway_BatchProcess_CardNo', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}]}, {'id': 104, 'authName': 'BoC Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1041, 'authName': 'Transaction', 'path': 'BoC_Gateway_Transaction', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1042, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1043, 'authName': 'Batch Process', 'path': 'BoC_Gateway_BatchProcess', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}]}, {'id': 105, 'authName': 'PayMe Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1051, 'authName': 'Transaction', 'path': 'PayMe_Gateway_Transaction', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1052, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1053, 'authName': 'Batch Process', 'path': 'PayMe_Gateway_BatchProcess', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}]}, {'id': 106, 'authName': 'Uniqlo Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1061, 'authName': 'Transaction', 'path': 'Uniqlo_Gateway_Transaction', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1062, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1063, 'authName': 'Batch Process', 'path': 'Uniqlo_Gateway_BatchProcess', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}]}, {'id': 107, 'authName': 'VMP Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1071, 'authName': 'Transaction', 'path': 'VMP_Gateway_Transaction', 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}, {'id': 1072, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}]}, {'id': 108, 'authName': 'EOPG Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1081, 'authName': 'Transaction', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}, {'id': 1082, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}]}, {'id': 109, 'authName': 'A8 Terminal Tools', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1091, 'authName': 'Password', 'path': 'A8_Password', 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}, {'id': 1092, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}]}, {'id': 110, 'authName': 'Octopus', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1101, 'authName': 'Report', 'path': 'Octopus_Report', 'level': 2, 'parent_id': 110, 'icon': None, 'children': []}]}, {'id': 111, 'authName': 'Admin', 'path': '', 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1201, 'authName': 'User', 'path': 'User', 'level': 2, 'parent_id': 111, 'icon': None, 'children': []}]}]}
+2021-10-12 18:35:07,307 DEBUG main.py:112 {'meta': {'status': 200, 'msg': 'SUCCESS'}, 'data': [{'id': 101, 'authName': '§@≤M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1011, 'authName': 'Transaction', 'path': '1C_Gateway_Transaction', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1012, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1013, 'authName': 'Batch Process', 'path': '1C_Gateway_BatchProcess', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}]}, {'id': 102, 'authName': '§G≤M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1021, 'authName': 'Transaction', 'path': '2C_Gateway_Transaction', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1022, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1023, 'authName': 'Batch Process', 'path': '2C_Gateway_BatchProcess', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}]}, {'id': 103, 'authName': 'ª»¡pQR Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1031, 'authName': 'Transaction', 'path': 'UnionPayQR_Gateway_Transaction', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1032, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1033, 'authName': 'Batch Process', 'path': 'UnionPayQR_Gateway_BatchProcess', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1034, 'authName': 'Batch_CardNo', 'path': 'UnionPayQR_Gateway_BatchProcess_CardNo', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}]}, {'id': 104, 'authName': 'BoC Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1041, 'authName': 'Transaction', 'path': 'BoC_Gateway_Transaction', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1042, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1043, 'authName': 'Batch Process', 'path': 'BoC_Gateway_BatchProcess', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}]}, {'id': 105, 'authName': 'PayMe Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1051, 'authName': 'Transaction', 'path': 'PayMe_Gateway_Transaction', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1052, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1053, 'authName': 'Batch Process', 'path': 'PayMe_Gateway_BatchProcess', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}]}, {'id': 106, 'authName': 'Uniqlo Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1061, 'authName': 'Transaction', 'path': 'Uniqlo_Gateway_Transaction', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1062, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1063, 'authName': 'Batch Process', 'path': 'Uniqlo_Gateway_BatchProcess', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}]}, {'id': 107, 'authName': 'VMP Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1071, 'authName': 'Transaction', 'path': 'VMP_Gateway_Transaction', 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}, {'id': 1072, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}]}, {'id': 108, 'authName': 'EOPG Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1081, 'authName': 'Transaction', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}, {'id': 1082, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}]}, {'id': 109, 'authName': 'A8 Terminal Tools', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1091, 'authName': 'Password', 'path': 'A8_Password', 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}, {'id': 1092, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}]}, {'id': 110, 'authName': 'Octopus', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1101, 'authName': 'Report', 'path': 'Octopus_Report', 'level': 2, 'parent_id': 110, 'icon': None, 'children': []}]}, {'id': 111, 'authName': 'Admin', 'path': '', 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1201, 'authName': 'User', 'path': 'User', 'level': 2, 'parent_id': 111, 'icon': None, 'children': []}]}]}
+2021-10-12 18:35:07,310 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 18:35:07] "[37mGET /menus?username=richard HTTP/1.1[0m" 200 -
+2021-10-12 18:35:07,310 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 18:35:07] "[37mGET /menus?username=richard HTTP/1.1[0m" 200 -
+2021-10-12 18:45:13,556 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 18:45:13] "[37mOPTIONS /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 18:45:13,556 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 18:45:13] "[37mOPTIONS /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 18:45:42,474 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 613
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 18:45:42,474 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 613
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 18:45:42,475 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Sale', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '', 'eft_trade_no': '', 'refund_no': '', 'service': 'service.alipay.web.PreOrder', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 18:45:42,475 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Sale', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '', 'eft_trade_no': '', 'refund_no': '', 'service': 'service.alipay.web.PreOrder', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 18:45:42,475 DEBUG main.py:727 signStr: 95a4197ef475c6b6bb2ae46131cd0410active_time=300&body=Testing&fee_type=HKD&lang=en&out_trade_no=20211012184542&payType=Alipay&pay_scene=WEB&return_url=http://vmp.eftpay.com.cn/VMP/returnSuccess&service=service.alipay.web.PreOrder&subject=Testing&tid=123456&time=20211012184542&transaction_amount=0.1&user_confirm_key=S0002575&wallet=ALIPAYHK
+2021-10-12 18:45:42,475 DEBUG main.py:727 signStr: 95a4197ef475c6b6bb2ae46131cd0410active_time=300&body=Testing&fee_type=HKD&lang=en&out_trade_no=20211012184542&payType=Alipay&pay_scene=WEB&return_url=http://vmp.eftpay.com.cn/VMP/returnSuccess&service=service.alipay.web.PreOrder&subject=Testing&tid=123456&time=20211012184542&transaction_amount=0.1&user_confirm_key=S0002575&wallet=ALIPAYHK
+2021-10-12 18:45:42,475 DEBUG main.py:730 Request Message: {"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012184542", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "461b959b4b8230485af4b72ef683a87bb9b8595484360977480f1c263d61212e", "subject": "Testing", "tid": "123456", "time": "20211012184542", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}
+2021-10-12 18:45:42,475 DEBUG main.py:730 Request Message: {"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012184542", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "461b959b4b8230485af4b72ef683a87bb9b8595484360977480f1c263d61212e", "subject": "Testing", "tid": "123456", "time": "20211012184542", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}
+2021-10-12 18:45:42,483 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 18:45:42,483 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 18:45:42,737 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/JSAPIService.do HTTP/1.1" 200 None
+2021-10-12 18:45:42,737 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/JSAPIService.do HTTP/1.1" 200 None
+2021-10-12 18:45:42,739 DEBUG main.py:1038 b'{"user_confirm_key":"S0002575","wallet":"ALIPAYHK","pay_apptrade":"http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012184542&lang=en&sign=96a00669414e675fa01fbf26bc1c746131dcac3e64dc5445cbecedfe6f56965c","return_char":"","transaction_amount":"0.10","sign":"686d81bbb44c8052eecbf31554b8b9e3d4410d0acaa29a702491fb1764bc6550","fee_type":"HKD","tid":"123456","eft_trade_no":"00001534000025761td6h0931236","out_trade_no":"20211012184542","payType":"Alipay","buyerType":"unknown","return_status":"00","time":"20211012184541"}'
+2021-10-12 18:45:42,739 DEBUG main.py:1038 b'{"user_confirm_key":"S0002575","wallet":"ALIPAYHK","pay_apptrade":"http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012184542&lang=en&sign=96a00669414e675fa01fbf26bc1c746131dcac3e64dc5445cbecedfe6f56965c","return_char":"","transaction_amount":"0.10","sign":"686d81bbb44c8052eecbf31554b8b9e3d4410d0acaa29a702491fb1764bc6550","fee_type":"HKD","tid":"123456","eft_trade_no":"00001534000025761td6h0931236","out_trade_no":"20211012184542","payType":"Alipay","buyerType":"unknown","return_status":"00","time":"20211012184541"}'
+2021-10-12 18:45:42,739 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012184542", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "461b959b4b8230485af4b72ef683a87bb9b8595484360977480f1c263d61212e", "subject": "Testing", "tid": "123456", "time": "20211012184542", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}', 'RawResponse': {'user_confirm_key': 'S0002575', 'wallet': 'ALIPAYHK', 'pay_apptrade': 'http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012184542&lang=en&sign=96a00669414e675fa01fbf26bc1c746131dcac3e64dc5445cbecedfe6f56965c', 'return_char': '', 'transaction_amount': '0.10', 'sign': '686d81bbb44c8052eecbf31554b8b9e3d4410d0acaa29a702491fb1764bc6550', 'fee_type': 'HKD', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h0931236', 'out_trade_no': '20211012184542', 'payType': 'Alipay', 'buyerType': 'unknown', 'return_status': '00', 'time': '20211012184541'}}}
+2021-10-12 18:45:42,739 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012184542", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "461b959b4b8230485af4b72ef683a87bb9b8595484360977480f1c263d61212e", "subject": "Testing", "tid": "123456", "time": "20211012184542", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}', 'RawResponse': {'user_confirm_key': 'S0002575', 'wallet': 'ALIPAYHK', 'pay_apptrade': 'http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012184542&lang=en&sign=96a00669414e675fa01fbf26bc1c746131dcac3e64dc5445cbecedfe6f56965c', 'return_char': '', 'transaction_amount': '0.10', 'sign': '686d81bbb44c8052eecbf31554b8b9e3d4410d0acaa29a702491fb1764bc6550', 'fee_type': 'HKD', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h0931236', 'out_trade_no': '20211012184542', 'payType': 'Alipay', 'buyerType': 'unknown', 'return_status': '00', 'time': '20211012184541'}}}
+2021-10-12 18:45:42,740 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 18:45:42] "[37mPOST /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 18:45:42,740 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 18:45:42] "[37mPOST /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 19:52:35,943 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 19:52:35] "[37mOPTIONS /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 19:52:35,943 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 19:52:35] "[37mOPTIONS /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 19:52:35,946 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 613
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 19:52:35,946 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 613
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 19:52:35,947 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Sale', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '', 'eft_trade_no': '', 'refund_no': '', 'service': 'service.alipay.web.PreOrder', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 19:52:35,947 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Sale', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '', 'eft_trade_no': '', 'refund_no': '', 'service': 'service.alipay.web.PreOrder', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 19:52:35,947 DEBUG main.py:727 signStr: 95a4197ef475c6b6bb2ae46131cd0410active_time=300&body=Testing&fee_type=HKD&lang=en&out_trade_no=20211012195235&payType=Alipay&pay_scene=WEB&return_url=http://vmp.eftpay.com.cn/VMP/returnSuccess&service=service.alipay.web.PreOrder&subject=Testing&tid=123456&time=20211012195235&transaction_amount=0.1&user_confirm_key=S0002575&wallet=ALIPAYHK
+2021-10-12 19:52:35,947 DEBUG main.py:727 signStr: 95a4197ef475c6b6bb2ae46131cd0410active_time=300&body=Testing&fee_type=HKD&lang=en&out_trade_no=20211012195235&payType=Alipay&pay_scene=WEB&return_url=http://vmp.eftpay.com.cn/VMP/returnSuccess&service=service.alipay.web.PreOrder&subject=Testing&tid=123456&time=20211012195235&transaction_amount=0.1&user_confirm_key=S0002575&wallet=ALIPAYHK
+2021-10-12 19:52:35,948 DEBUG main.py:730 Request Message: {"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012195235", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "2bcc66dd7e61af8079b1d35909b8cbcf15a7d14b40e9d15be0bfbcdb4ea6b2f5", "subject": "Testing", "tid": "123456", "time": "20211012195235", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}
+2021-10-12 19:52:35,948 DEBUG main.py:730 Request Message: {"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012195235", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "2bcc66dd7e61af8079b1d35909b8cbcf15a7d14b40e9d15be0bfbcdb4ea6b2f5", "subject": "Testing", "tid": "123456", "time": "20211012195235", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}
+2021-10-12 19:52:35,950 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 19:52:35,950 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 19:52:36,141 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/JSAPIService.do HTTP/1.1" 200 None
+2021-10-12 19:52:36,141 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/JSAPIService.do HTTP/1.1" 200 None
+2021-10-12 19:52:36,142 DEBUG main.py:1038 b'{"user_confirm_key":"S0002575","wallet":"ALIPAYHK","pay_apptrade":"http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012195235&lang=en&sign=96477a4cd1989b18a5f2a98fb4c15245801c433170d20ba23b676c3736960170","return_char":"","transaction_amount":"0.10","sign":"5592aa66eb57053c926ec7942509ad1e46fb8bbabd7d2c5d9506eab7a2cec811","fee_type":"HKD","tid":"123456","eft_trade_no":"00001534000025761td6h3h0e239","out_trade_no":"20211012195235","payType":"Alipay","buyerType":"unknown","return_status":"00","time":"20211012195235"}'
+2021-10-12 19:52:36,142 DEBUG main.py:1038 b'{"user_confirm_key":"S0002575","wallet":"ALIPAYHK","pay_apptrade":"http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012195235&lang=en&sign=96477a4cd1989b18a5f2a98fb4c15245801c433170d20ba23b676c3736960170","return_char":"","transaction_amount":"0.10","sign":"5592aa66eb57053c926ec7942509ad1e46fb8bbabd7d2c5d9506eab7a2cec811","fee_type":"HKD","tid":"123456","eft_trade_no":"00001534000025761td6h3h0e239","out_trade_no":"20211012195235","payType":"Alipay","buyerType":"unknown","return_status":"00","time":"20211012195235"}'
+2021-10-12 19:52:36,142 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012195235", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "2bcc66dd7e61af8079b1d35909b8cbcf15a7d14b40e9d15be0bfbcdb4ea6b2f5", "subject": "Testing", "tid": "123456", "time": "20211012195235", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}', 'RawResponse': {'user_confirm_key': 'S0002575', 'wallet': 'ALIPAYHK', 'pay_apptrade': 'http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012195235&lang=en&sign=96477a4cd1989b18a5f2a98fb4c15245801c433170d20ba23b676c3736960170', 'return_char': '', 'transaction_amount': '0.10', 'sign': '5592aa66eb57053c926ec7942509ad1e46fb8bbabd7d2c5d9506eab7a2cec811', 'fee_type': 'HKD', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h3h0e239', 'out_trade_no': '20211012195235', 'payType': 'Alipay', 'buyerType': 'unknown', 'return_status': '00', 'time': '20211012195235'}}}
+2021-10-12 19:52:36,142 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012195235", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "2bcc66dd7e61af8079b1d35909b8cbcf15a7d14b40e9d15be0bfbcdb4ea6b2f5", "subject": "Testing", "tid": "123456", "time": "20211012195235", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}', 'RawResponse': {'user_confirm_key': 'S0002575', 'wallet': 'ALIPAYHK', 'pay_apptrade': 'http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012195235&lang=en&sign=96477a4cd1989b18a5f2a98fb4c15245801c433170d20ba23b676c3736960170', 'return_char': '', 'transaction_amount': '0.10', 'sign': '5592aa66eb57053c926ec7942509ad1e46fb8bbabd7d2c5d9506eab7a2cec811', 'fee_type': 'HKD', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h3h0e239', 'out_trade_no': '20211012195235', 'payType': 'Alipay', 'buyerType': 'unknown', 'return_status': '00', 'time': '20211012195235'}}}
+2021-10-12 19:52:36,143 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 19:52:36] "[37mPOST /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 19:52:36,143 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 19:52:36] "[37mPOST /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 21:08:35,761 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:08:35] "[37mOPTIONS /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 21:08:35,761 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:08:35] "[37mOPTIONS /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 21:08:35,766 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 613
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:08:35,766 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 613
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:08:35,767 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Sale', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '', 'eft_trade_no': '', 'refund_no': '', 'service': 'service.alipay.web.PreOrder', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:08:35,767 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Sale', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '', 'eft_trade_no': '', 'refund_no': '', 'service': 'service.alipay.web.PreOrder', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:08:35,768 DEBUG main.py:727 signStr: 95a4197ef475c6b6bb2ae46131cd0410active_time=300&body=Testing&fee_type=HKD&lang=en&out_trade_no=20211012210835&payType=Alipay&pay_scene=WEB&return_url=http://vmp.eftpay.com.cn/VMP/returnSuccess&service=service.alipay.web.PreOrder&subject=Testing&tid=123456&time=20211012210835&transaction_amount=0.1&user_confirm_key=S0002575&wallet=ALIPAYHK
+2021-10-12 21:08:35,768 DEBUG main.py:727 signStr: 95a4197ef475c6b6bb2ae46131cd0410active_time=300&body=Testing&fee_type=HKD&lang=en&out_trade_no=20211012210835&payType=Alipay&pay_scene=WEB&return_url=http://vmp.eftpay.com.cn/VMP/returnSuccess&service=service.alipay.web.PreOrder&subject=Testing&tid=123456&time=20211012210835&transaction_amount=0.1&user_confirm_key=S0002575&wallet=ALIPAYHK
+2021-10-12 21:08:35,768 DEBUG main.py:730 Request Message: {"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012210835", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "11906b6b3d35365b6c8d6c8a4d5ac85ff74e0ee9d2bc417d16636abe39ca88bc", "subject": "Testing", "tid": "123456", "time": "20211012210835", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}
+2021-10-12 21:08:35,768 DEBUG main.py:730 Request Message: {"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012210835", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "11906b6b3d35365b6c8d6c8a4d5ac85ff74e0ee9d2bc417d16636abe39ca88bc", "subject": "Testing", "tid": "123456", "time": "20211012210835", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}
+2021-10-12 21:08:35,771 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:08:35,771 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:08:36,037 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/JSAPIService.do HTTP/1.1" 200 None
+2021-10-12 21:08:36,037 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/JSAPIService.do HTTP/1.1" 200 None
+2021-10-12 21:08:36,042 DEBUG main.py:1038 b'{"user_confirm_key":"S0002575","wallet":"ALIPAYHK","pay_apptrade":"http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012210835&lang=en&sign=763a113ab445a6137d15b7ff877fffe449fa350ab6a143e8f9761bd707ec37bb","return_char":"","transaction_amount":"0.10","sign":"a087b1942adba3c107edeff879624665ac3b7592229c0a1572e0e491de8f07ee","fee_type":"HKD","tid":"123456","eft_trade_no":"00001534000025761td6h897m240","out_trade_no":"20211012210835","payType":"Alipay","buyerType":"unknown","return_status":"00","time":"20211012210835"}'
+2021-10-12 21:08:36,042 DEBUG main.py:1038 b'{"user_confirm_key":"S0002575","wallet":"ALIPAYHK","pay_apptrade":"http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012210835&lang=en&sign=763a113ab445a6137d15b7ff877fffe449fa350ab6a143e8f9761bd707ec37bb","return_char":"","transaction_amount":"0.10","sign":"a087b1942adba3c107edeff879624665ac3b7592229c0a1572e0e491de8f07ee","fee_type":"HKD","tid":"123456","eft_trade_no":"00001534000025761td6h897m240","out_trade_no":"20211012210835","payType":"Alipay","buyerType":"unknown","return_status":"00","time":"20211012210835"}'
+2021-10-12 21:08:36,042 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012210835", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "11906b6b3d35365b6c8d6c8a4d5ac85ff74e0ee9d2bc417d16636abe39ca88bc", "subject": "Testing", "tid": "123456", "time": "20211012210835", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}', 'RawResponse': {'user_confirm_key': 'S0002575', 'wallet': 'ALIPAYHK', 'pay_apptrade': 'http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012210835&lang=en&sign=763a113ab445a6137d15b7ff877fffe449fa350ab6a143e8f9761bd707ec37bb', 'return_char': '', 'transaction_amount': '0.10', 'sign': 'a087b1942adba3c107edeff879624665ac3b7592229c0a1572e0e491de8f07ee', 'fee_type': 'HKD', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h897m240', 'out_trade_no': '20211012210835', 'payType': 'Alipay', 'buyerType': 'unknown', 'return_status': '00', 'time': '20211012210835'}}}
+2021-10-12 21:08:36,042 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012210835", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "11906b6b3d35365b6c8d6c8a4d5ac85ff74e0ee9d2bc417d16636abe39ca88bc", "subject": "Testing", "tid": "123456", "time": "20211012210835", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}', 'RawResponse': {'user_confirm_key': 'S0002575', 'wallet': 'ALIPAYHK', 'pay_apptrade': 'http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012210835&lang=en&sign=763a113ab445a6137d15b7ff877fffe449fa350ab6a143e8f9761bd707ec37bb', 'return_char': '', 'transaction_amount': '0.10', 'sign': 'a087b1942adba3c107edeff879624665ac3b7592229c0a1572e0e491de8f07ee', 'fee_type': 'HKD', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h897m240', 'out_trade_no': '20211012210835', 'payType': 'Alipay', 'buyerType': 'unknown', 'return_status': '00', 'time': '20211012210835'}}}
+2021-10-12 21:08:36,043 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:08:36] "[37mPOST /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 21:08:36,043 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:08:36] "[37mPOST /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 21:09:52,503 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:09:52] "[37mOPTIONS /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 21:09:52,503 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:09:52] "[37mOPTIONS /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 21:09:52,506 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 613
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:09:52,506 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 613
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:09:52,507 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Sale', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '', 'eft_trade_no': '', 'refund_no': '', 'service': 'service.alipay.web.PreOrder', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:09:52,507 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Sale', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '', 'eft_trade_no': '', 'refund_no': '', 'service': 'service.alipay.web.PreOrder', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:09:52,507 DEBUG main.py:727 signStr: 95a4197ef475c6b6bb2ae46131cd0410active_time=300&body=Testing&fee_type=HKD&lang=en&out_trade_no=20211012210952&payType=Alipay&pay_scene=WEB&return_url=http://vmp.eftpay.com.cn/VMP/returnSuccess&service=service.alipay.web.PreOrder&subject=Testing&tid=123456&time=20211012210952&transaction_amount=0.1&user_confirm_key=S0002575&wallet=ALIPAYHK
+2021-10-12 21:09:52,507 DEBUG main.py:727 signStr: 95a4197ef475c6b6bb2ae46131cd0410active_time=300&body=Testing&fee_type=HKD&lang=en&out_trade_no=20211012210952&payType=Alipay&pay_scene=WEB&return_url=http://vmp.eftpay.com.cn/VMP/returnSuccess&service=service.alipay.web.PreOrder&subject=Testing&tid=123456&time=20211012210952&transaction_amount=0.1&user_confirm_key=S0002575&wallet=ALIPAYHK
+2021-10-12 21:09:52,508 DEBUG main.py:730 Request Message: {"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012210952", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "f07e8e450e7b8398bd520ec0fa2e007a17e8caa6c9e34143bb8f4fc0d75703e1", "subject": "Testing", "tid": "123456", "time": "20211012210952", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}
+2021-10-12 21:09:52,508 DEBUG main.py:730 Request Message: {"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012210952", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "f07e8e450e7b8398bd520ec0fa2e007a17e8caa6c9e34143bb8f4fc0d75703e1", "subject": "Testing", "tid": "123456", "time": "20211012210952", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}
+2021-10-12 21:09:52,511 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:09:52,511 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:09:52,708 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/JSAPIService.do HTTP/1.1" 200 None
+2021-10-12 21:09:52,708 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/JSAPIService.do HTTP/1.1" 200 None
+2021-10-12 21:09:52,713 DEBUG main.py:1038 b'{"user_confirm_key":"S0002575","wallet":"ALIPAYHK","pay_apptrade":"http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012210952&lang=en&sign=b84fc98459eb5adba5ae4d3cb59216d3d1356c4867a549d900309a4e984329d5","return_char":"","transaction_amount":"0.10","sign":"69773eda9736c4b3e2702a70f74ca6035462e78d4a2686d77c5846ab90c528bb","fee_type":"HKD","tid":"123456","eft_trade_no":"00001534000025761td6h8arr241","out_trade_no":"20211012210952","payType":"Alipay","buyerType":"unknown","return_status":"00","time":"20211012210951"}'
+2021-10-12 21:09:52,713 DEBUG main.py:1038 b'{"user_confirm_key":"S0002575","wallet":"ALIPAYHK","pay_apptrade":"http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012210952&lang=en&sign=b84fc98459eb5adba5ae4d3cb59216d3d1356c4867a549d900309a4e984329d5","return_char":"","transaction_amount":"0.10","sign":"69773eda9736c4b3e2702a70f74ca6035462e78d4a2686d77c5846ab90c528bb","fee_type":"HKD","tid":"123456","eft_trade_no":"00001534000025761td6h8arr241","out_trade_no":"20211012210952","payType":"Alipay","buyerType":"unknown","return_status":"00","time":"20211012210951"}'
+2021-10-12 21:09:52,715 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012210952", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "f07e8e450e7b8398bd520ec0fa2e007a17e8caa6c9e34143bb8f4fc0d75703e1", "subject": "Testing", "tid": "123456", "time": "20211012210952", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}', 'RawResponse': {'user_confirm_key': 'S0002575', 'wallet': 'ALIPAYHK', 'pay_apptrade': 'http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012210952&lang=en&sign=b84fc98459eb5adba5ae4d3cb59216d3d1356c4867a549d900309a4e984329d5', 'return_char': '', 'transaction_amount': '0.10', 'sign': '69773eda9736c4b3e2702a70f74ca6035462e78d4a2686d77c5846ab90c528bb', 'fee_type': 'HKD', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h8arr241', 'out_trade_no': '20211012210952', 'payType': 'Alipay', 'buyerType': 'unknown', 'return_status': '00', 'time': '20211012210951'}}}
+2021-10-12 21:09:52,715 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012210952", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "f07e8e450e7b8398bd520ec0fa2e007a17e8caa6c9e34143bb8f4fc0d75703e1", "subject": "Testing", "tid": "123456", "time": "20211012210952", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}', 'RawResponse': {'user_confirm_key': 'S0002575', 'wallet': 'ALIPAYHK', 'pay_apptrade': 'http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012210952&lang=en&sign=b84fc98459eb5adba5ae4d3cb59216d3d1356c4867a549d900309a4e984329d5', 'return_char': '', 'transaction_amount': '0.10', 'sign': '69773eda9736c4b3e2702a70f74ca6035462e78d4a2686d77c5846ab90c528bb', 'fee_type': 'HKD', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h8arr241', 'out_trade_no': '20211012210952', 'payType': 'Alipay', 'buyerType': 'unknown', 'return_status': '00', 'time': '20211012210951'}}}
+2021-10-12 21:09:52,718 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:09:52] "[37mPOST /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 21:09:52,718 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:09:52] "[37mPOST /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 21:13:03,379 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:13:03] "[37mOPTIONS /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 21:13:03,379 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:13:03] "[37mOPTIONS /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 21:13:03,383 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 613
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:13:03,383 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 613
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:13:03,384 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Sale', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '', 'eft_trade_no': '', 'refund_no': '', 'service': 'service.alipay.web.PreOrder', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:13:03,384 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Sale', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '', 'eft_trade_no': '', 'refund_no': '', 'service': 'service.alipay.web.PreOrder', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:13:03,385 DEBUG main.py:727 signStr: 95a4197ef475c6b6bb2ae46131cd0410active_time=300&body=Testing&fee_type=HKD&lang=en&out_trade_no=20211012211303&payType=Alipay&pay_scene=WEB&return_url=http://vmp.eftpay.com.cn/VMP/returnSuccess&service=service.alipay.web.PreOrder&subject=Testing&tid=123456&time=20211012211303&transaction_amount=0.1&user_confirm_key=S0002575&wallet=ALIPAYHK
+2021-10-12 21:13:03,385 DEBUG main.py:727 signStr: 95a4197ef475c6b6bb2ae46131cd0410active_time=300&body=Testing&fee_type=HKD&lang=en&out_trade_no=20211012211303&payType=Alipay&pay_scene=WEB&return_url=http://vmp.eftpay.com.cn/VMP/returnSuccess&service=service.alipay.web.PreOrder&subject=Testing&tid=123456&time=20211012211303&transaction_amount=0.1&user_confirm_key=S0002575&wallet=ALIPAYHK
+2021-10-12 21:13:03,385 DEBUG main.py:730 Request Message: {"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012211303", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "ec39489b9c95a4f173d68f08112afcdb13159b85fef1c5d76ef305bcdbff8ca9", "subject": "Testing", "tid": "123456", "time": "20211012211303", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}
+2021-10-12 21:13:03,385 DEBUG main.py:730 Request Message: {"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012211303", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "ec39489b9c95a4f173d68f08112afcdb13159b85fef1c5d76ef305bcdbff8ca9", "subject": "Testing", "tid": "123456", "time": "20211012211303", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}
+2021-10-12 21:13:03,388 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:13:03,388 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:13:03,577 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/JSAPIService.do HTTP/1.1" 200 None
+2021-10-12 21:13:03,577 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/JSAPIService.do HTTP/1.1" 200 None
+2021-10-12 21:13:03,578 DEBUG main.py:1038 b'{"user_confirm_key":"S0002575","wallet":"ALIPAYHK","pay_apptrade":"http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012211303&lang=en&sign=d6e14eb60217ed54cc08f8ccb2ac158c66684a30f956ace2121fdebfae62e8d9","return_char":"","transaction_amount":"0.10","sign":"e115a6c2d29fd3aa03f2af29c951428e0eed0e9909ffc1f541d5f4d5d0b9e41c","fee_type":"HKD","tid":"123456","eft_trade_no":"00001534000025761td6h8eku242","out_trade_no":"20211012211303","payType":"Alipay","buyerType":"unknown","return_status":"00","time":"20211012211302"}'
+2021-10-12 21:13:03,578 DEBUG main.py:1038 b'{"user_confirm_key":"S0002575","wallet":"ALIPAYHK","pay_apptrade":"http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012211303&lang=en&sign=d6e14eb60217ed54cc08f8ccb2ac158c66684a30f956ace2121fdebfae62e8d9","return_char":"","transaction_amount":"0.10","sign":"e115a6c2d29fd3aa03f2af29c951428e0eed0e9909ffc1f541d5f4d5d0b9e41c","fee_type":"HKD","tid":"123456","eft_trade_no":"00001534000025761td6h8eku242","out_trade_no":"20211012211303","payType":"Alipay","buyerType":"unknown","return_status":"00","time":"20211012211302"}'
+2021-10-12 21:13:03,579 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012211303", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "ec39489b9c95a4f173d68f08112afcdb13159b85fef1c5d76ef305bcdbff8ca9", "subject": "Testing", "tid": "123456", "time": "20211012211303", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}', 'RawResponse': {'user_confirm_key': 'S0002575', 'wallet': 'ALIPAYHK', 'pay_apptrade': 'http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012211303&lang=en&sign=d6e14eb60217ed54cc08f8ccb2ac158c66684a30f956ace2121fdebfae62e8d9', 'return_char': '', 'transaction_amount': '0.10', 'sign': 'e115a6c2d29fd3aa03f2af29c951428e0eed0e9909ffc1f541d5f4d5d0b9e41c', 'fee_type': 'HKD', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h8eku242', 'out_trade_no': '20211012211303', 'payType': 'Alipay', 'buyerType': 'unknown', 'return_status': '00', 'time': '20211012211302'}}}
+2021-10-12 21:13:03,579 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012211303", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "ec39489b9c95a4f173d68f08112afcdb13159b85fef1c5d76ef305bcdbff8ca9", "subject": "Testing", "tid": "123456", "time": "20211012211303", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}', 'RawResponse': {'user_confirm_key': 'S0002575', 'wallet': 'ALIPAYHK', 'pay_apptrade': 'http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012211303&lang=en&sign=d6e14eb60217ed54cc08f8ccb2ac158c66684a30f956ace2121fdebfae62e8d9', 'return_char': '', 'transaction_amount': '0.10', 'sign': 'e115a6c2d29fd3aa03f2af29c951428e0eed0e9909ffc1f541d5f4d5d0b9e41c', 'fee_type': 'HKD', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h8eku242', 'out_trade_no': '20211012211303', 'payType': 'Alipay', 'buyerType': 'unknown', 'return_status': '00', 'time': '20211012211302'}}}
+2021-10-12 21:13:03,579 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:13:03] "[37mPOST /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 21:13:03,579 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:13:03] "[37mPOST /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 21:16:50,093 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:16:50] "[37mOPTIONS /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 21:16:50,093 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:16:50] "[37mOPTIONS /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 21:16:50,097 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 613
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:16:50,097 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 613
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:16:50,097 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Sale', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '', 'eft_trade_no': '', 'refund_no': '', 'service': 'service.alipay.web.PreOrder', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:16:50,097 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Sale', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '', 'eft_trade_no': '', 'refund_no': '', 'service': 'service.alipay.web.PreOrder', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:16:50,098 DEBUG main.py:727 signStr: 95a4197ef475c6b6bb2ae46131cd0410active_time=300&body=Testing&fee_type=HKD&lang=en&out_trade_no=20211012211650&payType=Alipay&pay_scene=WEB&return_url=http://vmp.eftpay.com.cn/VMP/returnSuccess&service=service.alipay.web.PreOrder&subject=Testing&tid=123456&time=20211012211650&transaction_amount=0.1&user_confirm_key=S0002575&wallet=ALIPAYHK
+2021-10-12 21:16:50,098 DEBUG main.py:727 signStr: 95a4197ef475c6b6bb2ae46131cd0410active_time=300&body=Testing&fee_type=HKD&lang=en&out_trade_no=20211012211650&payType=Alipay&pay_scene=WEB&return_url=http://vmp.eftpay.com.cn/VMP/returnSuccess&service=service.alipay.web.PreOrder&subject=Testing&tid=123456&time=20211012211650&transaction_amount=0.1&user_confirm_key=S0002575&wallet=ALIPAYHK
+2021-10-12 21:16:50,098 DEBUG main.py:730 Request Message: {"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012211650", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "4172a4919a46d635cdf79c63280a900d68691e21b2323011f706f2b59318c03b", "subject": "Testing", "tid": "123456", "time": "20211012211650", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}
+2021-10-12 21:16:50,098 DEBUG main.py:730 Request Message: {"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012211650", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "4172a4919a46d635cdf79c63280a900d68691e21b2323011f706f2b59318c03b", "subject": "Testing", "tid": "123456", "time": "20211012211650", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}
+2021-10-12 21:16:50,101 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:16:50,101 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:16:50,325 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/JSAPIService.do HTTP/1.1" 200 None
+2021-10-12 21:16:50,325 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/JSAPIService.do HTTP/1.1" 200 None
+2021-10-12 21:16:50,327 DEBUG main.py:1038 b'{"user_confirm_key":"S0002575","wallet":"ALIPAYHK","pay_apptrade":"http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012211650&lang=en&sign=500ebd415e78b125e9c1e7016491b901219e891d8bc2715d9cfd817291f58d41","return_char":"","transaction_amount":"0.10","sign":"31e046f878475e571423465ef0d0ddceffb78d1bdb830842ffccc3e8141bd3a2","fee_type":"HKD","tid":"123456","eft_trade_no":"00001534000025761td6h8ha1243","out_trade_no":"20211012211650","payType":"Alipay","buyerType":"unknown","return_status":"00","time":"20211012211649"}'
+2021-10-12 21:16:50,327 DEBUG main.py:1038 b'{"user_confirm_key":"S0002575","wallet":"ALIPAYHK","pay_apptrade":"http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012211650&lang=en&sign=500ebd415e78b125e9c1e7016491b901219e891d8bc2715d9cfd817291f58d41","return_char":"","transaction_amount":"0.10","sign":"31e046f878475e571423465ef0d0ddceffb78d1bdb830842ffccc3e8141bd3a2","fee_type":"HKD","tid":"123456","eft_trade_no":"00001534000025761td6h8ha1243","out_trade_no":"20211012211650","payType":"Alipay","buyerType":"unknown","return_status":"00","time":"20211012211649"}'
+2021-10-12 21:16:50,327 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012211650", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "4172a4919a46d635cdf79c63280a900d68691e21b2323011f706f2b59318c03b", "subject": "Testing", "tid": "123456", "time": "20211012211650", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}', 'RawResponse': {'user_confirm_key': 'S0002575', 'wallet': 'ALIPAYHK', 'pay_apptrade': 'http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012211650&lang=en&sign=500ebd415e78b125e9c1e7016491b901219e891d8bc2715d9cfd817291f58d41', 'return_char': '', 'transaction_amount': '0.10', 'sign': '31e046f878475e571423465ef0d0ddceffb78d1bdb830842ffccc3e8141bd3a2', 'fee_type': 'HKD', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h8ha1243', 'out_trade_no': '20211012211650', 'payType': 'Alipay', 'buyerType': 'unknown', 'return_status': '00', 'time': '20211012211649'}}}
+2021-10-12 21:16:50,327 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"active_time": "300", "body": "Testing", "fee_type": "HKD", "lang": "en", "out_trade_no": "20211012211650", "payType": "Alipay", "pay_scene": "WEB", "return_url": "http://vmp.eftpay.com.cn/VMP/returnSuccess", "service": "service.alipay.web.PreOrder", "sign": "4172a4919a46d635cdf79c63280a900d68691e21b2323011f706f2b59318c03b", "subject": "Testing", "tid": "123456", "time": "20211012211650", "transaction_amount": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}', 'RawResponse': {'user_confirm_key': 'S0002575', 'wallet': 'ALIPAYHK', 'pay_apptrade': 'http://vmp.eftpay.com.cn/VMP/web/payPage?userkey=S0002575&outTradeNo=20211012211650&lang=en&sign=500ebd415e78b125e9c1e7016491b901219e891d8bc2715d9cfd817291f58d41', 'return_char': '', 'transaction_amount': '0.10', 'sign': '31e046f878475e571423465ef0d0ddceffb78d1bdb830842ffccc3e8141bd3a2', 'fee_type': 'HKD', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h8ha1243', 'out_trade_no': '20211012211650', 'payType': 'Alipay', 'buyerType': 'unknown', 'return_status': '00', 'time': '20211012211649'}}}
+2021-10-12 21:16:50,328 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:16:50] "[37mPOST /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 21:16:50,328 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:16:50] "[37mPOST /VMP/Sale HTTP/1.1[0m" 200 -
+2021-10-12 21:18:22,768 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:18:22] "[37mOPTIONS /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:18:22,768 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:18:22] "[37mOPTIONS /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:18:22,772 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 628
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:18:22,772 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 628
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:18:22,773 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Query', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '20211012211650', 'eft_trade_no': '', 'refund_no': '', 'service': 'service.alipay.web.PreOrder', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:18:22,773 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Query', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '20211012211650', 'eft_trade_no': '', 'refund_no': '', 'service': 'service.alipay.web.PreOrder', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:18:22,773 DEBUG main.py:767 95a4197ef475c6b6bb2ae46131cd0410out_trade_no=20211012211650&querytype=OUT_TRADE&time=20211012211822&user_confirm_key=S0002575
+2021-10-12 21:18:22,773 DEBUG main.py:767 95a4197ef475c6b6bb2ae46131cd0410out_trade_no=20211012211650&querytype=OUT_TRADE&time=20211012211822&user_confirm_key=S0002575
+2021-10-12 21:18:22,774 DEBUG main.py:770 Request Message: {"out_trade_no": "20211012211650", "querytype": "OUT_TRADE", "sign": "7925e44920445da74e854a4f0c1835017d8a59aee2fa15fd48fd29382d9c6ea9", "time": "20211012211822", "user_confirm_key": "S0002575"}
+2021-10-12 21:18:22,774 DEBUG main.py:770 Request Message: {"out_trade_no": "20211012211650", "querytype": "OUT_TRADE", "sign": "7925e44920445da74e854a4f0c1835017d8a59aee2fa15fd48fd29382d9c6ea9", "time": "20211012211822", "user_confirm_key": "S0002575"}
+2021-10-12 21:18:22,777 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:18:22,777 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:18:22,944 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/QRcodeTradeQuery.do HTTP/1.1" 200 None
+2021-10-12 21:18:22,944 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/QRcodeTradeQuery.do HTTP/1.1" 200 None
+2021-10-12 21:18:22,945 DEBUG main.py:1038 b'{"transaction_id":"2021101222001304451452368073","user_confirm_key":"S0002575","trade_time":"2021-10-12 21:17:56","return_char":"","transaction_amount":"0.1","sign":"ce20767d2985ab75fac0241abfc069f22329be59d61f97ced21336a19611144f","buyer_id":"","tid":"123456","eft_trade_no":"00001534000025761td6h8ha1243","payment_type":"ALIPAYHK","out_trade_no":"20211012211650","trade_status":"TRADE_SUCCESS","return_status":"00","trade_type":"SALE","currency":"HKD","time":"20211012211822"}'
+2021-10-12 21:18:22,945 DEBUG main.py:1038 b'{"transaction_id":"2021101222001304451452368073","user_confirm_key":"S0002575","trade_time":"2021-10-12 21:17:56","return_char":"","transaction_amount":"0.1","sign":"ce20767d2985ab75fac0241abfc069f22329be59d61f97ced21336a19611144f","buyer_id":"","tid":"123456","eft_trade_no":"00001534000025761td6h8ha1243","payment_type":"ALIPAYHK","out_trade_no":"20211012211650","trade_status":"TRADE_SUCCESS","return_status":"00","trade_type":"SALE","currency":"HKD","time":"20211012211822"}'
+2021-10-12 21:18:22,945 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"out_trade_no": "20211012211650", "querytype": "OUT_TRADE", "sign": "7925e44920445da74e854a4f0c1835017d8a59aee2fa15fd48fd29382d9c6ea9", "time": "20211012211822", "user_confirm_key": "S0002575"}', 'RawResponse': {'transaction_id': '2021101222001304451452368073', 'user_confirm_key': 'S0002575', 'trade_time': '2021-10-12 21:17:56', 'return_char': '', 'transaction_amount': '0.1', 'sign': 'ce20767d2985ab75fac0241abfc069f22329be59d61f97ced21336a19611144f', 'buyer_id': '', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h8ha1243', 'payment_type': 'ALIPAYHK', 'out_trade_no': '20211012211650', 'trade_status': 'TRADE_SUCCESS', 'return_status': '00', 'trade_type': 'SALE', 'currency': 'HKD', 'time': '20211012211822'}}}
+2021-10-12 21:18:22,945 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"out_trade_no": "20211012211650", "querytype": "OUT_TRADE", "sign": "7925e44920445da74e854a4f0c1835017d8a59aee2fa15fd48fd29382d9c6ea9", "time": "20211012211822", "user_confirm_key": "S0002575"}', 'RawResponse': {'transaction_id': '2021101222001304451452368073', 'user_confirm_key': 'S0002575', 'trade_time': '2021-10-12 21:17:56', 'return_char': '', 'transaction_amount': '0.1', 'sign': 'ce20767d2985ab75fac0241abfc069f22329be59d61f97ced21336a19611144f', 'buyer_id': '', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h8ha1243', 'payment_type': 'ALIPAYHK', 'out_trade_no': '20211012211650', 'trade_status': 'TRADE_SUCCESS', 'return_status': '00', 'trade_type': 'SALE', 'currency': 'HKD', 'time': '20211012211822'}}}
+2021-10-12 21:18:22,946 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:18:22] "[37mPOST /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:18:22,946 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:18:22] "[37mPOST /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:24:02,083 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:24:02] "[37mOPTIONS /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:24:02,083 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:24:02] "[37mOPTIONS /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:24:02,086 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 628
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:24:02,086 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 628
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:24:02,086 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Query', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '20211012211650', 'eft_trade_no': '', 'refund_no': '', 'service': 'service.alipay.web.PreOrder', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:24:02,086 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Query', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '20211012211650', 'eft_trade_no': '', 'refund_no': '', 'service': 'service.alipay.web.PreOrder', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:24:02,087 DEBUG main.py:767 95a4197ef475c6b6bb2ae46131cd0410out_trade_no=20211012211650&querytype=OUT_TRADE&time=20211012212402&user_confirm_key=S0002575
+2021-10-12 21:24:02,087 DEBUG main.py:767 95a4197ef475c6b6bb2ae46131cd0410out_trade_no=20211012211650&querytype=OUT_TRADE&time=20211012212402&user_confirm_key=S0002575
+2021-10-12 21:24:02,087 DEBUG main.py:770 Request Message: {"out_trade_no": "20211012211650", "querytype": "OUT_TRADE", "sign": "2b7dfe06a53567d1ea03c10432256504f843552dcdb472bd39b6d2e00b54b25b", "time": "20211012212402", "user_confirm_key": "S0002575"}
+2021-10-12 21:24:02,087 DEBUG main.py:770 Request Message: {"out_trade_no": "20211012211650", "querytype": "OUT_TRADE", "sign": "2b7dfe06a53567d1ea03c10432256504f843552dcdb472bd39b6d2e00b54b25b", "time": "20211012212402", "user_confirm_key": "S0002575"}
+2021-10-12 21:24:02,090 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:24:02,090 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:24:02,308 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/QRcodeTradeQuery.do HTTP/1.1" 200 None
+2021-10-12 21:24:02,308 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/QRcodeTradeQuery.do HTTP/1.1" 200 None
+2021-10-12 21:24:02,309 DEBUG main.py:1038 b'{"transaction_id":"2021101222001304451452368073","user_confirm_key":"S0002575","trade_time":"2021-10-12 21:17:56","return_char":"","transaction_amount":"0.1","sign":"d6c1d4db9aeffd101785272861b4698157f0d49f197d7d27c38aa6a672f9a442","buyer_id":"","tid":"123456","eft_trade_no":"00001534000025761td6h8ha1243","payment_type":"ALIPAYHK","out_trade_no":"20211012211650","trade_status":"TRADE_SUCCESS","return_status":"00","trade_type":"SALE","currency":"HKD","time":"20211012212401"}'
+2021-10-12 21:24:02,309 DEBUG main.py:1038 b'{"transaction_id":"2021101222001304451452368073","user_confirm_key":"S0002575","trade_time":"2021-10-12 21:17:56","return_char":"","transaction_amount":"0.1","sign":"d6c1d4db9aeffd101785272861b4698157f0d49f197d7d27c38aa6a672f9a442","buyer_id":"","tid":"123456","eft_trade_no":"00001534000025761td6h8ha1243","payment_type":"ALIPAYHK","out_trade_no":"20211012211650","trade_status":"TRADE_SUCCESS","return_status":"00","trade_type":"SALE","currency":"HKD","time":"20211012212401"}'
+2021-10-12 21:24:02,309 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"out_trade_no": "20211012211650", "querytype": "OUT_TRADE", "sign": "2b7dfe06a53567d1ea03c10432256504f843552dcdb472bd39b6d2e00b54b25b", "time": "20211012212402", "user_confirm_key": "S0002575"}', 'RawResponse': {'transaction_id': '2021101222001304451452368073', 'user_confirm_key': 'S0002575', 'trade_time': '2021-10-12 21:17:56', 'return_char': '', 'transaction_amount': '0.1', 'sign': 'd6c1d4db9aeffd101785272861b4698157f0d49f197d7d27c38aa6a672f9a442', 'buyer_id': '', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h8ha1243', 'payment_type': 'ALIPAYHK', 'out_trade_no': '20211012211650', 'trade_status': 'TRADE_SUCCESS', 'return_status': '00', 'trade_type': 'SALE', 'currency': 'HKD', 'time': '20211012212401'}}}
+2021-10-12 21:24:02,309 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"out_trade_no": "20211012211650", "querytype": "OUT_TRADE", "sign": "2b7dfe06a53567d1ea03c10432256504f843552dcdb472bd39b6d2e00b54b25b", "time": "20211012212402", "user_confirm_key": "S0002575"}', 'RawResponse': {'transaction_id': '2021101222001304451452368073', 'user_confirm_key': 'S0002575', 'trade_time': '2021-10-12 21:17:56', 'return_char': '', 'transaction_amount': '0.1', 'sign': 'd6c1d4db9aeffd101785272861b4698157f0d49f197d7d27c38aa6a672f9a442', 'buyer_id': '', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h8ha1243', 'payment_type': 'ALIPAYHK', 'out_trade_no': '20211012211650', 'trade_status': 'TRADE_SUCCESS', 'return_status': '00', 'trade_type': 'SALE', 'currency': 'HKD', 'time': '20211012212401'}}}
+2021-10-12 21:24:02,310 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:24:02] "[37mPOST /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:24:02,310 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:24:02] "[37mPOST /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:25:53,643 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:25:53] "[37mOPTIONS /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:25:53,643 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:25:53] "[37mOPTIONS /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:25:53,647 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 628
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:25:53,647 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 628
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:25:53,648 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Query', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '20211012211650', 'eft_trade_no': '', 'refund_no': '', 'service': 'service.alipay.web.PreOrder', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:25:53,648 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Query', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '20211012211650', 'eft_trade_no': '', 'refund_no': '', 'service': 'service.alipay.web.PreOrder', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:25:53,648 DEBUG main.py:767 95a4197ef475c6b6bb2ae46131cd0410out_trade_no=20211012211650&querytype=OUT_TRADE&time=20211012212553&user_confirm_key=S0002575
+2021-10-12 21:25:53,648 DEBUG main.py:767 95a4197ef475c6b6bb2ae46131cd0410out_trade_no=20211012211650&querytype=OUT_TRADE&time=20211012212553&user_confirm_key=S0002575
+2021-10-12 21:25:53,649 DEBUG main.py:770 Request Message: {"out_trade_no": "20211012211650", "querytype": "OUT_TRADE", "sign": "50d2b07b9effad2f067da242874669d82faf1023e264195243a484feaa520823", "time": "20211012212553", "user_confirm_key": "S0002575"}
+2021-10-12 21:25:53,649 DEBUG main.py:770 Request Message: {"out_trade_no": "20211012211650", "querytype": "OUT_TRADE", "sign": "50d2b07b9effad2f067da242874669d82faf1023e264195243a484feaa520823", "time": "20211012212553", "user_confirm_key": "S0002575"}
+2021-10-12 21:25:53,652 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:25:53,652 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:25:53,835 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/QRcodeTradeQuery.do HTTP/1.1" 200 None
+2021-10-12 21:25:53,835 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/QRcodeTradeQuery.do HTTP/1.1" 200 None
+2021-10-12 21:25:53,838 DEBUG main.py:1038 b'{"transaction_id":"2021101222001304451452368073","user_confirm_key":"S0002575","trade_time":"2021-10-12 21:17:56","return_char":"","transaction_amount":"0.1","sign":"6b9240faaec2bbd056259226b9d049d5a7c25b2737cdd5976df220c4e3a96731","buyer_id":"","tid":"123456","eft_trade_no":"00001534000025761td6h8ha1243","payment_type":"ALIPAYHK","out_trade_no":"20211012211650","trade_status":"TRADE_SUCCESS","return_status":"00","trade_type":"SALE","currency":"HKD","time":"20211012212552"}'
+2021-10-12 21:25:53,838 DEBUG main.py:1038 b'{"transaction_id":"2021101222001304451452368073","user_confirm_key":"S0002575","trade_time":"2021-10-12 21:17:56","return_char":"","transaction_amount":"0.1","sign":"6b9240faaec2bbd056259226b9d049d5a7c25b2737cdd5976df220c4e3a96731","buyer_id":"","tid":"123456","eft_trade_no":"00001534000025761td6h8ha1243","payment_type":"ALIPAYHK","out_trade_no":"20211012211650","trade_status":"TRADE_SUCCESS","return_status":"00","trade_type":"SALE","currency":"HKD","time":"20211012212552"}'
+2021-10-12 21:25:53,839 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"out_trade_no": "20211012211650", "querytype": "OUT_TRADE", "sign": "50d2b07b9effad2f067da242874669d82faf1023e264195243a484feaa520823", "time": "20211012212553", "user_confirm_key": "S0002575"}', 'RawResponse': {'transaction_id': '2021101222001304451452368073', 'user_confirm_key': 'S0002575', 'trade_time': '2021-10-12 21:17:56', 'return_char': '', 'transaction_amount': '0.1', 'sign': '6b9240faaec2bbd056259226b9d049d5a7c25b2737cdd5976df220c4e3a96731', 'buyer_id': '', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h8ha1243', 'payment_type': 'ALIPAYHK', 'out_trade_no': '20211012211650', 'trade_status': 'TRADE_SUCCESS', 'return_status': '00', 'trade_type': 'SALE', 'currency': 'HKD', 'time': '20211012212552'}}}
+2021-10-12 21:25:53,839 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"out_trade_no": "20211012211650", "querytype": "OUT_TRADE", "sign": "50d2b07b9effad2f067da242874669d82faf1023e264195243a484feaa520823", "time": "20211012212553", "user_confirm_key": "S0002575"}', 'RawResponse': {'transaction_id': '2021101222001304451452368073', 'user_confirm_key': 'S0002575', 'trade_time': '2021-10-12 21:17:56', 'return_char': '', 'transaction_amount': '0.1', 'sign': '6b9240faaec2bbd056259226b9d049d5a7c25b2737cdd5976df220c4e3a96731', 'buyer_id': '', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h8ha1243', 'payment_type': 'ALIPAYHK', 'out_trade_no': '20211012211650', 'trade_status': 'TRADE_SUCCESS', 'return_status': '00', 'trade_type': 'SALE', 'currency': 'HKD', 'time': '20211012212552'}}}
+2021-10-12 21:25:53,840 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:25:53] "[37mPOST /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:25:53,840 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:25:53] "[37mPOST /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:26:46,075 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:26:46] "[37mOPTIONS /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:26:46,075 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:26:46] "[37mOPTIONS /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:26:46,078 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 628
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:26:46,078 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 628
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:26:46,079 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Query', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '20211012211650', 'eft_trade_no': '', 'refund_no': '', 'service': 'service.alipay.web.PreOrder', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:26:46,079 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Query', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '20211012211650', 'eft_trade_no': '', 'refund_no': '', 'service': 'service.alipay.web.PreOrder', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:26:46,079 DEBUG main.py:767 95a4197ef475c6b6bb2ae46131cd0410out_trade_no=20211012211650&querytype=OUT_TRADE&time=20211012212646&user_confirm_key=S0002575
+2021-10-12 21:26:46,079 DEBUG main.py:767 95a4197ef475c6b6bb2ae46131cd0410out_trade_no=20211012211650&querytype=OUT_TRADE&time=20211012212646&user_confirm_key=S0002575
+2021-10-12 21:26:46,080 DEBUG main.py:770 Request Message: {"out_trade_no": "20211012211650", "querytype": "OUT_TRADE", "sign": "afd0f2fc0aca2f654cba869a5136a138c086c8966445b7e3b0be45c23ad7e852", "time": "20211012212646", "user_confirm_key": "S0002575"}
+2021-10-12 21:26:46,080 DEBUG main.py:770 Request Message: {"out_trade_no": "20211012211650", "querytype": "OUT_TRADE", "sign": "afd0f2fc0aca2f654cba869a5136a138c086c8966445b7e3b0be45c23ad7e852", "time": "20211012212646", "user_confirm_key": "S0002575"}
+2021-10-12 21:26:46,082 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:26:46,082 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:26:46,273 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/QRcodeTradeQuery.do HTTP/1.1" 200 None
+2021-10-12 21:26:46,273 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/QRcodeTradeQuery.do HTTP/1.1" 200 None
+2021-10-12 21:26:46,275 DEBUG main.py:1038 b'{"transaction_id":"2021101222001304451452368073","user_confirm_key":"S0002575","trade_time":"2021-10-12 21:17:56","return_char":"","transaction_amount":"0.1","sign":"9858a4c3ce00bc4a1e8fd2190df42abf17c6e050a8303ae68907f1e41efa50f0","buyer_id":"","tid":"123456","eft_trade_no":"00001534000025761td6h8ha1243","payment_type":"ALIPAYHK","out_trade_no":"20211012211650","trade_status":"TRADE_SUCCESS","return_status":"00","trade_type":"SALE","currency":"HKD","time":"20211012212645"}'
+2021-10-12 21:26:46,275 DEBUG main.py:1038 b'{"transaction_id":"2021101222001304451452368073","user_confirm_key":"S0002575","trade_time":"2021-10-12 21:17:56","return_char":"","transaction_amount":"0.1","sign":"9858a4c3ce00bc4a1e8fd2190df42abf17c6e050a8303ae68907f1e41efa50f0","buyer_id":"","tid":"123456","eft_trade_no":"00001534000025761td6h8ha1243","payment_type":"ALIPAYHK","out_trade_no":"20211012211650","trade_status":"TRADE_SUCCESS","return_status":"00","trade_type":"SALE","currency":"HKD","time":"20211012212645"}'
+2021-10-12 21:26:46,275 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"out_trade_no": "20211012211650", "querytype": "OUT_TRADE", "sign": "afd0f2fc0aca2f654cba869a5136a138c086c8966445b7e3b0be45c23ad7e852", "time": "20211012212646", "user_confirm_key": "S0002575"}', 'RawResponse': {'transaction_id': '2021101222001304451452368073', 'user_confirm_key': 'S0002575', 'trade_time': '2021-10-12 21:17:56', 'return_char': '', 'transaction_amount': '0.1', 'sign': '9858a4c3ce00bc4a1e8fd2190df42abf17c6e050a8303ae68907f1e41efa50f0', 'buyer_id': '', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h8ha1243', 'payment_type': 'ALIPAYHK', 'out_trade_no': '20211012211650', 'trade_status': 'TRADE_SUCCESS', 'return_status': '00', 'trade_type': 'SALE', 'currency': 'HKD', 'time': '20211012212645'}}}
+2021-10-12 21:26:46,275 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"out_trade_no": "20211012211650", "querytype": "OUT_TRADE", "sign": "afd0f2fc0aca2f654cba869a5136a138c086c8966445b7e3b0be45c23ad7e852", "time": "20211012212646", "user_confirm_key": "S0002575"}', 'RawResponse': {'transaction_id': '2021101222001304451452368073', 'user_confirm_key': 'S0002575', 'trade_time': '2021-10-12 21:17:56', 'return_char': '', 'transaction_amount': '0.1', 'sign': '9858a4c3ce00bc4a1e8fd2190df42abf17c6e050a8303ae68907f1e41efa50f0', 'buyer_id': '', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h8ha1243', 'payment_type': 'ALIPAYHK', 'out_trade_no': '20211012211650', 'trade_status': 'TRADE_SUCCESS', 'return_status': '00', 'trade_type': 'SALE', 'currency': 'HKD', 'time': '20211012212645'}}}
+2021-10-12 21:26:46,276 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:26:46] "[37mPOST /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:26:46,276 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:26:46] "[37mPOST /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:26:53,994 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:26:53] "[37mOPTIONS /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:26:53,994 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:26:53] "[37mOPTIONS /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:26:53,998 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 642
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:26:53,998 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 642
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:26:53,999 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Query', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '', 'eft_trade_no': '00001534000025761td6h8ha1243', 'refund_no': '', 'service': 'service.alipay.web.PreOrder', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:26:53,999 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Query', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '', 'eft_trade_no': '00001534000025761td6h8ha1243', 'refund_no': '', 'service': 'service.alipay.web.PreOrder', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:26:53,999 DEBUG main.py:767 95a4197ef475c6b6bb2ae46131cd0410eft_trade_no=00001534000025761td6h8ha1243&querytype=OUT_TRADE&time=20211012212653&user_confirm_key=S0002575
+2021-10-12 21:26:53,999 DEBUG main.py:767 95a4197ef475c6b6bb2ae46131cd0410eft_trade_no=00001534000025761td6h8ha1243&querytype=OUT_TRADE&time=20211012212653&user_confirm_key=S0002575
+2021-10-12 21:26:53,999 DEBUG main.py:770 Request Message: {"eft_trade_no": "00001534000025761td6h8ha1243", "querytype": "OUT_TRADE", "sign": "c48f7efe4d043c4bd11bb615c5292c785b9b416ef693c8ab8de2323a91b7eb87", "time": "20211012212653", "user_confirm_key": "S0002575"}
+2021-10-12 21:26:53,999 DEBUG main.py:770 Request Message: {"eft_trade_no": "00001534000025761td6h8ha1243", "querytype": "OUT_TRADE", "sign": "c48f7efe4d043c4bd11bb615c5292c785b9b416ef693c8ab8de2323a91b7eb87", "time": "20211012212653", "user_confirm_key": "S0002575"}
+2021-10-12 21:26:54,002 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:26:54,002 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:26:54,183 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/QRcodeTradeQuery.do HTTP/1.1" 200 None
+2021-10-12 21:26:54,183 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/QRcodeTradeQuery.do HTTP/1.1" 200 None
+2021-10-12 21:26:54,185 DEBUG main.py:1038 b'{"transaction_id":"2021101222001304451452368073","user_confirm_key":"S0002575","trade_time":"2021-10-12 21:17:56","return_char":"","transaction_amount":"0.1","sign":"d174b172f430cfe381ac12ba29f24d1d662dede1625b357ad82bc7961e2f820b","buyer_id":"","tid":"123456","eft_trade_no":"00001534000025761td6h8ha1243","payment_type":"ALIPAYHK","out_trade_no":"20211012211650","trade_status":"TRADE_SUCCESS","return_status":"00","trade_type":"SALE","currency":"HKD","time":"20211012212653"}'
+2021-10-12 21:26:54,185 DEBUG main.py:1038 b'{"transaction_id":"2021101222001304451452368073","user_confirm_key":"S0002575","trade_time":"2021-10-12 21:17:56","return_char":"","transaction_amount":"0.1","sign":"d174b172f430cfe381ac12ba29f24d1d662dede1625b357ad82bc7961e2f820b","buyer_id":"","tid":"123456","eft_trade_no":"00001534000025761td6h8ha1243","payment_type":"ALIPAYHK","out_trade_no":"20211012211650","trade_status":"TRADE_SUCCESS","return_status":"00","trade_type":"SALE","currency":"HKD","time":"20211012212653"}'
+2021-10-12 21:26:54,186 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"eft_trade_no": "00001534000025761td6h8ha1243", "querytype": "OUT_TRADE", "sign": "c48f7efe4d043c4bd11bb615c5292c785b9b416ef693c8ab8de2323a91b7eb87", "time": "20211012212653", "user_confirm_key": "S0002575"}', 'RawResponse': {'transaction_id': '2021101222001304451452368073', 'user_confirm_key': 'S0002575', 'trade_time': '2021-10-12 21:17:56', 'return_char': '', 'transaction_amount': '0.1', 'sign': 'd174b172f430cfe381ac12ba29f24d1d662dede1625b357ad82bc7961e2f820b', 'buyer_id': '', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h8ha1243', 'payment_type': 'ALIPAYHK', 'out_trade_no': '20211012211650', 'trade_status': 'TRADE_SUCCESS', 'return_status': '00', 'trade_type': 'SALE', 'currency': 'HKD', 'time': '20211012212653'}}}
+2021-10-12 21:26:54,186 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"eft_trade_no": "00001534000025761td6h8ha1243", "querytype": "OUT_TRADE", "sign": "c48f7efe4d043c4bd11bb615c5292c785b9b416ef693c8ab8de2323a91b7eb87", "time": "20211012212653", "user_confirm_key": "S0002575"}', 'RawResponse': {'transaction_id': '2021101222001304451452368073', 'user_confirm_key': 'S0002575', 'trade_time': '2021-10-12 21:17:56', 'return_char': '', 'transaction_amount': '0.1', 'sign': 'd174b172f430cfe381ac12ba29f24d1d662dede1625b357ad82bc7961e2f820b', 'buyer_id': '', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h8ha1243', 'payment_type': 'ALIPAYHK', 'out_trade_no': '20211012211650', 'trade_status': 'TRADE_SUCCESS', 'return_status': '00', 'trade_type': 'SALE', 'currency': 'HKD', 'time': '20211012212653'}}}
+2021-10-12 21:26:54,190 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:26:54] "[37mPOST /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:26:54,190 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:26:54] "[37mPOST /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:27:17,681 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:27:17] "[37mOPTIONS /VMP/Refund HTTP/1.1[0m" 200 -
+2021-10-12 21:27:17,681 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:27:17] "[37mOPTIONS /VMP/Refund HTTP/1.1[0m" 200 -
+2021-10-12 21:27:17,684 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 641
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:27:17,684 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 641
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:27:17,685 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Refund', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '', 'eft_trade_no': '00001534000025761td6h8ha1243', 'refund_no': '', 'service': 'service.alipay.web.refund', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:27:17,685 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Refund', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '', 'eft_trade_no': '00001534000025761td6h8ha1243', 'refund_no': '', 'service': 'service.alipay.web.refund', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:27:17,685 DEBUG main.py:752 95a4197ef475c6b6bb2ae46131cd0410eft_trade_no=00001534000025761td6h8ha1243&out_refund_no=refund_20211012212717&payType=Alipay&pay_scene=WEB&reason=Testing&return_amount=0.1&service=service.alipay.web.refund&time=20211012212717&total_fee=0.1&user_confirm_key=S0002575&wallet=ALIPAYHK
+2021-10-12 21:27:17,685 DEBUG main.py:752 95a4197ef475c6b6bb2ae46131cd0410eft_trade_no=00001534000025761td6h8ha1243&out_refund_no=refund_20211012212717&payType=Alipay&pay_scene=WEB&reason=Testing&return_amount=0.1&service=service.alipay.web.refund&time=20211012212717&total_fee=0.1&user_confirm_key=S0002575&wallet=ALIPAYHK
+2021-10-12 21:27:17,686 DEBUG main.py:755 Request Message: {"eft_trade_no": "00001534000025761td6h8ha1243", "out_refund_no": "refund_20211012212717", "payType": "Alipay", "pay_scene": "WEB", "reason": "Testing", "return_amount": 0.1, "service": "service.alipay.web.refund", "sign": "a3f3601bdd0f8f5d66077d4b4553188aa76ea813d127df0356531173469748bb", "time": "20211012212717", "total_fee": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}
+2021-10-12 21:27:17,686 DEBUG main.py:755 Request Message: {"eft_trade_no": "00001534000025761td6h8ha1243", "out_refund_no": "refund_20211012212717", "payType": "Alipay", "pay_scene": "WEB", "reason": "Testing", "return_amount": 0.1, "service": "service.alipay.web.refund", "sign": "a3f3601bdd0f8f5d66077d4b4553188aa76ea813d127df0356531173469748bb", "time": "20211012212717", "total_fee": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}
+2021-10-12 21:27:17,689 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:27:17,689 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:27:17,783 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/JSAPIService.do HTTP/1.1" 200 None
+2021-10-12 21:27:17,783 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/JSAPIService.do HTTP/1.1" 200 None
+2021-10-12 21:27:17,787 DEBUG main.py:1038 b'{"return_status":"-05","return_char":"\xe6\x8e\xa5\xe5\x8f\xa3[service.alipay.web.refund]\xe5\x88\x9b\xe5\xbb\xba\xe5\xa4\xb1\xe8\xb4\xa5"}'
+2021-10-12 21:27:17,787 DEBUG main.py:1038 b'{"return_status":"-05","return_char":"\xe6\x8e\xa5\xe5\x8f\xa3[service.alipay.web.refund]\xe5\x88\x9b\xe5\xbb\xba\xe5\xa4\xb1\xe8\xb4\xa5"}'
+2021-10-12 21:27:17,801 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:27:17] "[37mPOST /VMP/Refund HTTP/1.1[0m" 200 -
+2021-10-12 21:27:17,801 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:27:17] "[37mPOST /VMP/Refund HTTP/1.1[0m" 200 -
+2021-10-12 21:29:44,370 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:29:44] "[37mOPTIONS /VMP/Refund HTTP/1.1[0m" 200 -
+2021-10-12 21:29:44,370 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:29:44] "[37mOPTIONS /VMP/Refund HTTP/1.1[0m" 200 -
+2021-10-12 21:29:44,373 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 641
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:29:44,373 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 641
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:29:44,374 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Refund', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '', 'eft_trade_no': '00001534000025761td6h8ha1243', 'refund_no': '', 'service': 'service.alipay.web.Refund', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:29:44,374 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Refund', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '', 'eft_trade_no': '00001534000025761td6h8ha1243', 'refund_no': '', 'service': 'service.alipay.web.Refund', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:29:44,374 DEBUG main.py:752 95a4197ef475c6b6bb2ae46131cd0410eft_trade_no=00001534000025761td6h8ha1243&out_refund_no=refund_20211012212944&payType=Alipay&pay_scene=WEB&reason=Testing&return_amount=0.1&service=service.alipay.web.Refund&time=20211012212944&total_fee=0.1&user_confirm_key=S0002575&wallet=ALIPAYHK
+2021-10-12 21:29:44,374 DEBUG main.py:752 95a4197ef475c6b6bb2ae46131cd0410eft_trade_no=00001534000025761td6h8ha1243&out_refund_no=refund_20211012212944&payType=Alipay&pay_scene=WEB&reason=Testing&return_amount=0.1&service=service.alipay.web.Refund&time=20211012212944&total_fee=0.1&user_confirm_key=S0002575&wallet=ALIPAYHK
+2021-10-12 21:29:44,374 DEBUG main.py:755 Request Message: {"eft_trade_no": "00001534000025761td6h8ha1243", "out_refund_no": "refund_20211012212944", "payType": "Alipay", "pay_scene": "WEB", "reason": "Testing", "return_amount": 0.1, "service": "service.alipay.web.Refund", "sign": "2b4830f86006b58570df7d300c48a6094aea0166d332f93d304d9952c80cccdf", "time": "20211012212944", "total_fee": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}
+2021-10-12 21:29:44,374 DEBUG main.py:755 Request Message: {"eft_trade_no": "00001534000025761td6h8ha1243", "out_refund_no": "refund_20211012212944", "payType": "Alipay", "pay_scene": "WEB", "reason": "Testing", "return_amount": 0.1, "service": "service.alipay.web.Refund", "sign": "2b4830f86006b58570df7d300c48a6094aea0166d332f93d304d9952c80cccdf", "time": "20211012212944", "total_fee": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}
+2021-10-12 21:29:44,377 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:29:44,377 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:29:44,430 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/JSAPIService.do HTTP/1.1" 200 None
+2021-10-12 21:29:44,430 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/JSAPIService.do HTTP/1.1" 200 None
+2021-10-12 21:29:44,432 DEBUG main.py:1038 b'{"return_status":"-13","return_char":"\xe5\x8f\x82\xe6\x95\xb0\xe9\x94\x99\xe8\xaf\xaf:\xe8\xaf\xb7\xe6\xa3\x80\xe6\x9f\xa5\xe8\xaf\xb7\xe6\xb1\x82\xe6\x8e\xa5\xe5\x8f\xa3\xe5\x8f\x82\xe6\x95\xb0out_trade_no"}'
+2021-10-12 21:29:44,432 DEBUG main.py:1038 b'{"return_status":"-13","return_char":"\xe5\x8f\x82\xe6\x95\xb0\xe9\x94\x99\xe8\xaf\xaf:\xe8\xaf\xb7\xe6\xa3\x80\xe6\x9f\xa5\xe8\xaf\xb7\xe6\xb1\x82\xe6\x8e\xa5\xe5\x8f\xa3\xe5\x8f\x82\xe6\x95\xb0out_trade_no"}'
+2021-10-12 21:29:44,436 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:29:44] "[37mPOST /VMP/Refund HTTP/1.1[0m" 200 -
+2021-10-12 21:29:44,436 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:29:44] "[37mPOST /VMP/Refund HTTP/1.1[0m" 200 -
+2021-10-12 21:29:50,745 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:29:50] "[37mOPTIONS /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:29:50,745 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:29:50] "[37mOPTIONS /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:29:50,749 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 640
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:29:50,749 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 640
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:29:50,750 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Query', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '', 'eft_trade_no': '00001534000025761td6h8ha1243', 'refund_no': '', 'service': 'service.alipay.web.Refund', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:29:50,750 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Query', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '', 'eft_trade_no': '00001534000025761td6h8ha1243', 'refund_no': '', 'service': 'service.alipay.web.Refund', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:29:50,750 DEBUG main.py:767 95a4197ef475c6b6bb2ae46131cd0410eft_trade_no=00001534000025761td6h8ha1243&querytype=OUT_TRADE&time=20211012212950&user_confirm_key=S0002575
+2021-10-12 21:29:50,750 DEBUG main.py:767 95a4197ef475c6b6bb2ae46131cd0410eft_trade_no=00001534000025761td6h8ha1243&querytype=OUT_TRADE&time=20211012212950&user_confirm_key=S0002575
+2021-10-12 21:29:50,750 DEBUG main.py:770 Request Message: {"eft_trade_no": "00001534000025761td6h8ha1243", "querytype": "OUT_TRADE", "sign": "4f3eca4386c5f25108904fcfbe478502674b085fd0eb631bc36e487f1d5b7c37", "time": "20211012212950", "user_confirm_key": "S0002575"}
+2021-10-12 21:29:50,750 DEBUG main.py:770 Request Message: {"eft_trade_no": "00001534000025761td6h8ha1243", "querytype": "OUT_TRADE", "sign": "4f3eca4386c5f25108904fcfbe478502674b085fd0eb631bc36e487f1d5b7c37", "time": "20211012212950", "user_confirm_key": "S0002575"}
+2021-10-12 21:29:50,753 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:29:50,753 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:29:50,949 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/QRcodeTradeQuery.do HTTP/1.1" 200 None
+2021-10-12 21:29:50,949 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/QRcodeTradeQuery.do HTTP/1.1" 200 None
+2021-10-12 21:29:50,950 DEBUG main.py:1038 b'{"transaction_id":"2021101222001304451452368073","user_confirm_key":"S0002575","trade_time":"2021-10-12 21:17:56","return_char":"","transaction_amount":"0.1","sign":"eef18f1fa6ed4b243891d369c9b92ef0274c4eb8a8b6d775f5491844c2daa7de","buyer_id":"","tid":"123456","eft_trade_no":"00001534000025761td6h8ha1243","payment_type":"ALIPAYHK","out_trade_no":"20211012211650","trade_status":"TRADE_SUCCESS","return_status":"00","trade_type":"SALE","currency":"HKD","time":"20211012212950"}'
+2021-10-12 21:29:50,950 DEBUG main.py:1038 b'{"transaction_id":"2021101222001304451452368073","user_confirm_key":"S0002575","trade_time":"2021-10-12 21:17:56","return_char":"","transaction_amount":"0.1","sign":"eef18f1fa6ed4b243891d369c9b92ef0274c4eb8a8b6d775f5491844c2daa7de","buyer_id":"","tid":"123456","eft_trade_no":"00001534000025761td6h8ha1243","payment_type":"ALIPAYHK","out_trade_no":"20211012211650","trade_status":"TRADE_SUCCESS","return_status":"00","trade_type":"SALE","currency":"HKD","time":"20211012212950"}'
+2021-10-12 21:29:50,950 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"eft_trade_no": "00001534000025761td6h8ha1243", "querytype": "OUT_TRADE", "sign": "4f3eca4386c5f25108904fcfbe478502674b085fd0eb631bc36e487f1d5b7c37", "time": "20211012212950", "user_confirm_key": "S0002575"}', 'RawResponse': {'transaction_id': '2021101222001304451452368073', 'user_confirm_key': 'S0002575', 'trade_time': '2021-10-12 21:17:56', 'return_char': '', 'transaction_amount': '0.1', 'sign': 'eef18f1fa6ed4b243891d369c9b92ef0274c4eb8a8b6d775f5491844c2daa7de', 'buyer_id': '', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h8ha1243', 'payment_type': 'ALIPAYHK', 'out_trade_no': '20211012211650', 'trade_status': 'TRADE_SUCCESS', 'return_status': '00', 'trade_type': 'SALE', 'currency': 'HKD', 'time': '20211012212950'}}}
+2021-10-12 21:29:50,950 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"eft_trade_no": "00001534000025761td6h8ha1243", "querytype": "OUT_TRADE", "sign": "4f3eca4386c5f25108904fcfbe478502674b085fd0eb631bc36e487f1d5b7c37", "time": "20211012212950", "user_confirm_key": "S0002575"}', 'RawResponse': {'transaction_id': '2021101222001304451452368073', 'user_confirm_key': 'S0002575', 'trade_time': '2021-10-12 21:17:56', 'return_char': '', 'transaction_amount': '0.1', 'sign': 'eef18f1fa6ed4b243891d369c9b92ef0274c4eb8a8b6d775f5491844c2daa7de', 'buyer_id': '', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h8ha1243', 'payment_type': 'ALIPAYHK', 'out_trade_no': '20211012211650', 'trade_status': 'TRADE_SUCCESS', 'return_status': '00', 'trade_type': 'SALE', 'currency': 'HKD', 'time': '20211012212950'}}}
+2021-10-12 21:29:50,951 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:29:50] "[37mPOST /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:29:50,951 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:29:50] "[37mPOST /VMP/Query HTTP/1.1[0m" 200 -
+2021-10-12 21:29:57,978 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:29:57] "[37mOPTIONS /VMP/Refund HTTP/1.1[0m" 200 -
+2021-10-12 21:29:57,978 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:29:57] "[37mOPTIONS /VMP/Refund HTTP/1.1[0m" 200 -
+2021-10-12 21:29:57,982 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 655
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:29:57,982 DEBUG main.py:624 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 655
+Sec-Ch-Ua: "Chromium";v="94", "Google Chrome";v="94", ";Not A Brand";v="99"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzQwMzQ5MDcsIm5iZiI6MTYzNDAzNDkwNywianRpIjoiNzRmZTk0M2UtYWM0My00NDk0LWFiZDEtN2E2NjlmYmRmMjZmIiwiZXhwIjoxNjM0MDc4MTA3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.bfF9AcKKqQJSz948EZThQNE7aahA8knIE8TsuBVeWBk
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-10-12 21:29:57,983 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Refund', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '20211012211650', 'eft_trade_no': '00001534000025761td6h8ha1243', 'refund_no': '', 'service': 'service.alipay.web.Refund', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:29:57,983 DEBUG main.py:625 JSON: {'User_Confirm_Key': 'S0002575', 'TransactionType': 'Refund', 'PaymentType': 'Alipay', 'amount': 0.1, 'wallet': 'HK', 'SecretCode': '95a4197ef475c6b6bb2ae46131cd0410', 'out_trade_no': '20211012211650', 'eft_trade_no': '00001534000025761td6h8ha1243', 'refund_no': '', 'service': 'service.alipay.web.Refund', 'subject': 'Testing', 'body': 'Testing', 'fee_type': 'HKD', 'tid': '123456', 'scene_type': 'APPLETS', 'openid': '', 'sub_openid': 'oghEf5Tp5xXBOnvhxvB22eJx-ngo', 'wechatWeb': 'N', 'active_time': '300', 'URL': 'http://vmp.eftpay.com.cn/VMP/Servlet/', 'notify_url': '', 'return_url': 'http://vmp.eftpay.com.cn/VMP/returnSuccess', 'app_pay': 'WEB', 'lang': 'en', 'APIType': 'WEB', 'GatewayType': 'EFT'}
+2021-10-12 21:29:57,983 DEBUG main.py:752 95a4197ef475c6b6bb2ae46131cd0410eft_trade_no=00001534000025761td6h8ha1243&out_refund_no=refund_20211012212957&out_trade_no=20211012211650&payType=Alipay&pay_scene=WEB&reason=Testing&return_amount=0.1&service=service.alipay.web.Refund&time=20211012212957&total_fee=0.1&user_confirm_key=S0002575&wallet=ALIPAYHK
+2021-10-12 21:29:57,983 DEBUG main.py:752 95a4197ef475c6b6bb2ae46131cd0410eft_trade_no=00001534000025761td6h8ha1243&out_refund_no=refund_20211012212957&out_trade_no=20211012211650&payType=Alipay&pay_scene=WEB&reason=Testing&return_amount=0.1&service=service.alipay.web.Refund&time=20211012212957&total_fee=0.1&user_confirm_key=S0002575&wallet=ALIPAYHK
+2021-10-12 21:29:57,984 DEBUG main.py:755 Request Message: {"eft_trade_no": "00001534000025761td6h8ha1243", "out_refund_no": "refund_20211012212957", "out_trade_no": "20211012211650", "payType": "Alipay", "pay_scene": "WEB", "reason": "Testing", "return_amount": 0.1, "service": "service.alipay.web.Refund", "sign": "22d4871b1266dd7be36cadc33e9a1644db9f5ad279c6f0c923150072e8729682", "time": "20211012212957", "total_fee": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}
+2021-10-12 21:29:57,984 DEBUG main.py:755 Request Message: {"eft_trade_no": "00001534000025761td6h8ha1243", "out_refund_no": "refund_20211012212957", "out_trade_no": "20211012211650", "payType": "Alipay", "pay_scene": "WEB", "reason": "Testing", "return_amount": 0.1, "service": "service.alipay.web.Refund", "sign": "22d4871b1266dd7be36cadc33e9a1644db9f5ad279c6f0c923150072e8729682", "time": "20211012212957", "total_fee": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}
+2021-10-12 21:29:57,986 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:29:57,986 DEBUG connectionpool.py:231 Starting new HTTP connection (1): vmp.eftpay.com.cn:80
+2021-10-12 21:29:59,710 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/JSAPIService.do HTTP/1.1" 200 None
+2021-10-12 21:29:59,710 DEBUG connectionpool.py:461 http://vmp.eftpay.com.cn:80 "POST /VMP/Servlet/JSAPIService.do HTTP/1.1" 200 None
+2021-10-12 21:29:59,714 DEBUG main.py:1038 b'{"user_confirm_key":"S0002575","return_amount":"0.10","wallet":"ALIPAYHK","return_char":"","out_refund_no":"refund_20211012212957","sign":"041e52b43ec4c99c6a11b6ff6a749b48e498217195f17a1cdd74bab5564d1a1e","fee_type":"HKD","tid":"123456","eft_trade_no":"00001534000025761td6h8ha1243","out_trade_no":"20211012211650","payType":"Alipay","refund_time":"20211012212958","trade_status":"TRADE_CLOSED","total_fee":"0.1","return_status":"00","buyerType":"unknown","time":"20211012212958"}'
+2021-10-12 21:29:59,714 DEBUG main.py:1038 b'{"user_confirm_key":"S0002575","return_amount":"0.10","wallet":"ALIPAYHK","return_char":"","out_refund_no":"refund_20211012212957","sign":"041e52b43ec4c99c6a11b6ff6a749b48e498217195f17a1cdd74bab5564d1a1e","fee_type":"HKD","tid":"123456","eft_trade_no":"00001534000025761td6h8ha1243","out_trade_no":"20211012211650","payType":"Alipay","refund_time":"20211012212958","trade_status":"TRADE_CLOSED","total_fee":"0.1","return_status":"00","buyerType":"unknown","time":"20211012212958"}'
+2021-10-12 21:29:59,715 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"eft_trade_no": "00001534000025761td6h8ha1243", "out_refund_no": "refund_20211012212957", "out_trade_no": "20211012211650", "payType": "Alipay", "pay_scene": "WEB", "reason": "Testing", "return_amount": 0.1, "service": "service.alipay.web.Refund", "sign": "22d4871b1266dd7be36cadc33e9a1644db9f5ad279c6f0c923150072e8729682", "time": "20211012212957", "total_fee": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}', 'RawResponse': {'user_confirm_key': 'S0002575', 'return_amount': '0.10', 'wallet': 'ALIPAYHK', 'return_char': '', 'out_refund_no': 'refund_20211012212957', 'sign': '041e52b43ec4c99c6a11b6ff6a749b48e498217195f17a1cdd74bab5564d1a1e', 'fee_type': 'HKD', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h8ha1243', 'out_trade_no': '20211012211650', 'payType': 'Alipay', 'refund_time': '20211012212958', 'trade_status': 'TRADE_CLOSED', 'total_fee': '0.1', 'return_status': '00', 'buyerType': 'unknown', 'time': '20211012212958'}}}
+2021-10-12 21:29:59,715 DEBUG main.py:1044 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {'RawRequest': '{"eft_trade_no": "00001534000025761td6h8ha1243", "out_refund_no": "refund_20211012212957", "out_trade_no": "20211012211650", "payType": "Alipay", "pay_scene": "WEB", "reason": "Testing", "return_amount": 0.1, "service": "service.alipay.web.Refund", "sign": "22d4871b1266dd7be36cadc33e9a1644db9f5ad279c6f0c923150072e8729682", "time": "20211012212957", "total_fee": 0.1, "user_confirm_key": "S0002575", "wallet": "ALIPAYHK"}', 'RawResponse': {'user_confirm_key': 'S0002575', 'return_amount': '0.10', 'wallet': 'ALIPAYHK', 'return_char': '', 'out_refund_no': 'refund_20211012212957', 'sign': '041e52b43ec4c99c6a11b6ff6a749b48e498217195f17a1cdd74bab5564d1a1e', 'fee_type': 'HKD', 'tid': '123456', 'eft_trade_no': '00001534000025761td6h8ha1243', 'out_trade_no': '20211012211650', 'payType': 'Alipay', 'refund_time': '20211012212958', 'trade_status': 'TRADE_CLOSED', 'total_fee': '0.1', 'return_status': '00', 'buyerType': 'unknown', 'time': '20211012212958'}}}
+2021-10-12 21:29:59,715 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:29:59] "[37mPOST /VMP/Refund HTTP/1.1[0m" 200 -
+2021-10-12 21:29:59,715 INFO _internal.py:113 127.0.0.1 - - [12/Oct/2021 21:29:59] "[37mPOST /VMP/Refund HTTP/1.1[0m" 200 -

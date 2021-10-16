@@ -1,0 +1,2150 @@
+2021-09-26 00:00:30,721 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-26 00:00:30,721 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-26 00:00:33,420 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:00:33] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:00:33,420 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:00:33] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:00:33,424 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:00:33,424 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:00:33,429 DEBUG Octopus.py:19 20210901
+2021-09-26 00:00:33,429 DEBUG Octopus.py:19 20210901
+2021-09-26 00:00:33,429 DEBUG Octopus.py:20 20210915
+2021-09-26 00:00:33,429 DEBUG Octopus.py:20 20210915
+2021-09-26 00:00:33,435 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:00:33,435 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:00:33,435 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:00:33] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:00:33,435 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:00:33] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:00:33,438 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:00:33] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:00:33,438 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:00:33] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:00:33,442 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:00:33,442 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:00:33,443 DEBUG Octopus.py:55 20210901
+2021-09-26 00:00:33,443 DEBUG Octopus.py:55 20210901
+2021-09-26 00:00:33,443 DEBUG Octopus.py:56 20210915
+2021-09-26 00:00:33,443 DEBUG Octopus.py:56 20210915
+2021-09-26 00:00:33,479 DEBUG main.py:582 Octopus_Report Exception : [Errno 2] No such file or directory: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\36006(20210901-20210915).zip'
+2021-09-26 00:00:33,479 DEBUG main.py:582 Octopus_Report Exception : [Errno 2] No such file or directory: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\36006(20210901-20210915).zip'
+2021-09-26 00:00:33,479 DEBUG main.py:585 {'meta': {'status': 1, 'msg': "[Errno 2] No such file or directory: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Merchant_Report\\\\36006(20210901-20210915).zip'"}, 'data': {}}
+2021-09-26 00:00:33,479 DEBUG main.py:585 {'meta': {'status': 1, 'msg': "[Errno 2] No such file or directory: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Merchant_Report\\\\36006(20210901-20210915).zip'"}, 'data': {}}
+2021-09-26 00:00:33,480 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:00:33] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:00:33,480 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:00:33] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:02:08,597 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-26 00:02:08,597 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-26 00:02:12,781 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:02:12] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:02:12,781 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:02:12] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:02:12,786 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:02:12,786 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:02:12,791 DEBUG Octopus.py:19 20210901
+2021-09-26 00:02:12,791 DEBUG Octopus.py:19 20210901
+2021-09-26 00:02:12,791 DEBUG Octopus.py:20 20210915
+2021-09-26 00:02:12,791 DEBUG Octopus.py:20 20210915
+2021-09-26 00:02:12,797 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:02:12,797 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:02:12,798 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:02:12] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:02:12,798 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:02:12] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:02:12,802 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:02:12] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:02:12,802 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:02:12] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:02:12,805 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:02:12,805 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:02:12,806 DEBUG Octopus.py:55 20210901
+2021-09-26 00:02:12,806 DEBUG Octopus.py:55 20210901
+2021-09-26 00:02:12,806 DEBUG Octopus.py:56 20210915
+2021-09-26 00:02:12,806 DEBUG Octopus.py:56 20210915
+2021-09-26 00:02:16,922 DEBUG main.py:582 Octopus_Report Exception : [Errno 2] No such file or directory: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\36007(20210901-20210915).zip'
+2021-09-26 00:02:16,922 DEBUG main.py:582 Octopus_Report Exception : [Errno 2] No such file or directory: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\36007(20210901-20210915).zip'
+2021-09-26 00:02:16,923 DEBUG main.py:585 {'meta': {'status': 1, 'msg': "[Errno 2] No such file or directory: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Merchant_Report\\\\36007(20210901-20210915).zip'"}, 'data': {}}
+2021-09-26 00:02:16,923 DEBUG main.py:585 {'meta': {'status': 1, 'msg': "[Errno 2] No such file or directory: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Merchant_Report\\\\36007(20210901-20210915).zip'"}, 'data': {}}
+2021-09-26 00:02:16,927 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:02:16] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:02:16,927 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:02:16] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:02:27,247 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-26 00:02:27,247 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-26 00:02:29,596 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:02:29] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:02:29,596 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:02:29] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:02:29,601 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:02:29,601 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:02:29,605 DEBUG Octopus.py:19 20210901
+2021-09-26 00:02:29,605 DEBUG Octopus.py:19 20210901
+2021-09-26 00:02:29,606 DEBUG Octopus.py:20 20210915
+2021-09-26 00:02:29,606 DEBUG Octopus.py:20 20210915
+2021-09-26 00:02:29,611 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:02:29,611 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:02:29,611 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:02:29] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:02:29,611 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:02:29] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:02:29,616 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:02:29] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:02:29,616 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:02:29] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:02:29,619 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:02:29,619 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:02:29,620 DEBUG Octopus.py:55 20210901
+2021-09-26 00:02:29,620 DEBUG Octopus.py:55 20210901
+2021-09-26 00:02:29,620 DEBUG Octopus.py:56 20210915
+2021-09-26 00:02:29,620 DEBUG Octopus.py:56 20210915
+2021-09-26 00:02:32,285 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:02:32] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:02:32,285 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:02:32] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:10:13,783 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-26 00:10:13,783 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-26 00:10:17,945 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:10:17] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:10:17,945 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:10:17] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:10:17,949 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:10:17,949 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:10:17,954 DEBUG Octopus.py:19 20210901
+2021-09-26 00:10:17,954 DEBUG Octopus.py:19 20210901
+2021-09-26 00:10:17,954 DEBUG Octopus.py:20 20210915
+2021-09-26 00:10:17,954 DEBUG Octopus.py:20 20210915
+2021-09-26 00:10:17,959 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:10:17,959 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:10:17,960 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:10:17] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:10:17,960 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:10:17] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:10:17,964 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:10:17] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:10:17,964 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:10:17] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:10:17,968 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:10:17,968 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:10:17,969 DEBUG Octopus.py:55 20210901
+2021-09-26 00:10:17,969 DEBUG Octopus.py:55 20210901
+2021-09-26 00:10:17,969 DEBUG Octopus.py:56 20210915
+2021-09-26 00:10:17,969 DEBUG Octopus.py:56 20210915
+2021-09-26 00:10:17,969 DEBUG main.py:582 Octopus_Report Exception : [WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\20210926001017\\36007(20210901-20210915)'
+2021-09-26 00:10:17,969 DEBUG main.py:582 Octopus_Report Exception : [WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\20210926001017\\36007(20210901-20210915)'
+2021-09-26 00:10:17,970 DEBUG main.py:585 {'meta': {'status': 1, 'msg': "[WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Merchant_Report\\\\20210926001017\\\\36007(20210901-20210915)'"}, 'data': {}}
+2021-09-26 00:10:17,970 DEBUG main.py:585 {'meta': {'status': 1, 'msg': "[WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Merchant_Report\\\\20210926001017\\\\36007(20210901-20210915)'"}, 'data': {}}
+2021-09-26 00:10:17,970 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:10:17] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:10:17,970 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:10:17] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:10:30,802 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:10:30] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:10:30,802 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:10:30] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:10:30,805 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:10:30,805 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:10:30,806 DEBUG Octopus.py:19 20210901
+2021-09-26 00:10:30,806 DEBUG Octopus.py:19 20210901
+2021-09-26 00:10:30,806 DEBUG Octopus.py:20 20210915
+2021-09-26 00:10:30,806 DEBUG Octopus.py:20 20210915
+2021-09-26 00:10:30,812 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:10:30,812 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:10:30,813 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:10:30] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:10:30,813 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:10:30] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:10:30,818 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:10:30] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:10:30,818 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:10:30] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:10:30,821 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:10:30,821 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:10:30,822 DEBUG Octopus.py:55 20210901
+2021-09-26 00:10:30,822 DEBUG Octopus.py:55 20210901
+2021-09-26 00:10:30,822 DEBUG Octopus.py:56 20210915
+2021-09-26 00:10:30,822 DEBUG Octopus.py:56 20210915
+2021-09-26 00:10:30,823 DEBUG main.py:582 Octopus_Report Exception : [WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\20210926001030\\36008(20210901-20210915)'
+2021-09-26 00:10:30,823 DEBUG main.py:582 Octopus_Report Exception : [WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\20210926001030\\36008(20210901-20210915)'
+2021-09-26 00:10:30,823 DEBUG main.py:585 {'meta': {'status': 1, 'msg': "[WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Merchant_Report\\\\20210926001030\\\\36008(20210901-20210915)'"}, 'data': {}}
+2021-09-26 00:10:30,823 DEBUG main.py:585 {'meta': {'status': 1, 'msg': "[WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Merchant_Report\\\\20210926001030\\\\36008(20210901-20210915)'"}, 'data': {}}
+2021-09-26 00:10:30,823 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:10:30] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:10:30,823 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:10:30] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:11:19,852 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:11:19] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:11:19,852 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:11:19] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:11:19,856 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:11:19,856 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:11:19,857 DEBUG Octopus.py:19 20210901
+2021-09-26 00:11:19,857 DEBUG Octopus.py:19 20210901
+2021-09-26 00:11:19,857 DEBUG Octopus.py:20 20210915
+2021-09-26 00:11:19,857 DEBUG Octopus.py:20 20210915
+2021-09-26 00:11:19,863 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:11:19,863 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:11:19,864 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:11:19] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:11:19,864 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:11:19] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:11:19,868 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:11:19] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:11:19,868 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:11:19] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:11:19,871 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:11:19,871 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:11:19,874 DEBUG Octopus.py:55 20210901
+2021-09-26 00:11:19,874 DEBUG Octopus.py:55 20210901
+2021-09-26 00:11:19,874 DEBUG Octopus.py:56 20210915
+2021-09-26 00:11:19,874 DEBUG Octopus.py:56 20210915
+2021-09-26 00:11:27,211 DEBUG main.py:582 Octopus_Report Exception : [WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\20210926001119\\36008(20210901-20210915)'
+2021-09-26 00:11:27,211 DEBUG main.py:582 Octopus_Report Exception : [WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\20210926001119\\36008(20210901-20210915)'
+2021-09-26 00:11:27,211 DEBUG main.py:585 {'meta': {'status': 1, 'msg': "[WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Merchant_Report\\\\20210926001119\\\\36008(20210901-20210915)'"}, 'data': {}}
+2021-09-26 00:11:27,211 DEBUG main.py:585 {'meta': {'status': 1, 'msg': "[WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Merchant_Report\\\\20210926001119\\\\36008(20210901-20210915)'"}, 'data': {}}
+2021-09-26 00:11:27,216 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:11:27] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:11:27,216 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:11:27] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:12:07,743 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-26 00:12:07,743 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-26 00:12:11,516 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:12:11] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:12:11,516 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:12:11] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:12:11,520 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:12:11,520 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:12:11,525 DEBUG Octopus.py:19 20210901
+2021-09-26 00:12:11,525 DEBUG Octopus.py:19 20210901
+2021-09-26 00:12:11,525 DEBUG Octopus.py:20 20210915
+2021-09-26 00:12:11,525 DEBUG Octopus.py:20 20210915
+2021-09-26 00:12:11,530 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:12:11,530 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:12:11,531 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:12:11] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:12:11,531 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:12:11] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:12:11,535 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:12:11] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:12:11,535 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:12:11] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:12:11,538 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:12:11,538 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:12:11,546 DEBUG Octopus.py:55 20210901
+2021-09-26 00:12:11,546 DEBUG Octopus.py:55 20210901
+2021-09-26 00:12:11,547 DEBUG Octopus.py:56 20210915
+2021-09-26 00:12:11,547 DEBUG Octopus.py:56 20210915
+2021-09-26 00:12:40,781 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:12:40] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:12:40,781 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:12:40] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:14:23,747 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-26 00:14:23,747 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-26 00:14:28,186 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:14:28] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:14:28,186 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:14:28] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:14:28,188 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:14:28,188 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:14:28,191 DEBUG Octopus.py:19 20210901
+2021-09-26 00:14:28,191 DEBUG Octopus.py:19 20210901
+2021-09-26 00:14:28,191 DEBUG Octopus.py:20 20210915
+2021-09-26 00:14:28,191 DEBUG Octopus.py:20 20210915
+2021-09-26 00:14:28,196 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:14:28,196 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:14:28,197 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:14:28] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:14:28,197 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:14:28] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:14:28,201 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:14:28] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:14:28,201 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:14:28] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:14:28,203 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:14:28,203 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:14:28,204 DEBUG Octopus.py:55 20210901
+2021-09-26 00:14:28,204 DEBUG Octopus.py:55 20210901
+2021-09-26 00:14:28,204 DEBUG Octopus.py:56 20210915
+2021-09-26 00:14:28,204 DEBUG Octopus.py:56 20210915
+2021-09-26 00:14:35,200 DEBUG main.py:582 Octopus_Report Exception : [Errno 2] No such file or directory: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\20210926001428\\36009(20210901-20210915).zip'
+2021-09-26 00:14:35,200 DEBUG main.py:582 Octopus_Report Exception : [Errno 2] No such file or directory: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\20210926001428\\36009(20210901-20210915).zip'
+2021-09-26 00:14:35,201 DEBUG main.py:585 {'meta': {'status': 1, 'msg': "[Errno 2] No such file or directory: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Merchant_Report\\\\20210926001428\\\\36009(20210901-20210915).zip'"}, 'data': {}}
+2021-09-26 00:14:35,201 DEBUG main.py:585 {'meta': {'status': 1, 'msg': "[Errno 2] No such file or directory: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Merchant_Report\\\\20210926001428\\\\36009(20210901-20210915).zip'"}, 'data': {}}
+2021-09-26 00:14:35,201 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:14:35] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:14:35,201 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:14:35] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:16:43,939 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-26 00:16:43,939 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-26 00:16:47,638 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:16:47] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:16:47,638 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:16:47] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:16:47,643 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:16:47,643 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:16:47,648 DEBUG Octopus.py:19 20210901
+2021-09-26 00:16:47,648 DEBUG Octopus.py:19 20210901
+2021-09-26 00:16:47,648 DEBUG Octopus.py:20 20210915
+2021-09-26 00:16:47,648 DEBUG Octopus.py:20 20210915
+2021-09-26 00:16:47,653 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:16:47,653 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:16:47,653 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:16:47] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:16:47,653 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:16:47] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:16:47,659 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:16:47] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:16:47,659 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:16:47] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:16:47,661 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:16:47,661 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:16:47,662 DEBUG Octopus.py:55 20210901
+2021-09-26 00:16:47,662 DEBUG Octopus.py:55 20210901
+2021-09-26 00:16:47,662 DEBUG Octopus.py:56 20210915
+2021-09-26 00:16:47,662 DEBUG Octopus.py:56 20210915
+2021-09-26 00:16:48,868 DEBUG main.py:582 Octopus_Report Exception : [Errno 2] No such file or directory: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\20210926001647\\36009(20210901-20210915).zip'
+2021-09-26 00:16:48,868 DEBUG main.py:582 Octopus_Report Exception : [Errno 2] No such file or directory: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\20210926001647\\36009(20210901-20210915).zip'
+2021-09-26 00:16:48,868 DEBUG main.py:585 {'meta': {'status': 1, 'msg': "[Errno 2] No such file or directory: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Merchant_Report\\\\20210926001647\\\\36009(20210901-20210915).zip'"}, 'data': {}}
+2021-09-26 00:16:48,868 DEBUG main.py:585 {'meta': {'status': 1, 'msg': "[Errno 2] No such file or directory: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Merchant_Report\\\\20210926001647\\\\36009(20210901-20210915).zip'"}, 'data': {}}
+2021-09-26 00:16:48,868 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:16:48] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:16:48,868 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:16:48] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:21:50,958 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-26 00:21:50,958 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-26 00:21:51,961 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:21:51] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:21:51,961 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:21:51] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:21:51,965 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:21:51,965 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:21:51,970 DEBUG Octopus.py:19 20210901
+2021-09-26 00:21:51,970 DEBUG Octopus.py:19 20210901
+2021-09-26 00:21:51,970 DEBUG Octopus.py:20 20210915
+2021-09-26 00:21:51,970 DEBUG Octopus.py:20 20210915
+2021-09-26 00:21:51,974 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:21:51,974 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:21:51,975 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:21:51] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:21:51,975 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:21:51] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:21:51,980 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:21:51] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:21:51,980 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:21:51] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:21:51,983 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:21:51,983 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:21:51,984 DEBUG Octopus.py:55 20210901
+2021-09-26 00:21:51,984 DEBUG Octopus.py:55 20210901
+2021-09-26 00:21:51,984 DEBUG Octopus.py:56 20210915
+2021-09-26 00:21:51,984 DEBUG Octopus.py:56 20210915
+2021-09-26 00:21:52,303 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:21:52] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:21:52,303 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:21:52] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:28:26,256 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-26 00:28:26,256 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-26 00:28:29,987 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:28:29] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:28:29,987 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:28:29] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:28:29,991 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:28:29,991 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:28:29,996 DEBUG Octopus.py:19 20210901
+2021-09-26 00:28:29,996 DEBUG Octopus.py:19 20210901
+2021-09-26 00:28:29,996 DEBUG Octopus.py:20 20210915
+2021-09-26 00:28:29,996 DEBUG Octopus.py:20 20210915
+2021-09-26 00:28:30,001 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:28:30,001 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:28:30,002 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:28:30] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:28:30,002 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:28:30] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:28:30,006 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:28:30] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:28:30,006 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:28:30] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:28:30,010 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:28:30,010 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:28:30,011 DEBUG Octopus.py:55 20210901
+2021-09-26 00:28:30,011 DEBUG Octopus.py:55 20210901
+2021-09-26 00:28:30,011 DEBUG Octopus.py:56 20210915
+2021-09-26 00:28:30,011 DEBUG Octopus.py:56 20210915
+2021-09-26 00:28:30,319 DEBUG main.py:582 Octopus_Report Exception : [WinError 5] ¦s¨ú³Q©Ú¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\20210926002830\\36009(20210901-20210915)'
+2021-09-26 00:28:30,319 DEBUG main.py:582 Octopus_Report Exception : [WinError 5] ¦s¨ú³Q©Ú¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\20210926002830\\36009(20210901-20210915)'
+2021-09-26 00:28:30,319 DEBUG main.py:585 {'meta': {'status': 1, 'msg': "[WinError 5] ¦s¨ú³Q©Ú¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Merchant_Report\\\\20210926002830\\\\36009(20210901-20210915)'"}, 'data': {}}
+2021-09-26 00:28:30,319 DEBUG main.py:585 {'meta': {'status': 1, 'msg': "[WinError 5] ¦s¨ú³Q©Ú¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Merchant_Report\\\\20210926002830\\\\36009(20210901-20210915)'"}, 'data': {}}
+2021-09-26 00:28:30,320 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:28:30] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:28:30,320 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:28:30] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:30:09,315 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:30:09] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:30:09,315 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:30:09] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:30:09,319 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:30:09,319 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:30:09,320 DEBUG Octopus.py:19 20210901
+2021-09-26 00:30:09,320 DEBUG Octopus.py:19 20210901
+2021-09-26 00:30:09,320 DEBUG Octopus.py:20 20210915
+2021-09-26 00:30:09,320 DEBUG Octopus.py:20 20210915
+2021-09-26 00:30:09,328 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:30:09,328 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:30:09,329 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:30:09] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:30:09,329 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:30:09] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:30:09,334 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:30:09] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:30:09,334 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:30:09] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:30:09,338 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:30:09,338 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:30:09,339 DEBUG Octopus.py:55 20210901
+2021-09-26 00:30:09,339 DEBUG Octopus.py:55 20210901
+2021-09-26 00:30:09,339 DEBUG Octopus.py:56 20210915
+2021-09-26 00:30:09,339 DEBUG Octopus.py:56 20210915
+2021-09-26 00:30:09,608 DEBUG main.py:582 Octopus_Report Exception : [WinError 5] ¦s¨ú³Q©Ú¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\20210926003009\\36009(20210901-20210915)'
+2021-09-26 00:30:09,608 DEBUG main.py:582 Octopus_Report Exception : [WinError 5] ¦s¨ú³Q©Ú¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\20210926003009\\36009(20210901-20210915)'
+2021-09-26 00:30:09,608 DEBUG main.py:585 {'meta': {'status': 1, 'msg': "[WinError 5] ¦s¨ú³Q©Ú¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Merchant_Report\\\\20210926003009\\\\36009(20210901-20210915)'"}, 'data': {}}
+2021-09-26 00:30:09,608 DEBUG main.py:585 {'meta': {'status': 1, 'msg': "[WinError 5] ¦s¨ú³Q©Ú¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Merchant_Report\\\\20210926003009\\\\36009(20210901-20210915)'"}, 'data': {}}
+2021-09-26 00:30:09,609 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:30:09] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:30:09,609 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:30:09] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:30:40,646 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:30:40] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:30:40,646 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:30:40] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:30:40,649 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:30:40,649 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:30:40,650 DEBUG Octopus.py:19 20210901
+2021-09-26 00:30:40,650 DEBUG Octopus.py:19 20210901
+2021-09-26 00:30:40,650 DEBUG Octopus.py:20 20210915
+2021-09-26 00:30:40,650 DEBUG Octopus.py:20 20210915
+2021-09-26 00:30:40,656 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:30:40,656 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:30:40,656 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:30:40] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:30:40,656 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:30:40] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:30:40,661 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:30:40] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:30:40,661 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:30:40] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:30:40,663 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:30:40,663 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:30:40,664 DEBUG Octopus.py:55 20210901
+2021-09-26 00:30:40,664 DEBUG Octopus.py:55 20210901
+2021-09-26 00:30:40,664 DEBUG Octopus.py:56 20210915
+2021-09-26 00:30:40,664 DEBUG Octopus.py:56 20210915
+2021-09-26 00:31:56,912 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-26 00:31:56,912 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-26 00:32:00,726 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:32:00] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:32:00,726 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:32:00] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:32:00,728 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:32:00,728 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:32:00,732 DEBUG Octopus.py:19 20210901
+2021-09-26 00:32:00,732 DEBUG Octopus.py:19 20210901
+2021-09-26 00:32:00,733 DEBUG Octopus.py:20 20210915
+2021-09-26 00:32:00,733 DEBUG Octopus.py:20 20210915
+2021-09-26 00:32:00,739 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:32:00,739 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:32:00,739 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:32:00] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:32:00,739 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:32:00] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:32:00,742 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:32:00] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:32:00,742 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:32:00] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:32:00,744 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:32:00,744 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:32:00,745 DEBUG Octopus.py:55 20210901
+2021-09-26 00:32:00,745 DEBUG Octopus.py:55 20210901
+2021-09-26 00:32:00,745 DEBUG Octopus.py:56 20210915
+2021-09-26 00:32:00,745 DEBUG Octopus.py:56 20210915
+2021-09-26 00:32:01,009 DEBUG main.py:582 Octopus_Report Exception : [WinError 5] ¦s¨ú³Q©Ú¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\20210926003200\\36009(20210901-20210915)'
+2021-09-26 00:32:01,009 DEBUG main.py:582 Octopus_Report Exception : [WinError 5] ¦s¨ú³Q©Ú¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\20210926003200\\36009(20210901-20210915)'
+2021-09-26 00:32:01,009 DEBUG main.py:585 {'meta': {'status': 1, 'msg': "[WinError 5] ¦s¨ú³Q©Ú¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Merchant_Report\\\\20210926003200\\\\36009(20210901-20210915)'"}, 'data': {}}
+2021-09-26 00:32:01,009 DEBUG main.py:585 {'meta': {'status': 1, 'msg': "[WinError 5] ¦s¨ú³Q©Ú¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Merchant_Report\\\\20210926003200\\\\36009(20210901-20210915)'"}, 'data': {}}
+2021-09-26 00:32:01,009 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:32:01] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:32:01,009 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:32:01] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:32:51,253 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-26 00:32:51,253 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-26 00:32:56,244 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:32:56] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:32:56,244 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:32:56] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:32:56,248 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:32:56,248 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:32:56,253 DEBUG Octopus.py:19 20210901
+2021-09-26 00:32:56,253 DEBUG Octopus.py:19 20210901
+2021-09-26 00:32:56,253 DEBUG Octopus.py:20 20210901
+2021-09-26 00:32:56,253 DEBUG Octopus.py:20 20210901
+2021-09-26 00:32:56,253 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:32:56,253 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:32:56,254 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:32:56] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:32:56,254 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:32:56] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:32:56,259 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:32:56] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:32:56,259 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:32:56] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:32:56,262 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:32:56,262 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:32:56,263 DEBUG Octopus.py:55 20210901
+2021-09-26 00:32:56,263 DEBUG Octopus.py:55 20210901
+2021-09-26 00:32:56,263 DEBUG Octopus.py:56 20210901
+2021-09-26 00:32:56,263 DEBUG Octopus.py:56 20210901
+2021-09-26 00:32:56,413 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:32:56] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:32:56,413 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:32:56] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:34:56,141 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:34:56] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:34:56,141 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:34:56] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:34:56,144 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:34:56,144 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:34:56,145 DEBUG Octopus.py:19 20210901
+2021-09-26 00:34:56,145 DEBUG Octopus.py:19 20210901
+2021-09-26 00:34:56,145 DEBUG Octopus.py:20 20210901
+2021-09-26 00:34:56,145 DEBUG Octopus.py:20 20210901
+2021-09-26 00:34:56,146 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:34:56,146 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:34:56,147 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:34:56] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:34:56,147 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:34:56] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:34:56,151 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:34:56] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:34:56,151 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:34:56] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:34:56,155 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:34:56,155 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:34:56,156 DEBUG Octopus.py:55 20210901
+2021-09-26 00:34:56,156 DEBUG Octopus.py:55 20210901
+2021-09-26 00:34:56,156 DEBUG Octopus.py:56 20210901
+2021-09-26 00:34:56,156 DEBUG Octopus.py:56 20210901
+2021-09-26 00:34:56,308 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:34:56] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:34:56,308 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:34:56] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:35:12,556 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:35:12] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:35:12,556 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:35:12] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:35:12,560 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:35:12,560 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:35:12,561 DEBUG Octopus.py:19 20210901
+2021-09-26 00:35:12,561 DEBUG Octopus.py:19 20210901
+2021-09-26 00:35:12,561 DEBUG Octopus.py:20 20210901
+2021-09-26 00:35:12,561 DEBUG Octopus.py:20 20210901
+2021-09-26 00:35:12,562 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:35:12,562 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:35:12,562 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:35:12] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:35:12,562 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:35:12] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:35:12,567 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:35:12] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:35:12,567 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:35:12] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:35:12,571 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:35:12,571 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:35:12,572 DEBUG Octopus.py:55 20210901
+2021-09-26 00:35:12,572 DEBUG Octopus.py:55 20210901
+2021-09-26 00:35:12,572 DEBUG Octopus.py:56 20210901
+2021-09-26 00:35:12,572 DEBUG Octopus.py:56 20210901
+2021-09-26 00:35:12,720 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:35:12] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:35:12,720 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:35:12] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:40:18,622 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:40:18] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:40:18,622 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:40:18] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:40:18,626 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:40:18,626 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:40:18,627 DEBUG Octopus.py:19 20210902
+2021-09-26 00:40:18,627 DEBUG Octopus.py:19 20210902
+2021-09-26 00:40:18,627 DEBUG Octopus.py:20 20210902
+2021-09-26 00:40:18,627 DEBUG Octopus.py:20 20210902
+2021-09-26 00:40:18,628 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:40:18,628 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:40:18,629 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:40:18] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:40:18,629 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:40:18] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:40:18,635 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:40:18] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:40:18,635 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:40:18] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:40:18,638 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:40:18,638 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:40:18,639 DEBUG Octopus.py:55 20210902
+2021-09-26 00:40:18,639 DEBUG Octopus.py:55 20210902
+2021-09-26 00:40:18,639 DEBUG Octopus.py:56 20210902
+2021-09-26 00:40:18,639 DEBUG Octopus.py:56 20210902
+2021-09-26 00:40:18,794 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:40:18] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:40:18,794 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:40:18] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:41:19,509 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:41:19] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:41:19,509 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:41:19] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:41:19,513 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:41:19,513 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:41:19,514 DEBUG Octopus.py:19 20210901
+2021-09-26 00:41:19,514 DEBUG Octopus.py:19 20210901
+2021-09-26 00:41:19,515 DEBUG Octopus.py:20 20210922
+2021-09-26 00:41:19,515 DEBUG Octopus.py:20 20210922
+2021-09-26 00:41:19,523 DEBUG main.py:565 {'meta': {'status': 1, 'msg': 'Some Data Not Exist: 20210920; \r\n20210921; \r\n20210922; \r\n'}, 'data': {}}
+2021-09-26 00:41:19,523 DEBUG main.py:565 {'meta': {'status': 1, 'msg': 'Some Data Not Exist: 20210920; \r\n20210921; \r\n20210922; \r\n'}, 'data': {}}
+2021-09-26 00:41:19,524 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:41:19] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:41:19,524 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:41:19] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:41:23,972 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:41:23,972 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:41:23,973 DEBUG Octopus.py:19 20210901
+2021-09-26 00:41:23,973 DEBUG Octopus.py:19 20210901
+2021-09-26 00:41:23,973 DEBUG Octopus.py:20 20210915
+2021-09-26 00:41:23,973 DEBUG Octopus.py:20 20210915
+2021-09-26 00:41:23,978 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:41:23,978 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:41:23,979 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:41:23] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:41:23,979 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:41:23] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:41:23,984 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:41:23] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:41:23,984 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:41:23] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:41:23,987 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:41:23,987 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:41:23,988 DEBUG Octopus.py:55 20210901
+2021-09-26 00:41:23,988 DEBUG Octopus.py:55 20210901
+2021-09-26 00:41:23,989 DEBUG Octopus.py:56 20210915
+2021-09-26 00:41:23,989 DEBUG Octopus.py:56 20210915
+2021-09-26 00:41:24,410 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:41:24] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:41:24,410 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:41:24] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:41:43,962 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:41:43] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:41:43,962 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:41:43] "[37mOPTIONS /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:41:43,967 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:41:43,967 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:41:43,968 DEBUG Octopus.py:19 20210901
+2021-09-26 00:41:43,968 DEBUG Octopus.py:19 20210901
+2021-09-26 00:41:43,968 DEBUG Octopus.py:20 20210915
+2021-09-26 00:41:43,968 DEBUG Octopus.py:20 20210915
+2021-09-26 00:41:43,976 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:41:43,976 DEBUG main.py:565 {'meta': {'status': 0, 'msg': 'Success'}, 'data': {}}
+2021-09-26 00:41:43,977 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:41:43] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:41:43,977 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:41:43] "[37mPOST /Octopus/Report/Check_SPIDStatus HTTP/1.1[0m" 200 -
+2021-09-26 00:41:43,982 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:41:43] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:41:43,982 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:41:43] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:41:43,986 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:41:43,986 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 58
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI1ODE1MzIsIm5iZiI6MTYzMjU4MTUzMiwianRpIjoiYWVjYjllNmMtZTQyNi00NDEyLTgxMzktMTBhMDMyZjdlMjM1IiwiZXhwIjoxNjMyNjI0NzMyLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.3-5Upx4qlBPKOzchjSIsFZWDTUzM9zwOgN0-AqA8IbY
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-26 00:41:43,987 DEBUG Octopus.py:55 20210901
+2021-09-26 00:41:43,987 DEBUG Octopus.py:55 20210901
+2021-09-26 00:41:43,987 DEBUG Octopus.py:56 20210915
+2021-09-26 00:41:43,987 DEBUG Octopus.py:56 20210915
+2021-09-26 00:41:44,256 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:41:44] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-26 00:41:44,256 INFO _internal.py:113 127.0.0.1 - - [26/Sep/2021 00:41:44] "[37mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -

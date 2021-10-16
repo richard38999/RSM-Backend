@@ -1,0 +1,938 @@
+2021-09-28 20:29:49,834 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-28 20:29:49,834 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-28 20:29:49,893 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 20:29:49] "[37mOPTIONS /login HTTP/1.1[0m" 200 -
+2021-09-28 20:29:49,893 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 20:29:49] "[37mOPTIONS /login HTTP/1.1[0m" 200 -
+2021-09-28 20:29:49,895 DEBUG main.py:42 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 86
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer null
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: null
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 20:29:49,895 DEBUG main.py:42 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 86
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer null
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: null
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 20:29:49,896 DEBUG main.py:43 BODY: b'{"username":"richard","password":"6ae199a93c381bf6d5de27491139d3f9","version":"1.0.3"}'
+2021-09-28 20:29:49,896 DEBUG main.py:43 BODY: b'{"username":"richard","password":"6ae199a93c381bf6d5de27491139d3f9","version":"1.0.3"}'
+2021-09-28 20:29:49,937 DEBUG main.py:72 {'meta': {'status': 'SUCCESS', 'msg': 'LOGIN SUCCESS'}, 'data': {'username': 'richard', 'password': '6ae199a93c381bf6d5de27491139d3f9', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg'}}
+2021-09-28 20:29:49,937 DEBUG main.py:72 {'meta': {'status': 'SUCCESS', 'msg': 'LOGIN SUCCESS'}, 'data': {'username': 'richard', 'password': '6ae199a93c381bf6d5de27491139d3f9', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg'}}
+2021-09-28 20:29:49,938 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 20:29:49] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-09-28 20:29:49,938 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 20:29:49] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-09-28 20:29:49,955 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 20:29:49] "[37mOPTIONS /menus?username=richard HTTP/1.1[0m" 200 -
+2021-09-28 20:29:49,955 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 20:29:49] "[37mOPTIONS /menus?username=richard HTTP/1.1[0m" 200 -
+2021-09-28 20:29:49,958 DEBUG main.py:104 Host: 127.0.0.1:5000
+Connection: keep-alive
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 20:29:49,958 DEBUG main.py:104 Host: 127.0.0.1:5000
+Connection: keep-alive
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 20:29:49,958 DEBUG main.py:105 BODY: b''
+2021-09-28 20:29:49,958 DEBUG main.py:105 BODY: b''
+2021-09-28 20:29:49,965 DEBUG main.py:110 {'meta': {'status': 200, 'msg': 'SUCCESS'}, 'data': [{'id': 101, 'authName': '¤@²M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1011, 'authName': 'Transaction', 'path': '1C_Gateway_Transaction', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1012, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1013, 'authName': 'Batch Process', 'path': '1C_Gateway_BatchProcess', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}]}, {'id': 102, 'authName': '¤G²M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1021, 'authName': 'Transaction', 'path': '2C_Gateway_Transaction', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1022, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1023, 'authName': 'Batch Process', 'path': '2C_Gateway_BatchProcess', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}]}, {'id': 103, 'authName': '»ÈÁpQR Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1031, 'authName': 'Transaction', 'path': 'UnionPayQR_Gateway_Transaction', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1032, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1033, 'authName': 'Batch Process', 'path': 'UnionPayQR_Gateway_BatchProcess', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1034, 'authName': 'Batch_CardNo', 'path': 'UnionPayQR_Gateway_BatchProcess_CardNo', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}]}, {'id': 104, 'authName': 'BoC Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1041, 'authName': 'Transaction', 'path': 'BoC_Gateway_Transaction', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1042, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1043, 'authName': 'Batch Process', 'path': 'BoC_Gateway_BatchProcess', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}]}, {'id': 105, 'authName': 'PayMe Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1051, 'authName': 'Transaction', 'path': 'PayMe_Gateway_Transaction', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1052, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1053, 'authName': 'Batch Process', 'path': 'PayMe_Gateway_BatchProcess', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}]}, {'id': 106, 'authName': 'Uniqlo Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1061, 'authName': 'Transaction', 'path': 'Uniqlo_Gateway_Transaction', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1062, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1063, 'authName': 'Batch Process', 'path': 'Uniqlo_Gateway_BatchProcess', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}]}, {'id': 107, 'authName': 'VMP Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1071, 'authName': 'Transaction', 'path': 'VMP_Gateway_Transaction', 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}, {'id': 1072, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}]}, {'id': 108, 'authName': 'EOPG Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1081, 'authName': 'Transaction', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}, {'id': 1082, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}]}, {'id': 109, 'authName': 'A8 Terminal Tools', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1091, 'authName': 'Password', 'path': 'A8_Password', 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}, {'id': 1092, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}]}, {'id': 110, 'authName': 'Octopus', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1101, 'authName': 'Report', 'path': 'Octopus_Report', 'level': 2, 'parent_id': 110, 'icon': None, 'children': []}]}, {'id': 111, 'authName': 'Admin', 'path': '', 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1201, 'authName': 'User', 'path': 'User', 'level': 2, 'parent_id': 111, 'icon': None, 'children': []}]}]}
+2021-09-28 20:29:49,965 DEBUG main.py:110 {'meta': {'status': 200, 'msg': 'SUCCESS'}, 'data': [{'id': 101, 'authName': '¤@²M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1011, 'authName': 'Transaction', 'path': '1C_Gateway_Transaction', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1012, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1013, 'authName': 'Batch Process', 'path': '1C_Gateway_BatchProcess', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}]}, {'id': 102, 'authName': '¤G²M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1021, 'authName': 'Transaction', 'path': '2C_Gateway_Transaction', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1022, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1023, 'authName': 'Batch Process', 'path': '2C_Gateway_BatchProcess', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}]}, {'id': 103, 'authName': '»ÈÁpQR Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1031, 'authName': 'Transaction', 'path': 'UnionPayQR_Gateway_Transaction', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1032, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1033, 'authName': 'Batch Process', 'path': 'UnionPayQR_Gateway_BatchProcess', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1034, 'authName': 'Batch_CardNo', 'path': 'UnionPayQR_Gateway_BatchProcess_CardNo', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}]}, {'id': 104, 'authName': 'BoC Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1041, 'authName': 'Transaction', 'path': 'BoC_Gateway_Transaction', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1042, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1043, 'authName': 'Batch Process', 'path': 'BoC_Gateway_BatchProcess', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}]}, {'id': 105, 'authName': 'PayMe Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1051, 'authName': 'Transaction', 'path': 'PayMe_Gateway_Transaction', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1052, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1053, 'authName': 'Batch Process', 'path': 'PayMe_Gateway_BatchProcess', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}]}, {'id': 106, 'authName': 'Uniqlo Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1061, 'authName': 'Transaction', 'path': 'Uniqlo_Gateway_Transaction', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1062, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1063, 'authName': 'Batch Process', 'path': 'Uniqlo_Gateway_BatchProcess', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}]}, {'id': 107, 'authName': 'VMP Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1071, 'authName': 'Transaction', 'path': 'VMP_Gateway_Transaction', 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}, {'id': 1072, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}]}, {'id': 108, 'authName': 'EOPG Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1081, 'authName': 'Transaction', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}, {'id': 1082, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}]}, {'id': 109, 'authName': 'A8 Terminal Tools', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1091, 'authName': 'Password', 'path': 'A8_Password', 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}, {'id': 1092, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}]}, {'id': 110, 'authName': 'Octopus', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1101, 'authName': 'Report', 'path': 'Octopus_Report', 'level': 2, 'parent_id': 110, 'icon': None, 'children': []}]}, {'id': 111, 'authName': 'Admin', 'path': '', 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1201, 'authName': 'User', 'path': 'User', 'level': 2, 'parent_id': 111, 'icon': None, 'children': []}]}]}
+2021-09-28 20:29:49,967 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 20:29:49] "[37mGET /menus?username=richard HTTP/1.1[0m" 200 -
+2021-09-28 20:29:49,967 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 20:29:49] "[37mGET /menus?username=richard HTTP/1.1[0m" 200 -
+2021-09-28 20:30:19,347 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 20:30:19] "[37mOPTIONS /A8_Password HTTP/1.1[0m" 200 -
+2021-09-28 20:30:19,347 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 20:30:19] "[37mOPTIONS /A8_Password HTTP/1.1[0m" 200 -
+2021-09-28 20:30:19,350 DEBUG main.py:527 Host: 127.0.0.1:5000
+Connection: keep-alive
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 20:30:19,350 DEBUG main.py:527 Host: 127.0.0.1:5000
+Connection: keep-alive
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 20:30:19,358 DEBUG connectionpool.py:231 Starting new HTTP connection (1): 10.17.2.238:80
+2021-09-28 20:30:19,358 DEBUG connectionpool.py:231 Starting new HTTP connection (1): 10.17.2.238:80
+2021-09-28 20:30:40,409 ERROR app.py:1892 Exception on /A8_Password [GET]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\urllib3\connection.py", line 170, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\urllib3\util\connection.py", line 96, in create_connection
+    raise err
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\urllib3\util\connection.py", line 86, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] ³s½u¹Á¸Õ¥¢±Ñ¡A¦]¬°³s½u¹ï¶H¦³¤@¬q®É¶¡¨Ã¥¼¥¿½T¦^À³¡A©Î¬O³s½u«Ø¥ß¥¢±Ñ¡A¦]¬°³s½uªº¥D¾÷µLªk¦^À³¡C
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\urllib3\connectionpool.py", line 706, in urlopen
+    chunked=chunked,
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\urllib3\connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\urllib3\connection.py", line 234, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\richard\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\richard\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\richard\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\richard\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\richard\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\urllib3\connection.py", line 200, in connect
+    conn = self._new_conn()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\urllib3\connection.py", line 182, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001827B6834E0>: Failed to establish a new connection: [WinError 10060] ³s½u¹Á¸Õ¥¢±Ñ¡A¦]¬°³s½u¹ï¶H¦³¤@¬q®É¶¡¨Ã¥¼¥¿½T¦^À³¡A©Î¬O³s½u«Ø¥ß¥¢±Ñ¡A¦]¬°³s½uªº¥D¾÷µLªk¦^À³¡C
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\urllib3\connectionpool.py", line 756, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\urllib3\util\retry.py", line 573, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='10.17.2.238', port=80): Max retries exceeded with url: /password/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001827B6834E0>: Failed to establish a new connection: [WinError 10060] ³s½u¹Á¸Õ¥¢±Ñ¡A¦]¬°³s½u¹ï¶H¦³¤@¬q®É¶¡¨Ã¥¼¥¿½T¦^À³¡A©Î¬O³s½u«Ø¥ß¥¢±Ñ¡A¦]¬°³s½uªº¥D¾÷µLªk¦^À³¡C'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM_Package/RSM_Package/pythonProject/main.py", line 534, in A8_Password
+    response = requests.get(url)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\requests\sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\requests\sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='10.17.2.238', port=80): Max retries exceeded with url: /password/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001827B6834E0>: Failed to establish a new connection: [WinError 10060] ³s½u¹Á¸Õ¥¢±Ñ¡A¦]¬°³s½u¹ï¶H¦³¤@¬q®É¶¡¨Ã¥¼¥¿½T¦^À³¡A©Î¬O³s½u«Ø¥ß¥¢±Ñ¡A¦]¬°³s½uªº¥D¾÷µLªk¦^À³¡C'))
+2021-09-28 20:30:40,409 ERROR app.py:1892 Exception on /A8_Password [GET]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\urllib3\connection.py", line 170, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\urllib3\util\connection.py", line 96, in create_connection
+    raise err
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\urllib3\util\connection.py", line 86, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] ³s½u¹Á¸Õ¥¢±Ñ¡A¦]¬°³s½u¹ï¶H¦³¤@¬q®É¶¡¨Ã¥¼¥¿½T¦^À³¡A©Î¬O³s½u«Ø¥ß¥¢±Ñ¡A¦]¬°³s½uªº¥D¾÷µLªk¦^À³¡C
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\urllib3\connectionpool.py", line 706, in urlopen
+    chunked=chunked,
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\urllib3\connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\urllib3\connection.py", line 234, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "C:\Users\richard\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\richard\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\richard\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\richard\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\richard\AppData\Local\Programs\Python\Python37\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\urllib3\connection.py", line 200, in connect
+    conn = self._new_conn()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\urllib3\connection.py", line 182, in _new_conn
+    self, "Failed to establish a new connection: %s" % e
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x000001827B6834E0>: Failed to establish a new connection: [WinError 10060] ³s½u¹Á¸Õ¥¢±Ñ¡A¦]¬°³s½u¹ï¶H¦³¤@¬q®É¶¡¨Ã¥¼¥¿½T¦^À³¡A©Î¬O³s½u«Ø¥ß¥¢±Ñ¡A¦]¬°³s½uªº¥D¾÷µLªk¦^À³¡C
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\requests\adapters.py", line 449, in send
+    timeout=timeout
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\urllib3\connectionpool.py", line 756, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\urllib3\util\retry.py", line 573, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='10.17.2.238', port=80): Max retries exceeded with url: /password/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001827B6834E0>: Failed to establish a new connection: [WinError 10060] ³s½u¹Á¸Õ¥¢±Ñ¡A¦]¬°³s½u¹ï¶H¦³¤@¬q®É¶¡¨Ã¥¼¥¿½T¦^À³¡A©Î¬O³s½u«Ø¥ß¥¢±Ñ¡A¦]¬°³s½uªº¥D¾÷µLªk¦^À³¡C'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM_Package/RSM_Package/pythonProject/main.py", line 534, in A8_Password
+    response = requests.get(url)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\requests\api.py", line 76, in get
+    return request('get', url, params=params, **kwargs)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\requests\sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\requests\sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='10.17.2.238', port=80): Max retries exceeded with url: /password/ (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001827B6834E0>: Failed to establish a new connection: [WinError 10060] ³s½u¹Á¸Õ¥¢±Ñ¡A¦]¬°³s½u¹ï¶H¦³¤@¬q®É¶¡¨Ã¥¼¥¿½T¦^À³¡A©Î¬O³s½u«Ø¥ß¥¢±Ñ¡A¦]¬°³s½uªº¥D¾÷µLªk¦^À³¡C'))
+2021-09-28 20:30:40,477 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 20:30:40] "[35m[1mGET /A8_Password HTTP/1.1[0m" 500 -
+2021-09-28 20:30:40,477 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 20:30:40] "[35m[1mGET /A8_Password HTTP/1.1[0m" 500 -
+2021-09-28 23:10:58,001 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-28 23:10:58,001 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-28 23:18:54,640 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:18:54] "[37mOPTIONS /menus?username=richard HTTP/1.1[0m" 200 -
+2021-09-28 23:18:54,640 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:18:54] "[37mOPTIONS /menus?username=richard HTTP/1.1[0m" 200 -
+2021-09-28 23:18:54,644 DEBUG main.py:104 Host: 127.0.0.1:5000
+Connection: keep-alive
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:18:54,644 DEBUG main.py:104 Host: 127.0.0.1:5000
+Connection: keep-alive
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:18:54,645 DEBUG main.py:105 BODY: b''
+2021-09-28 23:18:54,645 DEBUG main.py:105 BODY: b''
+2021-09-28 23:18:54,647 DEBUG main.py:110 {'meta': {'status': 200, 'msg': 'SUCCESS'}, 'data': [{'id': 101, 'authName': '¤@²M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1011, 'authName': 'Transaction', 'path': '1C_Gateway_Transaction', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1012, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1013, 'authName': 'Batch Process', 'path': '1C_Gateway_BatchProcess', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}]}, {'id': 102, 'authName': '¤G²M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1021, 'authName': 'Transaction', 'path': '2C_Gateway_Transaction', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1022, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1023, 'authName': 'Batch Process', 'path': '2C_Gateway_BatchProcess', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}]}, {'id': 103, 'authName': '»ÈÁpQR Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1031, 'authName': 'Transaction', 'path': 'UnionPayQR_Gateway_Transaction', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1032, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1033, 'authName': 'Batch Process', 'path': 'UnionPayQR_Gateway_BatchProcess', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1034, 'authName': 'Batch_CardNo', 'path': 'UnionPayQR_Gateway_BatchProcess_CardNo', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}]}, {'id': 104, 'authName': 'BoC Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1041, 'authName': 'Transaction', 'path': 'BoC_Gateway_Transaction', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1042, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1043, 'authName': 'Batch Process', 'path': 'BoC_Gateway_BatchProcess', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}]}, {'id': 105, 'authName': 'PayMe Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1051, 'authName': 'Transaction', 'path': 'PayMe_Gateway_Transaction', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1052, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1053, 'authName': 'Batch Process', 'path': 'PayMe_Gateway_BatchProcess', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}]}, {'id': 106, 'authName': 'Uniqlo Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1061, 'authName': 'Transaction', 'path': 'Uniqlo_Gateway_Transaction', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1062, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1063, 'authName': 'Batch Process', 'path': 'Uniqlo_Gateway_BatchProcess', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}]}, {'id': 107, 'authName': 'VMP Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1071, 'authName': 'Transaction', 'path': 'VMP_Gateway_Transaction', 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}, {'id': 1072, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}]}, {'id': 108, 'authName': 'EOPG Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1081, 'authName': 'Transaction', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}, {'id': 1082, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}]}, {'id': 109, 'authName': 'A8 Terminal Tools', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1091, 'authName': 'Password', 'path': 'A8_Password', 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}, {'id': 1092, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}]}, {'id': 110, 'authName': 'Octopus', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1101, 'authName': 'Report', 'path': 'Octopus_Report', 'level': 2, 'parent_id': 110, 'icon': None, 'children': []}]}, {'id': 111, 'authName': 'Admin', 'path': '', 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1201, 'authName': 'User', 'path': 'User', 'level': 2, 'parent_id': 111, 'icon': None, 'children': []}]}]}
+2021-09-28 23:18:54,647 DEBUG main.py:110 {'meta': {'status': 200, 'msg': 'SUCCESS'}, 'data': [{'id': 101, 'authName': '¤@²M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1011, 'authName': 'Transaction', 'path': '1C_Gateway_Transaction', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1012, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1013, 'authName': 'Batch Process', 'path': '1C_Gateway_BatchProcess', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}]}, {'id': 102, 'authName': '¤G²M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1021, 'authName': 'Transaction', 'path': '2C_Gateway_Transaction', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1022, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1023, 'authName': 'Batch Process', 'path': '2C_Gateway_BatchProcess', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}]}, {'id': 103, 'authName': '»ÈÁpQR Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1031, 'authName': 'Transaction', 'path': 'UnionPayQR_Gateway_Transaction', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1032, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1033, 'authName': 'Batch Process', 'path': 'UnionPayQR_Gateway_BatchProcess', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1034, 'authName': 'Batch_CardNo', 'path': 'UnionPayQR_Gateway_BatchProcess_CardNo', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}]}, {'id': 104, 'authName': 'BoC Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1041, 'authName': 'Transaction', 'path': 'BoC_Gateway_Transaction', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1042, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1043, 'authName': 'Batch Process', 'path': 'BoC_Gateway_BatchProcess', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}]}, {'id': 105, 'authName': 'PayMe Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1051, 'authName': 'Transaction', 'path': 'PayMe_Gateway_Transaction', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1052, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1053, 'authName': 'Batch Process', 'path': 'PayMe_Gateway_BatchProcess', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}]}, {'id': 106, 'authName': 'Uniqlo Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1061, 'authName': 'Transaction', 'path': 'Uniqlo_Gateway_Transaction', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1062, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1063, 'authName': 'Batch Process', 'path': 'Uniqlo_Gateway_BatchProcess', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}]}, {'id': 107, 'authName': 'VMP Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1071, 'authName': 'Transaction', 'path': 'VMP_Gateway_Transaction', 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}, {'id': 1072, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}]}, {'id': 108, 'authName': 'EOPG Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1081, 'authName': 'Transaction', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}, {'id': 1082, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}]}, {'id': 109, 'authName': 'A8 Terminal Tools', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1091, 'authName': 'Password', 'path': 'A8_Password', 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}, {'id': 1092, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}]}, {'id': 110, 'authName': 'Octopus', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1101, 'authName': 'Report', 'path': 'Octopus_Report', 'level': 2, 'parent_id': 110, 'icon': None, 'children': []}]}, {'id': 111, 'authName': 'Admin', 'path': '', 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1201, 'authName': 'User', 'path': 'User', 'level': 2, 'parent_id': 111, 'icon': None, 'children': []}]}]}
+2021-09-28 23:18:54,647 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:18:54] "[37mGET /menus?username=richard HTTP/1.1[0m" 200 -
+2021-09-28 23:18:54,647 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:18:54] "[37mGET /menus?username=richard HTTP/1.1[0m" 200 -
+2021-09-28 23:18:56,706 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:18:56] "[37mOPTIONS /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:18:56,706 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:18:56] "[37mOPTIONS /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:18:56,709 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 36
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:18:56,709 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 36
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:18:56,710 DEBUG main.py:587 Octopus_Report Exception : [WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Parsefiles\\2021-08-31T16:00:00.000Z'
+2021-09-28 23:18:56,710 DEBUG main.py:587 Octopus_Report Exception : [WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Parsefiles\\2021-08-31T16:00:00.000Z'
+2021-09-28 23:18:56,710 DEBUG main.py:590 {'meta': {'status': 1, 'msg': "[WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Parsefiles\\\\2021-08-31T16:00:00.000Z'"}, 'data': {}}
+2021-09-28 23:18:56,710 DEBUG main.py:590 {'meta': {'status': 1, 'msg': "[WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Parsefiles\\\\2021-08-31T16:00:00.000Z'"}, 'data': {}}
+2021-09-28 23:18:56,710 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:18:56] "[37mPOST /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:18:56,710 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:18:56] "[37mPOST /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:20:16,870 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:20:16] "[37mOPTIONS /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:20:16,870 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:20:16] "[37mOPTIONS /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:20:16,873 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 36
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:20:16,873 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 36
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:20:16,874 DEBUG main.py:587 Octopus_Report Exception : [WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Parsefiles\\2021-08-31T16:00:00.000Z'
+2021-09-28 23:20:16,874 DEBUG main.py:587 Octopus_Report Exception : [WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Parsefiles\\2021-08-31T16:00:00.000Z'
+2021-09-28 23:20:16,874 DEBUG main.py:590 {'meta': {'status': 1, 'msg': "[WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Parsefiles\\\\2021-08-31T16:00:00.000Z'"}, 'data': {}}
+2021-09-28 23:20:16,874 DEBUG main.py:590 {'meta': {'status': 1, 'msg': "[WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Parsefiles\\\\2021-08-31T16:00:00.000Z'"}, 'data': {}}
+2021-09-28 23:20:16,874 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:20:16] "[37mPOST /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:20:16,874 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:20:16] "[37mPOST /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:21:05,802 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-28 23:21:05,802 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-28 23:21:08,065 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:21:08] "[37mOPTIONS /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:21:08,065 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:21:08] "[37mOPTIONS /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:21:08,068 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 36
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:21:08,068 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 36
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:21:08,069 DEBUG main.py:587 Octopus_Report Exception : [WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Parsefiles\\2021-08-31T16:00:00.000Z'
+2021-09-28 23:21:08,069 DEBUG main.py:587 Octopus_Report Exception : [WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Parsefiles\\2021-08-31T16:00:00.000Z'
+2021-09-28 23:21:08,069 DEBUG main.py:590 {'meta': {'status': 1, 'msg': "[WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Parsefiles\\\\2021-08-31T16:00:00.000Z'"}, 'data': {}}
+2021-09-28 23:21:08,069 DEBUG main.py:590 {'meta': {'status': 1, 'msg': "[WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Parsefiles\\\\2021-08-31T16:00:00.000Z'"}, 'data': {}}
+2021-09-28 23:21:08,069 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:21:08] "[37mPOST /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:21:08,069 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:21:08] "[37mPOST /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:21:23,617 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:21:23] "[37mOPTIONS /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:21:23,617 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:21:23] "[37mOPTIONS /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:21:23,618 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 36
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:21:23,618 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 36
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:21:23,628 DEBUG main.py:587 Octopus_Report Exception : [WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Parsefiles\\2021-08-31T16:00:00.000Z'
+2021-09-28 23:21:23,628 DEBUG main.py:587 Octopus_Report Exception : [WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Parsefiles\\2021-08-31T16:00:00.000Z'
+2021-09-28 23:21:23,628 DEBUG main.py:590 {'meta': {'status': 1, 'msg': "[WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Parsefiles\\\\2021-08-31T16:00:00.000Z'"}, 'data': {}}
+2021-09-28 23:21:23,628 DEBUG main.py:590 {'meta': {'status': 1, 'msg': "[WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Parsefiles\\\\2021-08-31T16:00:00.000Z'"}, 'data': {}}
+2021-09-28 23:21:23,628 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:21:23] "[37mPOST /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:21:23,628 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:21:23] "[37mPOST /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:22:14,937 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:22:14] "[37mOPTIONS /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:22:14,937 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:22:14] "[37mOPTIONS /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:22:14,940 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 36
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:22:14,940 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 36
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:22:14,940 DEBUG main.py:587 Octopus_Report Exception : [WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Parsefiles\\2021-08-31T16:00:00.000Z'
+2021-09-28 23:22:14,940 DEBUG main.py:587 Octopus_Report Exception : [WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Parsefiles\\2021-08-31T16:00:00.000Z'
+2021-09-28 23:22:14,941 DEBUG main.py:590 {'meta': {'status': 1, 'msg': "[WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Parsefiles\\\\2021-08-31T16:00:00.000Z'"}, 'data': {}}
+2021-09-28 23:22:14,941 DEBUG main.py:590 {'meta': {'status': 1, 'msg': "[WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Parsefiles\\\\2021-08-31T16:00:00.000Z'"}, 'data': {}}
+2021-09-28 23:22:14,941 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:22:14] "[37mPOST /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:22:14,941 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:22:14] "[37mPOST /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:23:29,734 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-28 23:23:29,734 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-28 23:23:34,971 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:23:34] "[37mOPTIONS /menus?username=richard HTTP/1.1[0m" 200 -
+2021-09-28 23:23:34,971 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:23:34] "[37mOPTIONS /menus?username=richard HTTP/1.1[0m" 200 -
+2021-09-28 23:23:34,973 DEBUG main.py:104 Host: 127.0.0.1:5000
+Connection: keep-alive
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:23:34,973 DEBUG main.py:104 Host: 127.0.0.1:5000
+Connection: keep-alive
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:23:34,974 DEBUG main.py:105 BODY: b''
+2021-09-28 23:23:34,974 DEBUG main.py:105 BODY: b''
+2021-09-28 23:23:34,975 DEBUG main.py:110 {'meta': {'status': 200, 'msg': 'SUCCESS'}, 'data': [{'id': 101, 'authName': '¤@²M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1011, 'authName': 'Transaction', 'path': '1C_Gateway_Transaction', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1012, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1013, 'authName': 'Batch Process', 'path': '1C_Gateway_BatchProcess', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}]}, {'id': 102, 'authName': '¤G²M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1021, 'authName': 'Transaction', 'path': '2C_Gateway_Transaction', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1022, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1023, 'authName': 'Batch Process', 'path': '2C_Gateway_BatchProcess', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}]}, {'id': 103, 'authName': '»ÈÁpQR Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1031, 'authName': 'Transaction', 'path': 'UnionPayQR_Gateway_Transaction', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1032, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1033, 'authName': 'Batch Process', 'path': 'UnionPayQR_Gateway_BatchProcess', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1034, 'authName': 'Batch_CardNo', 'path': 'UnionPayQR_Gateway_BatchProcess_CardNo', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}]}, {'id': 104, 'authName': 'BoC Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1041, 'authName': 'Transaction', 'path': 'BoC_Gateway_Transaction', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1042, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1043, 'authName': 'Batch Process', 'path': 'BoC_Gateway_BatchProcess', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}]}, {'id': 105, 'authName': 'PayMe Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1051, 'authName': 'Transaction', 'path': 'PayMe_Gateway_Transaction', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1052, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1053, 'authName': 'Batch Process', 'path': 'PayMe_Gateway_BatchProcess', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}]}, {'id': 106, 'authName': 'Uniqlo Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1061, 'authName': 'Transaction', 'path': 'Uniqlo_Gateway_Transaction', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1062, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1063, 'authName': 'Batch Process', 'path': 'Uniqlo_Gateway_BatchProcess', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}]}, {'id': 107, 'authName': 'VMP Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1071, 'authName': 'Transaction', 'path': 'VMP_Gateway_Transaction', 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}, {'id': 1072, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}]}, {'id': 108, 'authName': 'EOPG Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1081, 'authName': 'Transaction', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}, {'id': 1082, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}]}, {'id': 109, 'authName': 'A8 Terminal Tools', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1091, 'authName': 'Password', 'path': 'A8_Password', 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}, {'id': 1092, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}]}, {'id': 110, 'authName': 'Octopus', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1101, 'authName': 'Report', 'path': 'Octopus_Report', 'level': 2, 'parent_id': 110, 'icon': None, 'children': []}]}, {'id': 111, 'authName': 'Admin', 'path': '', 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1201, 'authName': 'User', 'path': 'User', 'level': 2, 'parent_id': 111, 'icon': None, 'children': []}]}]}
+2021-09-28 23:23:34,975 DEBUG main.py:110 {'meta': {'status': 200, 'msg': 'SUCCESS'}, 'data': [{'id': 101, 'authName': '¤@²M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1011, 'authName': 'Transaction', 'path': '1C_Gateway_Transaction', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1012, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1013, 'authName': 'Batch Process', 'path': '1C_Gateway_BatchProcess', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}]}, {'id': 102, 'authName': '¤G²M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1021, 'authName': 'Transaction', 'path': '2C_Gateway_Transaction', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1022, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1023, 'authName': 'Batch Process', 'path': '2C_Gateway_BatchProcess', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}]}, {'id': 103, 'authName': '»ÈÁpQR Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1031, 'authName': 'Transaction', 'path': 'UnionPayQR_Gateway_Transaction', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1032, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1033, 'authName': 'Batch Process', 'path': 'UnionPayQR_Gateway_BatchProcess', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1034, 'authName': 'Batch_CardNo', 'path': 'UnionPayQR_Gateway_BatchProcess_CardNo', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}]}, {'id': 104, 'authName': 'BoC Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1041, 'authName': 'Transaction', 'path': 'BoC_Gateway_Transaction', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1042, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1043, 'authName': 'Batch Process', 'path': 'BoC_Gateway_BatchProcess', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}]}, {'id': 105, 'authName': 'PayMe Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1051, 'authName': 'Transaction', 'path': 'PayMe_Gateway_Transaction', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1052, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1053, 'authName': 'Batch Process', 'path': 'PayMe_Gateway_BatchProcess', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}]}, {'id': 106, 'authName': 'Uniqlo Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1061, 'authName': 'Transaction', 'path': 'Uniqlo_Gateway_Transaction', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1062, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1063, 'authName': 'Batch Process', 'path': 'Uniqlo_Gateway_BatchProcess', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}]}, {'id': 107, 'authName': 'VMP Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1071, 'authName': 'Transaction', 'path': 'VMP_Gateway_Transaction', 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}, {'id': 1072, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}]}, {'id': 108, 'authName': 'EOPG Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1081, 'authName': 'Transaction', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}, {'id': 1082, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}]}, {'id': 109, 'authName': 'A8 Terminal Tools', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1091, 'authName': 'Password', 'path': 'A8_Password', 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}, {'id': 1092, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}]}, {'id': 110, 'authName': 'Octopus', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1101, 'authName': 'Report', 'path': 'Octopus_Report', 'level': 2, 'parent_id': 110, 'icon': None, 'children': []}]}, {'id': 111, 'authName': 'Admin', 'path': '', 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1201, 'authName': 'User', 'path': 'User', 'level': 2, 'parent_id': 111, 'icon': None, 'children': []}]}]}
+2021-09-28 23:23:34,976 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:23:34] "[37mGET /menus?username=richard HTTP/1.1[0m" 200 -
+2021-09-28 23:23:34,976 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:23:34] "[37mGET /menus?username=richard HTTP/1.1[0m" 200 -
+2021-09-28 23:23:49,929 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:23:49] "[37mOPTIONS /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:23:49,929 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:23:49] "[37mOPTIONS /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:23:49,932 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 36
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:23:49,932 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 36
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:23:49,932 DEBUG main.py:587 Octopus_Report Exception : [WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Parsefiles\\2021-08-31T16:00:00.000Z'
+2021-09-28 23:23:49,932 DEBUG main.py:587 Octopus_Report Exception : [WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Parsefiles\\2021-08-31T16:00:00.000Z'
+2021-09-28 23:23:49,932 DEBUG main.py:590 {'meta': {'status': 1, 'msg': "[WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Parsefiles\\\\2021-08-31T16:00:00.000Z'"}, 'data': {}}
+2021-09-28 23:23:49,932 DEBUG main.py:590 {'meta': {'status': 1, 'msg': "[WinError 123] ÀÉ®×¦WºÙ¡B¥Ø¿ý¦WºÙ©ÎºÏºÐ°Ï¼ÐÅÒ»yªk¿ù»~¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Parsefiles\\\\2021-08-31T16:00:00.000Z'"}, 'data': {}}
+2021-09-28 23:23:49,933 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:23:49] "[37mPOST /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:23:49,933 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:23:49] "[37mPOST /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:24:45,662 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:24:45] "[37mOPTIONS /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:24:45,662 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:24:45] "[37mOPTIONS /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:24:45,665 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 18
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:24:45,665 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 18
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:24:45,666 DEBUG main.py:587 Octopus_Report Exception : [WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Parsefiles\\202109'
+2021-09-28 23:24:45,666 DEBUG main.py:587 Octopus_Report Exception : [WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Parsefiles\\202109'
+2021-09-28 23:24:45,666 DEBUG main.py:590 {'meta': {'status': 1, 'msg': "[WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Parsefiles\\\\202109'"}, 'data': {}}
+2021-09-28 23:24:45,666 DEBUG main.py:590 {'meta': {'status': 1, 'msg': "[WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Parsefiles\\\\202109'"}, 'data': {}}
+2021-09-28 23:24:45,666 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:24:45] "[37mPOST /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:24:45,666 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:24:45] "[37mPOST /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:25:13,467 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-28 23:25:13,467 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-28 23:25:16,498 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:25:16] "[37mOPTIONS /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:25:16,498 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:25:16] "[37mOPTIONS /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:25:16,500 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 18
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:25:16,500 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 18
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:25:16,501 DEBUG main.py:587 Octopus_Report Exception : [WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Parsefiles\\202109'
+2021-09-28 23:25:16,501 DEBUG main.py:587 Octopus_Report Exception : [WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Parsefiles\\202109'
+2021-09-28 23:25:16,501 DEBUG main.py:590 {'meta': {'status': 1, 'msg': "[WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Parsefiles\\\\202109'"}, 'data': {}}
+2021-09-28 23:25:16,501 DEBUG main.py:590 {'meta': {'status': 1, 'msg': "[WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Parsefiles\\\\202109'"}, 'data': {}}
+2021-09-28 23:25:16,501 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:25:16] "[37mPOST /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:25:16,501 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:25:16] "[37mPOST /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:25:25,753 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:25:25] "[37mOPTIONS /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:25:25,753 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:25:25] "[37mOPTIONS /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:25:29,957 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 18
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:25:29,957 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 18
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:26:18,716 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-28 23:26:18,716 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-28 23:26:24,631 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:26:24] "[37mOPTIONS /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:26:24,631 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:26:24] "[37mOPTIONS /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:26:29,624 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 18
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:26:29,624 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 18
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:26:31,589 DEBUG main.py:587 Octopus_Report Exception : [WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Parsefiles\\202109'
+2021-09-28 23:26:31,589 DEBUG main.py:587 Octopus_Report Exception : [WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Parsefiles\\202109'
+2021-09-28 23:26:31,590 DEBUG main.py:590 {'meta': {'status': 1, 'msg': "[WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Parsefiles\\\\202109'"}, 'data': {}}
+2021-09-28 23:26:31,590 DEBUG main.py:590 {'meta': {'status': 1, 'msg': "[WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\\\Users\\\\richard\\\\Desktop\\\\RSM_Package\\\\RSM_Package\\\\pythonProject\\\\Octopus\\\\Parsefiles\\\\202109'"}, 'data': {}}
+2021-09-28 23:26:31,590 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:26:31] "[37mPOST /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:26:31,590 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:26:31] "[37mPOST /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:26:37,672 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:26:37] "[37mOPTIONS /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:26:37,672 INFO _internal.py:113 127.0.0.1 - - [28/Sep/2021 23:26:37] "[37mOPTIONS /Octopus/Report/Download_MonthlyReport HTTP/1.1[0m" 200 -
+2021-09-28 23:26:37,688 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 18
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-28 23:26:37,688 DEBUG main.py:548 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 18
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzI4MzIxODksIm5iZiI6MTYzMjgzMjE4OSwianRpIjoiMzQyZTlkODItMWE1MS00N2JiLTg5YzktZTRkZjZlMzhhNzdiIiwiZXhwIjoxNjMyODc1Mzg5LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.Hc_pHEXvhDWKaNWhZ6B3ZwnddNG8_vE6P5tnzaXjEsg
+Content-Type: application/json;charset=UTF-8
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+

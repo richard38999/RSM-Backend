@@ -1,0 +1,71 @@
+2021-08-06 09:29:34,082 INFO _internal.py:113 127.0.0.1 - - [06/Aug/2021 09:29:34] "[37mOPTIONS /payme/SALE HTTP/1.1[0m" 200 -
+2021-08-06 09:29:34,133 INFO _internal.py:113 127.0.0.1 - - [06/Aug/2021 09:29:34] "[31m[1mPOST /payme/SALE HTTP/1.1[0m" 401 -
+2021-08-06 09:29:36,428 INFO _internal.py:113 127.0.0.1 - - [06/Aug/2021 09:29:36] "[37mOPTIONS /login HTTP/1.1[0m" 200 -
+2021-08-06 09:29:36,436 DEBUG main.py:40 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 72
+Sec-Ch-Ua: "Chromium";v="92", " Not A;Brand";v="99", "Google Chrome";v="92"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer null
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: null
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-HK,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-CN;q=0.6
+
+
+2021-08-06 09:29:36,439 DEBUG main.py:41 BODY: b'username=richard&password=22d6aeaa3c9d494af5190d138b5be244&version=1.0.2'
+2021-08-06 09:29:36,466 DEBUG main.py:69 {'meta': {'status': 'SUCCESS', 'msg': 'LOGIN SUCCESS'}, 'data': {'username': 'richard', 'password': '22d6aeaa3c9d494af5190d138b5be244', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MjgyMTMzNzYsIm5iZiI6MTYyODIxMzM3NiwianRpIjoiYmUxNjUyMTQtOTY5NC00MTU2LWI0ZGMtNDk1OTQ5YWFiMGQ2IiwiZXhwIjoxNjI4MjU2NTc2LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.zp3qU86p774nRKXU8xe176MZNZyodgwXq-hsVyTe6UM'}}
+2021-08-06 09:29:36,466 INFO _internal.py:113 127.0.0.1 - - [06/Aug/2021 09:29:36] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-08-06 09:29:36,492 INFO _internal.py:113 127.0.0.1 - - [06/Aug/2021 09:29:36] "[37mOPTIONS /menus?username=richard HTTP/1.1[0m" 200 -
+2021-08-06 09:29:36,501 DEBUG main.py:101 Host: 127.0.0.1:5000
+Connection: keep-alive
+Sec-Ch-Ua: "Chromium";v="92", " Not A;Brand";v="99", "Google Chrome";v="92"
+Accept: application/json, text/plain, */*
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MjgyMTMzNzYsIm5iZiI6MTYyODIxMzM3NiwianRpIjoiYmUxNjUyMTQtOTY5NC00MTU2LWI0ZGMtNDk1OTQ5YWFiMGQ2IiwiZXhwIjoxNjI4MjU2NTc2LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.zp3qU86p774nRKXU8xe176MZNZyodgwXq-hsVyTe6UM
+Contenttype: application/x-www-form-urlencoded
+Sec-Ch-Ua-Mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36
+Usermane: richard
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-HK,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-CN;q=0.6
+
+
+2021-08-06 09:29:36,506 DEBUG main.py:107 {'meta': {'status': 200, 'msg': 'SUCCESS'}, 'data': [{'id': 101, 'authName': '§@≤M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1011, 'authName': 'Transaction', 'path': '1C_Gateway_Transaction', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1012, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1013, 'authName': 'Batch Process', 'path': '1C_Gateway_BatchProcess', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}]}, {'id': 102, 'authName': '§G≤M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1021, 'authName': 'Transaction', 'path': '2C_Gateway_Transaction', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1022, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1023, 'authName': 'Batch Process', 'path': '2C_Gateway_BatchProcess', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}]}, {'id': 103, 'authName': 'ª»¡pQR Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1031, 'authName': 'Transaction', 'path': 'UnionPayQR_Gateway_Transaction', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1032, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1033, 'authName': 'Batch Process', 'path': 'UnionPayQR_Gateway_BatchProcess', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1034, 'authName': 'Batch_CardNo', 'path': 'UnionPayQR_Gateway_BatchProcess_CardNo', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}]}, {'id': 104, 'authName': 'BoC Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1041, 'authName': 'Transaction', 'path': 'BoC_Gateway_Transaction', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1042, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1043, 'authName': 'Batch Process', 'path': 'BoC_Gateway_BatchProcess', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}]}, {'id': 105, 'authName': 'PayMe Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1051, 'authName': 'Transaction', 'path': 'PayMe_Gateway_Transaction', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1052, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1053, 'authName': 'Batch Process', 'path': 'PayMe_Gateway_BatchProcess', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}]}, {'id': 106, 'authName': 'Uniqlo Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1061, 'authName': 'Transaction', 'path': 'Uniqlo_Gateway_Transaction', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1062, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1063, 'authName': 'Batch Process', 'path': 'Uniqlo_Gateway_BatchProcess', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}]}, {'id': 107, 'authName': 'VMP Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1071, 'authName': 'Transaction', 'path': None, 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}, {'id': 1072, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}]}, {'id': 108, 'authName': 'EOPG Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1081, 'authName': 'Transaction', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}, {'id': 1082, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}]}, {'id': 109, 'authName': 'A8 Terminal Tools', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1091, 'authName': 'Password', 'path': 'A8_Password', 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}, {'id': 1092, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}]}, {'id': 110, 'authName': 'Development Tools', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1101, 'authName': 'Testing1', 'path': None, 'level': 2, 'parent_id': 110, 'icon': None, 'children': []}, {'id': 1102, 'authName': 'Testing2', 'path': None, 'level': 2, 'parent_id': 110, 'icon': None, 'children': []}]}, {'id': 111, 'authName': 'Admin', 'path': '', 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1201, 'authName': 'User', 'path': 'User', 'level': 2, 'parent_id': 111, 'icon': None, 'children': []}]}]}
+2021-08-06 09:29:36,508 INFO _internal.py:113 127.0.0.1 - - [06/Aug/2021 09:29:36] "[37mGET /menus?username=richard HTTP/1.1[0m" 200 -
+2021-08-06 09:29:59,782 INFO _internal.py:113 127.0.0.1 - - [06/Aug/2021 09:29:59] "[37mOPTIONS /payme/SALE HTTP/1.1[0m" 200 -
+2021-08-06 09:29:59,789 DEBUG main.py:153 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 257
+Sec-Ch-Ua: "Chromium";v="92", " Not A;Brand";v="99", "Google Chrome";v="92"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MjgyMTMzNzYsIm5iZiI6MTYyODIxMzM3NiwianRpIjoiYmUxNjUyMTQtOTY5NC00MTU2LWI0ZGMtNDk1OTQ5YWFiMGQ2IiwiZXhwIjoxNjI4MjU2NTc2LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.zp3qU86p774nRKXU8xe176MZNZyodgwXq-hsVyTe6UM
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-HK,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-CN;q=0.6
+
+
+2021-08-06 09:29:59,789 DEBUG main.py:154 BODY: b'MID=852008500000001&TID=00000008&amount=600&TransactionType=SALE&barcode=800000000000000000&ecrRefNo=Portaltesting123&URL=http%3A%2F%2F127.0.0.1%3A8889&IP=10.17.247.75&Port=6666&TPDU=6000210000&Timeout=30&MsgType=ISO&COMMTYPE=1&PayType=PayMe&OrdDesc=Testing'
+2021-08-06 09:29:59,880 DEBUG main.py:369 {'meta': {'status': '0', 'msg': 'Success'}, 'data': {'paymentType': 0, 'transType': 0, 'merchantID': '852008500000001', 'terminalID': '00000008', 'respondCode': '06', 'approvalCode': None, 'ECRReferenceNumber': 'Portaltesting123', 'barcode': None, 'amount': 600, 'transactionDateTime': '20210806093000', 'cutOffDay': '20210806', 'traceNum': '070152', 'debitInCurrency': None, 'debitInAmount': 0, 'OrderNumber': None, 'hostMessage': None, 'voided': False, 'originalTraceNum': None, 'originalOrderNumber': None, 'RRN': '210806092959', 'hostDateTime': '20210806093000', 'discountAmount': 0, 'couponAmount': 0, 'paymentAmount': 0, 'oriTID': None, 'buyerAccountID': None, 'LogoUrl': None, 'open_id': None, 'respondText': 'Error'}}
+2021-08-06 09:29:59,880 INFO _internal.py:113 127.0.0.1 - - [06/Aug/2021 09:29:59] "[37mPOST /payme/SALE HTTP/1.1[0m" 200 -

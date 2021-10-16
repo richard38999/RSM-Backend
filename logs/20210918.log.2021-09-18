@@ -1,0 +1,1873 @@
+2021-09-18 13:22:17,008 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 13:22:17,254 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 13:22:17] "[37mOPTIONS /login HTTP/1.1[0m" 200 -
+2021-09-18 13:22:17,256 DEBUG main.py:40 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 72
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer null
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: null
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 13:22:17,258 DEBUG main.py:41 BODY: b'username=richard&password=6ae199a93c381bf6d5de27491139d3f9&version=1.0.3'
+2021-09-18 13:22:17,284 DEBUG main.py:69 {'meta': {'status': 'SUCCESS', 'msg': 'LOGIN SUCCESS'}, 'data': {'username': 'richard', 'password': '6ae199a93c381bf6d5de27491139d3f9', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g'}}
+2021-09-18 13:22:17,286 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 13:22:17] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-09-18 13:22:17,301 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 13:22:17] "[37mOPTIONS /menus?username=richard HTTP/1.1[0m" 200 -
+2021-09-18 13:22:17,303 DEBUG main.py:101 Host: 127.0.0.1:5000
+Connection: keep-alive
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 13:22:17,309 DEBUG main.py:107 {'meta': {'status': 200, 'msg': 'SUCCESS'}, 'data': [{'id': 101, 'authName': '¤@²M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1011, 'authName': 'Transaction', 'path': '1C_Gateway_Transaction', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1012, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1013, 'authName': 'Batch Process', 'path': '1C_Gateway_BatchProcess', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}]}, {'id': 102, 'authName': '¤G²M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1021, 'authName': 'Transaction', 'path': '2C_Gateway_Transaction', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1022, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1023, 'authName': 'Batch Process', 'path': '2C_Gateway_BatchProcess', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}]}, {'id': 103, 'authName': '»ÈÁpQR Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1031, 'authName': 'Transaction', 'path': 'UnionPayQR_Gateway_Transaction', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1032, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1033, 'authName': 'Batch Process', 'path': 'UnionPayQR_Gateway_BatchProcess', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1034, 'authName': 'Batch_CardNo', 'path': 'UnionPayQR_Gateway_BatchProcess_CardNo', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}]}, {'id': 104, 'authName': 'BoC Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1041, 'authName': 'Transaction', 'path': 'BoC_Gateway_Transaction', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1042, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1043, 'authName': 'Batch Process', 'path': 'BoC_Gateway_BatchProcess', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}]}, {'id': 105, 'authName': 'PayMe Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1051, 'authName': 'Transaction', 'path': 'PayMe_Gateway_Transaction', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1052, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1053, 'authName': 'Batch Process', 'path': 'PayMe_Gateway_BatchProcess', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}]}, {'id': 106, 'authName': 'Uniqlo Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1061, 'authName': 'Transaction', 'path': 'Uniqlo_Gateway_Transaction', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1062, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1063, 'authName': 'Batch Process', 'path': 'Uniqlo_Gateway_BatchProcess', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}]}, {'id': 107, 'authName': 'VMP Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1071, 'authName': 'Transaction', 'path': 'VMP_Gateway_Transaction', 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}, {'id': 1072, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}]}, {'id': 108, 'authName': 'EOPG Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1081, 'authName': 'Transaction', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}, {'id': 1082, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}]}, {'id': 109, 'authName': 'A8 Terminal Tools', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1091, 'authName': 'Password', 'path': 'A8_Password', 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}, {'id': 1092, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}]}, {'id': 110, 'authName': 'Octopus', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1101, 'authName': 'Report', 'path': 'Octopus_Report', 'level': 2, 'parent_id': 110, 'icon': None, 'children': []}]}, {'id': 111, 'authName': 'Admin', 'path': '', 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1201, 'authName': 'User', 'path': 'User', 'level': 2, 'parent_id': 111, 'icon': None, 'children': []}]}]}
+2021-09-18 13:22:17,311 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 13:22:17] "[37mGET /menus?username=richard HTTP/1.1[0m" 200 -
+2021-09-18 13:25:25,735 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 13:25:25] "[31m[1mGET /2C/BatchForRefund/Upload HTTP/1.1[0m" 405 -
+2021-09-18 13:25:25,851 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 13:25:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-09-18 14:02:32,815 INFO _internal.py:113 167.94.138.59 - - [18/Sep/2021 14:02:32] "[33mGET / HTTP/1.1[0m" 404 -
+2021-09-18 14:02:33,224 INFO _internal.py:113 167.94.138.59 - - [18/Sep/2021 14:02:33] "[33mGET / HTTP/1.1[0m" 404 -
+2021-09-18 15:49:25,713 INFO _internal.py:113 104.140.188.18 - - [18/Sep/2021 15:49:25] "[33mGET / HTTP/1.0[0m" 404 -
+2021-09-18 16:19:26,224 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 16:19:26] "[37mOPTIONS /menus?username=richard HTTP/1.1[0m" 200 -
+2021-09-18 16:19:26,227 DEBUG main.py:101 Host: 127.0.0.1:5000
+Connection: keep-alive
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 16:19:26,229 DEBUG main.py:107 {'meta': {'status': 200, 'msg': 'SUCCESS'}, 'data': [{'id': 101, 'authName': '¤@²M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1011, 'authName': 'Transaction', 'path': '1C_Gateway_Transaction', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1012, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1013, 'authName': 'Batch Process', 'path': '1C_Gateway_BatchProcess', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}]}, {'id': 102, 'authName': '¤G²M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1021, 'authName': 'Transaction', 'path': '2C_Gateway_Transaction', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1022, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1023, 'authName': 'Batch Process', 'path': '2C_Gateway_BatchProcess', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}]}, {'id': 103, 'authName': '»ÈÁpQR Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1031, 'authName': 'Transaction', 'path': 'UnionPayQR_Gateway_Transaction', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1032, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1033, 'authName': 'Batch Process', 'path': 'UnionPayQR_Gateway_BatchProcess', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1034, 'authName': 'Batch_CardNo', 'path': 'UnionPayQR_Gateway_BatchProcess_CardNo', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}]}, {'id': 104, 'authName': 'BoC Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1041, 'authName': 'Transaction', 'path': 'BoC_Gateway_Transaction', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1042, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1043, 'authName': 'Batch Process', 'path': 'BoC_Gateway_BatchProcess', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}]}, {'id': 105, 'authName': 'PayMe Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1051, 'authName': 'Transaction', 'path': 'PayMe_Gateway_Transaction', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1052, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1053, 'authName': 'Batch Process', 'path': 'PayMe_Gateway_BatchProcess', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}]}, {'id': 106, 'authName': 'Uniqlo Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1061, 'authName': 'Transaction', 'path': 'Uniqlo_Gateway_Transaction', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1062, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1063, 'authName': 'Batch Process', 'path': 'Uniqlo_Gateway_BatchProcess', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}]}, {'id': 107, 'authName': 'VMP Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1071, 'authName': 'Transaction', 'path': 'VMP_Gateway_Transaction', 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}, {'id': 1072, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}]}, {'id': 108, 'authName': 'EOPG Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1081, 'authName': 'Transaction', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}, {'id': 1082, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}]}, {'id': 109, 'authName': 'A8 Terminal Tools', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1091, 'authName': 'Password', 'path': 'A8_Password', 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}, {'id': 1092, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}]}, {'id': 110, 'authName': 'Octopus', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1101, 'authName': 'Report', 'path': 'Octopus_Report', 'level': 2, 'parent_id': 110, 'icon': None, 'children': []}]}, {'id': 111, 'authName': 'Admin', 'path': '', 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1201, 'authName': 'User', 'path': 'User', 'level': 2, 'parent_id': 111, 'icon': None, 'children': []}]}]}
+2021-09-18 16:19:26,230 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 16:19:26] "[37mGET /menus?username=richard HTTP/1.1[0m" 200 -
+2021-09-18 17:19:33,543 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 17:32:23,378 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 17:32:23] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 17:32:31,103 DEBUG main.py:544 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 17:32:32,743 DEBUG main.py:545 BODY: b'SPID=ABC123&DateFrom=20210909&DateTo=20210923'
+2021-09-18 20:32:19,449 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 20:32:29,410 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 20:32:29] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 20:32:29,414 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 20:32:29,414 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 20:32:29,415 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM Package/RSM Package/pythonProject/main.py", line 554, in Octopus_Report
+    Octopus.Download_SPID(SPID, DateFrom, DateTo)
+TypeError: Download_SPID() takes no arguments
+2021-09-18 20:32:29,441 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 20:32:29] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 20:34:28,263 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 20:34:30,560 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 20:34:30] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 20:34:30,564 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 20:34:30,564 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 20:34:46,091 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM Package/RSM Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\Octopus.py", line 11, in Download_SPID
+    for i in range(date_DateTo - date_DateFrom + 1):
+TypeError: unsupported operand type(s) for +: 'datetime.timedelta' and 'int'
+2021-09-18 20:34:46,107 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 20:34:46] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 20:35:49,263 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 20:35:52,200 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 20:35:52] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 20:35:52,204 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 20:35:52,205 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 20:35:55,965 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM Package/RSM Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\Octopus.py", line 11, in Download_SPID
+    for i in range((date_DateTo - date_DateFrom) + 1):
+TypeError: unsupported operand type(s) for +: 'datetime.timedelta' and 'int'
+2021-09-18 20:35:55,982 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 20:35:55] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 21:15:22,624 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:15:22] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 21:15:22,627 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 21:15:22,628 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 21:15:40,216 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM Package/RSM Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\Octopus.py", line 11, in Download_SPID
+    for i in range(int(date_DateTo - date_DateFrom) + 1):
+TypeError: unsupported operand type(s) for +: 'datetime.timedelta' and 'int'
+2021-09-18 21:15:40,224 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:15:40] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 21:17:01,019 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:17:01] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 21:17:01,023 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 21:17:01,023 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 21:17:04,440 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM Package/RSM Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\Octopus.py", line 11, in Download_SPID
+    for i in range(int(date_DateTo - date_DateFrom) + 1):
+TypeError: unsupported operand type(s) for +: 'datetime.timedelta' and 'int'
+2021-09-18 21:17:04,448 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:17:04] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 21:17:29,626 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:17:29] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 21:17:29,629 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 21:17:29,629 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 21:17:29,631 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM Package/RSM Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\Octopus.py", line 11, in Download_SPID
+    print(date_DateTo - date_DateFrom)
+TypeError: unsupported operand type(s) for +: 'datetime.timedelta' and 'int'
+2021-09-18 21:17:29,632 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:17:29] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 21:19:13,647 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 21:19:16,829 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:19:16] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 21:19:16,833 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 21:19:16,833 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 21:19:16,838 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM Package/RSM Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\Octopus.py", line 9, in Download_SPID
+    date_DateFrom = datetime.datetime.strptime(str_DateFrom, '%Y-%m-%d %H:%M:%S')
+  File "C:\Users\richard\AppData\Local\Programs\Python\Python37\lib\_strptime.py", line 577, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Users\richard\AppData\Local\Programs\Python\Python37\lib\_strptime.py", line 359, in _strptime
+    (data_string, format))
+ValueError: time data '20210901' does not match format '%Y-%m-%d %H:%M:%S'
+2021-09-18 21:19:16,848 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:19:16] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 21:19:31,629 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 21:19:33,102 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:19:33] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 21:19:33,106 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 21:19:33,107 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 21:19:33,113 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM Package/RSM Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\Octopus.py", line 9, in Download_SPID
+    date_DateFrom = datetime.datetime.strptime(str_DateFrom, '%Y-%m-%d')
+  File "C:\Users\richard\AppData\Local\Programs\Python\Python37\lib\_strptime.py", line 577, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Users\richard\AppData\Local\Programs\Python\Python37\lib\_strptime.py", line 359, in _strptime
+    (data_string, format))
+ValueError: time data '20210901' does not match format '%Y-%m-%d'
+2021-09-18 21:19:33,116 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:19:33] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 21:19:47,414 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 21:19:49,192 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:19:49] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 21:19:49,196 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 21:19:49,197 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 21:19:49,203 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM Package/RSM Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\Octopus.py", line 10, in Download_SPID
+    date_DateTo = datetime.datetime.strptime(str_DateTo, '%Y%m%d %H:%M:%S')
+  File "C:\Users\richard\AppData\Local\Programs\Python\Python37\lib\_strptime.py", line 577, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+  File "C:\Users\richard\AppData\Local\Programs\Python\Python37\lib\_strptime.py", line 359, in _strptime
+    (data_string, format))
+ValueError: time data '20210902' does not match format '%Y%m%d %H:%M:%S'
+2021-09-18 21:19:49,206 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:19:49] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 21:20:00,746 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 21:20:02,396 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:20:02] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 21:20:02,399 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 21:20:02,400 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 21:22:28,867 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 21:22:32,027 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:22:32] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 21:22:32,031 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 21:22:32,032 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 21:22:32,037 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM Package/RSM Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\Octopus.py", line 13, in Download_SPID
+    print(time.strftime("%Y%m%d", date_DateFrom))
+TypeError: Tuple or struct_time argument required
+2021-09-18 21:22:32,040 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:22:32] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 21:24:55,003 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 21:24:57,886 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:24:57] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 21:24:57,889 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 21:24:57,890 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 21:26:55,975 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 21:27:00,772 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:27:00] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 21:27:00,776 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 21:27:00,776 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 21:27:47,925 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM Package/RSM Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\Octopus.py", line 17, in Download_SPID
+    for i in range():
+TypeError: range expected 1 arguments, got 0
+2021-09-18 21:27:47,941 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:27:47] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 21:28:32,748 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 21:28:35,811 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:28:35] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 21:28:35,815 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 21:28:35,815 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 21:29:57,255 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 21:30:01,867 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:30:01] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 21:30:01,872 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 21:30:01,872 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 21:52:19,193 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 21:52:24,615 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:52:24] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 21:52:24,620 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 21:52:24,620 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 21:52:28,038 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM Package/RSM Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\Octopus.py", line 19, in Download_SPID
+    if not os.path.exists(currentlyPath + '/Octopus/Parsefiles' + (date_DateFrom + datetime.timedelta(days=+i))):
+TypeError: can only concatenate str (not "datetime.datetime") to str
+2021-09-18 21:52:28,055 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:52:28] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 21:52:54,636 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 21:52:55,939 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:52:55] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 21:52:55,944 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 21:52:55,944 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 21:54:49,997 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 21:54:52,036 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:54:52] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 21:54:52,041 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 21:54:52,042 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 21:57:27,723 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 21:57:31,245 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:57:31] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 21:57:31,250 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 21:57:31,250 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 21:57:34,606 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM Package/RSM Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM Package\RSM Package\pythonProject\Octopus.py", line 18, in Download_SPID
+    print(currentlyPath + '/Octopus/Parsefiles' + '/' + (date_DateFrom + datetime.timedelta(days=+i)))
+TypeError: can only concatenate str (not "datetime.datetime") to str
+2021-09-18 21:57:34,622 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:57:34] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 21:59:04,736 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 21:59:05,891 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 21:59:05] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 21:59:05,894 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 21:59:05,895 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 22:01:59,586 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 22:02:01,492 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 22:02:01] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 22:02:01,495 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 22:02:01,496 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 22:02:26,596 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 22:02:31,115 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 22:02:31] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 22:02:31,120 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 22:02:31,120 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 22:03:55,375 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 22:03:59,541 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 22:03:59] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 22:03:59,545 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 22:03:59,546 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 22:06:15,674 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 22:06:17,926 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 22:06:17] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 22:06:17,930 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 22:06:17,930 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 22:10:19,699 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 22:10:23,868 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 22:10:23] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 22:10:23,872 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 22:10:23,873 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 22:14:15,262 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 22:14:17,009 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 22:14:17] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 22:14:17,012 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 45
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 22:14:17,013 DEBUG main.py:546 BODY: b'SPID=ABC123&DateFrom=20210901&DateTo=20210902'
+2021-09-18 22:15:29,699 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 22:15:30,739 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 22:15:30] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 22:15:30,742 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 44
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 22:15:30,743 DEBUG main.py:546 BODY: b'SPID=36001&DateFrom=20210901&DateTo=20210902'
+2021-09-18 22:41:17,824 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 22:41:19,000 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 22:41:19] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 22:41:19,002 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 44
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NDI1MzcsIm5iZiI6MTYzMTk0MjUzNywianRpIjoiMDA4M2MzOGYtNTA3OC00NmRhLThkMTEtZTBkOTdmMWQzODRjIiwiZXhwIjoxNjMxOTg1NzM3LCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.UmgoUXJEd0iBKrFklxgikEUdGAw7OlAv9w-v8lQwV1g
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 22:41:19,003 DEBUG main.py:546 BODY: b'SPID=36001&DateFrom=20210901&DateTo=20210902'
+2021-09-18 22:46:56,311 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 22:47:27,380 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 22:47:30,896 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 22:47:30] "[37mOPTIONS /login HTTP/1.1[0m" 200 -
+2021-09-18 22:47:30,900 DEBUG main.py:41 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 72
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer null
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: null
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 22:47:30,900 DEBUG main.py:42 BODY: b'username=richard&password=6ae199a93c381bf6d5de27491139d3f9&version=1.0.3'
+2021-09-18 22:47:30,915 DEBUG main.py:70 {'meta': {'status': 'SUCCESS', 'msg': 'LOGIN SUCCESS'}, 'data': {'username': 'richard', 'password': '6ae199a93c381bf6d5de27491139d3f9', 'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NzY0NTAsIm5iZiI6MTYzMTk3NjQ1MCwianRpIjoiOGM1Y2FlOWUtYjgzOC00NzNjLWFiNWEtZDYzZGM4OGZkZWEwIiwiZXhwIjoxNjMyMDE5NjUwLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.HyP3L3MCXxjQwG5qyMg5pZ4BRvML2h27jELCLPs48xg'}}
+2021-09-18 22:47:30,916 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 22:47:30] "[37mPOST /login HTTP/1.1[0m" 200 -
+2021-09-18 22:47:30,933 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 22:47:30] "[37mOPTIONS /menus?username=richard HTTP/1.1[0m" 200 -
+2021-09-18 22:47:30,935 DEBUG main.py:102 Host: 127.0.0.1:5000
+Connection: keep-alive
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NzY0NTAsIm5iZiI6MTYzMTk3NjQ1MCwianRpIjoiOGM1Y2FlOWUtYjgzOC00NzNjLWFiNWEtZDYzZGM4OGZkZWEwIiwiZXhwIjoxNjMyMDE5NjUwLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.HyP3L3MCXxjQwG5qyMg5pZ4BRvML2h27jELCLPs48xg
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 22:47:30,943 DEBUG main.py:108 {'meta': {'status': 200, 'msg': 'SUCCESS'}, 'data': [{'id': 101, 'authName': '¤@²M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1011, 'authName': 'Transaction', 'path': '1C_Gateway_Transaction', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1012, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}, {'id': 1013, 'authName': 'Batch Process', 'path': '1C_Gateway_BatchProcess', 'level': 2, 'parent_id': 101, 'icon': None, 'children': []}]}, {'id': 102, 'authName': '¤G²M Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1021, 'authName': 'Transaction', 'path': '2C_Gateway_Transaction', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1022, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}, {'id': 1023, 'authName': 'Batch Process', 'path': '2C_Gateway_BatchProcess', 'level': 2, 'parent_id': 102, 'icon': None, 'children': []}]}, {'id': 103, 'authName': '»ÈÁpQR Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1031, 'authName': 'Transaction', 'path': 'UnionPayQR_Gateway_Transaction', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1032, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1033, 'authName': 'Batch Process', 'path': 'UnionPayQR_Gateway_BatchProcess', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}, {'id': 1034, 'authName': 'Batch_CardNo', 'path': 'UnionPayQR_Gateway_BatchProcess_CardNo', 'level': 2, 'parent_id': 103, 'icon': None, 'children': []}]}, {'id': 104, 'authName': 'BoC Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1041, 'authName': 'Transaction', 'path': 'BoC_Gateway_Transaction', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1042, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}, {'id': 1043, 'authName': 'Batch Process', 'path': 'BoC_Gateway_BatchProcess', 'level': 2, 'parent_id': 104, 'icon': None, 'children': []}]}, {'id': 105, 'authName': 'PayMe Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1051, 'authName': 'Transaction', 'path': 'PayMe_Gateway_Transaction', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1052, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}, {'id': 1053, 'authName': 'Batch Process', 'path': 'PayMe_Gateway_BatchProcess', 'level': 2, 'parent_id': 105, 'icon': None, 'children': []}]}, {'id': 106, 'authName': 'Uniqlo Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1061, 'authName': 'Transaction', 'path': 'Uniqlo_Gateway_Transaction', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1062, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}, {'id': 1063, 'authName': 'Batch Process', 'path': 'Uniqlo_Gateway_BatchProcess', 'level': 2, 'parent_id': 106, 'icon': None, 'children': []}]}, {'id': 107, 'authName': 'VMP Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1071, 'authName': 'Transaction', 'path': 'VMP_Gateway_Transaction', 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}, {'id': 1072, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 107, 'icon': None, 'children': []}]}, {'id': 108, 'authName': 'EOPG Gateway', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1081, 'authName': 'Transaction', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}, {'id': 1082, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 108, 'icon': None, 'children': []}]}, {'id': 109, 'authName': 'A8 Terminal Tools', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1091, 'authName': 'Password', 'path': 'A8_Password', 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}, {'id': 1092, 'authName': 'Report', 'path': None, 'level': 2, 'parent_id': 109, 'icon': None, 'children': []}]}, {'id': 110, 'authName': 'Octopus', 'path': None, 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1101, 'authName': 'Report', 'path': 'Octopus_Report', 'level': 2, 'parent_id': 110, 'icon': None, 'children': []}]}, {'id': 111, 'authName': 'Admin', 'path': '', 'level': 1, 'parent_id': None, 'icon': None, 'children': [{'id': 1201, 'authName': 'User', 'path': 'User', 'level': 2, 'parent_id': 111, 'icon': None, 'children': []}]}]}
+2021-09-18 22:47:30,945 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 22:47:30] "[37mGET /menus?username=richard HTTP/1.1[0m" 200 -
+2021-09-18 22:47:46,871 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 22:47:46] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 22:47:46,875 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 44
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NzY0NTAsIm5iZiI6MTYzMTk3NjQ1MCwianRpIjoiOGM1Y2FlOWUtYjgzOC00NzNjLWFiNWEtZDYzZGM4OGZkZWEwIiwiZXhwIjoxNjMyMDE5NjUwLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.HyP3L3MCXxjQwG5qyMg5pZ4BRvML2h27jELCLPs48xg
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 22:47:46,875 DEBUG main.py:546 BODY: b'SPID=36001&DateFrom=20210901&DateTo=20210908'
+2021-09-18 22:49:41,766 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 22:49:43,882 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 22:49:43] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 22:49:43,886 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 44
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NzY0NTAsIm5iZiI6MTYzMTk3NjQ1MCwianRpIjoiOGM1Y2FlOWUtYjgzOC00NzNjLWFiNWEtZDYzZGM4OGZkZWEwIiwiZXhwIjoxNjMyMDE5NjUwLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.HyP3L3MCXxjQwG5qyMg5pZ4BRvML2h27jELCLPs48xg
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 22:49:43,886 DEBUG main.py:546 BODY: b'SPID=36001&DateFrom=20210901&DateTo=20210908'
+2021-09-18 22:51:30,729 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 22:51:37,043 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 22:51:37] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 22:51:37,047 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 44
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NzY0NTAsIm5iZiI6MTYzMTk3NjQ1MCwianRpIjoiOGM1Y2FlOWUtYjgzOC00NzNjLWFiNWEtZDYzZGM4OGZkZWEwIiwiZXhwIjoxNjMyMDE5NjUwLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.HyP3L3MCXxjQwG5qyMg5pZ4BRvML2h27jELCLPs48xg
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 22:51:37,048 DEBUG main.py:546 BODY: b'SPID=36001&DateFrom=20210901&DateTo=20210908'
+2021-09-18 23:18:34,009 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 23:18:44,571 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:18:44] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 23:18:44,574 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 44
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NzY0NTAsIm5iZiI6MTYzMTk3NjQ1MCwianRpIjoiOGM1Y2FlOWUtYjgzOC00NzNjLWFiNWEtZDYzZGM4OGZkZWEwIiwiZXhwIjoxNjMyMDE5NjUwLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.HyP3L3MCXxjQwG5qyMg5pZ4BRvML2h27jELCLPs48xg
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 23:18:44,575 DEBUG main.py:546 BODY: b'SPID=36001&DateFrom=20210901&DateTo=20210908'
+2021-09-18 23:18:52,416 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM_Package/RSM_Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\Octopus.py", line 27, in Download_SPID
+    os.mkdir(currentlyPath + '\\Octopus\\' + SPID + '\\' + (date_DateFrom + datetime.timedelta(days=+i)).strftime("%Y%m%d"))
+FileNotFoundError: [WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\36001\\20210901'
+2021-09-18 23:18:52,447 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:18:52] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 23:20:52,592 INFO _internal.py:113 162.142.125.60 - - [18/Sep/2021 23:20:52] "[33mGET / HTTP/1.1[0m" 404 -
+2021-09-18 23:20:52,946 INFO _internal.py:113 162.142.125.60 - - [18/Sep/2021 23:20:52] "[33mGET / HTTP/1.1[0m" 404 -
+2021-09-18 23:21:38,151 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 23:21:42,650 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:21:42] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 23:21:42,653 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 44
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NzY0NTAsIm5iZiI6MTYzMTk3NjQ1MCwianRpIjoiOGM1Y2FlOWUtYjgzOC00NzNjLWFiNWEtZDYzZGM4OGZkZWEwIiwiZXhwIjoxNjMyMDE5NjUwLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.HyP3L3MCXxjQwG5qyMg5pZ4BRvML2h27jELCLPs48xg
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 23:21:42,654 DEBUG main.py:546 BODY: b'SPID=36001&DateFrom=20210901&DateTo=20210908'
+2021-09-18 23:21:57,688 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM_Package/RSM_Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\Octopus.py", line 33, in Download_SPID
+    shutil.copyfile(origin_path, new_file_name)
+  File "C:\Users\richard\AppData\Local\Programs\Python\Python37\lib\shutil.py", line 121, in copyfile
+    with open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\20210901\\36001.051'
+2021-09-18 23:21:57,707 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:21:57] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 23:25:41,510 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 23:25:45,751 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:25:45] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 23:25:45,755 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 44
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NzY0NTAsIm5iZiI6MTYzMTk3NjQ1MCwianRpIjoiOGM1Y2FlOWUtYjgzOC00NzNjLWFiNWEtZDYzZGM4OGZkZWEwIiwiZXhwIjoxNjMyMDE5NjUwLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.HyP3L3MCXxjQwG5qyMg5pZ4BRvML2h27jELCLPs48xg
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 23:25:45,756 DEBUG main.py:546 BODY: b'SPID=36001&DateFrom=20210901&DateTo=20210908'
+2021-09-18 23:25:50,798 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM_Package/RSM_Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\Octopus.py", line 33, in Download_SPID
+    shutil.copyfile(origin_path, new_file_name)
+  File "C:\Users\richard\AppData\Local\Programs\Python\Python37\lib\shutil.py", line 121, in copyfile
+    with open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\20210901\\36001.051'
+2021-09-18 23:25:50,809 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:25:50] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 23:29:17,632 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 23:29:18,448 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:29:18] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 23:29:18,451 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 44
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NzY0NTAsIm5iZiI6MTYzMTk3NjQ1MCwianRpIjoiOGM1Y2FlOWUtYjgzOC00NzNjLWFiNWEtZDYzZGM4OGZkZWEwIiwiZXhwIjoxNjMyMDE5NjUwLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.HyP3L3MCXxjQwG5qyMg5pZ4BRvML2h27jELCLPs48xg
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 23:29:18,452 DEBUG main.py:546 BODY: b'SPID=36001&DateFrom=20210901&DateTo=20210908'
+2021-09-18 23:29:26,901 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM_Package/RSM_Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\Octopus.py", line 33, in Download_SPID
+    shutil.copyfile(origin_path, new_file_name)
+  File "C:\Users\richard\AppData\Local\Programs\Python\Python37\lib\shutil.py", line 121, in copyfile
+    with open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\SPID\\20210901\\36001.051'
+2021-09-18 23:29:26,913 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:29:26] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 23:31:09,476 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 23:31:12,999 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:31:12] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 23:31:13,002 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 44
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NzY0NTAsIm5iZiI6MTYzMTk3NjQ1MCwianRpIjoiOGM1Y2FlOWUtYjgzOC00NzNjLWFiNWEtZDYzZGM4OGZkZWEwIiwiZXhwIjoxNjMyMDE5NjUwLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.HyP3L3MCXxjQwG5qyMg5pZ4BRvML2h27jELCLPs48xg
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 23:31:13,003 DEBUG main.py:546 BODY: b'SPID=36001&DateFrom=20210901&DateTo=20210908'
+2021-09-18 23:31:19,605 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM_Package/RSM_Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\Octopus.py", line 33, in Download_SPID
+    shutil.copyfile(origin_path, new_file_name)
+  File "C:\Users\richard\AppData\Local\Programs\Python\Python37\lib\shutil.py", line 121, in copyfile
+    with open(dst, 'wb') as fdst:
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\SPID\\20210901'
+2021-09-18 23:31:19,616 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:31:19] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 23:32:18,042 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 23:32:19,805 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:32:19] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 23:32:19,808 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 44
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NzY0NTAsIm5iZiI6MTYzMTk3NjQ1MCwianRpIjoiOGM1Y2FlOWUtYjgzOC00NzNjLWFiNWEtZDYzZGM4OGZkZWEwIiwiZXhwIjoxNjMyMDE5NjUwLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.HyP3L3MCXxjQwG5qyMg5pZ4BRvML2h27jELCLPs48xg
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 23:32:19,809 DEBUG main.py:546 BODY: b'SPID=36001&DateFrom=20210901&DateTo=20210908'
+2021-09-18 23:33:51,174 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 23:33:52,468 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:33:52] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 23:33:52,473 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 44
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NzY0NTAsIm5iZiI6MTYzMTk3NjQ1MCwianRpIjoiOGM1Y2FlOWUtYjgzOC00NzNjLWFiNWEtZDYzZGM4OGZkZWEwIiwiZXhwIjoxNjMyMDE5NjUwLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.HyP3L3MCXxjQwG5qyMg5pZ4BRvML2h27jELCLPs48xg
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 23:33:52,473 DEBUG main.py:546 BODY: b'SPID=36001&DateFrom=20210901&DateTo=20210908'
+2021-09-18 23:33:52,489 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM_Package/RSM_Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\Octopus.py", line 46, in Download_SPID
+    print((date_DateTo - date_DateFrom) + 1)
+TypeError: unsupported operand type(s) for +: 'datetime.timedelta' and 'int'
+2021-09-18 23:33:52,492 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:33:52] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 23:34:58,541 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 23:35:04,167 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:35:04] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 23:35:04,171 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 44
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NzY0NTAsIm5iZiI6MTYzMTk3NjQ1MCwianRpIjoiOGM1Y2FlOWUtYjgzOC00NzNjLWFiNWEtZDYzZGM4OGZkZWEwIiwiZXhwIjoxNjMyMDE5NjUwLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.HyP3L3MCXxjQwG5qyMg5pZ4BRvML2h27jELCLPs48xg
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 23:35:04,172 DEBUG main.py:546 BODY: b'SPID=36001&DateFrom=20210901&DateTo=20210908'
+2021-09-18 23:47:38,357 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 23:47:56,854 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 23:47:58,740 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:47:58] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 23:47:58,744 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 44
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NzY0NTAsIm5iZiI6MTYzMTk3NjQ1MCwianRpIjoiOGM1Y2FlOWUtYjgzOC00NzNjLWFiNWEtZDYzZGM4OGZkZWEwIiwiZXhwIjoxNjMyMDE5NjUwLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.HyP3L3MCXxjQwG5qyMg5pZ4BRvML2h27jELCLPs48xg
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 23:47:58,744 DEBUG main.py:546 BODY: b'SPID=36001&DateFrom=20210901&DateTo=20210903'
+2021-09-18 23:47:58,751 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM_Package/RSM_Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\Octopus.py", line 30, in Download_SPID
+    os.mkdir(currentlyPath + '\\Octopus\\Merchant_Report\\' + SPID + '\\' + (date_DateFrom + datetime.timedelta(days=+i)).strftime("%Y%m%d"))
+FileNotFoundError: [WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\36001\\20210901'
+2021-09-18 23:47:58,754 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:47:58] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 23:50:00,940 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:50:00] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 23:50:00,943 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 44
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NzY0NTAsIm5iZiI6MTYzMTk3NjQ1MCwianRpIjoiOGM1Y2FlOWUtYjgzOC00NzNjLWFiNWEtZDYzZGM4OGZkZWEwIiwiZXhwIjoxNjMyMDE5NjUwLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.HyP3L3MCXxjQwG5qyMg5pZ4BRvML2h27jELCLPs48xg
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 23:50:00,943 DEBUG main.py:546 BODY: b'SPID=36001&DateFrom=20210901&DateTo=20210903'
+2021-09-18 23:50:00,945 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM_Package/RSM_Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\Octopus.py", line 30, in Download_SPID
+    os.mkdir(currentlyPath + '\\Octopus\\Merchant_Report\\' + SPID)
+FileNotFoundError: [WinError 3] ¨t²Î§ä¤£¨ì«ü©wªº¸ô®|¡C: 'C:\\Users\\richard\\Desktop\\RSM_Package\\RSM_Package\\pythonProject\\Octopus\\Merchant_Report\\36001\\20210901'
+2021-09-18 23:50:00,947 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:50:00] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 23:51:39,049 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 23:51:42,447 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:51:42] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 23:51:42,451 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 44
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NzY0NTAsIm5iZiI6MTYzMTk3NjQ1MCwianRpIjoiOGM1Y2FlOWUtYjgzOC00NzNjLWFiNWEtZDYzZGM4OGZkZWEwIiwiZXhwIjoxNjMyMDE5NjUwLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.HyP3L3MCXxjQwG5qyMg5pZ4BRvML2h27jELCLPs48xg
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 23:51:42,452 DEBUG main.py:546 BODY: b'SPID=36001&DateFrom=20210901&DateTo=20210903'
+2021-09-18 23:51:42,461 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM_Package/RSM_Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\Octopus.py", line 50, in Download_SPID
+    "%Y%m%d"))
+TypeError: zip_dir() missing 1 required positional argument: 'path'
+2021-09-18 23:51:42,464 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:51:42] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 23:52:12,275 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:52:12] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 23:52:12,279 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 44
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NzY0NTAsIm5iZiI6MTYzMTk3NjQ1MCwianRpIjoiOGM1Y2FlOWUtYjgzOC00NzNjLWFiNWEtZDYzZGM4OGZkZWEwIiwiZXhwIjoxNjMyMDE5NjUwLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.HyP3L3MCXxjQwG5qyMg5pZ4BRvML2h27jELCLPs48xg
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 23:52:12,279 DEBUG main.py:546 BODY: b'SPID=36001&DateFrom=20210901&DateTo=20210903'
+2021-09-18 23:52:12,283 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM_Package/RSM_Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\Octopus.py", line 50, in Download_SPID
+    "%Y%m%d"))
+TypeError: zip_dir() missing 1 required positional argument: 'path'
+2021-09-18 23:52:12,285 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:52:12] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 23:52:55,304 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 23:52:56,198 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:52:56] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 23:52:56,202 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 44
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NzY0NTAsIm5iZiI6MTYzMTk3NjQ1MCwianRpIjoiOGM1Y2FlOWUtYjgzOC00NzNjLWFiNWEtZDYzZGM4OGZkZWEwIiwiZXhwIjoxNjMyMDE5NjUwLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.HyP3L3MCXxjQwG5qyMg5pZ4BRvML2h27jELCLPs48xg
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 23:52:56,202 DEBUG main.py:546 BODY: b'SPID=36001&DateFrom=20210901&DateTo=20210903'
+2021-09-18 23:55:15,711 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 23:55:18,044 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:55:18] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 23:55:18,047 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 44
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NzY0NTAsIm5iZiI6MTYzMTk3NjQ1MCwianRpIjoiOGM1Y2FlOWUtYjgzOC00NzNjLWFiNWEtZDYzZGM4OGZkZWEwIiwiZXhwIjoxNjMyMDE5NjUwLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.HyP3L3MCXxjQwG5qyMg5pZ4BRvML2h27jELCLPs48xg
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 23:55:18,048 DEBUG main.py:546 BODY: b'SPID=36001&DateFrom=20210901&DateTo=20210903'
+2021-09-18 23:57:10,005 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 23:57:12,597 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:57:12] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 23:57:12,600 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 44
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NzY0NTAsIm5iZiI6MTYzMTk3NjQ1MCwianRpIjoiOGM1Y2FlOWUtYjgzOC00NzNjLWFiNWEtZDYzZGM4OGZkZWEwIiwiZXhwIjoxNjMyMDE5NjUwLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.HyP3L3MCXxjQwG5qyMg5pZ4BRvML2h27jELCLPs48xg
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 23:57:12,601 DEBUG main.py:546 BODY: b'SPID=36001&DateFrom=20210901&DateTo=20210903'
+2021-09-18 23:57:17,847 ERROR app.py:1892 Exception on /Octopus/Report/Download_SPID [POST]
+Traceback (most recent call last):
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\venv\lib\site-packages\flask_jwt_extended\view_decorators.py", line 108, in wrapper
+    return fn(*args, **kwargs)
+  File "C:/Users/richard/Desktop/RSM_Package/RSM_Package/pythonProject/main.py", line 555, in Octopus_Report
+    testing = temp.Download_SPID(SPID, DateFrom, DateTo)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\Octopus.py", line 49, in Download_SPID
+    zip_dir(currentlyPath + '\\Octopus\\Merchant_Report\\' + SPID)
+  File "C:\Users\richard\Desktop\RSM_Package\RSM_Package\pythonProject\Octopus.py", line 60, in zip_dir
+    zf.write(os.path.join(file_name))
+  File "C:\Users\richard\AppData\Local\Programs\Python\Python37\lib\zipfile.py", line 1688, in write
+    zinfo = ZipInfo.from_file(filename, arcname)
+  File "C:\Users\richard\AppData\Local\Programs\Python\Python37\lib\zipfile.py", line 483, in from_file
+    st = os.stat(filename)
+FileNotFoundError: [WinError 2] ¨t²Î§ä¤£¨ì«ü©wªºÀÉ®×¡C: '36001.051'
+2021-09-18 23:57:17,866 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:57:17] "[35m[1mPOST /Octopus/Report/Download_SPID HTTP/1.1[0m" 500 -
+2021-09-18 23:59:54,432 INFO _internal.py:113  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2021-09-18 23:59:57,698 INFO _internal.py:113 127.0.0.1 - - [18/Sep/2021 23:59:57] "[37mOPTIONS /Octopus/Report/Download_SPID HTTP/1.1[0m" 200 -
+2021-09-18 23:59:57,702 DEBUG main.py:545 Host: 127.0.0.1:5000
+Connection: keep-alive
+Content-Length: 44
+Sec-Ch-Ua: "Google Chrome";v="93", " Not;A Brand";v="99", "Chromium";v="93"
+Sec-Ch-Ua-Mobile: ?0
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MzE5NzY0NTAsIm5iZiI6MTYzMTk3NjQ1MCwianRpIjoiOGM1Y2FlOWUtYjgzOC00NzNjLWFiNWEtZDYzZGM4OGZkZWEwIiwiZXhwIjoxNjMyMDE5NjUwLCJpZGVudGl0eSI6InJpY2hhcmQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.HyP3L3MCXxjQwG5qyMg5pZ4BRvML2h27jELCLPs48xg
+Content-Type: application/x-www-form-urlencoded
+Accept: application/json, text/plain, */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Safari/537.36
+Contenttype: application/x-www-form-urlencoded
+Usermane: richard
+Sec-Ch-Ua-Platform: "Windows"
+Origin: http://localhost:8080
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://localhost:8080/
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7
+
+
+2021-09-18 23:59:57,702 DEBUG main.py:546 BODY: b'SPID=36001&DateFrom=20210901&DateTo=20210903'
