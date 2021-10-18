@@ -52,7 +52,7 @@ def get_Merchant_Info():
 def get_Email_info():
     conn = sqlite3.connect(db_name)
     cursor = conn.cursor()
-    cursor.execute('select * FROM Emailinfo;')
+    cursor.execute('select * FROM Email_info;')
     values = cursor.fetchall()
     #print(values)
     cursor.close()
@@ -82,6 +82,17 @@ def get_Alert_Email():
     conn.close()
     sftp_info = values
     return sftp_info
+
+def get_A8_PW_Email():
+    conn = sqlite3.connect(db_name)
+    cursor = conn.cursor()
+    cursor.execute('select * FROM A8_PW_Email;')
+    values = cursor.fetchall()
+    # print(values)
+    cursor.close()
+    conn.close()
+    A8_PW_Email = values
+    return A8_PW_Email
 
 class Config():
     FrontEndVersion = ''

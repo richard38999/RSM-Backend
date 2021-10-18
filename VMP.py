@@ -23,6 +23,7 @@ class EOPG_Request():
     tid = None # Mandatory=N, Sign=N
     wallet = None # Mandatory=N, Sign=N
     wechatWeb = None # Mandatory=Y, Sign=Y
+    balance_ignore = None
     pass
 
 class EOPG_Response():
@@ -91,6 +92,10 @@ class VMP_Request():
     detail = None
     refund_desc = None
     sign = None
+    billingAddress = None
+    items = None
+    shippingAddress = None
+    customerInfo = None
     pass
 class detail():
     cost_price = None
@@ -169,7 +174,7 @@ class Spiral_Response():
 def packSignStr(obj, secretcode):
     retuenStr = secretcode
     for name, value in vars(obj).items():
-        if value != None and value != '':
+        if value != None:
             # print('%s=%s' % (name, value))
             retuenStr += '%s=%s&' % (name, value)
     retuenStr = retuenStr[:(len(retuenStr) - 1)]

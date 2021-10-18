@@ -656,6 +656,11 @@ def VMP_Transaction(TransactionType):
     refund_reason = request.json.get('refund_reason')
     APIType = request.json.get('APIType')
     GatewayType = request.json.get('GatewayType')
+    app_pay = request.json.get('app_pay')
+    customerInfo = request.json.get('customerInfo')
+    shippingAddress = request.json.get('shippingAddress')
+    billingAddress = request.json.get('billingAddress')
+    items = request.json.get('items')
     iRet = -1
     meta = {}
     data = {}
@@ -665,6 +670,7 @@ def VMP_Transaction(TransactionType):
     errormessage = ''
     EOPG_req = None
     VMP_req = None
+    JSONMessage = None
     if APIType == 'EOPG': #EOPG 接口
         if str(TransactionType).upper() == 'SALE':
             URL += '/VMP/eopg/ForexTradeRecetion'
@@ -675,18 +681,19 @@ def VMP_Transaction(TransactionType):
             EOPG_req.payment_type = PaymentType
             EOPG_req.service = service
             EOPG_req.trans_amount = amount
+            EOPG_req.wechatWeb = wechatWeb
             signStr = VMP.packSignStr(EOPG_req,SecretCode)
             current_app.logger.debug(signStr)
             EOPG_req.signature = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
+            EOPG_req.app_pay = app_pay
             EOPG_req.return_url = return_url
             EOPG_req.goods_subject = subject
             EOPG_req.goods_body = body
             EOPG_req.notify_url = notify_url
             EOPG_req.wallet = wallet
-            EOPG_req.wechatWeb = wechatWeb
             EOPG_req.tid = tid
             EOPG_req.active_time = active_time
-            EOPG_req.api_version = '2.9.5'
+            EOPG_req.api_version = '2.9'
             EOPG_req.lang = lang
             EOPG_req.reuse = reuse
             RawRequest = VMP.packGetMsg(EOPG_req, URL)
@@ -698,15 +705,16 @@ def VMP_Transaction(TransactionType):
             EOPG_req.payment_type = PaymentType
             EOPG_req.refund_amount = amount
             EOPG_req.refund_reason = refund_reason
-            EOPG_req.return_url = return_url
+            EOPG_req.return_url = ''
             EOPG_req.service = service
             EOPG_req.trans_amount = amount
             signStr = VMP.packSignStr(EOPG_req, SecretCode)
             current_app.logger.debug(signStr)
             EOPG_req.signature = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             EOPG_req.merch_refund_id = refund_no
-            EOPG_req.api_version = '2.9.5'
+            EOPG_req.api_version = '2.9'
             EOPG_req.redirect = redirect
+            EOPG_req.balance_ignore = 'N'
             RawRequest = VMP.packGetMsg(EOPG_req, URL)
             # teustubg
         elif str(TransactionType).upper() == 'QUERY':
@@ -719,7 +727,7 @@ def VMP_Transaction(TransactionType):
             signStr = VMP.packSignStr(EOPG_req, SecretCode)
             current_app.logger.debug(signStr)
             EOPG_req.signature = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-            EOPG_req.api_version = '2.9.5'
+            EOPG_req.api_version = '2.9'
             EOPG_req.redirect = redirect
             EOPG_req.return_url = return_url
             RawRequest = VMP.packGetMsg(EOPG_req, URL)
@@ -734,9 +742,9 @@ def VMP_Transaction(TransactionType):
             signStr = VMP.packSignStr(EOPG_req, SecretCode)
             current_app.logger.debug(signStr)
             EOPG_req.signature = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-            EOPG_req.api_version = '2.9.5'
+            EOPG_req.api_version = '2.9'
             EOPG_req.redirect = redirect
-            EOPG_req.return_url = return_url
+            EOPG_req.return_url = ''
             RawRequest = VMP.packGetMsg(EOPG_req, URL)
 
     elif APIType == 'WEB':
@@ -744,9 +752,12 @@ def VMP_Transaction(TransactionType):
             VMP_req = VMP.VMP_Request()
             URL = URL + 'JSAPIService.do'
             VMP_req.active_time = active_time
+            VMP_req.billingAddress = billingAddress
             VMP_req.body = body
             VMP_req.buyerType = buyerType
+            VMP_req.customerInfo = customerInfo
             VMP_req.fee_type = fee_type
+            VMP_req.items = items
             VMP_req.lang = lang
             VMP_req.notify_url = notify_url
             VMP_req.out_trade_no = out_trade_no
@@ -759,6 +770,7 @@ def VMP_Transaction(TransactionType):
                 VMP_req.pay_scene = 'WEB'
             VMP_req.return_url = return_url
             VMP_req.service = service
+            VMP_req.shippingAddress = shippingAddress
             VMP_req.subject = subject
             VMP_req.tid = tid
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
@@ -1092,20 +1104,21 @@ def VMP_Transaction(TransactionType):
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
             current_app.logger.debug('Request Message: {0}'.format(RawRequest))
             pass
-
+    current_app.logger.info(RawRequest)
     if APIType == 'EOPG':
         if (str(TransactionType).upper()) != 'SALE':
             resp = Utility.GetToHost(RawRequest, timeout=30)
             if resp.status_code == 200:
                 current_app.logger.debug(resp.text)
-                RawResponse = dict(x.split('=') for x in resp.text.split('&'))
+                RawResponse = str(resp.text)
+                JSONMessage = dict(x.split('=') for x in resp.text.split('&'))
     else:
         resp = Utility.PostToHost(URL, RawRequest, timeout=30)
         if resp.status_code == 200:
             current_app.logger.debug(resp.text.encode("utf8"))
             RawResponse = json.loads(resp.text.encode("utf8"))
 
-    data = {'RawRequest': RawRequest, 'RawResponse': RawResponse}
+    data = {'RawRequest': RawRequest, 'RawResponse': RawResponse, 'JSONMessage': JSONMessage}
     meta = {'status': 0, 'msg': 'Success'}
     returnmessage = {'meta': meta, 'data': data}
     current_app.logger.debug(returnmessage)

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../RSM-Backend/.idea/RSM-Backend.iml" filepath="$PROJECT_DIR$/../RSM-Backend/.idea/RSM-Backend.iml" />
       <module fileurl="file://$PROJECT_DIR$/../WebServer/.idea/WebServer.iml" filepath="$PROJECT_DIR$/../WebServer/.idea/WebServer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/pythonProject.iml" filepath="$PROJECT_DIR$/.idea/pythonProject.iml" />
     </modules>
   </component>
 </project>
