@@ -15,7 +15,6 @@ import Octopus
 import hashlib
 import VMP
 from zipfile import ZipFile
-import Log
 from logging.handlers import TimedRotatingFileHandler
 clr.FindAssembly('EFTPaymentsServer.dll')
 clr.AddReference('EFTPaymentsServer')
