@@ -7,7 +7,7 @@ from werkzeug.utils import secure_filename
 import xlrd
 import Utility
 import Configuration
-import logging
+from Logger import *
 import time
 import datetime
 import requests
@@ -15,6 +15,7 @@ import Octopus
 import hashlib
 import VMP
 from zipfile import ZipFile
+
 from logging.handlers import TimedRotatingFileHandler
 clr.FindAssembly('EFTPaymentsServer.dll')
 clr.AddReference('EFTPaymentsServer')
@@ -24,24 +25,25 @@ clr.AddReference('XML_InterFace')
 from EFTSolutions import *
 from XML_InterFace import *
 
+log = Log('Flask')
 app = Flask(__name__)
 # 設定 JWT 密鑰
 app.config['JWT_SECRET_KEY'] = 'Testing123'
 jwt = JWTManager()
 jwt.init_app(app)
 now_date = time.strftime("%Y%m%d", time.localtime())
-logging.basicConfig(level=logging.DEBUG)
-# file_log_handler = RotatingFileHandler("logs/{0}.log".format(now_date), maxBytes=1024 * 1024 * 100, backupCount=10)
-file_log_handler = TimedRotatingFileHandler("logs/{0}.log".format(now_date), when='midnight',interval=1, backupCount=10)
-formatter = logging.Formatter('%(asctime)s %(levelname)s %(filename)s:%(lineno)d %(message)s')
-file_log_handler.setFormatter(formatter)
-logging.getLogger().addHandler(file_log_handler)
+# logging.basicConfig(level=logging.DEBUG)
+# file_log_handler = TimedRotatingFileHandler("logs/{0}.log".format(now_date), when='midnight',interval=1, backupCount=10)
+# formatter = logging.Formatter('%(asctime)s %(levelname)s %(filename)s:%(lineno)d %(message)s')
+# file_log_handler.setFormatter(formatter)
+# logging.getLogger().addHandler(file_log_handler)
 CORS(app)
 
 @app.route("/login", methods=['POST'])
 def login():
-    current_app.logger.debug(request.headers)
-    current_app.logger.debug("BODY: %s" % request.get_data())
+    log.debug(request.headers)
+    log.debug(request.headers)
+    log.debug("BODY: %s" % request.get_data())
     # request.form = request.form.to_dict()
     username = request.json.get("username")
     password = request.json.get("password")
@@ -70,13 +72,13 @@ def login():
         meta = {'status': 'Failed', 'msg': 'Version Not Updated, please re-start browser'}
         data = {'username': username}
     returnmessage = {'meta': meta, 'data': data}
-    current_app.logger.debug(returnmessage)
+    log.debug(returnmessage)
     return jsonify(returnmessage)
 
 @app.route("/ChangePassword", methods=['POST'])
 def ChangePassword():
-    current_app.logger.debug(request.headers)
-    current_app.logger.debug("BODY: %s" % request.get_data())
+    log.debug(request.headers)
+    log.debug("BODY: %s" % request.get_data())
     username = request.json.get("username")
     oldpassword = request.json.get("oldpassword")
     newpassword = request.json.get("newpassword")
@@ -84,78 +86,78 @@ def ChangePassword():
     data = {}
     meta = Utility.ChangePassword(username, oldpassword,newpassword)
     returnmessage = {'meta': meta, 'data': data}
-    current_app.logger.debug(returnmessage)
+    log.debug(returnmessage)
     return jsonify(returnmessage)
 
 @app.route("/userView", methods=['GET'])
 @jwt_required
 def userView():
-    current_app.logger.debug(request.headers)
-    current_app.logger.debug("BODY: %s" % request.get_data())
+    log.debug(request.headers)
+    log.debug("BODY: %s" % request.get_data())
     username = request.args.get('username')
     data = Utility.userView(username)
     meta = {'status': 200, 'msg': 'SUCCESS'}
     returnmessage = {'meta': meta, 'data': data}
-    current_app.logger.debug(returnmessage)
+    log.debug(returnmessage)
     return jsonify(returnmessage)
 
 @app.route("/menus", methods=['GET'])
 @jwt_required
 def menu():
-    current_app.logger.debug(request.headers)
-    current_app.logger.debug("BODY: %s" % request.get_data())
+    log.debug(request.headers)
+    log.debug("BODY: %s" % request.get_data())
     username = request.args.get('username')
     data = Utility.get_Menu(username)
     meta = {'status': 200, 'msg': 'SUCCESS'}
     returnmessage = {'meta': meta, 'data': data}
-    current_app.logger.debug(returnmessage)
+    log.debug(returnmessage)
     return jsonify(returnmessage)
 
 @app.route("/userlist", methods=['GET'])
 @jwt_required
 def userlist():
-    current_app.logger.debug(request.headers)
-    current_app.logger.debug("BODY: %s" % request.get_data())
+    log.debug(request.headers)
+    log.debug("BODY: %s" % request.get_data())
     username = request.args.get('username')
     pagenum = request.args.get('pagenum')
     pagesize = request.args.get('pagesize')
     data = Utility.get_userlist(int(pagenum), int(pagesize))
     meta = {'status': 200, 'msg': 'SUCCESS'}
     returnmessage = {'meta': meta, 'data': data}
-    current_app.logger.debug(returnmessage)
+    log.debug(returnmessage)
     return jsonify(returnmessage)
 
 @app.route("/updateuserstatus", methods=['GET'])
 @jwt_required
 def updateuserstatus():
-    current_app.logger.debug(request.headers)
-    current_app.logger.debug("BODY: %s" % request.get_data())
+    log.debug(request.headers)
+    log.debug("BODY: %s" % request.get_data())
     username = request.args.get('username')
     status = request.args.get('status')
     data = Utility.update_AccountStatus(username, status)
     meta = {'status': 200, 'msg': 'SUCCESS'}
     returnmessage = {'meta': meta, 'data': data}
-    current_app.logger.debug(returnmessage)
+    log.debug(returnmessage)
     return jsonify(returnmessage)
 
 @app.route("/deleteUser", methods=['GET'])
 @jwt_required
 def deleteUser():
-    current_app.logger.debug(request.headers)
-    current_app.logger.debug("BODY: %s" % request.get_data())
+    log.debug(request.headers)
+    log.debug("BODY: %s" % request.get_data())
     username = request.args.get('username')
     status = request.args.get('status')
     data = Utility.delete_Account(username)
     meta = {'status': 200, 'msg': 'SUCCESS'}
     returnmessage = {'meta': meta, 'data': data}
-    current_app.logger.debug(returnmessage)
+    log.debug(returnmessage)
     return jsonify(returnmessage)
 
 @app.route("/<Till_Number>/<TransactionType>", methods=['POST'])
 @jwt_required
 def Transaction(Till_Number, TransactionType):
-    current_app.logger.debug(request.headers)
-    current_app.logger.debug("BODY: %s" % request.get_data())
+    log.debug(request.headers)
+    log.debug("BODY: %s" % request.get_data())
     username = request.headers.get("username")
     MID = request.json.get('MID')
     TID = request.json.get('TID')
@@ -372,15 +374,15 @@ def Transaction(Till_Number, TransactionType):
                 meta = {'status': status, 'msg': msg}
 
     returnmessage = {'meta': meta, 'data': data}
-    current_app.logger.debug(returnmessage)
+    log.debug(returnmessage)
     return jsonify(returnmessage)
 
 
 @app.route("/<Till_Number>/<BatchFor>/Upload", methods=['POST'])
 @jwt_required
 def BatchFor(Till_Number, BatchFor):
-    current_app.logger.debug(request.headers)
-    current_app.logger.debug("BODY: %s" % request.get_data())
+    log.debug(request.headers)
+    log.debug("BODY: %s" % request.get_data())
     username = request.headers.get("username")
     f = request.files['file']
     filepath = os.path.join('Batch Process/', secure_filename(f.filename))
@@ -483,14 +485,14 @@ def BatchFor(Till_Number, BatchFor):
                 data.append([MID, TID, round(float(int(Amount) / 100), 2), RRN, iRet])
                 meta = {'status': 1, 'msg': "Some Transactions Refund Failed"}
     returnmessage = {'meta': meta, 'data': data}
-    current_app.logger.debug(returnmessage)
+    log.debug(returnmessage)
     return jsonify(returnmessage)
 
 @app.route("/CUP/BatchForCardNo", methods=['POST'])
 @jwt_required
 def BatchForCardNo():
-    current_app.logger.debug(request.headers)
-    current_app.logger.debug("BODY: %s" % request.get_data())
+    log.debug(request.headers)
+    log.debug("BODY: %s" % request.get_data())
     username = request.header.get("username")
     f = request.files['file']
     filepath = os.path.join('Batch Process/', secure_filename(f.filename))
@@ -519,14 +521,14 @@ def BatchForCardNo():
         data.append(rowData)
     meta = {'status': 0, 'msg': "Success"}
     returnmessage = {'meta': meta, 'data': data}
-    current_app.logger.debug(returnmessage)
+    log.debug(returnmessage)
     return jsonify(returnmessage)
 
 @app.route("/A8_Password", methods=['GET'])
 @jwt_required
 def A8_Password():
-    current_app.logger.debug(request.headers)
-    # current_app.logger.debug("BODY: %s" % request.get_data())
+    log.debug(request.headers)
+    # log.debug()()("BODY: %s" % request.get_data())
     #http://10.17.2.238/password/
     meta = {}
     data = {}
@@ -540,14 +542,14 @@ def A8_Password():
     data = {"password": password, "trainingmodePW": trainingmodePW}
     meta = {'status': 200, 'msg': 'success'}
     returnmessage = {'meta': meta, 'data':data }
-    current_app.logger.debug(returnmessage)
+    log.debug(returnmessage)
     return jsonify(returnmessage)
 
 @app.route("/Octopus/Report/<action>", methods=['POST'])
 @jwt_required
 def Octopus_Report(action):
-    current_app.logger.debug(request.headers)
-    # current_app.logger.debug("BODY: %s" % request.get_data())
+    log.debug(request.headers)
+    # log.debug()()("BODY: %s" % request.get_data())
     username = request.headers.get("username")
     meta = {}
     data = {}
@@ -563,7 +565,7 @@ def Octopus_Report(action):
         else:
             meta = {'status': 1, 'msg': '{0}'.format(result[1])}
         returnmessage = {'meta': meta, 'data': data}
-        current_app.logger.debug(returnmessage)
+        log.debug(returnmessage)
         return jsonify(returnmessage)
     elif action == 'Download_SPID':
         SPID = request.json.get("SPID")
@@ -586,10 +588,10 @@ def Octopus_Report(action):
         else:
             meta = {'status': 1, 'msg': Monthly_Report_Status[1]}
         returnmessage = {'meta': meta, 'data': data}
-        current_app.logger.debug(returnmessage)
+        log.debug(returnmessage)
         return jsonify(returnmessage)
     elif action == 'UploadRawData':
-        current_app.logger.debug(request.files)
+        log.debug(request.files)
         files = request.files.getlist("files")
         # files = files.split(",")
         # files = list(filter(None, files))
@@ -607,7 +609,7 @@ def Octopus_Report(action):
                 zipObj.extractall(unzipPath)
         meta = {'status': 0, 'msg': '{}'.format('Upload Success')}
         returnmessage = {'meta': meta, 'data': data}
-        current_app.logger.debug(returnmessage)
+        log.debug(returnmessage)
         return jsonify(returnmessage)
 
 @app.route("/download/<string:filename>", methods=['GET'])
@@ -620,8 +622,8 @@ def download(filename):
 @app.route("/VMP/<TransactionType>", methods=['POST'])
 @jwt_required
 def VMP_Transaction(TransactionType):
-    current_app.logger.debug(request.headers)
-    current_app.logger.debug("JSON: %s" % request.json)
+    log.debug(request.headers)
+    log.debug("JSON: %s" % request.json)
     username = request.headers.get("username")
     service = request.json.get('service')
     User_Confirm_Key = request.json.get('User_Confirm_Key')
@@ -682,7 +684,7 @@ def VMP_Transaction(TransactionType):
             EOPG_req.trans_amount = amount
             EOPG_req.wechatWeb = wechatWeb
             signStr = VMP.packSignStr(EOPG_req,SecretCode)
-            current_app.logger.debug(signStr)
+            log.debug(signStr)
             EOPG_req.signature = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             EOPG_req.app_pay = app_pay
             EOPG_req.return_url = return_url
@@ -708,7 +710,7 @@ def VMP_Transaction(TransactionType):
             EOPG_req.service = service
             EOPG_req.trans_amount = amount
             signStr = VMP.packSignStr(EOPG_req, SecretCode)
-            current_app.logger.debug(signStr)
+            log.debug(signStr)
             EOPG_req.signature = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             EOPG_req.merch_refund_id = refund_no
             EOPG_req.api_version = '2.9'
@@ -724,7 +726,7 @@ def VMP_Transaction(TransactionType):
             EOPG_req.payment_type = PaymentType
             EOPG_req.service = service
             signStr = VMP.packSignStr(EOPG_req, SecretCode)
-            current_app.logger.debug(signStr)
+            log.debug(signStr)
             EOPG_req.signature = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             EOPG_req.api_version = '2.9'
             EOPG_req.redirect = redirect
@@ -739,7 +741,7 @@ def VMP_Transaction(TransactionType):
             EOPG_req.payment_type = PaymentType
             EOPG_req.service = service
             signStr = VMP.packSignStr(EOPG_req, SecretCode)
-            current_app.logger.debug(signStr)
+            log.debug(signStr)
             EOPG_req.signature = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             EOPG_req.api_version = '2.9'
             EOPG_req.redirect = redirect
@@ -782,10 +784,10 @@ def VMP_Transaction(TransactionType):
             elif str(PaymentType).upper() == 'ATOME':
                 VMP_req.wallet = 'ATOME'
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            current_app.logger.debug('signStr: {0}'.format(signStr))
+            log.debug('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            current_app.logger.debug('Request Message: {0}'.format(RawRequest))
+            log.debug('Request Message: {0}'.format(RawRequest))
             pass
         elif str(TransactionType).upper() == 'REFUND':
             VMP_req = VMP.VMP_Request()
@@ -807,10 +809,10 @@ def VMP_Transaction(TransactionType):
             elif str(PaymentType).upper() == 'WECHAT':
                 VMP_req.wallet = 'WECHAT' + wallet
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            current_app.logger.debug(signStr)
+            log.debug(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            current_app.logger.debug('Request Message: {0}'.format(RawRequest))
+            log.debug('Request Message: {0}'.format(RawRequest))
             pass
         elif str(TransactionType).upper() == 'QUERY':
             VMP_req = VMP.VMP_Request()
@@ -822,10 +824,10 @@ def VMP_Transaction(TransactionType):
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            current_app.logger.debug(signStr)
+            log.debug(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            current_app.logger.debug('Request Message: {0}'.format(RawRequest))
+            log.debug('Request Message: {0}'.format(RawRequest))
             pass
     elif APIType == 'JSAPI':
         if str(TransactionType).upper() == 'SALE':
@@ -850,10 +852,10 @@ def VMP_Transaction(TransactionType):
             VMP_req.transaction_amount = amount
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            current_app.logger.debug('signStr: {0}'.format(signStr))
+            log.debug('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            current_app.logger.debug('Request Message: {0}'.format(RawRequest))
+            log.debug('Request Message: {0}'.format(RawRequest))
             pass
         elif str(TransactionType).upper() == 'REFUND':
             VMP_req = VMP.VMP_Request()
@@ -872,10 +874,10 @@ def VMP_Transaction(TransactionType):
             VMP_req.transaction_amount = amount
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            current_app.logger.debug(signStr)
+            log.debug(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            current_app.logger.debug('Request Message: {0}'.format(RawRequest))
+            log.debug('Request Message: {0}'.format(RawRequest))
             pass
         elif str(TransactionType).upper() == 'QUERY':
             VMP_req = VMP.VMP_Request()
@@ -893,10 +895,10 @@ def VMP_Transaction(TransactionType):
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            current_app.logger.debug(signStr)
+            log.debug(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            current_app.logger.debug('Request Message: {0}'.format(RawRequest))
+            log.debug('Request Message: {0}'.format(RawRequest))
             pass
     elif APIType == 'QRCode':
         if str(TransactionType).upper() == 'SALE':
@@ -925,10 +927,10 @@ def VMP_Transaction(TransactionType):
             VMP_req.transaction_amount = amount
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            current_app.logger.debug('signStr: {0}'.format(signStr))
+            log.debug('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            current_app.logger.debug('Request Message: {0}'.format(RawRequest))
+            log.debug('Request Message: {0}'.format(RawRequest))
             pass
         elif str(TransactionType).upper() == 'REFUND':
             VMP_req = VMP.VMP_Request()
@@ -954,10 +956,10 @@ def VMP_Transaction(TransactionType):
             VMP_req.transaction_amount = amount
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            current_app.logger.debug(signStr)
+            log.debug(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            current_app.logger.debug('Request Message: {0}'.format(RawRequest))
+            log.debug('Request Message: {0}'.format(RawRequest))
             pass
         elif str(TransactionType).upper() == 'QUERY':
             VMP_req = VMP.VMP_Request()
@@ -982,10 +984,10 @@ def VMP_Transaction(TransactionType):
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            current_app.logger.debug(signStr)
+            log.debug(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            current_app.logger.debug('Request Message: {0}'.format(RawRequest))
+            log.debug('Request Message: {0}'.format(RawRequest))
             pass
     elif APIType == 'APP':
         if str(TransactionType).upper() == 'SALE':
@@ -1008,10 +1010,10 @@ def VMP_Transaction(TransactionType):
             elif str(PaymentType).upper() == 'WECHAT':
                 VMP_req.wallet = 'WECHAT' + wallet
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            current_app.logger.debug('signStr: {0}'.format(signStr))
+            log.debug('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            current_app.logger.debug('Request Message: {0}'.format(RawRequest))
+            log.debug('Request Message: {0}'.format(RawRequest))
             pass
         elif str(TransactionType).upper() == 'REFUND':
             VMP_req = VMP.VMP_Request()
@@ -1025,10 +1027,10 @@ def VMP_Transaction(TransactionType):
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            current_app.logger.debug(signStr)
+            log.debug(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            current_app.logger.debug('Request Message: {0}'.format(RawRequest))
+            log.debug('Request Message: {0}'.format(RawRequest))
             pass
         elif str(TransactionType).upper() == 'QUERY':
             VMP_req = VMP.VMP_Request()
@@ -1040,10 +1042,10 @@ def VMP_Transaction(TransactionType):
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            current_app.logger.debug(signStr)
+            log.debug(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            current_app.logger.debug('Request Message: {0}'.format(RawRequest))
+            log.debug('Request Message: {0}'.format(RawRequest))
             pass
     elif APIType == 'Cashier':
         if str(TransactionType).upper() == 'SALE':
@@ -1064,10 +1066,10 @@ def VMP_Transaction(TransactionType):
             VMP_req.transaction_amount = amount
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            current_app.logger.debug('signStr: {0}'.format(signStr))
+            log.debug('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            current_app.logger.debug('Request Message: {0}'.format(RawRequest))
+            log.debug('Request Message: {0}'.format(RawRequest))
             pass
         elif str(TransactionType).upper() == 'REFUND':
             VMP_req = VMP.VMP_Request()
@@ -1083,10 +1085,10 @@ def VMP_Transaction(TransactionType):
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            current_app.logger.debug(signStr)
+            log.debug(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            current_app.logger.debug('Request Message: {0}'.format(RawRequest))
+            log.debug('Request Message: {0}'.format(RawRequest))
             pass
         elif str(TransactionType).upper() == 'QUERY':
             VMP_req = VMP.VMP_Request()
@@ -1098,29 +1100,29 @@ def VMP_Transaction(TransactionType):
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            current_app.logger.debug(signStr)
+            log.debug(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            current_app.logger.debug('Request Message: {0}'.format(RawRequest))
+            log.debug('Request Message: {0}'.format(RawRequest))
             pass
     current_app.logger.info(RawRequest)
     if APIType == 'EOPG':
         if (str(TransactionType).upper()) != 'SALE':
             resp = Utility.GetToHost(RawRequest, timeout=30)
             if resp.status_code == 200:
-                current_app.logger.debug(resp.text)
+                log.debug(resp.text)
                 RawResponse = str(resp.text)
                 JSONMessage = dict(x.split('=') for x in resp.text.split('&'))
     else:
         resp = Utility.PostToHost(URL, RawRequest, timeout=30)
         if resp.status_code == 200:
-            current_app.logger.debug(resp.text.encode("utf8"))
+            log.debug(resp.text.encode("utf8"))
             RawResponse = json.loads(resp.text.encode("utf8"))
 
     data = {'RawRequest': RawRequest, 'RawResponse': RawResponse, 'JSONMessage': JSONMessage}
     meta = {'status': 0, 'msg': 'Success'}
     returnmessage = {'meta': meta, 'data': data}
-    current_app.logger.debug(returnmessage)
+    log.debug(returnmessage)
     return jsonify(returnmessage)
 
 @app.route("/download/<string:filename>", methods=['GET'])

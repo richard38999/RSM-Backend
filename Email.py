@@ -5,6 +5,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 log = Log('A8-Daily-Email')
+log.start('A8 Daily Email')
 Email_info = Configuration.get_Email_info()
 Sent_To = Configuration.get_A8_PW_Email()
 
@@ -31,11 +32,15 @@ log.info('Email to: {0}'.format(content["to"]))
 content.attach(MIMEText("A8 Daily Password: {0}".format(password)))  # 郵件純文字內容
 log.info("A8 Daily Password: {0}".format(password))
 with smtplib.SMTP(host=Email_info[0][1], port=Email_info[0][2]) as smtp:  # 設定SMTP伺服器
-    try:
-        smtp.ehlo()  # 驗證SMTP伺服器
-        smtp.starttls()  # 建立加密傳輸
-        smtp.login(Email_info[0][0], Email_info[0][4])  # 登入寄件者gmail
-        smtp.send_message(content)  # 寄送郵件
-        log.info('sent email success')
-    except Exception as e:
-        log.error("sent email Failed, Erroe message: {0}".format(e))
+    for i in range(5):
+        try:
+            smtp.ehlo()  # 驗證SMTP伺服器
+            smtp.starttls()  # 建立加密傳輸
+            smtp.login(Email_info[0][0], Email_info[0][4])  # 登入寄件者gmail
+            smtp.send_message(content)  # 寄送郵件
+            log.info('sent email success')
+            break
+        except Exception as e:
+            log.error("sent email Failed, Erroe message: {0}".format(e))
+
+log.end('A8 Daily Email')

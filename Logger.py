@@ -37,6 +37,12 @@ class Log():
             self.logger.warning(message)
         elif level =='error':
             self.logger.error(message)
+        elif level =='start':
+            message = '************************************* {0} Start *************************************'.format(message)
+            self.logger.info(message)
+        elif level =='end':
+            message = '************************************* {0} End *************************************'.format(message)
+            self.logger.info(message)
         #避免日志输出重复问题
         self.logger.removeHandler(ch)
         self.logger.removeHandler(fh)
@@ -51,3 +57,7 @@ class Log():
         self.__console('warning',message)
     def error(self,message):
         self.__console('error',message)
+    def start(self,message):
+        self.__console('start', message)
+    def end(self,message):
+        self.__console('end', message)
