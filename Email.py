@@ -3,18 +3,18 @@ import smtplib
 from Logger import *
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-
+import requests
 log = Log('A8-Daily-Email')
 log.start('A8 Daily Email')
 Email_info = Configuration.get_Email_info()
 Sent_To = Configuration.get_A8_PW_Email()
 
-# url = 'http://10.17.2.238/password/'
-# response = requests.get(url)
-# temp = response.text.find('pw')
-# password = str(response.text)
-# password = password[temp+3:9+temp]
-password = '123456'
+url = 'http://10.17.2.238/password/'
+response = requests.get(url)
+temp = response.text.find('pw')
+password = str(response.text)
+password = password[temp+3:9+temp]
+# password = '123456'
 to = ''
 for i in Sent_To:
     to += (i[0]) + ';'
