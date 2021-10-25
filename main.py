@@ -1,4 +1,6 @@
 import os
+import re
+
 from flask import Flask, current_app, session, make_response, send_from_directory, request, jsonify, send_file, json
 from flask_jwt_extended import JWTManager, jwt_required
 from flask_cors import CORS
@@ -41,7 +43,7 @@ CORS(app)
 
 @app.route("/login", methods=['POST'])
 def login():
-    log.debug(request.headers)
+    log.start('login')
     log.debug(request.headers)
     log.debug("BODY: %s" % request.get_data())
     # request.form = request.form.to_dict()
@@ -73,10 +75,12 @@ def login():
         data = {'username': username}
     returnmessage = {'meta': meta, 'data': data}
     log.debug(returnmessage)
+    log.end('login')
     return jsonify(returnmessage)
 
 @app.route("/ChangePassword", methods=['POST'])
 def ChangePassword():
+    log.start('ChangePassword')
     log.debug(request.headers)
     log.debug("BODY: %s" % request.get_data())
     username = request.json.get("username")
@@ -87,11 +91,13 @@ def ChangePassword():
     meta = Utility.ChangePassword(username, oldpassword,newpassword)
     returnmessage = {'meta': meta, 'data': data}
     log.debug(returnmessage)
+    log.end('ChangePassword')
     return jsonify(returnmessage)
 
 @app.route("/userView", methods=['GET'])
 @jwt_required
 def userView():
+    log.start('userView')
     log.debug(request.headers)
     log.debug("BODY: %s" % request.get_data())
     username = request.args.get('username')
@@ -99,11 +105,13 @@ def userView():
     meta = {'status': 200, 'msg': 'SUCCESS'}
     returnmessage = {'meta': meta, 'data': data}
     log.debug(returnmessage)
+    log.end('userView')
     return jsonify(returnmessage)
 
 @app.route("/menus", methods=['GET'])
 @jwt_required
 def menu():
+    log.start('menu')
     log.debug(request.headers)
     log.debug("BODY: %s" % request.get_data())
     username = request.args.get('username')
@@ -111,11 +119,13 @@ def menu():
     meta = {'status': 200, 'msg': 'SUCCESS'}
     returnmessage = {'meta': meta, 'data': data}
     log.debug(returnmessage)
+    log.end('menu')
     return jsonify(returnmessage)
 
 @app.route("/userlist", methods=['GET'])
 @jwt_required
 def userlist():
+    log.start('userlist')
     log.debug(request.headers)
     log.debug("BODY: %s" % request.get_data())
     username = request.args.get('username')
@@ -125,11 +135,13 @@ def userlist():
     meta = {'status': 200, 'msg': 'SUCCESS'}
     returnmessage = {'meta': meta, 'data': data}
     log.debug(returnmessage)
+    log.end('userlist')
     return jsonify(returnmessage)
 
 @app.route("/updateuserstatus", methods=['GET'])
 @jwt_required
 def updateuserstatus():
+    log.start('updateuserstatus')
     log.debug(request.headers)
     log.debug("BODY: %s" % request.get_data())
     username = request.args.get('username')
@@ -138,11 +150,13 @@ def updateuserstatus():
     meta = {'status': 200, 'msg': 'SUCCESS'}
     returnmessage = {'meta': meta, 'data': data}
     log.debug(returnmessage)
+    log.end('updateuserstatus')
     return jsonify(returnmessage)
 
 @app.route("/deleteUser", methods=['GET'])
 @jwt_required
 def deleteUser():
+    log.start('deleteUser')
     log.debug(request.headers)
     log.debug("BODY: %s" % request.get_data())
     username = request.args.get('username')
@@ -151,11 +165,13 @@ def deleteUser():
     meta = {'status': 200, 'msg': 'SUCCESS'}
     returnmessage = {'meta': meta, 'data': data}
     log.debug(returnmessage)
+    log.end('deleteUser')
     return jsonify(returnmessage)
 
 @app.route("/<Till_Number>/<TransactionType>", methods=['POST'])
 @jwt_required
 def Transaction(Till_Number, TransactionType):
+    log.start('Transaction')
     log.debug(request.headers)
     log.debug("BODY: %s" % request.get_data())
     username = request.headers.get("username")
@@ -375,12 +391,14 @@ def Transaction(Till_Number, TransactionType):
 
     returnmessage = {'meta': meta, 'data': data}
     log.debug(returnmessage)
+    log.end('Transaction')
     return jsonify(returnmessage)
 
 
 @app.route("/<Till_Number>/<BatchFor>/Upload", methods=['POST'])
 @jwt_required
 def BatchFor(Till_Number, BatchFor):
+    log.start('BatchFor')
     log.debug(request.headers)
     log.debug("BODY: %s" % request.get_data())
     username = request.headers.get("username")
@@ -395,14 +413,14 @@ def BatchFor(Till_Number, BatchFor):
     ecrRefNo = request.form['ecrRefNo']
     xlsx = xlrd.open_workbook(filepath)
     table = xlsx.sheet_by_index(0)
-
+    meta = []
     data = []
     if BatchFor == 'BatchForSale':
         meta = {'status': 0, 'msg': "All Account Activated"}
         amount = '10'
         barcode = '280000000000000000'
         for i in range(table.nrows):
-            current_app.logger.info(table.row_values(i))
+            log.debug(table.row_values(i))
             if (i == 0):
                 data.append([table.row_values(i)[0], table.row_values(i)[1], 'Respond Code'])
                 continue
@@ -430,7 +448,7 @@ def BatchFor(Till_Number, BatchFor):
         ApprovalCode = ''
         meta = {'status': 0, 'msg': "All Transactions Refund Success"}
         for i in range(table.nrows):
-            current_app.logger.info(table.row_values(i))
+            log.debug(table.row_values(i))
             if (i == 0):
                 if Till_Number == 'CUP' or Till_Number == 'BoC':
                     data.append([table.row_values(i)[0],
@@ -458,7 +476,7 @@ def BatchFor(Till_Number, BatchFor):
             if table.cell(i, 2).ctype == 2:
                 Amount = str(int(round(float(table.cell_value(i, 2)*100),2)))
             else:
-                Amount = round(float(table.cell_value(i, 2)*100),2)
+                Amount = str(int(round(float(table.cell_value(i, 2)) * 100, 2)))
             if table.cell(i, 3).ctype == 2:
                 RRN = str(int(float(table.cell_value(i, 3))))
             else:
@@ -484,13 +502,16 @@ def BatchFor(Till_Number, BatchFor):
             else:
                 data.append([MID, TID, round(float(int(Amount) / 100), 2), RRN, iRet])
                 meta = {'status': 1, 'msg': "Some Transactions Refund Failed"}
+    os.remove(filepath)
     returnmessage = {'meta': meta, 'data': data}
     log.debug(returnmessage)
+    log.end('BatchFor')
     return jsonify(returnmessage)
 
 @app.route("/CUP/BatchForCardNo", methods=['POST'])
 @jwt_required
 def BatchForCardNo():
+    log.start('BatchForCardNo')
     log.debug(request.headers)
     log.debug("BODY: %s" % request.get_data())
     username = request.header.get("username")
@@ -502,7 +523,7 @@ def BatchForCardNo():
     meta = {'status': 1, 'msg': "Failed"}
     data = []
     for i in range(table.nrows):
-        current_app.logger.info(table.row_values(i))
+        log.debug(table.row_values(i))
         # Column 19 == Masked CardNo
         if (i == 0):
             header = []
@@ -522,11 +543,13 @@ def BatchForCardNo():
     meta = {'status': 0, 'msg': "Success"}
     returnmessage = {'meta': meta, 'data': data}
     log.debug(returnmessage)
+    log.end('BatchForCardNo')
     return jsonify(returnmessage)
 
 @app.route("/A8_Password", methods=['GET'])
 @jwt_required
 def A8_Password():
+    log.start('A8_Password')
     log.debug(request.headers)
     # log.debug()()("BODY: %s" % request.get_data())
     #http://10.17.2.238/password/
@@ -543,11 +566,13 @@ def A8_Password():
     meta = {'status': 200, 'msg': 'success'}
     returnmessage = {'meta': meta, 'data':data }
     log.debug(returnmessage)
+    log.end('A8_Password')
     return jsonify(returnmessage)
 
 @app.route("/Octopus/Report/<action>", methods=['POST'])
 @jwt_required
 def Octopus_Report(action):
+    log.start('Octopus_Report')
     log.debug(request.headers)
     # log.debug()()("BODY: %s" % request.get_data())
     username = request.headers.get("username")
@@ -566,6 +591,7 @@ def Octopus_Report(action):
             meta = {'status': 1, 'msg': '{0}'.format(result[1])}
         returnmessage = {'meta': meta, 'data': data}
         log.debug(returnmessage)
+        log.end('Octopus_Report')
         return jsonify(returnmessage)
     elif action == 'Download_SPID':
         SPID = request.json.get("SPID")
@@ -573,6 +599,7 @@ def Octopus_Report(action):
         DateTo = request.json.get("DateTo")
         temp = Octopus.Report()
         result = temp.Download_SPID(SPID, DateFrom, DateTo)
+        log.end('Octopus_Report')
         return send_file(result[1], as_attachment=True)
     elif action == 'Download_MonthlyReport':
         Month = request.json.get("Month")
@@ -589,6 +616,7 @@ def Octopus_Report(action):
             meta = {'status': 1, 'msg': Monthly_Report_Status[1]}
         returnmessage = {'meta': meta, 'data': data}
         log.debug(returnmessage)
+        log.end('Octopus_Report')
         return jsonify(returnmessage)
     elif action == 'UploadRawData':
         log.debug(request.files)
@@ -610,18 +638,13 @@ def Octopus_Report(action):
         meta = {'status': 0, 'msg': '{}'.format('Upload Success')}
         returnmessage = {'meta': meta, 'data': data}
         log.debug(returnmessage)
+        log.end('Octopus_Report')
         return jsonify(returnmessage)
-
-@app.route("/download/<string:filename>", methods=['GET'])
-def download(filename):
-    currentlyPath = os.getcwd()
-    if (os.path.isfile(os.path.join(currentlyPath,filename))):
-        return send_from_directory(currentlyPath,filename, as_attachment=True)
-    pass
 
 @app.route("/VMP/<TransactionType>", methods=['POST'])
 @jwt_required
 def VMP_Transaction(TransactionType):
+    log.start('VMP_Transaction')
     log.debug(request.headers)
     log.debug("JSON: %s" % request.json)
     username = request.headers.get("username")
@@ -629,7 +652,7 @@ def VMP_Transaction(TransactionType):
     User_Confirm_Key = request.json.get('User_Confirm_Key')
     PaymentType = request.json.get('PaymentType')
     wallet = request.json.get('wallet')
-    amount = request.json.get('amount')
+    amount = str(request.json.get('amount'))
     SecretCode = request.json.get('SecretCode')
     out_trade_no = request.json.get('out_trade_no')
     if out_trade_no == '' and str(TransactionType).upper() == 'SALE':
@@ -672,6 +695,7 @@ def VMP_Transaction(TransactionType):
     EOPG_req = None
     VMP_req = None
     JSONMessage = None
+
     if APIType == 'EOPG': #EOPG 接口
         if str(TransactionType).upper() == 'SALE':
             URL += '/VMP/eopg/ForexTradeRecetion'
@@ -749,16 +773,20 @@ def VMP_Transaction(TransactionType):
             RawRequest = VMP.packGetMsg(EOPG_req, URL)
 
     elif APIType == 'WEB':
+        URL += '/VMP/Servlet/'
         if str(TransactionType).upper() == 'SALE':
             VMP_req = VMP.VMP_Request()
             URL = URL + 'JSAPIService.do'
             VMP_req.active_time = active_time
-            VMP_req.billingAddress = billingAddress
+            if str(PaymentType).upper() == 'ATOME':
+                VMP_req.billingAddress = billingAddress
             VMP_req.body = body
             VMP_req.buyerType = buyerType
-            VMP_req.customerInfo = customerInfo
+            if str(PaymentType).upper() == 'ATOME':
+                VMP_req.customerInfo = customerInfo
             VMP_req.fee_type = fee_type
-            VMP_req.items = items
+            if str(PaymentType).upper() == 'ATOME':
+                VMP_req.items = items
             VMP_req.lang = lang
             VMP_req.notify_url = notify_url
             VMP_req.out_trade_no = out_trade_no
@@ -771,7 +799,8 @@ def VMP_Transaction(TransactionType):
                 VMP_req.pay_scene = 'WEB'
             VMP_req.return_url = return_url
             VMP_req.service = service
-            VMP_req.shippingAddress = shippingAddress
+            if str(PaymentType).upper() == 'ATOME':
+                VMP_req.shippingAddress = shippingAddress
             VMP_req.subject = subject
             VMP_req.tid = tid
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
@@ -787,7 +816,6 @@ def VMP_Transaction(TransactionType):
             log.debug('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            log.debug('Request Message: {0}'.format(RawRequest))
             pass
         elif str(TransactionType).upper() == 'REFUND':
             VMP_req = VMP.VMP_Request()
@@ -812,7 +840,6 @@ def VMP_Transaction(TransactionType):
             log.debug(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            log.debug('Request Message: {0}'.format(RawRequest))
             pass
         elif str(TransactionType).upper() == 'QUERY':
             VMP_req = VMP.VMP_Request()
@@ -827,9 +854,9 @@ def VMP_Transaction(TransactionType):
             log.debug(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            log.debug('Request Message: {0}'.format(RawRequest))
             pass
     elif APIType == 'JSAPI':
+        URL += '/VMP/Servlet/'
         if str(TransactionType).upper() == 'SALE':
             VMP_req = VMP.VMP_Request()
             URL = URL + 'JSAPIService.do'
@@ -855,7 +882,6 @@ def VMP_Transaction(TransactionType):
             log.debug('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            log.debug('Request Message: {0}'.format(RawRequest))
             pass
         elif str(TransactionType).upper() == 'REFUND':
             VMP_req = VMP.VMP_Request()
@@ -877,7 +903,6 @@ def VMP_Transaction(TransactionType):
             log.debug(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            log.debug('Request Message: {0}'.format(RawRequest))
             pass
         elif str(TransactionType).upper() == 'QUERY':
             VMP_req = VMP.VMP_Request()
@@ -898,9 +923,9 @@ def VMP_Transaction(TransactionType):
             log.debug(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            log.debug('Request Message: {0}'.format(RawRequest))
             pass
     elif APIType == 'QRCode':
+        URL += '/VMP/Servlet/'
         if str(TransactionType).upper() == 'SALE':
             VMP_req = VMP.VMP_Request()
             URL = URL + 'JSAPIService.do'
@@ -930,7 +955,6 @@ def VMP_Transaction(TransactionType):
             log.debug('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            log.debug('Request Message: {0}'.format(RawRequest))
             pass
         elif str(TransactionType).upper() == 'REFUND':
             VMP_req = VMP.VMP_Request()
@@ -959,7 +983,6 @@ def VMP_Transaction(TransactionType):
             log.debug(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            log.debug('Request Message: {0}'.format(RawRequest))
             pass
         elif str(TransactionType).upper() == 'QUERY':
             VMP_req = VMP.VMP_Request()
@@ -987,9 +1010,9 @@ def VMP_Transaction(TransactionType):
             log.debug(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            log.debug('Request Message: {0}'.format(RawRequest))
             pass
     elif APIType == 'APP':
+        URL += '/VMP/Servlet/'
         if str(TransactionType).upper() == 'SALE':
             VMP_req = VMP.VMP_Request()
             URL = URL + 'AppTradePay.do'
@@ -1013,7 +1036,6 @@ def VMP_Transaction(TransactionType):
             log.debug('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            log.debug('Request Message: {0}'.format(RawRequest))
             pass
         elif str(TransactionType).upper() == 'REFUND':
             VMP_req = VMP.VMP_Request()
@@ -1030,7 +1052,6 @@ def VMP_Transaction(TransactionType):
             log.debug(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            log.debug('Request Message: {0}'.format(RawRequest))
             pass
         elif str(TransactionType).upper() == 'QUERY':
             VMP_req = VMP.VMP_Request()
@@ -1045,9 +1066,9 @@ def VMP_Transaction(TransactionType):
             log.debug(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            log.debug('Request Message: {0}'.format(RawRequest))
             pass
     elif APIType == 'Cashier':
+        URL += '/VMP/Servlet/'
         if str(TransactionType).upper() == 'SALE':
             VMP_req = VMP.VMP_Request()
             URL = URL + 'JSAPIService.do'
@@ -1069,7 +1090,6 @@ def VMP_Transaction(TransactionType):
             log.debug('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            log.debug('Request Message: {0}'.format(RawRequest))
             pass
         elif str(TransactionType).upper() == 'REFUND':
             VMP_req = VMP.VMP_Request()
@@ -1088,7 +1108,6 @@ def VMP_Transaction(TransactionType):
             log.debug(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            log.debug('Request Message: {0}'.format(RawRequest))
             pass
         elif str(TransactionType).upper() == 'QUERY':
             VMP_req = VMP.VMP_Request()
@@ -1103,35 +1122,38 @@ def VMP_Transaction(TransactionType):
             log.debug(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
-            log.debug('Request Message: {0}'.format(RawRequest))
             pass
-    current_app.logger.info(RawRequest)
+    log.debug('RawRequest: {0}'.format(RawRequest))
     if APIType == 'EOPG':
         if (str(TransactionType).upper()) != 'SALE':
             resp = Utility.GetToHost(RawRequest, timeout=30)
             if resp.status_code == 200:
-                log.debug(resp.text)
+                log.debug('RawResponse: {0}'.format(resp.text))
                 RawResponse = str(resp.text)
                 JSONMessage = dict(x.split('=') for x in resp.text.split('&'))
     else:
         resp = Utility.PostToHost(URL, RawRequest, timeout=30)
         if resp.status_code == 200:
-            log.debug(resp.text.encode("utf8"))
+            log.debug('RawResponse: {0}'.format(resp.text.encode("utf8")))
             RawResponse = json.loads(resp.text.encode("utf8"))
 
     data = {'RawRequest': RawRequest, 'RawResponse': RawResponse, 'JSONMessage': JSONMessage}
     meta = {'status': 0, 'msg': 'Success'}
     returnmessage = {'meta': meta, 'data': data}
     log.debug(returnmessage)
+    log.end('VMP_Transaction')
     return jsonify(returnmessage)
 
 @app.route("/download/<string:filename>", methods=['GET'])
 def imagedownload(filename):
+    log.start('imagedownload')
     currentlyPath = os.getcwd()
     if (os.path.isfile(os.path.join(currentlyPath,filename))):
+        log.end('imagedownload')
         return send_from_directory(currentlyPath,filename, as_attachment=True)
-    pass
 
 if __name__ == '__main__':
+    log.start('Flask')
     Config = Configuration.loadConfig()
     app.run(host='0.0.0.0', port=5000)
+    log.end('Flask')
