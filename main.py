@@ -403,7 +403,8 @@ def BatchFor(Till_Number, BatchFor):
     log.debug("BODY: %s" % request.get_data())
     username = request.headers.get("username")
     f = request.files['file']
-    filepath = os.path.join('Batch Process/', secure_filename(f.filename))
+    datetime = time.strftime("%Y%m%d%H%M%S", time.localtime())
+    filepath = os.path.join('Batch Process/', '{0}_'.format(datetime) + secure_filename(f.filename))
     f.save(filepath)
     IP = request.form['IP']
     Port = request.form['Port']
