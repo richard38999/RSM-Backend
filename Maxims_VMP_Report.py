@@ -10,6 +10,8 @@ AlertEmail = Configuration.get_Alert_Email()
 Email_info = Configuration.get_Email_info()
 SFTP_info = Configuration.get_SFTP_info()
 
+today = ''
+day_of_year = ''
 class VMP_RH:
     RecordIdentifier = None
     FileID = None
@@ -138,7 +140,7 @@ def readCSV(path):
         log.end('readCSV')
         return False
 
-def writeEOPGFile(path, data):
+def writeEOPGFile(path=None, data=None):
     try:
         log.start('writeEOPGFile')
         log.info('path: {0}'.format(path))
@@ -154,17 +156,17 @@ def writeEOPGFile(path, data):
 
 
 def convertDataToEopgFormat():
+    returnData = ''
     try:
-        returnData = ''
         log.start('convertDataToEopgFormat')
         # RH: Record Identifier, 2, (RH)
         returnData += RH.RecordIdentifier
         # RH: File ID, 8, (Year+’N’+day of year, in YYYYXddd format. Example: 2013-2-1 = 2013N032)
-
+        returnData += today[:4] + 'N' + day_of_year
         # RH: File Date, 8, (In CCYYMMDD format. It should be the current processing date.)
-
+        returnData += today
         # RH: Rate of fee, 5, (With 2 decimal points)
-
+        returnData += '00120'
         # RH: MID, 15
         returnData += RH.MID.rjust(15, ' ')
         # RH: MID name, 30
@@ -173,11 +175,12 @@ def convertDataToEopgFormat():
         returnData += '2088031839616494'.rjust(28,' ')
         # RH: Filler, 156
         returnData += ' ' * 156
+        returnData += '\n'
         for rd in RD:
             # RD: Record Identifier, 2, (RD)
             returnData += rd.RecordIdentifier
             # RD: Settlement Date, 10, (In CCYY/MM/DD format)
-            returnData += rd.SettlementDate
+            returnData += '{0}/{1}/{2}'.format(rd.TransactionDate[:4],rd.TransactionDate[4:6],rd.TransactionDate[-2:])
             # RD: Terminal ID, 8, (Space if no information or non-numeric value)
             returnData += rd.TerminalID.rjust(8, ' ')
             # RD: Batch Number, 6, (Space if no information or non-numeric value)
@@ -189,7 +192,7 @@ def convertDataToEopgFormat():
             # RD: Type, 10, (ALIPAY)
             returnData += rd.PaymentType.rjust(10, ' ')
             # RD: Currency, 3, (e.g. “HKD”,”RMB”,”USD”)
-            returnData += rd.Currency
+            returnData += 'HKD'
             # RD: Sign of Transaction amount, 1, ('-' means negative amount ' ' means positive amount)
             if rd.TransType == 'R':
                 returnData += '-'
@@ -211,20 +214,24 @@ def convertDataToEopgFormat():
             # RD: Alipay Order ID, 64, (Space if no information or non-numeric value)
             returnData += rd.Settlementno.rjust(64, ' ')
             # RD: EFTP Ref Number, 64, ()
-            returnData += rd.RRN.rjust(64,' ')
+            returnData += rd.MerchantRRN.rjust(64,' ')
             # RD: Store ID, 8, (Space if no information or non-numeric value)
             returnData += ' '*8
             # RD: Wallet Currency, 3, (e.g. “HKD”,”RMB”)
-            returnData += 'HKD'
+            if rd.WalletVersion[-2:] == 'HK':
+                returnData += 'HKD'
+            elif rd.WalletVersion[-2:] == 'CN':
+                returnData += 'RMB'
             # RD: Transaction Entry mode, 1, (1- Spot Barcode Payment 2- QRCode Payment 3- Online Payment 4- Apps Payment)
             returnData += '3'
             # RD: Filler, 2, (Filled with spaces)
             returnData += ' '*2
+            returnData += '\n'
 
         # RT: Record Identifier, 2, (RT)
         returnData += RT.RecordIdentifier
         # RT: Total of Transaction, 9,
-        returnData += str(int(round(float(RT.TotalofTrasaction) * 100, 2))).zfill(9)
+        returnData += RT.TotalofTrasaction.zfill(9)
         # RT: Sign of Total amount, 1, ('-' means negative amount ' ' means positive amount)
         if RT.TotalofAmount[0] == '-':
             returnData += '-'
@@ -236,23 +243,32 @@ def convertDataToEopgFormat():
         returnData += str(int(round(float(RT.TotalofFee) * 100, 2))).zfill(18)
         # RT: Filler, 204, (Filled with spaces)
         returnData += ' '*204
-        pass
-        return True
+        returnData += '\n'
+        return [True, returnData]
     except Exception as ex:
         log.error('Error message: {0}'.format(ex))
         log.end('convertDataToEopgFormat')
-        return False
+        return [False, returnData]
 
 if __name__ == '__main__':
     try:
         log.start('Maxims_VMP_Report')
         MID = '852000058140011'
+        # today = datetime.datetime.now()
+        today = '20211028'
+        day_of_year = str(datetime.date(int(today[:4]), int(today[4:6]), int(today[6:])).timetuple().tm_yday)
+        # today = '20211028'.strftime("%y%m%d")
+        # temp = today.strftime('%j')
         Datetime = (datetime.datetime.now() + datetime.timedelta(days=-1)).strftime("%y%m%d")
         currentlyPath = os.getcwd()
-        path = currentlyPath + '\\Settlement_Report\\Maxims_VMP_Report\\VMP_Report\\852000057220001_20201103.csv'
+        path = currentlyPath + '\\Settlement_Report\\Maxims_VMP_Report\\VMP_Report\\852000058140011_20211027.csv'
         # getSftpFile(SFTP_info,localpath=currentlyPath + '\\Settlement_Report\\Maxims_VMP_Report\\VMP_Report\\' + MID + '.' + Datetime, remotepath='/home/852000058140011/eopgfile/' + MID + '.' + Datetime)
+        localEOPGPath = currentlyPath + '\\Settlement_Report\\Maxims_VMP_Report\\EOPG_Report\\{0}'.format('VMP_' + MID + '.' + Datetime)
         if readCSV(path):
-            convertDataToEopgFormat()
+            result = convertDataToEopgFormat()
+            if result[0] == True:
+                writeEOPGFile(path=localEOPGPath, data=result[1])
+                log.info('write EOPG file in local success')
 
         log.end('Maxims_VMP_Report')
     except Exception as ex:
