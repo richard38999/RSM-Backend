@@ -166,42 +166,48 @@ def convertDataToEopgFormat():
         # RH: Rate of fee, 5, (With 2 decimal points)
 
         # RH: MID, 15
-
+        returnData += RH.MID.rjust(15, ' ')
         # RH: MID name, 30
-
+        returnData += RH.MIDname.rjust(30, ' ')
         # RH: PID, 28
-
+        returnData += '2088031839616494'.rjust(28,' ')
         # RH: Filler, 156
-
+        returnData += ' ' * 156
         for rd in RD:
             # RD: Record Identifier, 2, (RD)
-
+            returnData += rd.RecordIdentifier
             # RD: Settlement Date, 10, (In CCYY/MM/DD format)
-
+            returnData += rd.SettlementDate
             # RD: Terminal ID, 8, (Space if no information or non-numeric value)
-
+            returnData += rd.TerminalID.rjust(8, ' ')
             # RD: Batch Number, 6, (Space if no information or non-numeric value)
-
+            returnData += ' ' * 6
             # RD: Transaction Date, 15, (In YYYYMMDD:HH24MISS format)
-
+            returnData += '{0}:{1}'.format(rd.TransactionDate, rd.TransactionTime)
             # RD: BarCode Number, 19, (Space if no information or non-numeric value)
-
+            returnData += ' ' * 19
             # RD: Type, 10, (ALIPAY)
-
+            returnData += rd.PaymentType.rjust(10, ' ')
             # RD: Currency, 3, (e.g. “HKD”,”RMB”,”USD”)
-
+            returnData += rd.Currency
             # RD: Sign of Transaction amount, 1, ('-' means negative amount ' ' means positive amount)
-
+            if rd.TransType == 'R':
+                returnData += '-'
+            elif rd.TransType == 'S':
+                returnData += ' '
             # RD: Transaction Amount, 12, (With 2 decimal points)
-
+            returnData += str(int(round(float(rd.TransactionamountHKD) * 100, 2))).zfill(12)
             # RD: Approval Code, 6, (Space if no information or non-numeric value)
-
+            returnData += ' ' * 6
             # RD: Trace Number, 6, (Space if no information or non-numeric value)
-
+            returnData += ' ' * 6
             # RD: Sign of MDR fee, 1, ('-' means negative amount ' ' means positive amount)
-
+            if rd.TransType == 'R':
+                returnData += '-'
+            elif rd.TransType == 'S':
+                returnData += ' '
             # RD: Alipay MDR fee, 11, (With 2 decimal points)
-
+            returnData += str(int(round(float(rd.MDRFeeHKD) * 100, 2))).zfill(11)
             # RD: Alipay Order ID, 64, (Space if no information or non-numeric value)
             returnData += rd.Settlementno.rjust(64, ' ')
             # RD: EFTP Ref Number, 64, ()
