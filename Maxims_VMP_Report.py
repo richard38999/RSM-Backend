@@ -1,5 +1,6 @@
 import os
 import csv
+import sys
 import datetime as datetime
 import pysftp
 import Logger
@@ -253,17 +254,21 @@ def convertDataToEopgFormat():
 if __name__ == '__main__':
     try:
         log.start('Maxims_VMP_Report')
+        log.info(str(sys.argv))
+        if len(sys.argv) == 2:
+            today = sys.argv[1]
+        else:
+            today = datetime.datetime.now().strftime("%Y%m%d")
         MID = '852000058140011'
         # today = datetime.datetime.now()
-        today = '20211028'
         day_of_year = str(datetime.date(int(today[:4]), int(today[4:6]), int(today[6:])).timetuple().tm_yday)
         # today = '20211028'.strftime("%y%m%d")
         # temp = today.strftime('%j')
-        Datetime = (datetime.datetime.now() + datetime.timedelta(days=-1)).strftime("%y%m%d")
+        TransDatetime = (datetime.datetime.now() + datetime.timedelta(days=-1)).strftime("%y%m%d")
         currentlyPath = os.getcwd()
         path = currentlyPath + '\\Settlement_Report\\Maxims_VMP_Report\\VMP_Report\\852000058140011_20211027.csv'
-        # getSftpFile(SFTP_info,localpath=currentlyPath + '\\Settlement_Report\\Maxims_VMP_Report\\VMP_Report\\' + MID + '.' + Datetime, remotepath='/home/852000058140011/eopgfile/' + MID + '.' + Datetime)
-        localEOPGPath = currentlyPath + '\\Settlement_Report\\Maxims_VMP_Report\\EOPG_Report\\{0}'.format('VMP_' + MID + '.' + Datetime)
+        # getSftpFile(SFTP_info,localpath=currentlyPath + '\\Settlement_Report\\Maxims_VMP_Report\\VMP_Report\\' + MID + '.' + TransDatetime, remotepath='/home/852000058140011/eopgfile/' + MID + '.' + TransDatetime)
+        localEOPGPath = currentlyPath + '\\Settlement_Report\\Maxims_VMP_Report\\EOPG_Report\\{0}'.format('VMP_' + MID + '.' + TransDatetime)
         if readCSV(path):
             result = convertDataToEopgFormat()
             if result[0] == True:
