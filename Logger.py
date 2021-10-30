@@ -3,23 +3,25 @@ import logging
 import time
 import os
 
+
 class Log():
-    def __init__(self, path):
+    def __init__(self, Log_folder):
         # cur_path = os.path.dirname(os.path.realpath(__file__))
         currentlyPath = os.getcwd()
-        log_path = os.path.join(currentlyPath, 'logs\\' + path)
+        self.log_path = os.path.join(currentlyPath, 'logs\\' + Log_folder)
         # 如果不存在这个logs文件夹，就自动创建一个
-        if not os.path.exists(log_path):
-            os.mkdir(log_path)
+        if not os.path.exists(self.log_path):
+            os.mkdir(self.log_path)
         #文件的命名
-        self.logname = os.path.join(log_path,'%s.log'%time.strftime('%Y%m%d'))
+        self.logName = '%s.log'%time.strftime('%Y%m%d')
+        self.log_full_name = os.path.join(self.log_path,self.logName)
         self.logger = logging.getLogger()
         self.logger.setLevel(logging.DEBUG)
         #日志输出格式
         self.formatter = logging.Formatter('[%(asctime)s] [%(levelname)s] %(message)s')
     def __console(self,level,message):
         #创建一个FileHandler，用于写到本地
-        fh = logging.FileHandler(self.logname,'a',encoding='utf-8')#这个是python3的
+        fh = logging.FileHandler(self.log_full_name,'a',encoding='utf-8')#这个是python3的
         fh.setLevel(logging.DEBUG)
         fh.setFormatter(self.formatter)
         self.logger.addHandler(fh)
