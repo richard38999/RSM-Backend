@@ -264,11 +264,12 @@ if __name__ == '__main__':
         day_of_year = str(datetime.date(int(today[:4]), int(today[4:6]), int(today[6:])).timetuple().tm_yday)
         # today = '20211028'.strftime("%y%m%d")
         # temp = today.strftime('%j')
-        TransDatetime = (datetime.datetime.now() + datetime.timedelta(days=-1)).strftime("%y%m%d")
+        TransDatetime6 = (datetime.datetime.now() + datetime.timedelta(days=-1)).strftime("%y%m%d")
+        TransDatetime8 = (datetime.datetime.now() + datetime.timedelta(days=-1)).strftime("%Y%m%d")
         currentlyPath = os.getcwd()
-        path = currentlyPath + '\\Settlement_Report\\Maxims_VMP_Report\\VMP_Report\\852000058140011_20211027.csv'
-        # getSftpFile(SFTP_info,localpath=currentlyPath + '\\Settlement_Report\\Maxims_VMP_Report\\VMP_Report\\' + MID + '.' + TransDatetime, remotepath='/home/852000058140011/eopgfile/' + MID + '.' + TransDatetime)
-        localEOPGPath = currentlyPath + '\\Settlement_Report\\Maxims_VMP_Report\\EOPG_Report\\{0}'.format('VMP_' + MID + '.' + TransDatetime)
+        path = currentlyPath + '\\Settlement_Report\\Maxims_VMP_Report\\VMP_Report\\{0}_{1}.csv'.format(MID,TransDatetime8)
+        getSftpFile(SFTP_info,localpath=currentlyPath + '\\Settlement_Report\\Maxims_VMP_Report\\VMP_Report\\{0}_{1}.csv'.format(MID,TransDatetime8), remotepath='/home/eft/vmpfile/{0}/{1}_{2}.csv'.format(TransDatetime8,MID,TransDatetime8))
+        localEOPGPath = currentlyPath + '\\Settlement_Report\\Maxims_VMP_Report\\EOPG_Report\\{0}'.format('VMP_' + MID + '.' + TransDatetime6)
         if readCSV(path):
             result = convertDataToEopgFormat()
             if result[0] == True:
