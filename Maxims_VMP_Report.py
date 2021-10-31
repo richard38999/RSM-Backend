@@ -246,7 +246,7 @@ def convertDataToEopgFormat():
     returnData += ' '*204
     returnData += '\n'
     return [True, returnData]
-@decorator.except_output(Log_name='Maxims_VMP_Report', isSendEmail=True, Email_subject='Maxims_VMP_Report Error Alert!')
+@decorator.except_output('Maxims_VMP_Report', isSendEmail=True, Email_subject='Maxims_VMP_Report Error Alert!')
 def main():
     log.start('Maxims_VMP_Report')
     log.info(str(sys.argv))

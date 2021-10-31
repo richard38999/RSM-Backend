@@ -1,7 +1,5 @@
-import os
-import re
-
-from flask import Flask, current_app, session, make_response, send_from_directory, request, jsonify, send_file, json
+import decorator
+from flask import Flask,send_from_directory, request, jsonify, send_file, json
 from flask_jwt_extended import JWTManager, jwt_required
 from flask_cors import CORS
 import clr
@@ -17,8 +15,6 @@ import Octopus
 import hashlib
 import VMP
 from zipfile import ZipFile
-
-from logging.handlers import TimedRotatingFileHandler
 clr.FindAssembly('EFTPaymentsServer.dll')
 clr.AddReference('EFTPaymentsServer')
 clr.FindAssembly('XML_InterFace.dll')
@@ -29,19 +25,16 @@ from XML_InterFace import *
 
 log = Log('Flask')
 app = Flask(__name__)
+app.config.from_object(Configuration.Flask_Config['PROD'])
+Config = Configuration.Flask_Config.get('PROD')
 # 設定 JWT 密鑰
-app.config['JWT_SECRET_KEY'] = 'Testing123'
 jwt = JWTManager()
 jwt.init_app(app)
 now_date = time.strftime("%Y%m%d", time.localtime())
-# logging.basicConfig(level=logging.DEBUG)
-# file_log_handler = TimedRotatingFileHandler("logs/{0}.log".format(now_date), when='midnight',interval=1, backupCount=10)
-# formatter = logging.Formatter('%(asctime)s %(levelname)s %(filename)s:%(lineno)d %(message)s')
-# file_log_handler.setFormatter(formatter)
-# logging.getLogger().addHandler(file_log_handler)
 CORS(app)
 
 @app.route("/login", methods=['POST'])
+@decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def login():
     log.start('login')
     log.debug(request.headers)
@@ -79,6 +72,8 @@ def login():
     return jsonify(returnmessage)
 
 @app.route("/ChangePassword", methods=['POST'])
+@jwt_required
+@decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def ChangePassword():
     log.start('ChangePassword')
     log.debug(request.headers)
@@ -96,11 +91,12 @@ def ChangePassword():
 
 @app.route("/userView", methods=['GET'])
 @jwt_required
+@decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def userView():
     log.start('userView')
     log.debug(request.headers)
     log.debug("BODY: %s" % request.get_data())
-    username = request.args.get('username')
+    username = request.headers.get("username")
     data = Utility.userView(username)
     meta = {'status': 200, 'msg': 'SUCCESS'}
     returnmessage = {'meta': meta, 'data': data}
@@ -110,11 +106,12 @@ def userView():
 
 @app.route("/menus", methods=['GET'])
 @jwt_required
+@decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def menu():
     log.start('menu')
     log.debug(request.headers)
     log.debug("BODY: %s" % request.get_data())
-    username = request.args.get('username')
+    username = request.headers.get("username")
     data = Utility.get_Menu(username)
     meta = {'status': 200, 'msg': 'SUCCESS'}
     returnmessage = {'meta': meta, 'data': data}
@@ -124,11 +121,12 @@ def menu():
 
 @app.route("/userlist", methods=['GET'])
 @jwt_required
+@decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def userlist():
     log.start('userlist')
     log.debug(request.headers)
     log.debug("BODY: %s" % request.get_data())
-    username = request.args.get('username')
+    username = request.headers.get("username")
     pagenum = request.args.get('pagenum')
     pagesize = request.args.get('pagesize')
     data = Utility.get_userlist(int(pagenum), int(pagesize))
@@ -140,11 +138,12 @@ def userlist():
 
 @app.route("/updateuserstatus", methods=['GET'])
 @jwt_required
+@decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def updateuserstatus():
     log.start('updateuserstatus')
     log.debug(request.headers)
     log.debug("BODY: %s" % request.get_data())
-    username = request.args.get('username')
+    username = request.headers.get("username")
     status = request.args.get('status')
     data = Utility.update_AccountStatus(username, status)
     meta = {'status': 200, 'msg': 'SUCCESS'}
@@ -155,11 +154,12 @@ def updateuserstatus():
 
 @app.route("/deleteUser", methods=['GET'])
 @jwt_required
+@decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def deleteUser():
     log.start('deleteUser')
     log.debug(request.headers)
     log.debug("BODY: %s" % request.get_data())
-    username = request.args.get('username')
+    username = request.headers.get("username")
     status = request.args.get('status')
     data = Utility.delete_Account(username)
     meta = {'status': 200, 'msg': 'SUCCESS'}
@@ -170,6 +170,7 @@ def deleteUser():
 
 @app.route("/<Till_Number>/<TransactionType>", methods=['POST'])
 @jwt_required
+@decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def Transaction(Till_Number, TransactionType):
     log.start('Transaction')
     log.debug(request.headers)
@@ -397,6 +398,7 @@ def Transaction(Till_Number, TransactionType):
 
 @app.route("/<Till_Number>/<BatchFor>/Upload", methods=['POST'])
 @jwt_required
+@decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def BatchFor(Till_Number, BatchFor):
     log.start('BatchFor')
     log.debug(request.headers)
@@ -511,6 +513,7 @@ def BatchFor(Till_Number, BatchFor):
 
 @app.route("/CUP/BatchForCardNo", methods=['POST'])
 @jwt_required
+@decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def BatchForCardNo():
     log.start('BatchForCardNo')
     log.debug(request.headers)
@@ -549,6 +552,7 @@ def BatchForCardNo():
 
 @app.route("/A8_Password", methods=['GET'])
 @jwt_required
+@decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def A8_Password():
     log.start('A8_Password')
     log.debug(request.headers)
@@ -572,6 +576,7 @@ def A8_Password():
 
 @app.route("/Octopus/Report/<action>", methods=['POST'])
 @jwt_required
+@decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def Octopus_Report(action):
     log.start('Octopus_Report')
     log.debug(request.headers)
@@ -644,6 +649,7 @@ def Octopus_Report(action):
 
 @app.route("/VMP/<TransactionType>", methods=['POST'])
 @jwt_required
+@decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def VMP_Transaction(TransactionType):
     log.start('VMP_Transaction')
     log.debug(request.headers)
@@ -1146,15 +1152,15 @@ def VMP_Transaction(TransactionType):
     return jsonify(returnmessage)
 
 @app.route("/download/<string:filename>", methods=['GET'])
+@decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def imagedownload(filename):
     log.start('imagedownload')
     currentlyPath = os.getcwd()
     if (os.path.isfile(os.path.join(currentlyPath,filename))):
         log.end('imagedownload')
         return send_from_directory(currentlyPath,filename, as_attachment=True)
-
+    return '404 NOT FOUND'
 if __name__ == '__main__':
     log.start('Flask')
-    Config = Configuration.loadConfig()
     app.run(host='0.0.0.0', port=5000)
     log.end('Flask')

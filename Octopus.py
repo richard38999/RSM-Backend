@@ -1,9 +1,10 @@
 import datetime
 import os
 import time
-from main import current_app
+import Logger
 import shutil
 from operator import itemgetter
+log = Logger.Log('Octopus')
 
 class SET111():
     SettDate = ''
@@ -29,48 +30,44 @@ class Report():
     zip_path = ''
 
     def Check_SPIDStatus(self, SPID, str_DateFrom, str_DateTo):
-        try:
-            status = True
-            currentlyPath = os.getcwd()  # 获取当前目录path
-            allFileName = os.listdir(currentlyPath + '\\Octopus\\Parsefiles')
-            date_DateFrom = datetime.datetime.strptime(str_DateFrom, '%Y%m%d')
-            date_DateTo = datetime.datetime.strptime(str_DateTo, '%Y%m%d')
-            current_app.logger.debug(str_DateFrom)
-            current_app.logger.debug(str_DateTo)
-            returnmessage = 'Some Data Not Exist: '
-            for i in range((date_DateTo - date_DateFrom).days + 1):
-                if not os.path.exists(currentlyPath + '\\Octopus\\Parsefiles' + '\\' + (
-                        date_DateFrom + datetime.timedelta(days=+i)).strftime("%Y%m%d")):
-                    returnmessage += (date_DateFrom + datetime.timedelta(days=+i)).strftime("%Y%m%d") + '; \r\n'
-                    status = False
-                    continue
-                if not os.path.exists(currentlyPath + '\\Octopus\\Parsefiles' + '\\' + (
-                        date_DateFrom + datetime.timedelta(days=+i)).strftime("%Y%m%d") + '\\' + SPID + '.051'):
-                    returnmessage += (date_DateFrom + datetime.timedelta(days=+i)).strftime(
-                        "%Y%m%d") + '\\' + SPID + '.051' + '; \r\n'
-                    status = False
-                    continue
-                if not os.path.exists(currentlyPath + '\\Octopus\\Parsefiles' + '\\' + (
-                        date_DateFrom + datetime.timedelta(days=+i)).strftime("%Y%m%d") + '\\' + SPID + '.052'):
-                    returnmessage += (date_DateFrom + datetime.timedelta(days=+i)).strftime(
-                        "%Y%m%d") + '\\' + SPID + '.052' + '; \r\n'
-                    status = False
-                    continue
-                if not os.path.exists(currentlyPath + '\\Octopus\\Parsefiles' + '\\' + (
-                        date_DateFrom + datetime.timedelta(days=+i)).strftime("%Y%m%d") + '\\' + SPID + '.csv'):
-                    returnmessage += (date_DateFrom + datetime.timedelta(days=+i)).strftime(
-                        "%Y%m%d") + '\\' + SPID + '.csv' + '; \r\n'
-                    status = False
-                    continue
-            if status == True:
-                returnmessage = 'Success'
-                return [status, returnmessage]
-            else:
-                return [status, returnmessage]
-        except Exception as e:
-            current_app.logger.debug(e)
-            status = False
-            return [status, e]
+        status = False
+        currentlyPath = os.getcwd()  # 获取当前目录path
+        allFileName = os.listdir(currentlyPath + '\\Octopus\\Parsefiles')
+        date_DateFrom = datetime.datetime.strptime(str_DateFrom, '%Y%m%d')
+        date_DateTo = datetime.datetime.strptime(str_DateTo, '%Y%m%d')
+        log.debug(str_DateFrom)
+        log.debug(str_DateTo)
+        returnmessage = 'Some Data Not Exist: '
+        for i in range((date_DateTo - date_DateFrom).days + 1):
+            if not os.path.exists(currentlyPath + '\\Octopus\\Parsefiles' + '\\' + (
+                    date_DateFrom + datetime.timedelta(days=+i)).strftime("%Y%m%d")):
+                returnmessage += (date_DateFrom + datetime.timedelta(days=+i)).strftime("%Y%m%d") + '; \r\n'
+                status = False
+                continue
+            if not os.path.exists(currentlyPath + '\\Octopus\\Parsefiles' + '\\' + (
+                    date_DateFrom + datetime.timedelta(days=+i)).strftime("%Y%m%d") + '\\' + SPID + '.051'):
+                returnmessage += (date_DateFrom + datetime.timedelta(days=+i)).strftime(
+                    "%Y%m%d") + '\\' + SPID + '.051' + '; \r\n'
+                status = False
+                continue
+            if not os.path.exists(currentlyPath + '\\Octopus\\Parsefiles' + '\\' + (
+                    date_DateFrom + datetime.timedelta(days=+i)).strftime("%Y%m%d") + '\\' + SPID + '.052'):
+                returnmessage += (date_DateFrom + datetime.timedelta(days=+i)).strftime(
+                    "%Y%m%d") + '\\' + SPID + '.052' + '; \r\n'
+                status = False
+                continue
+            if not os.path.exists(currentlyPath + '\\Octopus\\Parsefiles' + '\\' + (
+                    date_DateFrom + datetime.timedelta(days=+i)).strftime("%Y%m%d") + '\\' + SPID + '.csv'):
+                returnmessage += (date_DateFrom + datetime.timedelta(days=+i)).strftime(
+                    "%Y%m%d") + '\\' + SPID + '.csv' + '; \r\n'
+                status = False
+                continue
+        status = True
+        if status == True:
+            returnmessage = 'Success'
+            return [status, returnmessage]
+        else:
+            return [status, returnmessage]
 
     # check SPID
     def Download_SPID(self, SPID, str_DateFrom, str_DateTo):
@@ -79,8 +76,8 @@ class Report():
         allFileName = os.listdir(currentlyPath + '\\Octopus\\Parsefiles')
         date_DateFrom = datetime.datetime.strptime(str_DateFrom, '%Y%m%d')
         date_DateTo = datetime.datetime.strptime(str_DateTo, '%Y%m%d')
-        current_app.logger.debug(str_DateFrom)
-        current_app.logger.debug(str_DateTo)
+        log.debug(str_DateFrom)
+        log.debug(str_DateTo)
         masterFileName = time.strftime("%Y%m%d%H%M%S", time.localtime())
         Path_SPID = currentlyPath + '\\Octopus\\Merchant_Report\\' + masterFileName
         if str_DateFrom == str_DateTo:
@@ -193,7 +190,7 @@ class Report():
         return [status, returnmessage]
 
     def Check_MonthlyReportStatus(self, Month):
-        status = True
+        status = False
         currentlyPath = os.getcwd()  # 获取当前目录path
         startDate = Month + '01'
         date_DateFrom = datetime.datetime.strptime(startDate, '%Y%m%d')
@@ -207,6 +204,7 @@ class Report():
                 i += 1
                 continue
             i += 1
+        status = True
         if status == True:
             returnmessage = 'Success'
             return [status, returnmessage]

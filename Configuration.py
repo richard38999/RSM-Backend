@@ -96,10 +96,34 @@ def get_A8_PW_Email():
 
 class Config():
     FrontEndVersion = ''
+    isSentEmailAlert = None
+    Environment = None
 
 def loadConfig():
     Configuration = Config()
     config = configparser.ConfigParser()
     config.read("config.ini")
-    Configuration.FrontEndVersion = config['config']['FrontEnd Version']
+    Configuration.FrontEndVersion = config['Flask_Base_config']['FrontEnd Version']
+    Configuration.Environment = config['Flask_Base_config']['Environment']
+    if Configuration.Environment == 'PROD':
+        Configuration.isSentEmailAlert = config['Flask_PROD_config']['isSentEmailAlert']
+    elif Configuration.Environment == 'DEV':
+        Configuration.isSentEmailAlert = config['Flask_DEV_config']['isSentEmailAlert']
     return Configuration
+
+class Flask_Base_Config():
+    JWT_SECRET_KEY = 'Testing123'
+    FrontEndVersion = '1.0.4'
+
+class Flask_PROD_Config(Flask_Base_Config):
+    DEBUG = False
+    isSentEmail = True
+
+class Flask_DEV_Config(Flask_Base_Config):
+    DEBUG = True
+    isSentEmail = False
+
+Flask_Config = {
+    'DEV': Flask_DEV_Config,
+    'PROD': Flask_PROD_Config
+}
