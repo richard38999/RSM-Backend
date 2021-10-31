@@ -30,7 +30,7 @@ class Report():
     zip_path = ''
 
     def Check_SPIDStatus(self, SPID, str_DateFrom, str_DateTo):
-        status = False
+        status = True
         currentlyPath = os.getcwd()  # 获取当前目录path
         allFileName = os.listdir(currentlyPath + '\\Octopus\\Parsefiles')
         date_DateFrom = datetime.datetime.strptime(str_DateFrom, '%Y%m%d')
@@ -62,7 +62,6 @@ class Report():
                     "%Y%m%d") + '\\' + SPID + '.csv' + '; \r\n'
                 status = False
                 continue
-        status = True
         if status == True:
             returnmessage = 'Success'
             return [status, returnmessage]
@@ -190,7 +189,7 @@ class Report():
         return [status, returnmessage]
 
     def Check_MonthlyReportStatus(self, Month):
-        status = False
+        status = True
         currentlyPath = os.getcwd()  # 获取当前目录path
         startDate = Month + '01'
         date_DateFrom = datetime.datetime.strptime(startDate, '%Y%m%d')
@@ -204,7 +203,6 @@ class Report():
                 i += 1
                 continue
             i += 1
-        status = True
         if status == True:
             returnmessage = 'Success'
             return [status, returnmessage]
