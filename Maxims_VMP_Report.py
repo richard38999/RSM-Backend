@@ -11,7 +11,7 @@ log = Logger.Log('Maxims_VMP_Report')
 AlertEmail = Configuration.get_Alert_Email()
 Email_info = Configuration.get_Email_info()
 SFTP_info = Configuration.get_SFTP_info()
-
+Maxims_VMP_Report_Config = Configuration.get_Maxims_VMP_Report_Config()
 today = ''
 day_of_year = ''
 Result = False
@@ -260,47 +260,61 @@ def main():
     else:
         today = datetime.datetime.now().strftime("%Y%m%d")
         # today = '20211030'
-    MID = '852000058140011'
-    day_of_year = str(datetime.date(int(today[:4]), int(today[4:6]), int(today[6:])).timetuple().tm_yday)
-    TransDatetime_6_digits = (datetime.datetime.strptime(today,'%Y%m%d') + datetime.timedelta(days=-1)).strftime("%y%m%d")
-    log.info(f'TransDatetime_6_digits: {TransDatetime_6_digits}')
-    TransDatetime_8_digits = (datetime.datetime.strptime(today,'%Y%m%d') + datetime.timedelta(days=-1)).strftime("%Y%m%d")
-    log.info(f'TransDatetime_8_digits: {TransDatetime_8_digits}')
-    currentlyPath = os.getcwd()
-    VMP_File_Remote_Path = '/home/eft/vmpfile/{0}/{1}_{2}.csv'.format(TransDatetime_8_digits, MID, TransDatetime_8_digits)
-    log.info(f'VMP_File_Remote_Path: {VMP_File_Remote_Path}')
-    VMP_File_Local_Path = currentlyPath + '\\Settlement_Report\\Maxims_VMP_Report\\VMP_Report\\{0}_{1}.csv'.format(MID, TransDatetime_8_digits)
-    log.info(f'VMP_File_Local_Path: {VMP_File_Local_Path}')
-    EOPG_File_Remote_Path = f'/home/{MID}/eopgfile/VMP_{MID}.{TransDatetime_6_digits}'
-    log.info(f'EOPG_File_Remote_Path: {EOPG_File_Remote_Path}')
-    EOPG_File_Local_Path = currentlyPath + '\\Settlement_Report\\Maxims_VMP_Report\\EOPG_Report\\{0}'.format(
-        'VMP_' + MID + '.' + TransDatetime_6_digits)
-    log.info(f'EOPG_File_Local_Path: {EOPG_File_Local_Path}')
-    if not checkSftpFile(SFTP_info, remotepath=VMP_File_Remote_Path):
-        emailContent = f'remotepath Not Exist: {VMP_File_Remote_Path}'
-        log.info(emailContent)
+    for MID in Maxims_VMP_Report_Config:
+        # MID = '852000058140011'
+        MID = MID[0]
         Result = False
-        Email.sentEmail(Log_Name='Maxims_VMP_Report', Email_subject=f'[{Result}]Maxims_VMP_Report ({today})', Email_content=emailContent)
-        log.end('Maxims_VMP_Report')
-        return
-    getSftpFile(SFTP_info,
-                localpath=currentlyPath + '\\Settlement_Report\\Maxims_VMP_Report\\VMP_Report\\{0}_{1}.csv'.format(MID,TransDatetime_8_digits),
-                remotepath=VMP_File_Remote_Path)
-    if readCSV(VMP_File_Local_Path):
-        result = convertDataToEopgFormat()
-        if result[0] == True:
-            writeEOPGFile(path=EOPG_File_Local_Path, data=result[1])
-            log.info('write EOPG file in local success')
-    putSftpFile(SFTP_info, localpath=EOPG_File_Local_Path, remotepath=EOPG_File_Remote_Path)
-    Result = True
-    emailContent = f'''
-    Settlement  Date: {today}\n
-    Transaction Date: {TransDatetime_8_digits}\n
-    Total Transaction: {RT.TotalofTrasaction}\n
-    Total Fee: {RT.TotalofFee}\n
-    Total Amount: {RT.TotalofAmount}'''
-    Email.sentEmail(Log_Name='Maxims_VMP_Report', Email_subject=f'[{Result}]Maxims_VMP_Report ({today})',
-                    Email_content=emailContent, Email_attachement=[VMP_File_Local_Path, EOPG_File_Local_Path])
+        log.info(f'MID: {MID}')
+        day_of_year = str(datetime.date(int(today[:4]), int(today[4:6]), int(today[6:])).timetuple().tm_yday)
+        TransDatetime_6_digits = (datetime.datetime.strptime(today,'%Y%m%d') + datetime.timedelta(days=-1)).strftime("%y%m%d")
+        log.info(f'TransDatetime_6_digits: {TransDatetime_6_digits}')
+        TransDatetime_8_digits = (datetime.datetime.strptime(today,'%Y%m%d') + datetime.timedelta(days=-1)).strftime("%Y%m%d")
+        log.info(f'TransDatetime_8_digits: {TransDatetime_8_digits}')
+        currentlyPath = os.getcwd()
+        VMP_File_Remote_Path = '/home/eft/vmpfile/{0}/{1}_{2}.csv'.format(TransDatetime_8_digits, MID, TransDatetime_8_digits)
+        log.info(f'VMP_File_Remote_Path: {VMP_File_Remote_Path}')
+        VMP_File_Local_Path = currentlyPath + '\\Settlement_Report\\Maxims_VMP_Report\\VMP_Report\\{0}_{1}.csv'.format(MID, TransDatetime_8_digits)
+        log.info(f'VMP_File_Local_Path: {VMP_File_Local_Path}')
+        EOPG_File_Remote_Path = f'/home/{MID}/eopgfile/VMP_{MID}.{TransDatetime_6_digits}'
+        log.info(f'EOPG_File_Remote_Path: {EOPG_File_Remote_Path}')
+        EOPG_File_Local_Path = currentlyPath + '\\Settlement_Report\\Maxims_VMP_Report\\EOPG_Report\\{0}'.format(
+            'VMP_' + MID + '.' + TransDatetime_6_digits)
+        log.info(f'EOPG_File_Local_Path: {EOPG_File_Local_Path}')
+        EOPG_File_Remote_folder = f'/home/{MID}/eopgfile'
+        log.info(f'EOPG_File_Remote_folder: {EOPG_File_Remote_folder}')
+        if not checkSftpFile(SFTP_info, remotepath=VMP_File_Remote_Path):
+            emailContent = f'remotepath Not Exist: {VMP_File_Remote_Path}'
+            log.info(emailContent)
+            Result = False
+            Email.sentEmail(Log_Name='Maxims_VMP_Report', Email_subject=f'[{Result}]Maxims_VMP_Report ({today}) - {MID}', Email_content=emailContent)
+            log.end('Maxims_VMP_Report')
+            continue
+        getSftpFile(SFTP_info,
+                    localpath=currentlyPath + '\\Settlement_Report\\Maxims_VMP_Report\\VMP_Report\\{0}_{1}.csv'.format(MID,TransDatetime_8_digits),
+                    remotepath=VMP_File_Remote_Path)
+        if readCSV(VMP_File_Local_Path):
+            result = convertDataToEopgFormat()
+            if result[0] == True:
+                writeEOPGFile(path=EOPG_File_Local_Path, data=result[1])
+                log.info('write EOPG file in local success')
+        if not checkSftpFile(SFTP_info,remotepath=EOPG_File_Remote_folder):
+            emailContent = f'Remote Folder Not Exist: {EOPG_File_Remote_folder}'
+            log.info(emailContent)
+            Result = False
+            Email.sentEmail(Log_Name='Maxims_VMP_Report',
+                            Email_subject=f'[{Result}]Maxims_VMP_Report ({today}) - {MID}', Email_content=emailContent)
+            log.end('Maxims_VMP_Report')
+            continue
+        putSftpFile(SFTP_info, localpath=EOPG_File_Local_Path, remotepath=EOPG_File_Remote_Path)
+        Result = True
+        emailContent = f'''
+        Settlement  Date: {today}\n
+        Transaction Date: {TransDatetime_8_digits}\n
+        Total Transaction: {RT.TotalofTrasaction}\n
+        Total Fee: {RT.TotalofFee}\n
+        Total Amount: {RT.TotalofAmount}'''
+        Email.sentEmail(Log_Name='Maxims_VMP_Report', Email_subject=f'[{Result}]Maxims_VMP_Report ({today}) - {MID}',
+                        Email_content=emailContent, Email_attachement=[VMP_File_Local_Path, EOPG_File_Local_Path])
     log.end('Maxims_VMP_Report')
 
 if __name__ == '__main__':

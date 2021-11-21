@@ -24,6 +24,8 @@ def except_output(Log_name, isSendEmail=False, Email_subject='', Email_from='RSM
                 if isSendEmail:
                     SendEmail(Email_from=Email_from, Email_subject=Email_subject, Email_attachement=log.log_full_name, Email_content=errorMessage)
                 raise
+                # return func(*args, **kwargs)
+                # return
         return execept_print
     return except_execute
 @Async.async_call

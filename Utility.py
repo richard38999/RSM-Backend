@@ -1,6 +1,9 @@
 import sqlite3
 import requests
-db_name = 'param.db'
+import Configuration
+
+db_name = Configuration.DB_path
+
 
 def getResultMessage(iRet):
     if iRet == '0':
@@ -44,6 +47,7 @@ def getResultMessage(iRet):
     if iRet == '-98':
         return 'Unknown error'
 
+
 def getTransactionRecord(tr):
     returndata = {'paymentType': tr.paymentType,
                   'transType': tr.transType,
@@ -75,6 +79,7 @@ def getTransactionRecord(tr):
                   'open_id': tr.open_id,
                   'respondText': tr.respondText}
     return returndata
+
 
 def getXmlResp(tr, RawRequest, RawResponse):
     returndata = {'merchantID': tr.MID,
@@ -127,6 +132,7 @@ def getXmlResp(tr, RawRequest, RawResponse):
 
     return returndata
 
+
 def get_login_account():
     conn = sqlite3.connect(db_name)
     cursor = conn.cursor()
@@ -135,6 +141,7 @@ def get_login_account():
     cursor.close()
     conn.close()
     return values
+
 
 def userView(username):
     returnmessage = []
@@ -165,24 +172,30 @@ def userView(username):
         twomessage = []
         for j in LevelTWOvalues:
             threemessage = []
-            if j[4] == None: # parent id 有就代表是二级菜单
+            if j[4] == None:  # parent id 有就代表是二级菜单
                 continue
-            elif j[4] != i[0]: # parent id 不等于 level one 的 id
+            elif j[4] != i[0]:  # parent id 不等于 level one 的 id
                 continue
-            else: # parent id 等于 level one 的 id
+            else:  # parent id 等于 level one 的 id
                 for k in LevelTHREEvalues:
                     if k[4] == None:
                         continue
                     elif k[4] != j[0]:
                         continue
                     else:
-                        threemessage.append({'id': k[0], 'authName': k[1], 'path': k[2], 'level': k[3], 'parent_id': k[4], 'icon': k[6], 'children': []})
-            twomessage.append({'id': j[0], 'authName': j[1], 'path': j[2], 'level': j[3], 'parent_id': j[4], 'icon': j[6], 'children': threemessage})
-        data.append({'id': i[0], 'authName': i[1], 'path': i[2], 'level': i[3], 'parent_id': i[4], 'icon': i[6], 'children': twomessage})
+                        threemessage.append(
+                            {'id': k[0], 'authName': k[1], 'path': k[2], 'level': k[3], 'parent_id': k[4], 'icon': k[6],
+                             'children': []})
+            twomessage.append(
+                {'id': j[0], 'authName': j[1], 'path': j[2], 'level': j[3], 'parent_id': j[4], 'icon': j[6],
+                 'children': threemessage})
+        data.append({'id': i[0], 'authName': i[1], 'path': i[2], 'level': i[3], 'parent_id': i[4], 'icon': i[6],
+                     'children': twomessage})
     returnmessage = {'chooseKey': chooseKey, 'data': data}
     cursor.close()
     conn.close()
     return returnmessage
+
 
 def get_Menu(username):
     returnmessage = []
@@ -191,13 +204,16 @@ def get_Menu(username):
     command = 'select * from users where username = "{0}";'.format(username)
     cursor.execute(command)
     id = cursor.fetchall()[0][0]  # for get user ID
-    command = 'select DISTINCT * from users_role ur LEFT JOIN Menus p on ur.role_id where ur.user_id = "{0}" and ur.role_id = p.id and p.level = 1 order by sort;'.format(id)
+    command = 'select DISTINCT * from users_role ur LEFT JOIN Menus p on ur.role_id where ur.user_id = "{0}" and ur.role_id = p.id and p.level = 1 order by sort;'.format(
+        id)
     cursor.execute(command)
     LevelONEvalues = cursor.fetchall()  # menus level one values
-    command = 'select DISTINCT * from users_role ur LEFT JOIN Menus p on ur.role_id where ur.user_id = "{0}" and ur.role_id = p.id and p.level = 2;'.format(id)
+    command = 'select DISTINCT * from users_role ur LEFT JOIN Menus p on ur.role_id where ur.user_id = "{0}" and ur.role_id = p.id and p.level = 2;'.format(
+        id)
     cursor.execute(command)
     LevelTWOvalues = cursor.fetchall()  # menus level two values
-    command = 'select DISTINCT * from users_role ur LEFT JOIN Menus p on ur.role_id where ur.user_id = "{0}" and ur.role_id = p.id and p.level = 3;'.format(id)
+    command = 'select DISTINCT * from users_role ur LEFT JOIN Menus p on ur.role_id where ur.user_id = "{0}" and ur.role_id = p.id and p.level = 3;'.format(
+        id)
     cursor.execute(command)
     LevelTHREEvalues = {}
     if len(cursor.fetchall()) > 0:
@@ -206,24 +222,31 @@ def get_Menu(username):
         twomessage = []
         for j in LevelTWOvalues:
             threemessage = []
-            if j[6] == None: # parent id 有就代表是二级菜单
+            if j[6] == None:  # parent id 有就代表是二级菜单
                 continue
-            elif j[6] != i[2]: # parent id 不等于 level one 的 id
+            elif j[6] != i[2]:  # parent id 不等于 level one 的 id
                 continue
-            else: # parent id 等于 level one 的 id
+            else:  # parent id 等于 level one 的 id
                 for k in LevelTHREEvalues:
                     if k[6] == None:
                         continue
                     elif k[6] != j[2]:
                         continue
                     else:
-                        threemessage.append({'id': k[2], 'authName': k[3], 'path': k[4], 'level': k[5], 'parent_id': k[6], 'icon': k[8], 'children': []})
-            twomessage.append({'id': j[2], 'authName': j[3], 'path': j[4], 'level': j[5], 'parent_id': j[6], 'icon': j[8], 'children': threemessage})
-        returnmessage.append({'id': i[2], 'authName': i[3], 'path': i[4], 'level': i[5], 'parent_id': i[6], 'icon': i[8], 'children': twomessage})
+                        threemessage.append(
+                            {'id': k[2], 'authName': k[3], 'path': k[4], 'level': k[5], 'parent_id': k[6], 'icon': k[8],
+                             'children': []})
+            twomessage.append(
+                {'id': j[2], 'authName': j[3], 'path': j[4], 'level': j[5], 'parent_id': j[6], 'icon': j[8],
+                 'children': threemessage})
+        returnmessage.append(
+            {'id': i[2], 'authName': i[3], 'path': i[4], 'level': i[5], 'parent_id': i[6], 'icon': i[8],
+             'children': twomessage})
 
     cursor.close()
     conn.close()
     return returnmessage
+
 
 def get_userlist(pagenum, pagesize):
     returnmessage = []
@@ -249,8 +272,9 @@ def get_userlist(pagenum, pagesize):
             'lastlogindatetime': values[i][6]
         })
 
-    returnmessage = {'userlist': userlist,'total': len(values)}
+    returnmessage = {'userlist': userlist, 'total': len(values)}
     return returnmessage
+
 
 def update_lastlogindatetime(nowdatetime, username):
     conn = sqlite3.connect(db_name)
@@ -260,9 +284,10 @@ def update_lastlogindatetime(nowdatetime, username):
     cursor.close()
     conn.close()
 
+
 def update_AccountStatus(username, status):
     try:
-        if(status == 'true'):
+        if (status == 'true'):
             vaule = 1
         else:
             vaule = 0
@@ -295,6 +320,7 @@ def delete_Account(username):
         returnmessage = {'DeleteResult': False}
         return returnmessage
 
+
 def convertToCardNo(maskedCardNo):
     returnmessage = ''
     for i in maskedCardNo:
@@ -320,6 +346,7 @@ def convertToCardNo(maskedCardNo):
             returnmessage += '9'
     return returnmessage
 
+
 def ChangePassword(username, oldPassword, newPassword):
     try:
         returnmessage = ''
@@ -328,7 +355,7 @@ def ChangePassword(username, oldPassword, newPassword):
         cursor.execute('select * FROM users where username="{0}";'.format(username))
         vaules = cursor.fetchall()[0][2]
         if oldPassword == vaules:
-        #     password match, update password
+            #     password match, update password
             cursor.execute('update users set password="{0}" where username="{1}";'.format(newPassword, username))
             conn.commit()
             returnmessage = {'status': 'Success', 'msg': 'Change Password Success'}
@@ -343,6 +370,7 @@ def ChangePassword(username, oldPassword, newPassword):
         returnmessage = {'status': 'Failed', 'msg': "{0}".format(err)}
         return returnmessage
 
+
 def PostToHost(url, data, timeout):
     try:
         req = requests.post(url, data=data, timeout=timeout)
@@ -351,6 +379,7 @@ def PostToHost(url, data, timeout):
     finally:
         return req
 
+
 def GetToHost(url, timeout):
     try:
         req = requests.get(url, timeout=timeout)
@@ -358,3 +387,123 @@ def GetToHost(url, timeout):
         print(err)
     finally:
         return req
+
+
+def setconfig_Offline(username='',
+                      Gateway_Name='',
+                      Tag='',
+                      MID='',
+                      TID='',
+                      TransactionType='',
+                      PaymentType='',
+                      barcode='',
+                      amount='',
+                      ecrRefNo='',
+                      ApprovalCode='',
+                      RRN='',
+                      IP='',
+                      Port='',
+                      TPDU='',
+                      COMMTYPE='',
+                      Timeout='',
+                      MsgType='',
+                      TraceNo='',
+                      URL='',
+                      PayType='',
+                      OrdDesc='',
+                      Products='',
+                      AUTH='',
+                      shopcarts='',
+                      OriTID=''
+                      ):
+    returnmessage = {}
+    conn = sqlite3.connect(db_name)
+    cursor = conn.cursor()
+    cursor.execute(
+        f'select * FROM Offline_Txn_Config where username="{username}" and Gateway_Name="{Gateway_Name}" and Tag="{Tag}";')
+    values = cursor.fetchall()
+    if values != []:
+        cursor.close()
+        conn.close()
+        return {'status': 1, 'msg': 'Tag Already exist! Please change the Tag.'}
+    cmd = f'INSERT INTO Offline_Txn_Config VALUES ("{username}", "{Gateway_Name}", "{Tag}", "{MID}", "{TID}", "{TransactionType}", "{PaymentType}", "{amount}", "{barcode}", "{ApprovalCode}", "{RRN}", "{TraceNo}", "{OriTID}", "{URL}", "{IP}", "{Port}", "{TPDU}", "{Timeout}", "{MsgType}", "{COMMTYPE}", "{OrdDesc}", "{Products}");'
+    cursor.execute(cmd)
+    conn.commit()
+    cursor.close()
+    conn.close()
+    return {'status': 0, 'msg': 'Set Config Success'}
+
+
+def setconfig_VMP(username='', Gateway_Name='', Tag='', APIType='', User_Confirm_Key='', SecretCode='', Amount='', Service='', out_trade_no='', TransactionType='',
+                  PaymentType='', eft_trade_no='', refund_no='', Wallet='',
+                   buyerType='', subject='', body='', fee_type='', tid='',
+                  scene_type='', openid='', sub_openid='', wechatWeb='', active_time='', URL='', notify_url='',
+                  return_url='', app_pay='', lang='', goods_body='', goods_subject='',
+                  reuse='', redirect='', refund_reason='', reason='', mobileNumber='',
+                  fullName='', shippingAddress_countryCode='', shippingAddress_postCode='', shippingAddress_lines='',
+                  billingAddress_countryCode='', billingAddress_postCode='', billingAddress_lines=''):
+    returnmessage = {}
+    conn = sqlite3.connect(db_name)
+    cursor = conn.cursor()
+    cursor.execute(
+        f'select * FROM VMP_Config where username="{username}" and Gateway_Name="{Gateway_Name}" and Tag="{Tag}";')
+    values = cursor.fetchall()
+    if values != []:
+        cursor.close()
+        conn.close()
+        return {'status': 1, 'msg': 'Tag Already exist! Please change the Tag.'}
+    cmd = f'INSERT INTO VMP_Config VALUES ("{username}", "{Gateway_Name}", "{Tag}", "{APIType}", "{User_Confirm_Key}", ' \
+          f'"{SecretCode}", "{Amount}", "{Service}", "{out_trade_no}", "{TransactionType}", ' \
+          f'"{PaymentType}", "{eft_trade_no}", "{refund_no}", "{Wallet}", "{buyerType}", ' \
+          f'"{subject}", "{body}", "{fee_type}", "{tid}", "{scene_type}", ' \
+          f'"{openid}", "{sub_openid}","{wechatWeb}", "{active_time}", "{URL}", "{notify_url}","{return_url}",' \
+          f'"{app_pay}", "{lang}","{goods_body}", "{goods_subject}","{reuse}",' \
+          f'"{redirect}", "{refund_reason}","{reason}", "{mobileNumber}","{fullName}",' \
+          f'"{shippingAddress_countryCode}", "{shippingAddress_postCode}","{shippingAddress_lines}", "{billingAddress_countryCode}","{billingAddress_postCode}",'\
+          f'"{billingAddress_lines}");'
+    print(cmd)
+    cursor.execute(cmd)
+    conn.commit()
+    cursor.close()
+    conn.close()
+    return {'status': 0, 'msg': 'Set Config Success'}
+
+
+def loadconfig(username=None, Gateway_Name=None):
+    returnmessage = []
+    conn = sqlite3.connect(db_name)
+    cursor = conn.cursor()
+    if Gateway_Name == 'VMP' or Gateway_Name == 'BOCVMP':
+        cmd = f'select * FROM VMP_Config where username="{username}" and Gateway_Name="{Gateway_Name}";'
+    else:
+        cmd = f'select * FROM Offline_Txn_Config where username="{username}" and Gateway_Name="{Gateway_Name}";'
+    cursor.execute(cmd)
+    values = cursor.fetchall()
+    # print(values)
+    cursor.close()
+    conn.close()
+    desc = list(zip(*cursor.description))[0]  # To get column names
+    for row in values:
+        rowdict = dict(zip(desc, row))
+        returnmessage.append(rowdict)
+    return returnmessage
+
+
+def deleteconfig(username='', Gateway_Name='', Tag=''):
+    try:
+        conn = sqlite3.connect(db_name)
+        cursor = conn.cursor()
+        if Gateway_Name == 'VMP' or Gateway_Name == 'BOCVMP':
+            cursor.execute(
+                f'DELETE from VMP_Config where username="{username}" and Gateway_Name="{Gateway_Name}" and Tag="{Tag}";')
+        else:
+            cursor.execute(
+                f'DELETE from Offline_Txn_Config where username="{username}" and Gateway_Name="{Gateway_Name}" and Tag="{Tag}";')
+        conn.commit()
+        cursor.close()
+        conn.close()
+        returnmessage = {'status': 0, 'msg': 'DELETE Config Success'}
+        return returnmessage
+    except Exception as err:
+        returnmessage = {'status': 1, 'msg': err}
+        return returnmessage

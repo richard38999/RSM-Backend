@@ -6,7 +6,6 @@ import smtplib
 import Logger
 import os
 import traceback
-
 Email_info = Configuration.get_Email_info()
 log = None
 def sentEmail(

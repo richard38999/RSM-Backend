@@ -3548,3 +3548,832 @@
 
 2021-10-03 23:24:16.870:[GetResponse] errormessage: 
 2021-10-03 23:24:16.870:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[00000001] [RespCode]:[14] [RefNo]:[211003232416] [CardNo]:[280000000000000000] [TransType]:[SALE] [TransDate]:[20211003] [TransTime]:[232415] [TraceNo]:[900049] [Amount]:[000000000010] [respondText]:[Invalid Payment Code] 
+2021-11-03 21:50:59.754:[initialize] Gateway: BOC
+2021-11-03 21:50:59.754:[initialize] MID: 852999900000001
+2021-11-03 21:50:59.754:[initialize] TID: 00000001
+2021-11-03 21:50:59.755:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-03 21:50:59.755:[initialize] Timeout: 90
+2021-11-03 21:50:59.755:[initialize] COMMTYPE: 2
+2021-11-03 21:50:59.755:[initialize] PaymentType: Alipay
+2021-11-03 21:50:59.761:[SALE] Barcode: <280000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-03 21:50:59.762:[SALE] XML_Req: 
+2021-11-03 21:50:59.766:[SALE] PaymentType: Alipay
+2021-11-03 21:50:59.767:[SALE] Start Send the message
+2021-11-03 21:50:59.767:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo>900050</TraceNo><CardNo>280000000000000000</CardNo><RefNo>211103215059</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>215059</TransTime></TxnReq>
+2021-11-03 21:50:59.776:[HTTP] Start Get Cert
+2021-11-03 21:50:59.802:[HTTP] End Get Cert
+2021-11-03 21:51:00.360:[SALE] End Send the message
+2021-11-03 21:51:00.360:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>00000001</TID><RespCode>14</RespCode><ApproCode></ApproCode><RefNo>211103215059</RefNo><ERCRFN></ERCRFN><Amount>000000000010</Amount><TraceNo>900050</TraceNo><inVoiceNo></inVoiceNo><CardNo>280000000000000000</CardNo><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>215058</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+
+2021-11-03 21:51:00.390:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo>900050</TraceNo><CardNo>280000000000000000</CardNo><RefNo>211103215059</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>215059</TransTime></TxnReq>
+2021-11-03 21:51:00.390:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>00000001</TID><RespCode>14</RespCode><ApproCode></ApproCode><RefNo>211103215059</RefNo><ERCRFN></ERCRFN><Amount>000000000010</Amount><TraceNo>900050</TraceNo><inVoiceNo></inVoiceNo><CardNo>280000000000000000</CardNo><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>215058</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+
+2021-11-03 21:51:00.390:[GetResponse] errormessage: 
+2021-11-03 21:51:00.392:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[00000001] [RespCode]:[14] [RefNo]:[211103215059] [CardNo]:[280000000000000000] [TransType]:[SALE] [TransDate]:[20211103] [TransTime]:[215058] [TraceNo]:[900050] [Amount]:[000000000010] [respondText]:[Invalid Payment Code] 
+2021-11-03 22:44:10.525:[initialize] Gateway: BOC
+2021-11-03 22:44:10.525:[initialize] MID: 852999900000001
+2021-11-03 22:44:10.525:[initialize] TID: 00000001
+2021-11-03 22:44:10.525:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-03 22:44:10.525:[initialize] Timeout: 90
+2021-11-03 22:44:10.526:[initialize] COMMTYPE: 2
+2021-11-03 22:44:10.526:[initialize] PaymentType: Alipay
+2021-11-03 22:44:10.526:[SALE] Barcode: <280000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-03 22:44:10.526:[SALE] XML_Req: 
+2021-11-03 22:44:10.535:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-03 22:44:10.535:[SALE] PaymentType: Alipay
+2021-11-03 22:44:10.536:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-03 22:44:10.536:[SALE] Start Send the message
+2021-11-03 22:44:10.536:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>280000000000000000</CardNo><RefNo>211103224410</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>224410</TransTime></TxnReq>
+2021-11-03 22:44:10.616:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-03 22:44:10.617:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>280000000000000000</CardNo><RefNo>211103224410</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>224410</TransTime></TxnReq>
+2021-11-03 22:44:10.617:[GetResponse] RawResponse: 
+2021-11-03 22:44:10.617:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-03 22:44:22.782:[initialize] Gateway: BOC
+2021-11-03 22:44:22.782:[initialize] MID: 852999900000001
+2021-11-03 22:44:22.782:[initialize] TID: 00000001
+2021-11-03 22:44:22.783:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-03 22:44:22.783:[initialize] Timeout: 90
+2021-11-03 22:44:22.783:[initialize] COMMTYPE: 2
+2021-11-03 22:44:22.783:[initialize] PaymentType: Alipay
+2021-11-03 22:44:22.783:[SALE] Barcode: <280000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-03 22:44:22.784:[SALE] XML_Req: 
+2021-11-03 22:44:22.784:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-03 22:44:22.784:[SALE] PaymentType: Alipay
+2021-11-03 22:44:22.785:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-03 22:44:22.785:[SALE] Start Send the message
+2021-11-03 22:44:22.785:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>280000000000000000</CardNo><RefNo>211103224422</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>224422</TransTime></TxnReq>
+2021-11-03 22:44:22.805:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-03 22:44:22.805:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>280000000000000000</CardNo><RefNo>211103224422</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>224422</TransTime></TxnReq>
+2021-11-03 22:44:22.806:[GetResponse] RawResponse: 
+2021-11-03 22:44:22.806:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-03 22:45:02.622:[initialize] Gateway: BOC
+2021-11-03 22:45:02.623:[initialize] MID: 852999900000001
+2021-11-03 22:45:02.623:[initialize] TID: 00000001
+2021-11-03 22:45:02.623:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-03 22:45:02.623:[initialize] Timeout: 90
+2021-11-03 22:45:02.623:[initialize] COMMTYPE: 2
+2021-11-03 22:45:02.624:[initialize] PaymentType: Alipay
+2021-11-03 22:45:02.624:[SALE] Barcode: <280000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-03 22:45:02.624:[SALE] XML_Req: 
+2021-11-03 22:45:02.625:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-03 22:45:02.625:[SALE] PaymentType: Alipay
+2021-11-03 22:45:02.625:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-03 22:45:02.625:[SALE] Start Send the message
+2021-11-03 22:45:02.626:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>280000000000000000</CardNo><RefNo>211103224502</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>224502</TransTime></TxnReq>
+2021-11-03 22:45:02.645:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-03 22:45:02.645:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>280000000000000000</CardNo><RefNo>211103224502</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>224502</TransTime></TxnReq>
+2021-11-03 22:45:02.646:[GetResponse] RawResponse: 
+2021-11-03 22:45:02.646:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-03 22:45:12.086:[initialize] Gateway: BOC
+2021-11-03 22:45:12.086:[initialize] MID: 852999900000001
+2021-11-03 22:45:12.086:[initialize] TID: 00000001
+2021-11-03 22:45:12.087:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-03 22:45:12.087:[initialize] Timeout: 90
+2021-11-03 22:45:12.087:[initialize] COMMTYPE: 2
+2021-11-03 22:45:12.087:[initialize] PaymentType: Alipay
+2021-11-03 22:45:12.093:[SALE] Barcode: <280000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-03 22:45:12.093:[SALE] XML_Req: 
+2021-11-03 22:45:12.105:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-03 22:45:12.105:[SALE] PaymentType: Alipay
+2021-11-03 22:45:12.106:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-03 22:45:12.106:[SALE] Start Send the message
+2021-11-03 22:45:12.106:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>280000000000000000</CardNo><RefNo>211103224512</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>224512</TransTime></TxnReq>
+2021-11-03 22:45:12.178:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-03 22:45:12.178:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>280000000000000000</CardNo><RefNo>211103224512</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>224512</TransTime></TxnReq>
+2021-11-03 22:45:12.179:[GetResponse] RawResponse: 
+2021-11-03 22:45:12.179:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-03 22:54:06.370:[initialize] Gateway: BOC
+2021-11-03 22:54:06.371:[initialize] MID: 852999900000001
+2021-11-03 22:54:06.372:[initialize] TID: 00000001
+2021-11-03 22:54:06.372:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-03 22:54:06.372:[initialize] Timeout: 90
+2021-11-03 22:54:06.372:[initialize] COMMTYPE: 2
+2021-11-03 22:54:06.372:[initialize] PaymentType: Alipay
+2021-11-03 22:54:06.379:[SALE] Barcode: <280000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-03 22:54:06.380:[SALE] XML_Req: 
+2021-11-03 22:54:06.393:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-03 22:54:06.394:[SALE] PaymentType: Alipay
+2021-11-03 22:54:06.394:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-03 22:54:06.395:[SALE] Start Send the message
+2021-11-03 22:54:06.395:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>280000000000000000</CardNo><RefNo>211103225406</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>225406</TransTime></TxnReq>
+2021-11-03 22:54:06.500:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-03 22:54:06.501:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>280000000000000000</CardNo><RefNo>211103225406</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>225406</TransTime></TxnReq>
+2021-11-03 22:54:06.501:[GetResponse] RawResponse: 
+2021-11-03 22:54:06.501:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-03 22:56:43.684:[initialize] Gateway: 1C
+2021-11-03 22:56:43.685:[initialize] MID: 852999900000003
+2021-11-03 22:56:43.685:[initialize] TID: 99999997
+2021-11-03 22:56:43.685:[initialize] URL: https://xml1.mobipay.co:4100/payment
+2021-11-03 22:56:43.685:[initialize] Timeout: 90
+2021-11-03 22:56:43.685:[initialize] COMMTYPE: 2
+2021-11-03 22:56:43.685:[initialize] PaymentType: Alipay
+2021-11-03 22:56:43.686:[SALE] Barcode: <280000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-03 22:56:43.686:[SALE] XML_Req: 
+2021-11-03 22:56:43.686:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-03 22:56:43.686:[SALE] PaymentType: Alipay
+2021-11-03 22:56:43.687:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-03 22:56:43.687:[SALE] Start Send the message
+2021-11-03 22:56:43.687:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000003</MID><TID>99999997</TID><Amount>10</Amount><TraceNo /><CardNo>280000000000000000</CardNo><RefNo>211103225643</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>225643</TransTime></TxnReq>
+2021-11-03 22:56:44.059:[SALE] End Send the message
+2021-11-03 22:56:44.059:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000003</MID><TID>99999997</TID><RespCode>14</RespCode><ApproCode></ApproCode><RefNo>211103225643</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000010</Amount><TraceNo>000000</TraceNo><inVoiceNo></inVoiceNo><CardNo>280000000000000000</CardNo><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>225644</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+
+2021-11-03 22:56:44.060:[SALE] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.increaseTrace(String KEY_NAME)
+   於 XML_InterFace.InterFace.SALE(String barcode, String amount, String ecrRefNumber, String OrdDesc, Int32 NumOfProduct, XML_Req shopcarts)
+2021-11-03 22:56:44.060:[SALE]    於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.increaseTrace(String KEY_NAME)
+   於 XML_InterFace.InterFace.SALE(String barcode, String amount, String ecrRefNumber, String OrdDesc, Int32 NumOfProduct, XML_Req shopcarts)
+2021-11-03 22:56:44.060:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000003</MID><TID>99999997</TID><Amount>10</Amount><TraceNo /><CardNo>280000000000000000</CardNo><RefNo>211103225643</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>225643</TransTime></TxnReq>
+2021-11-03 22:56:44.060:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000003</MID><TID>99999997</TID><RespCode>14</RespCode><ApproCode></ApproCode><RefNo>211103225643</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000010</Amount><TraceNo>000000</TraceNo><inVoiceNo></inVoiceNo><CardNo>280000000000000000</CardNo><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>225644</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+
+2021-11-03 22:56:44.060:[GetResponse] errormessage: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+2021-11-03 22:56:52.650:[initialize] Gateway: BOC
+2021-11-03 22:56:52.650:[initialize] MID: 852888800000001
+2021-11-03 22:56:52.651:[initialize] TID: 00000001
+2021-11-03 22:56:52.651:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-03 22:56:52.651:[initialize] Timeout: 90
+2021-11-03 22:56:52.651:[initialize] COMMTYPE: 2
+2021-11-03 22:56:52.651:[initialize] PaymentType: Wechat
+2021-11-03 22:56:52.651:[SALE] Barcode: <150000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-03 22:56:52.652:[SALE] XML_Req: 
+2021-11-03 22:56:52.652:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-03 22:56:52.652:[SALE] PaymentType: Wechat
+2021-11-03 22:56:52.653:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-03 22:56:52.653:[SALE] Start Send the message
+2021-11-03 22:56:52.653:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211103225652</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>225652</TransTime></TxnReq>
+2021-11-03 22:56:52.674:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-03 22:56:52.674:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211103225652</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>225652</TransTime></TxnReq>
+2021-11-03 22:56:52.674:[GetResponse] RawResponse: 
+2021-11-03 22:56:52.674:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-03 23:00:40.520:[initialize] Gateway: BOC
+2021-11-03 23:00:40.521:[initialize] MID: 852888800000001
+2021-11-03 23:00:40.521:[initialize] TID: 00000001
+2021-11-03 23:00:40.522:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-03 23:00:40.522:[initialize] Timeout: 90
+2021-11-03 23:00:40.522:[initialize] COMMTYPE: 2
+2021-11-03 23:00:40.522:[initialize] PaymentType: Wechat
+2021-11-03 23:00:40.528:[SALE] Barcode: <150000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-03 23:00:40.529:[SALE] XML_Req: 
+2021-11-03 23:00:40.543:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-03 23:00:40.543:[SALE] PaymentType: Wechat
+2021-11-03 23:00:40.544:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-03 23:00:40.544:[SALE] Start Send the message
+2021-11-03 23:00:40.544:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211103230040</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>230040</TransTime></TxnReq>
+2021-11-03 23:00:40.635:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-03 23:00:40.636:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211103230040</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>230040</TransTime></TxnReq>
+2021-11-03 23:00:40.636:[GetResponse] RawResponse: 
+2021-11-03 23:00:40.636:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-03 23:02:51.394:[initialize] Gateway: BOC
+2021-11-03 23:02:51.394:[initialize] MID: 852888800000001
+2021-11-03 23:02:51.394:[initialize] TID: 00000001
+2021-11-03 23:02:51.394:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-03 23:02:51.395:[initialize] Timeout: 90
+2021-11-03 23:02:51.395:[initialize] COMMTYPE: 2
+2021-11-03 23:02:51.395:[initialize] PaymentType: Wechat
+2021-11-03 23:02:51.395:[SALE] Barcode: <150000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-03 23:02:51.395:[SALE] XML_Req: 
+2021-11-03 23:02:51.396:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-03 23:02:51.396:[SALE] PaymentType: Wechat
+2021-11-03 23:02:51.396:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-03 23:02:51.397:[SALE] Start Send the message
+2021-11-03 23:02:51.397:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211103230251</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>230251</TransTime></TxnReq>
+2021-11-03 23:02:51.419:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-03 23:02:51.420:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211103230251</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>230251</TransTime></TxnReq>
+2021-11-03 23:02:51.420:[GetResponse] RawResponse: 
+2021-11-03 23:02:51.420:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-03 23:05:03.860:[initialize] Gateway: BOC
+2021-11-03 23:05:03.860:[initialize] MID: 852888800000001
+2021-11-03 23:05:03.861:[initialize] TID: 00000001
+2021-11-03 23:05:03.861:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-03 23:05:03.861:[initialize] Timeout: 90
+2021-11-03 23:05:03.861:[initialize] COMMTYPE: 2
+2021-11-03 23:05:03.861:[initialize] PaymentType: Wechat
+2021-11-03 23:05:03.867:[SALE] Barcode: <150000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-03 23:05:03.868:[SALE] XML_Req: 
+2021-11-03 23:05:03.879:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-03 23:05:03.880:[SALE] PaymentType: Wechat
+2021-11-03 23:05:03.880:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-03 23:05:03.881:[SALE] Start Send the message
+2021-11-03 23:05:03.881:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211103230503</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>230503</TransTime></TxnReq>
+2021-11-03 23:05:03.957:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-03 23:05:03.958:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211103230503</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>230503</TransTime></TxnReq>
+2021-11-03 23:05:03.958:[GetResponse] RawResponse: 
+2021-11-03 23:05:03.958:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-03 23:06:29.390:[initialize] Gateway: BOC
+2021-11-03 23:06:29.391:[initialize] MID: 852888800000001
+2021-11-03 23:06:29.391:[initialize] TID: 00000001
+2021-11-03 23:06:29.391:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-03 23:06:29.391:[initialize] Timeout: 90
+2021-11-03 23:06:29.391:[initialize] COMMTYPE: 2
+2021-11-03 23:06:29.391:[initialize] PaymentType: Wechat
+2021-11-03 23:06:29.392:[SALE] Barcode: <150000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-03 23:06:29.392:[SALE] XML_Req: 
+2021-11-03 23:06:29.392:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-03 23:06:29.392:[SALE] PaymentType: Wechat
+2021-11-03 23:06:29.393:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-03 23:06:29.393:[SALE] Start Send the message
+2021-11-03 23:06:29.393:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211103230629</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>230629</TransTime></TxnReq>
+2021-11-03 23:06:29.415:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-03 23:06:29.415:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211103230629</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>230629</TransTime></TxnReq>
+2021-11-03 23:06:29.415:[GetResponse] RawResponse: 
+2021-11-03 23:06:29.415:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-03 23:06:52.777:[initialize] Gateway: BOC
+2021-11-03 23:06:52.778:[initialize] MID: 852888800000001
+2021-11-03 23:06:52.778:[initialize] TID: 00000001
+2021-11-03 23:06:52.778:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-03 23:06:52.778:[initialize] Timeout: 90
+2021-11-03 23:06:52.778:[initialize] COMMTYPE: 2
+2021-11-03 23:06:52.779:[initialize] PaymentType: Wechat
+2021-11-03 23:06:52.784:[SALE] Barcode: <150000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-03 23:06:52.785:[SALE] XML_Req: 
+2021-11-03 23:06:52.797:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-03 23:06:52.797:[SALE] PaymentType: Wechat
+2021-11-03 23:06:52.798:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-03 23:06:52.798:[SALE] Start Send the message
+2021-11-03 23:06:52.798:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211103230652</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>230652</TransTime></TxnReq>
+2021-11-03 23:06:52.875:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-03 23:06:52.875:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211103230652</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>230652</TransTime></TxnReq>
+2021-11-03 23:06:52.875:[GetResponse] RawResponse: 
+2021-11-03 23:06:52.876:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-03 23:10:37.351:[initialize] Gateway: BOC
+2021-11-03 23:10:37.352:[initialize] MID: 852888800000001
+2021-11-03 23:10:37.352:[initialize] TID: 00000001
+2021-11-03 23:10:37.352:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-03 23:10:37.352:[initialize] Timeout: 90
+2021-11-03 23:10:37.353:[initialize] COMMTYPE: 2
+2021-11-03 23:10:37.353:[initialize] PaymentType: Wechat
+2021-11-03 23:10:37.359:[SALE] Barcode: <150000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-03 23:10:37.360:[SALE] XML_Req: 
+2021-11-03 23:10:37.373:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-03 23:10:37.373:[SALE] PaymentType: Wechat
+2021-11-03 23:10:37.374:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-03 23:10:37.374:[SALE] Start Send the message
+2021-11-03 23:10:37.374:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211103231037</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>231037</TransTime></TxnReq>
+2021-11-03 23:10:37.454:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-03 23:10:37.454:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211103231037</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>231037</TransTime></TxnReq>
+2021-11-03 23:10:37.455:[GetResponse] RawResponse: 
+2021-11-03 23:10:37.455:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-03 23:10:39.629:[initialize] Gateway: BOC
+2021-11-03 23:10:39.629:[initialize] MID: 852888800000001
+2021-11-03 23:10:39.629:[initialize] TID: 00000001
+2021-11-03 23:10:39.630:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-03 23:10:39.630:[initialize] Timeout: 90
+2021-11-03 23:10:39.630:[initialize] COMMTYPE: 1
+2021-11-03 23:10:39.630:[initialize] PaymentType: Wechat
+2021-11-03 23:10:39.630:[SALE] Barcode: <150000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-03 23:10:39.631:[SALE] XML_Req: 
+2021-11-03 23:10:39.631:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-03 23:10:39.631:[SALE] PaymentType: Wechat
+2021-11-03 23:10:39.632:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-03 23:10:39.632:[SALE] Start Send the message
+2021-11-03 23:10:39.632:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211103231039</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>231039</TransTime></TxnReq>
+2021-11-03 23:10:39.652:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-03 23:10:39.652:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211103231039</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>231039</TransTime></TxnReq>
+2021-11-03 23:10:39.652:[GetResponse] RawResponse: 
+2021-11-03 23:10:39.652:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-03 23:13:45.302:[initialize] Gateway: BOC
+2021-11-03 23:13:45.302:[initialize] MID: 852888800000001
+2021-11-03 23:13:45.302:[initialize] TID: 00000001
+2021-11-03 23:13:45.303:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-03 23:13:45.303:[initialize] Timeout: 90
+2021-11-03 23:13:45.303:[initialize] COMMTYPE: 2
+2021-11-03 23:13:45.303:[initialize] PaymentType: Wechat
+2021-11-03 23:13:45.309:[SALE] Barcode: <150000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-03 23:13:45.310:[SALE] XML_Req: 
+2021-11-03 23:13:45.325:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-03 23:13:45.325:[SALE] PaymentType: Wechat
+2021-11-03 23:13:45.326:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-03 23:13:45.326:[SALE] Start Send the message
+2021-11-03 23:13:45.326:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211103231345</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>231345</TransTime></TxnReq>
+2021-11-03 23:13:45.406:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-03 23:13:45.406:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211103231345</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>231345</TransTime></TxnReq>
+2021-11-03 23:13:45.406:[GetResponse] RawResponse: 
+2021-11-03 23:13:45.407:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-03 23:15:21.799:[initialize] Gateway: BOC
+2021-11-03 23:15:21.800:[initialize] MID: 852888800000001
+2021-11-03 23:15:21.800:[initialize] TID: 00000001
+2021-11-03 23:15:21.800:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-03 23:15:21.800:[initialize] Timeout: 90
+2021-11-03 23:15:21.800:[initialize] COMMTYPE: 2
+2021-11-03 23:15:21.801:[initialize] PaymentType: Wechat
+2021-11-03 23:15:21.806:[SALE] Barcode: <150000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-03 23:15:21.807:[SALE] XML_Req: 
+2021-11-03 23:15:21.819:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-03 23:15:21.820:[SALE] PaymentType: Wechat
+2021-11-03 23:15:21.820:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-03 23:15:21.821:[SALE] Start Send the message
+2021-11-03 23:15:21.821:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211103231521</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>231521</TransTime></TxnReq>
+2021-11-03 23:15:21.906:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-03 23:15:21.907:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211103231521</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>231521</TransTime></TxnReq>
+2021-11-03 23:15:21.907:[GetResponse] RawResponse: 
+2021-11-03 23:15:21.907:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-03 23:16:54.069:[initialize] Gateway: BOC
+2021-11-03 23:16:54.070:[initialize] MID: 852888800000001
+2021-11-03 23:16:54.070:[initialize] TID: 00000001
+2021-11-03 23:16:54.070:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-03 23:16:54.071:[initialize] Timeout: 90
+2021-11-03 23:16:54.071:[initialize] COMMTYPE: 2
+2021-11-03 23:16:54.071:[initialize] PaymentType: Wechat
+2021-11-03 23:16:54.077:[SALE] Barcode: <150000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-03 23:16:54.078:[SALE] XML_Req: 
+2021-11-03 23:16:54.090:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-03 23:16:54.091:[SALE] PaymentType: Wechat
+2021-11-03 23:16:54.092:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-03 23:16:54.092:[SALE] Start Send the message
+2021-11-03 23:16:54.092:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211103231654</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>231654</TransTime></TxnReq>
+2021-11-03 23:16:54.171:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-03 23:16:54.171:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211103231654</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211103</TransDate><TransTime>231654</TransTime></TxnReq>
+2021-11-03 23:16:54.171:[GetResponse] RawResponse: 
+2021-11-03 23:16:54.172:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-04 20:19:34.143:[initialize] Gateway: BOC
+2021-11-04 20:19:34.143:[initialize] MID: 852888800000001
+2021-11-04 20:19:34.143:[initialize] TID: 00000001
+2021-11-04 20:19:34.144:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-04 20:19:34.144:[initialize] Timeout: 90
+2021-11-04 20:19:34.144:[initialize] COMMTYPE: 2
+2021-11-04 20:19:34.144:[initialize] PaymentType: Wechat
+2021-11-04 20:19:34.152:[SALE] Barcode: <150000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-04 20:19:34.153:[SALE] XML_Req: 
+2021-11-04 20:19:34.167:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-04 20:19:34.168:[SALE] PaymentType: Wechat
+2021-11-04 20:19:34.169:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-04 20:19:34.169:[SALE] Start Send the message
+2021-11-04 20:19:34.170:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211104201934</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>201934</TransTime></TxnReq>
+2021-11-04 20:19:34.349:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-04 20:19:34.350:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211104201934</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>201934</TransTime></TxnReq>
+2021-11-04 20:19:34.350:[GetResponse] RawResponse: 
+2021-11-04 20:19:34.350:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-04 20:22:41.713:[initialize] Gateway: BOC
+2021-11-04 20:22:41.713:[initialize] MID: 852888800000001
+2021-11-04 20:22:41.713:[initialize] TID: 00000001
+2021-11-04 20:22:41.714:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-04 20:22:41.714:[initialize] Timeout: 90
+2021-11-04 20:22:41.714:[initialize] COMMTYPE: 2
+2021-11-04 20:22:41.714:[initialize] PaymentType: Wechat
+2021-11-04 20:22:41.721:[SALE] Barcode: <150000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-04 20:22:41.722:[SALE] XML_Req: 
+2021-11-04 20:22:41.732:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-04 20:22:41.733:[SALE] PaymentType: Wechat
+2021-11-04 20:22:41.733:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-04 20:22:41.733:[SALE] Start Send the message
+2021-11-04 20:22:41.734:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211104202241</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>202241</TransTime></TxnReq>
+2021-11-04 20:22:41.808:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-04 20:22:41.808:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211104202241</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>202241</TransTime></TxnReq>
+2021-11-04 20:22:41.808:[GetResponse] RawResponse: 
+2021-11-04 20:22:41.809:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-04 20:33:01.436:[initialize] Gateway: BOC
+2021-11-04 20:33:01.437:[initialize] MID: 852888800000001
+2021-11-04 20:33:01.437:[initialize] TID: 00000001
+2021-11-04 20:33:01.437:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-04 20:33:01.437:[initialize] Timeout: 90
+2021-11-04 20:33:01.437:[initialize] COMMTYPE: 2
+2021-11-04 20:33:01.438:[initialize] PaymentType: Wechat
+2021-11-04 20:33:01.444:[SALE] Barcode: <150000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-04 20:33:01.445:[SALE] XML_Req: 
+2021-11-04 20:33:01.459:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-04 20:33:01.459:[SALE] PaymentType: Wechat
+2021-11-04 20:33:01.460:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-04 20:33:01.460:[SALE] Start Send the message
+2021-11-04 20:33:01.461:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211104203301</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>203301</TransTime></TxnReq>
+2021-11-04 20:33:01.560:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-04 20:33:01.560:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211104203301</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>203301</TransTime></TxnReq>
+2021-11-04 20:33:01.560:[GetResponse] RawResponse: 
+2021-11-04 20:33:01.561:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-04 21:03:04.521:[initialize] Gateway: BOC
+2021-11-04 21:03:04.521:[initialize] MID: 852888800000001
+2021-11-04 21:03:04.522:[initialize] TID: 00000001
+2021-11-04 21:03:04.522:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-04 21:03:04.522:[initialize] Timeout: 90
+2021-11-04 21:03:04.522:[initialize] COMMTYPE: 2
+2021-11-04 21:03:04.522:[initialize] PaymentType: Wechat
+2021-11-04 21:03:04.528:[SALE] Barcode: <150000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-04 21:03:04.529:[SALE] XML_Req: 
+2021-11-04 21:03:04.542:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-04 21:03:04.542:[SALE] PaymentType: Wechat
+2021-11-04 21:03:04.543:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-04 21:03:04.543:[SALE] Start Send the message
+2021-11-04 21:03:04.543:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211104210304</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>210304</TransTime></TxnReq>
+2021-11-04 21:03:04.641:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-04 21:03:04.642:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211104210304</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>210304</TransTime></TxnReq>
+2021-11-04 21:03:04.642:[GetResponse] RawResponse: 
+2021-11-04 21:03:04.642:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-04 21:03:46.862:[initialize] Gateway: BOC
+2021-11-04 21:03:46.862:[initialize] MID: 852888800000001
+2021-11-04 21:03:46.862:[initialize] TID: 00000001
+2021-11-04 21:03:46.862:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-04 21:03:46.862:[initialize] Timeout: 90
+2021-11-04 21:03:46.862:[initialize] COMMTYPE: 2
+2021-11-04 21:03:46.862:[initialize] PaymentType: Wechat
+2021-11-04 21:03:46.863:[SALE] Barcode: <150000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-04 21:03:46.863:[SALE] XML_Req: 
+2021-11-04 21:03:46.863:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-04 21:03:46.864:[SALE] PaymentType: Wechat
+2021-11-04 21:03:46.864:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-04 21:03:46.864:[SALE] Start Send the message
+2021-11-04 21:03:46.864:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211104210346</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>210346</TransTime></TxnReq>
+2021-11-04 21:03:46.888:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-04 21:03:46.888:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211104210346</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>210346</TransTime></TxnReq>
+2021-11-04 21:03:46.888:[GetResponse] RawResponse: 
+2021-11-04 21:03:46.888:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-04 21:09:44.593:[initialize] Gateway: BOC
+2021-11-04 21:09:44.594:[initialize] MID: 852888800000001
+2021-11-04 21:09:44.594:[initialize] TID: 00000001
+2021-11-04 21:09:44.594:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-04 21:09:44.595:[initialize] Timeout: 90
+2021-11-04 21:09:44.595:[initialize] COMMTYPE: 2
+2021-11-04 21:09:44.595:[initialize] PaymentType: Wechat
+2021-11-04 21:09:44.601:[SALE] Barcode: <150000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-04 21:09:44.602:[SALE] XML_Req: 
+2021-11-04 21:09:44.613:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-04 21:09:44.614:[SALE] PaymentType: Wechat
+2021-11-04 21:09:44.615:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-04 21:09:44.615:[SALE] Start Send the message
+2021-11-04 21:09:44.615:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211104210944</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>210944</TransTime></TxnReq>
+2021-11-04 21:09:44.723:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-04 21:09:44.724:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211104210944</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>210944</TransTime></TxnReq>
+2021-11-04 21:09:44.724:[GetResponse] RawResponse: 
+2021-11-04 21:09:44.724:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-04 21:15:06.677:[initialize] Gateway: BOC
+2021-11-04 21:15:06.678:[initialize] MID: 852888800000001
+2021-11-04 21:15:06.678:[initialize] TID: 00000001
+2021-11-04 21:15:06.678:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-04 21:15:06.678:[initialize] Timeout: 90
+2021-11-04 21:15:06.678:[initialize] COMMTYPE: 2
+2021-11-04 21:15:06.678:[initialize] PaymentType: Wechat
+2021-11-04 21:15:06.684:[SALE] Barcode: <150000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-04 21:15:06.685:[SALE] XML_Req: 
+2021-11-04 21:15:06.698:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-04 21:15:06.699:[SALE] PaymentType: Wechat
+2021-11-04 21:15:06.699:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-04 21:15:06.699:[SALE] Start Send the message
+2021-11-04 21:15:06.700:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211104211506</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>211506</TransTime></TxnReq>
+2021-11-04 21:15:06.776:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-04 21:15:06.776:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211104211506</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>211506</TransTime></TxnReq>
+2021-11-04 21:15:06.776:[GetResponse] RawResponse: 
+2021-11-04 21:15:06.777:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-04 21:21:37.303:[initialize] Gateway: BOC
+2021-11-04 21:21:37.304:[initialize] MID: 852888800000001
+2021-11-04 21:21:37.305:[initialize] TID: 00000001
+2021-11-04 21:21:37.305:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-04 21:21:37.307:[initialize] Timeout: 90
+2021-11-04 21:21:37.307:[initialize] COMMTYPE: 2
+2021-11-04 21:21:37.308:[initialize] PaymentType: Wechat
+2021-11-04 21:21:37.314:[SALE] Barcode: <150000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-04 21:21:37.315:[SALE] XML_Req: 
+2021-11-04 21:21:37.328:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-04 21:21:37.328:[SALE] PaymentType: Wechat
+2021-11-04 21:21:37.329:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-04 21:21:37.329:[SALE] Start Send the message
+2021-11-04 21:21:37.329:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211104212137</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>212137</TransTime></TxnReq>
+2021-11-04 21:21:37.412:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-04 21:21:37.412:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211104212137</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>212137</TransTime></TxnReq>
+2021-11-04 21:21:37.412:[GetResponse] RawResponse: 
+2021-11-04 21:21:37.413:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-04 21:24:25.978:[initialize] Gateway: BOC
+2021-11-04 21:24:25.979:[initialize] MID: 852888800000001
+2021-11-04 21:24:25.979:[initialize] TID: 00000001
+2021-11-04 21:24:25.979:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-04 21:24:25.979:[initialize] Timeout: 90
+2021-11-04 21:24:25.980:[initialize] COMMTYPE: 2
+2021-11-04 21:24:25.980:[initialize] PaymentType: Wechat
+2021-11-04 21:24:25.987:[SALE] Barcode: <150000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-04 21:24:25.987:[SALE] XML_Req: 
+2021-11-04 21:24:25.999:[loadInIfile] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.loadInIfile(String KEY_NAME)
+2021-11-04 21:24:25.999:[SALE] PaymentType: Wechat
+2021-11-04 21:24:26.000:[GetTrace] XML_InterFace.Exceptions.InvalidInputException: 已發生類型 'XML_InterFace.Exceptions.InvalidInputException' 的例外狀況。
+   於 XML_InterFace.Ini.Parse(TextReader sr)
+   於 XML_InterFace.Ini..ctor(String filename)
+   於 XML_InterFace.InterFace.GetTrace(String KEY_NAME)
+2021-11-04 21:24:26.000:[SALE] Start Send the message
+2021-11-04 21:24:26.000:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211104212426</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>212426</TransTime></TxnReq>
+2021-11-04 21:24:26.086:[HTTP] System.Net.WebException: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+   於 System.Net.HttpWebRequest.GetResponse()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2021-11-04 21:24:26.086:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852888800000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo /><CardNo>150000000000000000</CardNo><RefNo>211104212426</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>212426</TransTime></TxnReq>
+2021-11-04 21:24:26.086:[GetResponse] RawResponse: 
+2021-11-04 21:24:26.086:[GetResponse] errormessage: 遠端伺服器傳回一個錯誤: (400) 不正確的要求。
+2021-11-04 21:33:24.569:[initialize] Gateway: 1C
+2021-11-04 21:33:24.569:[initialize] MID: 852999900000003
+2021-11-04 21:33:24.570:[initialize] TID: 99999997
+2021-11-04 21:33:24.570:[initialize] URL: https://xml1.mobipay.co:4100/payment
+2021-11-04 21:33:24.570:[initialize] Timeout: 90
+2021-11-04 21:33:24.570:[initialize] COMMTYPE: 2
+2021-11-04 21:33:24.570:[initialize] PaymentType: Alipay
+2021-11-04 21:33:24.577:[SALE] Barcode: <280000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-04 21:33:24.577:[SALE] XML_Req: 
+2021-11-04 21:33:24.584:[SALE] PaymentType: Alipay
+2021-11-04 21:33:24.585:[SALE] Start Send the message
+2021-11-04 21:33:24.585:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000003</MID><TID>99999997</TID><Amount>10</Amount><TraceNo>900022</TraceNo><CardNo>280000000000000000</CardNo><RefNo>211104213324</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>213324</TransTime></TxnReq>
+2021-11-04 21:33:25.026:[SALE] End Send the message
+2021-11-04 21:33:25.026:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000003</MID><TID>99999997</TID><RespCode>14</RespCode><ApproCode></ApproCode><RefNo>211104213324</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000010</Amount><TraceNo>900022</TraceNo><inVoiceNo></inVoiceNo><CardNo>280000000000000000</CardNo><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>213325</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+
+2021-11-04 21:33:25.051:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000003</MID><TID>99999997</TID><Amount>10</Amount><TraceNo>900022</TraceNo><CardNo>280000000000000000</CardNo><RefNo>211104213324</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>213324</TransTime></TxnReq>
+2021-11-04 21:33:25.052:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000003</MID><TID>99999997</TID><RespCode>14</RespCode><ApproCode></ApproCode><RefNo>211104213324</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000010</Amount><TraceNo>900022</TraceNo><inVoiceNo></inVoiceNo><CardNo>280000000000000000</CardNo><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>213325</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+
+2021-11-04 21:33:25.052:[GetResponse] errormessage: 
+2021-11-04 21:33:25.054:[GetResponse] XML_Resp: [MID]:[852999900000003] [TID]:[99999997] [RespCode]:[14] [RefNo]:[211104213324] [CardNo]:[280000000000000000] [TransType]:[SALE] [TransDate]:[20211104] [TransTime]:[213325] [ERCRFN]:[Portaltesting123] [TraceNo]:[900022] [Amount]:[000000000010] [respondText]:[Invalid Payment Code] 
+2021-11-04 21:33:36.276:[initialize] Gateway: BOC
+2021-11-04 21:33:36.276:[initialize] MID: 852999900000001
+2021-11-04 21:33:36.276:[initialize] TID: 00000001
+2021-11-04 21:33:36.276:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-04 21:33:36.277:[initialize] Timeout: 90
+2021-11-04 21:33:36.277:[initialize] COMMTYPE: 2
+2021-11-04 21:33:36.277:[initialize] PaymentType: Alipay
+2021-11-04 21:33:36.277:[SALE] Barcode: <280000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-04 21:33:36.277:[SALE] XML_Req: 
+2021-11-04 21:33:36.282:[SALE] PaymentType: Alipay
+2021-11-04 21:33:36.282:[SALE] Start Send the message
+2021-11-04 21:33:36.282:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo>900051</TraceNo><CardNo>280000000000000000</CardNo><RefNo>211104213336</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>213336</TransTime></TxnReq>
+2021-11-04 21:33:36.284:[HTTP] Start Get Cert
+2021-11-04 21:33:36.309:[HTTP] End Get Cert
+2021-11-04 21:33:36.579:[SALE] End Send the message
+2021-11-04 21:33:36.579:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>00000001</TID><RespCode>14</RespCode><ApproCode></ApproCode><RefNo>211104213336</RefNo><ERCRFN></ERCRFN><Amount>000000000010</Amount><TraceNo>900051</TraceNo><inVoiceNo></inVoiceNo><CardNo>280000000000000000</CardNo><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>213337</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+
+2021-11-04 21:33:36.580:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo>900051</TraceNo><CardNo>280000000000000000</CardNo><RefNo>211104213336</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>213336</TransTime></TxnReq>
+2021-11-04 21:33:36.580:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>00000001</TID><RespCode>14</RespCode><ApproCode></ApproCode><RefNo>211104213336</RefNo><ERCRFN></ERCRFN><Amount>000000000010</Amount><TraceNo>900051</TraceNo><inVoiceNo></inVoiceNo><CardNo>280000000000000000</CardNo><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>213337</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+
+2021-11-04 21:33:36.580:[GetResponse] errormessage: 
+2021-11-04 21:33:36.580:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[00000001] [RespCode]:[14] [RefNo]:[211104213336] [CardNo]:[280000000000000000] [TransType]:[SALE] [TransDate]:[20211104] [TransTime]:[213337] [TraceNo]:[900051] [Amount]:[000000000010] [respondText]:[Invalid Payment Code] 
+2021-11-04 21:35:19.668:[initialize] Gateway: BOC
+2021-11-04 21:35:19.668:[initialize] MID: 852999900000001
+2021-11-04 21:35:19.668:[initialize] TID: 00000001
+2021-11-04 21:35:19.669:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-04 21:35:19.669:[initialize] Timeout: 90
+2021-11-04 21:35:19.669:[initialize] COMMTYPE: 2
+2021-11-04 21:35:19.669:[initialize] PaymentType: Alipay
+2021-11-04 21:35:19.675:[SALE] Barcode: <280000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-04 21:35:19.676:[SALE] XML_Req: 
+2021-11-04 21:35:19.679:[SALE] PaymentType: Alipay
+2021-11-04 21:35:19.679:[SALE] Start Send the message
+2021-11-04 21:35:19.680:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo>900052</TraceNo><CardNo>280000000000000000</CardNo><RefNo>211104213519</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>213519</TransTime></TxnReq>
+2021-11-04 21:35:19.697:[HTTP] Start Get Cert
+2021-11-04 21:35:19.717:[HTTP] End Get Cert
+2021-11-04 21:35:19.922:[SALE] End Send the message
+2021-11-04 21:35:19.922:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>00000001</TID><RespCode>14</RespCode><ApproCode></ApproCode><RefNo>211104213519</RefNo><ERCRFN></ERCRFN><Amount>000000000010</Amount><TraceNo>900052</TraceNo><inVoiceNo></inVoiceNo><CardNo>280000000000000000</CardNo><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>213520</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+
+2021-11-04 21:35:19.939:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>00000001</TID><Amount>10</Amount><TraceNo>900052</TraceNo><CardNo>280000000000000000</CardNo><RefNo>211104213519</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>213519</TransTime></TxnReq>
+2021-11-04 21:35:19.939:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>00000001</TID><RespCode>14</RespCode><ApproCode></ApproCode><RefNo>211104213519</RefNo><ERCRFN></ERCRFN><Amount>000000000010</Amount><TraceNo>900052</TraceNo><inVoiceNo></inVoiceNo><CardNo>280000000000000000</CardNo><TransType>SALE</TransType><TransDate>20211104</TransDate><TransTime>213520</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+
+2021-11-04 21:35:19.939:[GetResponse] errormessage: 
+2021-11-04 21:35:19.940:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[00000001] [RespCode]:[14] [RefNo]:[211104213519] [CardNo]:[280000000000000000] [TransType]:[SALE] [TransDate]:[20211104] [TransTime]:[213520] [TraceNo]:[900052] [Amount]:[000000000010] [respondText]:[Invalid Payment Code] 
+2021-11-07 21:29:36.893:[initialize] Gateway: 1C
+2021-11-07 21:29:36.893:[initialize] MID: 852999900000003
+2021-11-07 21:29:36.893:[initialize] TID: 99999997
+2021-11-07 21:29:36.893:[initialize] URL: https://xml1.mobipay.co:4100/payment
+2021-11-07 21:29:36.894:[initialize] Timeout: 90
+2021-11-07 21:29:36.894:[initialize] COMMTYPE: 2
+2021-11-07 21:29:36.894:[initialize] PaymentType: Alipay
+2021-11-07 21:29:36.897:[ADMIN_REFUND] RRN: <123123123232>, amount: <10>, ERCRFN: <Portaltesting123>, OriTID: <12312312>
+2021-11-07 21:29:38.284:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000003</MID><TID>99999997</TID><Amount>10</Amount><OldRefNo>123123123232</OldRefNo><TraceNo>900023</TraceNo><ERCRFN>Portaltesting123</ERCRFN><TransType>ADM_REFUND</TransType><OldTID>12312312</OldTID><TransDate>20211107</TransDate><TransTime>212936</TransTime></TxnReq>
+2021-11-07 21:29:38.284:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000003</MID><TID>99999997</TID><RespCode>25</RespCode><ApproCode></ApproCode><RefNo>211107212937</RefNo><ERCRFN></ERCRFN><Amount>000000000010</Amount><TraceNo>900023</TraceNo><inVoiceNo></inVoiceNo><CardNo>280000000000000000</CardNo><TransType>ADM_REFUND</TransType><TransDate>20211107</TransDate><TransTime>212938</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+
+2021-11-07 21:29:38.284:[GetResponse] errormessage: 
+2021-11-07 21:29:38.287:[GetResponse] XML_Resp: [MID]:[852999900000003] [TID]:[99999997] [RespCode]:[25] [RefNo]:[211107212937] [CardNo]:[280000000000000000] [TransType]:[ADM_REFUND] [TransDate]:[20211107] [TransTime]:[212938] [TraceNo]:[900023] [Amount]:[000000000010] [respondText]:[Record Not Found] 
+2021-11-07 22:10:09.282:[initialize] Gateway: BOC
+2021-11-07 22:10:09.282:[initialize] MID: 598034453111209
+2021-11-07 22:10:09.282:[initialize] TID: 00000001
+2021-11-07 22:10:09.283:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/payment
+2021-11-07 22:10:09.283:[initialize] Timeout: 90
+2021-11-07 22:10:09.283:[initialize] COMMTYPE: 2
+2021-11-07 22:10:09.283:[initialize] PaymentType: Alipay
+2021-11-07 22:10:09.288:[SALE] Barcode: <hQVDUFYwMWFTTwigAAADMwEBAVcOYhYmEAAAAAJIXVASIB9jM4ICAACfEBEHAQEDoAAAAQg5MDg4MDAxOZ8mCFZtifr+7jswnycBgJ82AidKnzcEM9KA7l80AQE>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-07 22:10:09.288:[SALE] XML_Req: 
+2021-11-07 22:10:09.294:[SALE] PaymentType: Alipay
+2021-11-07 22:10:09.294:[SALE] Start Send the message
+2021-11-07 22:10:09.294:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>598034453111209</MID><TID>00000001</TID><Amount>10</Amount><TraceNo>900053</TraceNo><CardNo>hQVDUFYwMWFTTwigAAADMwEBAVcOYhYmEAAAAAJIXVASIB9jM4ICAACfEBEHAQEDoAAAAQg5MDg4MDAxOZ8mCFZtifr+7jswnycBgJ82AidKnzcEM9KA7l80AQE</CardNo><RefNo>211107221009</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211107</TransDate><TransTime>221009</TransTime></TxnReq>
+2021-11-07 22:10:09.295:[HTTP] Start Get Cert
+2021-11-07 22:10:09.321:[HTTP] End Get Cert
+2021-11-07 22:10:09.378:[SALE] End Send the message
+2021-11-07 22:10:09.378:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID></MID><TID></TID><RespCode>96</RespCode><ApproCode></ApproCode><RefNo></RefNo><ERCRFN></ERCRFN><Amount></Amount><TraceNo></TraceNo><inVoiceNo></inVoiceNo><CardNo></CardNo><TransType></TransType><TransDate></TransDate><TransTime></TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+
+2021-11-07 22:10:09.379:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>598034453111209</MID><TID>00000001</TID><Amount>10</Amount><TraceNo>900053</TraceNo><CardNo>hQVDUFYwMWFTTwigAAADMwEBAVcOYhYmEAAAAAJIXVASIB9jM4ICAACfEBEHAQEDoAAAAQg5MDg4MDAxOZ8mCFZtifr+7jswnycBgJ82AidKnzcEM9KA7l80AQE</CardNo><RefNo>211107221009</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20211107</TransDate><TransTime>221009</TransTime></TxnReq>
+2021-11-07 22:10:09.379:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID></MID><TID></TID><RespCode>96</RespCode><ApproCode></ApproCode><RefNo></RefNo><ERCRFN></ERCRFN><Amount></Amount><TraceNo></TraceNo><inVoiceNo></inVoiceNo><CardNo></CardNo><TransType></TransType><TransDate></TransDate><TransTime></TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+
+2021-11-07 22:10:09.379:[GetResponse] errormessage: 
+2021-11-07 22:10:09.380:[GetResponse] XML_Resp: [RespCode]:[96] [respondText]:[Systems Error] 
+2021-11-07 22:10:11.910:[initialize] Gateway: BOC
+2021-11-07 22:10:11.910:[initialize] MID: 598034453111209
+2021-11-07 22:10:11.910:[initialize] TID: 00000001
+2021-11-07 22:10:11.911:[initialize] URL: https://bocixml1.eftpayhk1.com:4101/unionpay
+2021-11-07 22:10:11.911:[initialize] Timeout: 90
+2021-11-07 22:10:11.911:[initialize] COMMTYPE: 2
+2021-11-07 22:10:11.911:[initialize] PaymentType: UnionPay
+2021-11-07 22:10:11.911:[SALE] Barcode: <hQVDUFYwMWFTTwigAAADMwEBAVcOYhYmEAAAAAJIXVASIB9jM4ICAACfEBEHAQEDoAAAAQg5MDg4MDAxOZ8mCFZtifr+7jswnycBgJ82AidKnzcEM9KA7l80AQE>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2021-11-07 22:10:11.911:[SALE] XML_Req: 
+2021-11-07 22:10:11.916:[SALE] PaymentType: UnionPay
+2021-11-07 22:10:11.916:[SALE] Start Send the message
+2021-11-07 22:10:11.916:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>598034453111209</MID><TID>00000001</TID><TraceNo>900054</TraceNo><Amount>10</Amount><QrCode>hQVDUFYwMWFTTwigAAADMwEBAVcOYhYmEAAAAAJIXVASIB9jM4ICAACfEBEHAQEDoAAAAQg5MDg4MDAxOZ8mCFZtifr+7jswnycBgJ82AidKnzcEM9KA7l80AQE</QrCode><TransType>SALE</TransType></TxnReq>
+2021-11-07 22:10:11.918:[HTTP] Start Get Cert
+2021-11-07 22:10:11.931:[HTTP] End Get Cert
+2021-11-07 22:10:12.339:[SALE] End Send the message
+2021-11-07 22:10:12.340:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?>
+<TxnResp><TransType>SALE</TransType><MID>598034453111209</MID><TID>00000001</TID><TransDate>1107</TransDate><TransTime>221013</TransTime><TraceNo>900054</TraceNo><Amount>000000000010</Amount><RefNo>211107221012</RefNo><RespCode>20</RespCode><PAN>621626*********2485</PAN></TxnResp>
+2021-11-07 22:10:12.343:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>598034453111209</MID><TID>00000001</TID><TraceNo>900054</TraceNo><Amount>10</Amount><QrCode>hQVDUFYwMWFTTwigAAADMwEBAVcOYhYmEAAAAAJIXVASIB9jM4ICAACfEBEHAQEDoAAAAQg5MDg4MDAxOZ8mCFZtifr+7jswnycBgJ82AidKnzcEM9KA7l80AQE</QrCode><TransType>SALE</TransType></TxnReq>
+2021-11-07 22:10:12.344:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?>
+<TxnResp><TransType>SALE</TransType><MID>598034453111209</MID><TID>00000001</TID><TransDate>1107</TransDate><TransTime>221013</TransTime><TraceNo>900054</TraceNo><Amount>000000000010</Amount><RefNo>211107221012</RefNo><RespCode>20</RespCode><PAN>621626*********2485</PAN></TxnResp>
+2021-11-07 22:10:12.345:[GetResponse] errormessage: 
+2021-11-07 22:10:12.345:[GetResponse] XML_Resp: [MID]:[598034453111209] [TID]:[00000001] [RespCode]:[20] [RefNo]:[211107221012] [TransType]:[SALE] [TransDate]:[1107] [TransTime]:[221013] [PAN]:[621626*********2485] [TraceNo]:[900054] [Amount]:[000000000010] [respondText]:[Invalid Transaction/Payment Code Repeat] 

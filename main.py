@@ -15,18 +15,18 @@ import Octopus
 import hashlib
 import VMP
 from zipfile import ZipFile
-clr.FindAssembly('EFTPaymentsServer.dll')
-clr.AddReference('EFTPaymentsServer')
-clr.FindAssembly('XML_InterFace.dll')
-# clr.AddReference('InterFace')
-clr.AddReference('XML_InterFace')
+clr.FindAssembly('DLL\\EFTPaymentsServer.dll')
+clr.AddReference('DLL\\EFTPaymentsServer')
+clr.FindAssembly('DLL\\XML_InterFace.dll')
+clr.AddReference('DLL\\XML_InterFace')
 from EFTSolutions import *
 from XML_InterFace import *
-
 log = Log('Flask')
 app = Flask(__name__)
-app.config.from_object(Configuration.Flask_Config['PROD'])
-Config = Configuration.Flask_Config.get('PROD')
+ENVIRONMENT = 'DEV'
+app.config.from_object(Configuration.Flask_Config['DEV'])
+Config = Configuration.Flask_Config.get('DEV')
+
 # 設定 JWT 密鑰
 jwt = JWTManager()
 jwt.init_app(app)
@@ -188,6 +188,10 @@ def Transaction(Till_Number, TransactionType):
     Port = request.json.get('Port')
     TPDU = request.json.get('TPDU')
     COMMTYPE = request.json.get('COMMTYPE')
+    if COMMTYPE == 'TLS':
+        COMMTYPE = 2
+    elif COMMTYPE == 'PlainText':
+        COMMTYPE = 1
     Timeout = request.json.get('Timeout')
     MsgType = request.json.get('MsgType')
     TraceNo = request.json.get('TraceNo')
@@ -412,6 +416,10 @@ def BatchFor(Till_Number, BatchFor):
     Port = request.form['Port']
     TPDU = request.form['TPDU']
     COMMTYPE = request.form['COMMTYPE']
+    if COMMTYPE == 'TLS':
+        COMMTYPE = 2
+    elif COMMTYPE == 'PlainText':
+        COMMTYPE = 1
     Timeout = request.form['Timeout']
     ecrRefNo = request.form['ecrRefNo']
     xlsx = xlrd.open_workbook(filepath)
@@ -647,10 +655,10 @@ def Octopus_Report(action):
         log.end('Octopus_Report')
         return jsonify(returnmessage)
 
-@app.route("/VMP/<TransactionType>", methods=['POST'])
+@app.route("/VMP/<Gateway>", methods=['POST'])
 @jwt_required
 @decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
-def VMP_Transaction(TransactionType):
+def VMP_Transaction(Gateway):
     log.start('VMP_Transaction')
     log.debug(request.headers)
     log.debug("JSON: %s" % request.json)
@@ -661,6 +669,7 @@ def VMP_Transaction(TransactionType):
     wallet = request.json.get('wallet')
     amount = str(request.json.get('amount'))
     SecretCode = request.json.get('SecretCode')
+    TransactionType = request.json.get('TransactionType')
     out_trade_no = request.json.get('out_trade_no')
     if out_trade_no == '' and str(TransactionType).upper() == 'SALE':
         out_trade_no = time.strftime("%Y%m%d%H%M%S", time.localtime())
@@ -687,6 +696,7 @@ def VMP_Transaction(TransactionType):
     refund_reason = request.json.get('refund_reason')
     APIType = request.json.get('APIType')
     GatewayType = request.json.get('GatewayType')
+    Gateway_Name = request.json.get('Gateway_Name')
     app_pay = request.json.get('app_pay')
     customerInfo = request.json.get('customerInfo')
     shippingAddress = request.json.get('shippingAddress')
@@ -702,10 +712,11 @@ def VMP_Transaction(TransactionType):
     EOPG_req = None
     VMP_req = None
     JSONMessage = None
-
     if APIType == 'EOPG': #EOPG 接口
+        if return_url == '':
+            return_url = URL + f'/{Gateway}/EOPG/eopg_return_addr'
         if str(TransactionType).upper() == 'SALE':
-            URL += '/VMP/eopg/ForexTradeRecetion'
+            URL += f'/{Gateway}/eopg/ForexTradeRecetion'
             EOPG_req = VMP.EOPG_Request()
             EOPG_req.fee_type = fee_type
             EOPG_req.merch_ref_no = out_trade_no
@@ -714,7 +725,7 @@ def VMP_Transaction(TransactionType):
             EOPG_req.service = service
             EOPG_req.trans_amount = amount
             EOPG_req.wechatWeb = wechatWeb
-            signStr = VMP.packSignStr(EOPG_req,SecretCode)
+            signStr = VMP.packSignStr_EOPG(EOPG_req,SecretCode)
             log.debug(signStr)
             EOPG_req.signature = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             EOPG_req.app_pay = app_pay
@@ -730,7 +741,7 @@ def VMP_Transaction(TransactionType):
             EOPG_req.reuse = reuse
             RawRequest = VMP.packGetMsg(EOPG_req, URL)
         elif str(TransactionType).upper() == 'REFUND':
-            URL += '/VMP/eopg/ForexRefundRecetion'
+            URL += f'/{Gateway}/eopg/ForexRefundRecetion'
             EOPG_req = VMP.EOPG_Request()
             EOPG_req.merch_ref_no = out_trade_no
             EOPG_req.mid = User_Confirm_Key
@@ -740,7 +751,7 @@ def VMP_Transaction(TransactionType):
             EOPG_req.return_url = ''
             EOPG_req.service = service
             EOPG_req.trans_amount = amount
-            signStr = VMP.packSignStr(EOPG_req, SecretCode)
+            signStr = VMP.packSignStr_EOPG(EOPG_req, SecretCode)
             log.debug(signStr)
             EOPG_req.signature = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             EOPG_req.merch_refund_id = refund_no
@@ -750,13 +761,13 @@ def VMP_Transaction(TransactionType):
             RawRequest = VMP.packGetMsg(EOPG_req, URL)
             # teustubg
         elif str(TransactionType).upper() == 'QUERY':
-            URL += '/VMP/eopg/ForexCheckQuery'
+            URL += f'/{Gateway}/eopg/ForexCheckQuery'
             EOPG_req = VMP.EOPG_Request()
             EOPG_req.merch_ref_no = out_trade_no
             EOPG_req.mid = User_Confirm_Key
             EOPG_req.payment_type = PaymentType
             EOPG_req.service = service
-            signStr = VMP.packSignStr(EOPG_req, SecretCode)
+            signStr = VMP.packSignStr_EOPG(EOPG_req, SecretCode)
             log.debug(signStr)
             EOPG_req.signature = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             EOPG_req.api_version = '2.9'
@@ -764,23 +775,24 @@ def VMP_Transaction(TransactionType):
             EOPG_req.return_url = return_url
             RawRequest = VMP.packGetMsg(EOPG_req, URL)
         elif str(TransactionType).upper() == 'QUERYREFUND':
-            URL += '/VMP/eopg/ForexCheckRefund'
+            URL += f'/{Gateway}/eopg/ForexCheckRefund'
             EOPG_req = VMP.EOPG_Request()
             EOPG_req.merch_ref_no = out_trade_no
             EOPG_req.merch_refund_id = refund_no
             EOPG_req.mid = User_Confirm_Key
             EOPG_req.payment_type = PaymentType
             EOPG_req.service = service
-            signStr = VMP.packSignStr(EOPG_req, SecretCode)
+            signStr = VMP.packSignStr_EOPG(EOPG_req, SecretCode)
             log.debug(signStr)
             EOPG_req.signature = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             EOPG_req.api_version = '2.9'
             EOPG_req.redirect = redirect
             EOPG_req.return_url = ''
             RawRequest = VMP.packGetMsg(EOPG_req, URL)
-
     elif APIType == 'WEB':
-        URL += '/VMP/Servlet/'
+        if return_url == '':
+            return_url = URL + '/VMP/returnSuccess'
+        URL += f'/{Gateway}/Servlet/'
         if str(TransactionType).upper() == 'SALE':
             VMP_req = VMP.VMP_Request()
             URL = URL + 'JSAPIService.do'
@@ -863,7 +875,9 @@ def VMP_Transaction(TransactionType):
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
             pass
     elif APIType == 'JSAPI':
-        URL += '/VMP/Servlet/'
+        if return_url == '':
+            return_url = URL + '/VMP/returnSuccess'
+        URL += f'/{Gateway}/Servlet/'
         if str(TransactionType).upper() == 'SALE':
             VMP_req = VMP.VMP_Request()
             URL = URL + 'JSAPIService.do'
@@ -932,7 +946,9 @@ def VMP_Transaction(TransactionType):
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
             pass
     elif APIType == 'QRCode':
-        URL += '/VMP/Servlet/'
+        if return_url == '':
+            return_url = URL + '/VMP/returnSuccess'
+        URL += f'/{Gateway}/Servlet/'
         if str(TransactionType).upper() == 'SALE':
             VMP_req = VMP.VMP_Request()
             URL = URL + 'JSAPIService.do'
@@ -1019,7 +1035,7 @@ def VMP_Transaction(TransactionType):
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
             pass
     elif APIType == 'APP':
-        URL += '/VMP/Servlet/'
+        URL += f'/{Gateway}/Servlet/'
         if str(TransactionType).upper() == 'SALE':
             VMP_req = VMP.VMP_Request()
             URL = URL + 'AppTradePay.do'
@@ -1075,7 +1091,9 @@ def VMP_Transaction(TransactionType):
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
             pass
     elif APIType == 'Cashier':
-        URL += '/VMP/Servlet/'
+        if return_url == '':
+            return_url = URL + '/VMP/returnSuccess'
+        URL += f'/{Gateway}/Servlet/'
         if str(TransactionType).upper() == 'SALE':
             VMP_req = VMP.VMP_Request()
             URL = URL + 'JSAPIService.do'
@@ -1160,6 +1178,126 @@ def imagedownload(filename):
         log.end('imagedownload')
         return send_from_directory(currentlyPath,filename, as_attachment=True)
     return '404 NOT FOUND'
+
+@app.route("/setconfig/<Till_Number>/<TransactionType>", methods=['POST'])
+@jwt_required
+@decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
+def setconfig(Till_Number,TransactionType):
+    log.start('setconfig')
+    log.debug(request.headers)
+    log.debug("BODY: %s" % request.get_data())
+    username = request.headers.get("username")
+    Tag = request.json.get('Tag')
+    MID = request.json.get('MID')
+    TID = request.json.get('TID')
+    barcode = request.json.get('barcode')
+    amount = request.json.get('amount')
+    ecrRefNo = request.json.get('ecrRefNo')
+    ApprovalCode = request.json.get('ApprovalCode')
+    TransactionType = TransactionType
+    RRN = request.json.get('RRN')
+    IP = request.json.get('IP')
+    Port = request.json.get('Port')
+    TPDU = request.json.get('TPDU')
+    COMMTYPE = request.json.get('COMMTYPE')
+    Timeout = request.json.get('Timeout')
+    MsgType = request.json.get('MsgType')
+    TraceNo = request.json.get('TraceNo')
+    URL = request.json.get('URL')
+    OrdDesc = request.json.get('OrdDesc')
+    PayType = request.json.get('PayType')
+    NumOfProduct = request.json.get('NumOfProduct')
+    AUTH = request.json.get('AUTH')
+    shopcarts = request.json.get('AUTH')
+    OriTID = request.json.get('OriTID')
+    User_Confirm_Key = request.json.get('User_Confirm_Key')
+    SecretCode = request.json.get('SecretCode')
+    Amount = request.json.get('Amount')
+    Service = request.json.get('Service')
+    out_trade_no = request.json.get('out_trade_no')
+    TransactionType = request.json.get('TransactionType')
+    PaymentType = request.json.get('PaymentType')
+    eft_trade_no = request.json.get('eft_trade_no')
+    refund_no = request.json.get('refund_no')
+    Wallet = request.json.get('Wallet')
+    APIType = request.json.get('APIType')
+    Gateway_Name = Till_Number
+    buyerType = request.json.get('buyerType')
+    subject = request.json.get('subject')
+    body = request.json.get('body')
+    fee_type = request.json.get('fee_type')
+    tid = request.json.get('tid')
+    scene_type = request.json.get('scene_type')
+    openid = request.json.get('openid')
+    sub_openid = request.json.get('sub_openid')
+    wechatWeb = request.json.get('wechatWeb')
+    active_time = request.json.get('active_time')
+    notify_url = request.json.get('notify_url')
+    return_url = request.json.get('return_url')
+    app_pay = request.json.get('app_pay')
+    lang = request.json.get('lang')
+    goods_body = request.json.get('goods_body')
+    goods_subject = request.json.get('goods_subject')
+    reuse = request.json.get('reuse')
+    redirect = request.json.get('redirect')
+    refund_reason = request.json.get('refund_reason')
+    reason = request.json.get('reason')
+    mobileNumber = request.json.get('mobileNumber')
+    fullName = request.json.get('fullName')
+    shippingAddress_countryCode = request.json.get('shippingAddress_countryCode')
+    shippingAddress_postCode = request.json.get('shippingAddress_postCode')
+    shippingAddress_lines = request.json.get('shippingAddress_lines')
+    billingAddress_countryCode = request.json.get('billingAddress_countryCode')
+    billingAddress_postCode = request.json.get('billingAddress_postCode')
+    billingAddress_lines = request.json.get('billingAddress_lines')
+
+    iRet = -1
+    data = {}
+    if Till_Number == 'VMP' or Till_Number == 'BOCVMP':
+        meta = Utility.setconfig_VMP(username=username, Tag=Tag, User_Confirm_Key=User_Confirm_Key,
+                                     SecretCode=SecretCode, Amount=Amount, Service=Service, out_trade_no=out_trade_no, TransactionType=TransactionType,
+                                     PaymentType=PaymentType, eft_trade_no=eft_trade_no, refund_no=refund_no, Wallet=Wallet, APIType=APIType,
+                                     Gateway_Name=Gateway_Name, buyerType=buyerType, subject=subject, body=body, fee_type=fee_type, tid=tid,
+                                     scene_type=scene_type, openid=openid, sub_openid=sub_openid, wechatWeb=wechatWeb, active_time=active_time, URL=URL, notify_url=notify_url,
+                                     return_url=return_url, app_pay=app_pay, lang=lang, goods_body=goods_body, goods_subject=goods_subject,
+                                     reuse=reuse, redirect=redirect, refund_reason=refund_reason, reason=reason, mobileNumber=mobileNumber,
+                                     fullName=fullName, shippingAddress_countryCode=shippingAddress_countryCode, shippingAddress_postCode=shippingAddress_postCode, shippingAddress_lines=shippingAddress_lines, billingAddress_countryCode=billingAddress_countryCode, billingAddress_postCode=billingAddress_postCode, billingAddress_lines=billingAddress_lines)
+    else:
+        meta = Utility.setconfig_Offline(username=username,Gateway_Name=Till_Number, Tag=Tag, MID=MID, TID=TID, TransactionType=TransactionType, PaymentType=PayType, amount=amount, barcode=barcode, ApprovalCode=ApprovalCode, RRN=RRN, TraceNo=TraceNo, OriTID=OriTID, URL=URL, IP=IP, Port=Port, TPDU=TPDU, Timeout=Timeout, MsgType=MsgType, COMMTYPE=COMMTYPE)
+    returnmessage = {'meta': meta, 'data': data}
+    return jsonify(returnmessage)
+
+@app.route("/loadconfig/<Till_Number>", methods=['POST'])
+@jwt_required
+@decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
+def loadconfig(Till_Number):
+    log.start('loadconfig')
+    log.info(request.headers)
+    log.info("BODY: %s" % request.get_data())
+    username = request.headers.get("username")
+    iRet = -1
+    data = Utility.loadconfig(username=username,Gateway_Name=Till_Number)
+    meta = {'status': 0, 'msg': 'Success'}
+    returnmessage = {'meta': meta, 'data': data}
+    log.info(returnmessage)
+    return jsonify(returnmessage)
+
+@app.route("/deleteconfig/<Till_Number>/<Tag>", methods=['POST'])
+@jwt_required
+@decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
+def deleteconfig(Till_Number, Tag):
+    log.start('deleteconfig')
+    log.info(request.headers)
+    log.info("BODY: %s" % request.get_data())
+    username = request.headers.get("username")
+    iRet = -1
+    data = {}
+    meta = Utility.deleteconfig(username=username,Gateway_Name=Till_Number, Tag=Tag)
+    returnmessage = {'meta': meta, 'data': data}
+    log.info(returnmessage)
+    return jsonify(returnmessage)
+
+
 if __name__ == '__main__':
     log.start('Flask')
     app.run(host='0.0.0.0', port=5000)

@@ -26,9 +26,10 @@ print(values)
 cursor.close()
 conn.close()
 '''
-db_name = 'param.db'
+DB_path = 'DataBase\\RSM_TEST.db'
+
 def get_Merchant_Info():
-    conn = sqlite3.connect(db_name)
+    conn = sqlite3.connect(DB_path)
     cursor = conn.cursor()
     cursor.execute('select * FROM MerchantList;')
     values = cursor.fetchall()
@@ -50,30 +51,29 @@ def get_Merchant_Info():
     return Merchant_info
 
 def get_Email_info():
-    conn = sqlite3.connect(db_name)
+    conn = sqlite3.connect(DB_path)
     cursor = conn.cursor()
     cursor.execute('select * FROM Email_info;')
     values = cursor.fetchall()
-    #print(values)
+    # print(values)
     cursor.close()
     conn.close()
     Email_info = values
     return Email_info
 
-
 def get_SFTP_info():
-    conn = sqlite3.connect(db_name)
+    conn = sqlite3.connect(DB_path)
     cursor = conn.cursor()
     cursor.execute('select * FROM SFTP_Info;')
     values = cursor.fetchall()
-    #print(values)
+    # print(values)
     cursor.close()
     conn.close()
     sftp_info = values
     return sftp_info
 
 def get_Alert_Email():
-    conn = sqlite3.connect(db_name)
+    conn = sqlite3.connect(DB_path)
     cursor = conn.cursor()
     cursor.execute('select * FROM AlertEmailList;')
     values = cursor.fetchall()
@@ -84,7 +84,7 @@ def get_Alert_Email():
     return sftp_info
 
 def get_A8_PW_Email():
-    conn = sqlite3.connect(db_name)
+    conn = sqlite3.connect(DB_path)
     cursor = conn.cursor()
     cursor.execute('select * FROM A8_PW_Email;')
     values = cursor.fetchall()
@@ -93,6 +93,17 @@ def get_A8_PW_Email():
     conn.close()
     A8_PW_Email = values
     return A8_PW_Email
+
+def get_Maxims_VMP_Report_Config():
+    conn = sqlite3.connect(DB_path)
+    cursor = conn.cursor()
+    cursor.execute('select * FROM Maxims_VMP_Report_Config;')
+    values = cursor.fetchall()
+    # print(values)
+    cursor.close()
+    conn.close()
+    Maxims_VMP_Report_Config = values
+    return Maxims_VMP_Report_Config
 
 class Config():
     FrontEndVersion = ''
@@ -113,7 +124,7 @@ def loadConfig():
 
 class Flask_Base_Config():
     JWT_SECRET_KEY = 'Testing123'
-    FrontEndVersion = '1.0.4'
+    FrontEndVersion = '1.0.5'
 
 class Flask_PROD_Config(Flask_Base_Config):
     DEBUG = False
