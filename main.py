@@ -144,8 +144,9 @@ def updateuserstatus():
     log.debug(request.headers)
     log.debug("BODY: %s" % request.get_data())
     username = request.headers.get("username")
+    updateUsername = request.args.get('username')
     status = request.args.get('status')
-    data = Utility.update_AccountStatus(username, status)
+    data = Utility.update_AccountStatus(updateUsername, status)
     meta = {'status': 200, 'msg': 'SUCCESS'}
     returnmessage = {'meta': meta, 'data': data}
     log.debug(returnmessage)
@@ -160,8 +161,9 @@ def deleteUser():
     log.debug(request.headers)
     log.debug("BODY: %s" % request.get_data())
     username = request.headers.get("username")
+    deleteUsername = request.args.get('username')
     status = request.args.get('status')
-    data = Utility.delete_Account(username)
+    data = Utility.delete_Account(deleteUsername)
     meta = {'status': 200, 'msg': 'SUCCESS'}
     returnmessage = {'meta': meta, 'data': data}
     log.debug(returnmessage)
@@ -968,6 +970,9 @@ def VMP_Transaction(Gateway):
                 VMP_req.payType = PaymentType
                 VMP_req.pay_scene = 'QRCODE'
                 VMP_req.payment_type = PaymentType.upper()
+            elif str(PaymentType).upper() == 'GBPAY':
+                VMP_req.payment_type = PaymentType
+                VMP_req.paytype = PaymentType
             VMP_req.service = service
             VMP_req.subject = subject
             VMP_req.tid = tid
