@@ -255,6 +255,9 @@ def main():
     global Result
     global sftp
     global emailContent
+    global RH
+    global RT
+    global RD
     if len(sys.argv) == 2:
         today = sys.argv[1]
     else:
@@ -263,6 +266,10 @@ def main():
     for MID in Maxims_VMP_Report_Config:
         # MID = '852000058140011'
         MID = MID[0]
+
+        RH = VMP_RH()
+        RT = VMP_RT()
+        RD = []
         Result = False
         log.info(f'MID: {MID}')
         day_of_year = str(datetime.date(int(today[:4]), int(today[4:6]), int(today[6:])).timetuple().tm_yday)

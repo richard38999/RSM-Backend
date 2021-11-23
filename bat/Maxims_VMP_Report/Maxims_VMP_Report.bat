@@ -1,2 +1,2 @@
-cd C:\Users\richard\Desktop\RSM_Package\RSM_Package\RSM-Backend
+cd C:\Users\RichardDing\Documents\EFT\Program\RSM-Backend
 python Maxims_VMP_Report.py

@@ -26,7 +26,7 @@ print(values)
 cursor.close()
 conn.close()
 '''
-DB_path = 'DataBase\\RSM_TEST.db'
+DB_path = 'DataBase\\RSM.db'
 
 def get_Merchant_Info():
     conn = sqlite3.connect(DB_path)

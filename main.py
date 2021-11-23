@@ -23,9 +23,9 @@ from EFTSolutions import *
 from XML_InterFace import *
 log = Log('Flask')
 app = Flask(__name__)
-ENVIRONMENT = 'DEV'
-app.config.from_object(Configuration.Flask_Config['DEV'])
-Config = Configuration.Flask_Config.get('DEV')
+ENVIRONMENT = 'PROD'
+app.config.from_object(Configuration.Flask_Config['PROD'])
+Config = Configuration.Flask_Config.get('PROD')
 
 # 設定 JWT 密鑰
 jwt = JWTManager()
@@ -1029,6 +1029,9 @@ def VMP_Transaction(Gateway):
             elif str(PaymentType).upper() == 'UNIONPAY':
                 VMP_req.payType = PaymentType
                 VMP_req.payment_type = 'UNIONPAY'
+            elif str(PaymentType).upper() == 'GBPAY':
+                VMP_req.payment_type = 'GBPAY'
+                VMP_req.paytype = PaymentType
             VMP_req.querytype = 'OUT_TRADE'
             VMP_req.refund_no = refund_no
             VMP_req.service = service
