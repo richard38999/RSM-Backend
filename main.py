@@ -857,6 +857,8 @@ def VMP_Transaction(Gateway):
                 VMP_req.wallet = 'ALIPAY' + wallet
             elif str(PaymentType).upper() == 'WECHAT':
                 VMP_req.wallet = 'WECHAT' + wallet
+            elif str(PaymentType).upper() == 'ATOME':
+                VMP_req.wallet = 'ATOME'
             signStr = VMP.packSignStr(VMP_req, SecretCode)
             log.debug(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
