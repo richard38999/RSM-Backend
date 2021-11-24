@@ -23,9 +23,9 @@ from EFTSolutions import *
 from XML_InterFace import *
 log = Log('Flask')
 app = Flask(__name__)
-ENVIRONMENT = 'PROD'
-app.config.from_object(Configuration.Flask_Config['PROD'])
-Config = Configuration.Flask_Config.get('PROD')
+ENVIRONMENT = 'DEV'
+app.config.from_object(Configuration.Flask_Config['DEV'])
+Config = Configuration.Flask_Config.get('DEV')
 
 # 設定 JWT 密鑰
 jwt = JWTManager()
@@ -800,14 +800,14 @@ def VMP_Transaction(Gateway):
             URL = URL + 'JSAPIService.do'
             VMP_req.active_time = active_time
             if str(PaymentType).upper() == 'ATOME':
-                VMP_req.billingAddress = billingAddress
+                VMP_req.billingAddress = str(billingAddress)
             VMP_req.body = body
             VMP_req.buyerType = buyerType
             if str(PaymentType).upper() == 'ATOME':
-                VMP_req.customerInfo = customerInfo
+                VMP_req.customerInfo = str(customerInfo)
             VMP_req.fee_type = fee_type
             if str(PaymentType).upper() == 'ATOME':
-                VMP_req.items = items
+                VMP_req.items = str(items)
             VMP_req.lang = lang
             VMP_req.notify_url = notify_url
             VMP_req.out_trade_no = out_trade_no
@@ -821,7 +821,7 @@ def VMP_Transaction(Gateway):
             VMP_req.return_url = return_url
             VMP_req.service = service
             if str(PaymentType).upper() == 'ATOME':
-                VMP_req.shippingAddress = shippingAddress
+                VMP_req.shippingAddress = str(shippingAddress)
             VMP_req.subject = subject
             VMP_req.tid = tid
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
