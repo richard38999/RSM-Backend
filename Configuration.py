@@ -105,6 +105,17 @@ def get_Maxims_VMP_Report_Config():
     Maxims_VMP_Report_Config = values
     return Maxims_VMP_Report_Config
 
+def get_Settlement_Report_DailyEmail_Config():
+    conn = sqlite3.connect(DB_path)
+    cursor = conn.cursor()
+    cursor.execute('select * FROM Settlement_Report_DailyEmail_Config;')
+    values = cursor.fetchall()
+    # print(values)
+    cursor.close()
+    conn.close()
+    Settlement_Report_DailyEmail_Config = values
+    return Settlement_Report_DailyEmail_Config
+
 class Config():
     FrontEndVersion = ''
     isSentEmailAlert = None

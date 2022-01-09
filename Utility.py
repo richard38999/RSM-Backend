@@ -507,3 +507,14 @@ def deleteconfig(username='', Gateway_Name='', Tag=''):
     except Exception as err:
         returnmessage = {'status': 1, 'msg': err}
         return returnmessage
+
+def SQL_script(script):
+    conn = sqlite3.connect(db_name)
+    cursor = conn.cursor()
+    cursor.execute(script)
+    returnmData = cursor.fetchall()
+    # print(values)
+    conn.commit()
+    cursor.close()
+    conn.close()
+    return returnmData

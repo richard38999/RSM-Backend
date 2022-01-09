@@ -3,7 +3,6 @@ import logging
 import time
 import os
 
-
 class Log():
     def __init__(self, Log_folder):
         # cur_path = os.path.dirname(os.path.realpath(__file__))
@@ -40,10 +39,10 @@ class Log():
         elif level =='error':
             self.logger.error(message)
         elif level =='start':
-            message = '************************************* {0} Start *************************************'.format(message)
+            message = '*********************************************** {0} Start ***********************************************\r'.format(message)
             self.logger.info(message)
         elif level =='end':
-            message = '************************************* {0} End *************************************'.format(message)
+            message = '*********************************************** {0} End ***********************************************\r'.format(message)
             self.logger.info(message)
         #避免日志输出重复问题
         self.logger.removeHandler(ch)
