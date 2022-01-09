@@ -13,10 +13,14 @@ Email_info = Configuration.get_Email_info()
 SFTP_info = Configuration.get_SFTP_info()
 Maxims_VMP_Report_Config = Configuration.get_Maxims_VMP_Report_Config()
 today = ''
+TransDatetime_8_digits = ''
 day_of_year = ''
 Result = False
 sftp = None
 emailContent = ''
+PID_Amount_Total = 0
+PID_Fee_Total = 0
+PID_Txns_Total = 0
 class PID_Content:
     Partner_transaction_id = None
     Transaction_id = None
@@ -36,46 +40,45 @@ class PID_Content:
     Trans_forex_rate = None
     Issue = None
 
-class MID_Content():
-    class RD:
-        RecordIdentifier = None
-        SettlementDate = None
-        TerminalID = None
-        BatchNumber = None
-        TransactionDate = None
-        BarCodeNumber = None
-        Type = None
-        Currency = None
-        SignofTransactionamount = None
-        TransactionAmount = None
-        ApprovalCode = None
-        TraceNumber = None
-        SignofMDRfee = None
-        MDRfee = None
-        OrderID = None
-        EFTPRefNumber = None
-        StoreID = None
-        WalletCurrency = None
-        TransactionEntrymode = None
-        Filler = None
+class RD:
+    RecordIdentifier = None
+    SettlementDate = None
+    TerminalID = None
+    BatchNumber = None
+    TransactionDate = None
+    BarCodeNumber = None
+    Type = None
+    Currency = None
+    SignofTransactionamount = None
+    TransactionAmount = None
+    ApprovalCode = None
+    TraceNumber = None
+    SignofMDRfee = None
+    MDRfee = None
+    OrderID = None
+    EFTPRefNumber = None
+    StoreID = None
+    WalletCurrency = None
+    TransactionEntrymode = None
+    Filler = None
 
-    class RT:
-        RecordIdentifier = None
-        TotalofTrasaction = None
-        SignofTotalamount = None
-        TotalofAmount = None
-        TotalofFee = None
-        Filler = None
+class RT:
+    RecordIdentifier = None
+    TotalofTransaction = None
+    SignofTotalamount = None
+    TotalofAmount = None
+    TotalofFee = None
+    Filler = None
 
-    class RH:
-        RecordIdentifier = None
-        FileID = None
-        FileDate = None
-        Rateoffee = None
-        MID = None
-        MIDname = None
-        PID = None
-        Filler = None
+class RH:
+    RecordIdentifier = None
+    FileID = None
+    FileDate = None
+    Rateoffee = None
+    MID = None
+    MIDname = None
+    PID = None
+    Filler = None
 
 def getSftpFile(SFTP_info, remotepath=None, localpath=None):
     log.start('getSftpFile')
@@ -127,12 +130,14 @@ def checkSftpFile(SFTP_info, remotepath=None):
 
 def read_PID_Report(localpath=''):
     log.start('read_PID_Report')
-    returnMessage = PID_Content()
     list_returnMessage = []
     f = open(localpath, 'r')
     rows = csv.reader(f, delimiter='|')
     for row in rows:
         log.info(row)
+        if len(row) != 17:
+            continue
+        returnMessage = PID_Content()
         returnMessage.Partner_transaction_id = row[0]
         returnMessage.Transaction_id = row[1]
         returnMessage.Amount = row[2]
@@ -156,57 +161,146 @@ def read_PID_Report(localpath=''):
 
 def read_RawMID_Report(localpath=''):
     log.start('read_RawMID_Report')
-    returnMessage = MID_Content()
-
+    rh = RH()
+    list_rd = []
+    rt = RT()
     f = open(localpath, 'r')
-    rows = csv.reader(f, delimiter='|')
-    for row in rows:
-        if row[0:2] == 'RH':
-            returnMessage.RH.RecordIdentifier = row[0:2]
-            returnMessage.RH.FileID = row[2:10]
-            returnMessage.RH.FileDate = row[10:18]
-            returnMessage.RH.Rateoffee = row[18:23]
-            returnMessage.RH.MID = row[23:38]
-            returnMessage.RH.MIDname = row[38:68]
-            returnMessage.RH.PID = row[68:96]
-            returnMessage.RH.Filler = row[96:200]
-        elif row[0:2] == 'RD':
-            returnMessage.RD.RecordIdentifier = row[0:3]
-            returnMessage.RD.SettlementDate = row[2:12]
-            returnMessage.RD.TerminalID = row[12:20]
-            returnMessage.RD.BatchNumber = row[20:26]
-            returnMessage.RD.TransactionDate = row[26:41]
-            returnMessage.RD.BarCodeNumber = row[41:60]
-            returnMessage.RD.Type = row[60:70]
-            returnMessage.RD.Currency = row[70:73]
-            returnMessage.RD.SignofTransactionamount = row[73:74]
-            returnMessage.RD.TransactionAmount = row[74:86]
-            returnMessage.RD.ApprovalCode = row[86:92]
-            returnMessage.RD.TraceNumber = row[92:98]
-            returnMessage.RD.SignofMDRfee = row[98:99]
-            returnMessage.RD.MDRfee = row[99:110]
-            returnMessage.RD.OrderID = row[110:174]
-            returnMessage.RD.EFTPRefNumber = row[174:186]
-            returnMessage.RD.StoreID = row[186:194]
-            returnMessage.RD.WalletCurrency = row[194:197]
-            returnMessage.RD.TransactionEntrymode = row[197:198]
-            returnMessage.RD.Filler = row[198:200]
-        elif row[0:2] == 'RT':
-            returnMessage.RT.RecordIdentifier = row[0:2]
-            returnMessage.RT.TotalofTransaction = row[2:11]
-            returnMessage.RT.SignofTotalamount = row[11:12]
-            returnMessage.RT.TotalofAmount = row[12:30]
-            returnMessage.RT.TotalofFee = row[30:48]
-            returnMessage.RT.Filler = row[48:200]
-    return returnMessage
-def writeEOPGFile(path=None, data=None):
-    log.start('writeEOPGFile')
+    line = 1
+    try:
+        rows = f.read()
+        filelength = len(rows)
+        while True:
+            if filelength >= line * 200:
+                row = rows[(line-1)*200:(200*line)-1]
+                if row[0:2] == 'RH':
+                    rh.RecordIdentifier = row[0:2]
+                    rh.FileID = row[2:10]
+                    rh.FileDate = row[10:18]
+                    rh.Rateoffee = row[18:23]
+                    rh.MID = row[23:38]
+                    rh.MIDname = row[38:68]
+                    rh.PID = row[68:96]
+                    rh.Filler = ' ' * 104
+                elif row[0:2] == 'RD':
+                    rd = RD()
+                    rd.RecordIdentifier = row[0:3]
+                    rd.SettlementDate = row[2:12]
+                    rd.TerminalID = row[12:20]
+                    rd.BatchNumber = row[20:26]
+                    rd.TransactionDate = row[26:41]
+                    rd.BarCodeNumber = row[41:60]
+                    rd.Type = row[60:70]
+                    rd.Currency = row[70:73]
+                    rd.SignofTransactionamount = row[73:74]
+                    rd.TransactionAmount = row[74:86]
+                    rd.ApprovalCode = row[86:92]
+                    rd.TraceNumber = row[92:98]
+                    rd.SignofMDRfee = row[98:99]
+                    rd.MDRfee = row[99:110]
+                    rd.OrderID = row[110:174]
+                    rd.EFTPRefNumber = row[174:186]
+                    rd.StoreID = row[186:194]
+                    rd.WalletCurrency = row[194:197]
+                    rd.TransactionEntrymode = row[197:198]
+                    rd.Filler = row[198:200]
+                    list_rd.append(rd)
+                elif row[0:2] == 'RT':
+                    rt.RecordIdentifier = row[0:2]
+                    rt.TotalofTransaction = row[2:11]
+                    rt.SignofTotalamount = row[11:12]
+                    rt.TotalofAmount = row[12:30]
+                    rt.TotalofFee = row[30:48]
+                    rt.Filler = row[48:]
+                line += 1
+            else:
+                break
+    finally:
+        f.close()
+
+    return [rh,list_rd,rt]
+
+def Combine_Report(localpath=None, PID_Report=None,RawMID_Report=None):
+    WriteData = ''
+    global PID_Amount_Total
+    global PID_Fee_Total
+    global PID_Txns_Total
+    global TransDatetime_8_digits
+    # Raw MID RH
+    WriteData += RawMID_Report[0].RecordIdentifier
+    WriteData += RawMID_Report[0].FileID
+    WriteData += RawMID_Report[0].FileDate
+    WriteData += RawMID_Report[0].Rateoffee
+    WriteData += RawMID_Report[0].MID
+    WriteData += RawMID_Report[0].MIDname
+    WriteData += RawMID_Report[0].PID
+    WriteData += RawMID_Report[0].Filler
+    # Raw MID RD
+    for row in RawMID_Report[1]:
+        WriteData += row.RecordIdentifier
+        WriteData += row.SettlementDate
+        WriteData += row.TerminalID
+        WriteData += row.BatchNumber
+        WriteData += row.TransactionDate
+        WriteData += row.BarCodeNumber
+        WriteData += row.Type
+        WriteData += row.Currency
+        WriteData += row.SignofTransactionamount
+        WriteData += row.TransactionAmount
+        WriteData += row.ApprovalCode
+        WriteData += row.TraceNumber
+        WriteData += row.SignofMDRfee
+        WriteData += row.MDRfee
+        WriteData += row.OrderID
+        WriteData += row.EFTPRefNumber
+        WriteData += row.StoreID
+        WriteData += row.WalletCurrency
+        WriteData += row.TransactionEntrymode
+        WriteData += row.Filler
+    # get PID Report Summary
+    for i in PID_Report:
+        if i.Product == 'shopQrCode':
+            PID_Amount_Total += int(round(float(i.Amount) * 100, 2))
+            PID_Fee_Total += int(round(float(i.Fee) * 100, 2))
+            PID_Txns_Total += 1
+            WriteData += 'RD'
+            WriteData += '{0}/{1}/{2}'.format(TransDatetime_8_digits[:4],TransDatetime_8_digits[4:6],TransDatetime_8_digits[-2:])
+            WriteData += ' ' * 8
+            WriteData += '000001'
+            WriteData += str(i.Payment_time).replace('-', '').replace(':', '').replace(' ', ':')
+            WriteData += ' ' * 19
+            WriteData += 'PAYMENT'.ljust(10, ' ')
+            WriteData += i.Currency
+            WriteData += ' '
+            WriteData += str(int(round(float(i.Amount) * 100, 2))).zfill(12)
+            WriteData += ' ' * 6
+            WriteData += ' ' * 6
+            WriteData += ' '
+            WriteData += str(int(round(float(i.Fee) * 100, 2))).zfill(11)
+            WriteData += i.Transaction_id.ljust(64, ' ')
+            WriteData += ' ' * 12
+            WriteData += ' ' * 8
+            WriteData += i.Trans_Currency
+            WriteData += '2'
+            WriteData += ' ' * 2
+    # Raw MID RT
+    WriteData += RawMID_Report[2].RecordIdentifier
+    WriteData += str(int(RawMID_Report[2].TotalofTransaction) + PID_Txns_Total).zfill(9)
+    WriteData += RawMID_Report[2].SignofTotalamount
+    WriteData += str(int(RawMID_Report[2].TotalofAmount) + PID_Amount_Total).zfill(18)
+    WriteData += str(int(RawMID_Report[2].TotalofFee) + PID_Fee_Total).zfill(18)
+    WriteData += ' ' * 152
+    print(len(RawMID_Report[2].Filler))
+    print(RawMID_Report[2].Filler)
+    return writeCombineFile(path=localpath,data=WriteData)
+
+def writeCombineFile(path=None, data=None):
+    log.start('writeCombineFile')
     log.info('path: {0}'.format(path))
     log.info('data: {0}'.format(data))
     f = open(path, "w")
     f.write(data)
     f.close()
-    log.end('writeEOPGFile')
+    log.end('writeCombineFile')
     return True
 
 def convertDataToEopgFormat():
@@ -284,7 +378,7 @@ def convertDataToEopgFormat():
     # RT: Record Identifier, 2, (RT)
     returnData += RT.RecordIdentifier
     # RT: Total of Transaction, 9,
-    returnData += RT.TotalofTrasaction.zfill(9)
+    returnData += RT.TotalofTransaction.zfill(9)
     # RT: Sign of Total amount, 1, ('-' means negative amount ' ' means positive amount)
     if RT.TotalofAmount[0] == '-':
         returnData += '-'
@@ -309,11 +403,12 @@ def main():
     global Result
     global sftp
     global emailContent
+    global TransDatetime_8_digits
     if len(sys.argv) == 2:
         today = sys.argv[1]
     else:
         today = datetime.datetime.now().strftime("%Y%m%d")
-    today = '20211127'
+
     Result = False
     log.info(f'MID: {MID}')
     log.info(f'PID: {PID}')
@@ -365,18 +460,25 @@ def main():
     getSftpFile(SFTP_info[1], localpath=RawMID_File_Local_Path, remotepath=RawMID_File_Remote_Path)
     PID_Report = read_PID_Report(localpath=PID_File_Local_Path)
     RawMID_Report = read_RawMID_Report(localpath=RawMID_File_Local_Path)
-    # ParseMID_Report = Combine_Report(localpath=ParseMID_File_Local_Path)
-
-    putSftpFile(SFTP_info, localpath=ParseMID_File_Local_Path, remotepath=ParseMID_File_Remote_Path)
+    ParseMID_Report = Combine_Report(localpath=ParseMID_File_Local_Path, PID_Report=PID_Report,RawMID_Report=RawMID_Report)
+    if ParseMID_Report:
+        putSftpFile(SFTP_info[0], localpath=ParseMID_File_Local_Path, remotepath=ParseMID_File_Remote_Path)
+        pass
     Result = True
     emailContent = f'''
     Settlement  Date: {today}\n
     Transaction Date: {TransDatetime_8_digits}\n
-    Total Transaction: {RT.TotalofTrasaction}\n
-    Total Fee: {RT.TotalofFee}\n
-    Total Amount: {RT.TotalofAmount}'''
+    PID showQRCode Count: {PID_Txns_Total}\n
+    PID showQRCode Fee: {float(PID_Fee_Total)/100}\n
+    PID showQRCode Amount: {float(PID_Amount_Total)/100}\n
+    Raw MID Count: {RawMID_Report[2].TotalofTransaction}\n
+    Raw MID Fee: {float(RawMID_Report[2].TotalofFee)/100}\n
+    Raw MID Amount: {float(RawMID_Report[2].TotalofAmount)/100}\n
+    Final Report Count: {str(int(RawMID_Report[2].TotalofTransaction) + PID_Txns_Total)}\n
+    Final Report Fee: {float(RawMID_Report[2].TotalofFee)/100 + float(PID_Fee_Total)/100}\n
+    Final Report Amount: {float(RawMID_Report[2].TotalofAmount)/100 + float(PID_Amount_Total)/100}'''
     Email.sentEmail(Log_Name='CLP_Report', Email_subject=f'[{Result}]CLP_Report ({today}) - {MID}',
-                    Email_content=emailContent, Email_attachement=[PID_File_Local_Path, RawMID_File_Local_Path, ParseMID_File_Local_Path])
+                    Email_content=emailContent, Email_attachement=[PID_File_Local_Path,ParseMID_File_Local_Path])
     log.end('CLP_Report')
 
 if __name__ == '__main__':

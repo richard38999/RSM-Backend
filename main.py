@@ -573,9 +573,9 @@ def A8_Password():
     username = request.headers.get("username")
     url = 'http://10.17.2.238/password/'
     response = requests.get(url)
-    temp = response.text.find('pw')
+    temp = response.text.find('password')
     password = str(response.text)
-    password = password[temp+3:9+temp]
+    password = password[temp+10:temp+16]
     trainingmodePW = '80' + password
     data = {"password": password, "trainingmodePW": trainingmodePW}
     meta = {'status': 200, 'msg': 'success'}

@@ -171,6 +171,8 @@ def convertDataToEopgFormat():
     # RH: MID, 15
     returnData += RH.MID.rjust(15, ' ')
     # RH: MID name, 30
+    if RH.MID == '852000058140017':
+        RH.MIDname = 'New Concepts Chinese Rest'
     returnData += RH.MIDname.rjust(30, ' ')
     # RH: PID, 28
     returnData += '2088031839616494'.rjust(28,' ')

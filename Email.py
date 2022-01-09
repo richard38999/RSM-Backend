@@ -57,7 +57,7 @@ def sentEmail(
                     email.attach(attachement)
                 else:
                     log.info(f'Email_attachement Not Exist: {att}')
-        with smtplib.SMTP(host=Email_info[0][1], port=Email_info[0][2]) as smtp:  # 設定SMTP伺服器
+        with smtplib.SMTP(host=Email_info[0][1], port=int(Email_info[0][2])) as smtp:  # 設定SMTP伺服器
             for i in range(5):
                 try:
                     log.info('Start ehlo')

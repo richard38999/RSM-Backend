@@ -11,9 +11,9 @@ Sent_To = Configuration.get_A8_PW_Email()
 
 url = 'http://10.17.2.238/password/'
 response = requests.get(url)
-temp = response.text.find('pw')
+temp = response.text.find('password')
 password = str(response.text)
-password = password[temp+3:9+temp]
+password = password[temp+10:temp+16]
 # password = '123456'
 to = ''
 for i in Sent_To:
