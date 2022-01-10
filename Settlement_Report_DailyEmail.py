@@ -78,7 +78,7 @@ def main():
                                     Email_subject=f'{i[4]} - {i[8]} Settlement Files 結算文件 ({EmailDatetime_8_digits})',
                                     Email_content=MerchantemailContent,
                                     Email_to=i[7],
-                                    Email_from='EFT Settlement Report',
+                                    Email_from=Email_info[0][3],
                                     Email_attachement=localpath)
                     emailContent += f'[{i[4]}_{i[8]} : {i[5]}] Success!\nEmail Address: {i[7]}\r\n-----------------------------------------------------------------------------------------------\n'
                     Utility.SQL_script(f'update Settlement_Report_DailyEmail_Result set IsSentEmail="Y" where Date="{i[0]}" and id="{i[1]}";')
