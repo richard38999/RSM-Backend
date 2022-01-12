@@ -74,16 +74,17 @@ def main():
                     "所有結算文件將由發出日期起計保留12個月，其後將會自動清除。\r\n\r\n\r\n\r\n" \
                     "客戶服務團隊 謹致"\
 
-                    Email.sentEmail(Log_Name='Settlement_Report_DailyEmail',
+                    if Email.sentEmail(Log_Name='Settlement_Report_DailyEmail',
                                     Email_subject=f'{i[4]} - {i[8]} Settlement Files 結算文件 ({EmailDatetime_8_digits})',
                                     Email_content=MerchantemailContent,
                                     Email_to=i[7],
                                     Email_from=Email_info[0][3],
                                     Email_displayName='Settlement EFTP',
-                                    Email_attachement=localpath)
+                                    Email_attachement=localpath) == False:
+                        continue
                     emailContent += f'[{i[4]}_{i[8]} : {i[5]}] Success!\nEmail Address: {i[7]}\r\n-----------------------------------------------------------------------------------------------\n'
                     Utility.SQL_script(f'update Settlement_Report_DailyEmail_Result set IsSentEmail="Y" where Date="{i[0]}" and id="{i[1]}";')
-                    log.info(f'{i[4]} - Sent email Success - to: {i[8]}')
+                    log.info(f'{i[4]}_{i[8]} ({i[5]}) - Sent email Success - to: {i[7]}')
             else:
                 log.info(f'{i[4]}_{i[8]} ({i[5]}): Not the right time to send email')
                 continue

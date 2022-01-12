@@ -1,6 +1,7 @@
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.header import Header
+from email.utils import formataddr
 from datetime import datetime
 import Configuration
 import smtplib
@@ -19,6 +20,7 @@ def sentEmail(
         Email_displayName=None,
         isHTML=False
         ):
+    sentResult = False
     try:
         log = Logger.Log(Log_Name)
         log.start('Email')
@@ -32,13 +34,15 @@ def sentEmail(
         email = MIMEMultipart()  # 建立MIMEMultipart物件
         email['Subject'] = Email_subject
         if Email_displayName != None:
-            email['From'] = Header(Email_displayName, 'utf-8')
-        # email["from"] = Email_from  # 寄件者
-        to_addrs = ''
+            email['From'] = formataddr((str(Header(Email_displayName, 'utf-8')), Email_from))
+        else:
+            email["From"] = Email_from  # 寄件者
+        # to_addrs = ''
         if type(Email_to) == str and len(Email_to) > 0:
-            to_addrs = Email_to  # 收件者
+            email['to'] = Email_to  # 收件者
         elif type(Email_to) == list and len(Email_to) != 0:
-            to_addrs = ';'.join(Email_to)   # 收件者
+            email['to'] = ';'.join(Email_to)   # 收件者
+        # email['to'] = to_addrs
         if isHTML:
             email.attach(MIMEText(_text=Email_content, _subtype='html', _charset='utf-8'))  # 郵件HTML內容
         else:
@@ -62,8 +66,8 @@ def sentEmail(
                     email.attach(attachement)
                 else:
                     log.info(f'Email_attachement Not Exist: {att}')
-        with smtplib.SMTP(host=Email_info[0][1], port=int(Email_info[0][2])) as smtp:  # 設定SMTP伺服器
-            for i in range(5):
+        for i in range(5):
+            with smtplib.SMTP(host=Email_info[0][1], port=int(Email_info[0][2])) as smtp:  # 設定SMTP伺服器
                 try:
                     log.info('Start ehlo')
                     smtp.ehlo()  # 驗證SMTP伺服器
@@ -75,13 +79,17 @@ def sentEmail(
                     smtp.login(Email_info[0][0], Email_info[0][4])  # 登入寄件者gmail
                     log.info('login Success')
                     log.info('Start send Email')
-                    smtp.send_message(email, from_addr=Email_from, to_addrs=to_addrs)  # 寄送郵件
+                    # smtp.send_message(email, from_addr=Email_from, to_addrs=to_addrs)  # 寄送郵件
+                    smtp.send_message(email)  # 寄送郵件
+                    sentResult = True
                     log.info('Send Email success')
                     break
                 except Exception as ex:
                     log.error("sent email Failed, Erroe message: {0}".format(ex))
+        return sentResult
     except Exception as ex:
         sign = '*' * 100 + '\n'
         errorMessage = f'{sign}>>>Exception Time：\t{datetime.now()}\n>>>Exception def：\t{sentEmail.__name__}\n>>>Exception msg：\t{ex}\n{traceback.format_exc()}{sign}'
         log.error(errorMessage)
         log.end('Email')
+        return False
