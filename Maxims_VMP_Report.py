@@ -274,7 +274,7 @@ def main():
         RD = []
         Result = False
         log.info(f'MID: {MID}')
-        day_of_year = str(datetime.date(int(today[:4]), int(today[4:6]), int(today[6:])).timetuple().tm_yday)
+        day_of_year = str(datetime.date(int(today[:4]), int(today[4:6]), int(today[6:])).timetuple().tm_yday).zfill(3)
         TransDatetime_6_digits = (datetime.datetime.strptime(today,'%Y%m%d') + datetime.timedelta(days=-1)).strftime("%y%m%d")
         log.info(f'TransDatetime_6_digits: {TransDatetime_6_digits}')
         TransDatetime_8_digits = (datetime.datetime.strptime(today,'%Y%m%d') + datetime.timedelta(days=-1)).strftime("%Y%m%d")
