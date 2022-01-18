@@ -79,7 +79,7 @@ def main():
                                     Email_content=MerchantemailContent,
                                     Email_to=i[7],
                                     Email_from=Email_info[0][3],
-                                    Email_displayName='Settlement EFTP',
+                                    Email_displayName='EFT Settlement Report',
                                     Email_attachement=localpath) == False:
                         continue
                     emailContent += f'[{i[4]}_{i[8]} : {i[5]}] Success!\nEmail Address: {i[7]}\r\n-----------------------------------------------------------------------------------------------\n'

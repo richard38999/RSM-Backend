@@ -97,7 +97,8 @@ def userView():
     log.debug(request.headers)
     log.debug("BODY: %s" % request.get_data())
     username = request.headers.get("username")
-    data = Utility.userView(username)
+    viewUser = request.args.get("username")
+    data = Utility.userView(viewUser)
     meta = {'status': 200, 'msg': 'SUCCESS'}
     returnmessage = {'meta': meta, 'data': data}
     log.debug(returnmessage)
@@ -112,7 +113,8 @@ def menu():
     log.debug(request.headers)
     log.debug("BODY: %s" % request.get_data())
     username = request.headers.get("username")
-    data = Utility.get_Menu(username)
+    menuUser = request.args.get("username")
+    data = Utility.get_Menu(menuUser)
     meta = {'status': 200, 'msg': 'SUCCESS'}
     returnmessage = {'meta': meta, 'data': data}
     log.debug(returnmessage)
@@ -204,12 +206,29 @@ def Transaction(Till_Number, TransactionType):
     AUTH = request.json.get('AUTH')
     shopcarts = request.json.get('AUTH')
     OriTID = request.json.get('OriTID')
+    Email_Subject = request.json.get('Email_Subject')
+    Remark = request.json.get('Remark')
     iRet = -1
+    msg = ''
     meta = {}
-    data = {}
+    data = []
     RawRequest = ''
     RawResponse = ''
     errormessage = ''
+    nowdatetime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+    confirm_Refund = request.json.get('confirm_Refund')
+    # check refund record
+    if confirm_Refund != 'Y':
+        if TransactionType == 'REFUND' or TransactionType == 'ADMINREFUND':
+            Refund_Result = Utility.check_offline_refund_txn(GateName=Till_Number, MID=MID, RRN=RRN)
+            if Refund_Result != []:
+                for i in range(len(Refund_Result)):
+                    data.append({'ID': i, 'DateTime': Refund_Result[i][0], 'UserName': Refund_Result[i][1], 'MID': Refund_Result[i][3], 'TID': Refund_Result[i][4], 'Amount': Refund_Result[i][6], 'RRN': Refund_Result[i][7], 'ResponseCode': f'{Refund_Result[i][9]}({Refund_Result[i][10]})', 'Email_Subject': Refund_Result[i][11], 'Remark': Refund_Result[i][12]})
+                meta = {'status': 'confirm_Refund', 'msg': msg}
+                returnmessage = {'meta': meta, 'data': data}
+                log.debug(returnmessage)
+                log.end('Transaction')
+                return jsonify(returnmessage)
     if MsgType == 'ISO' or MsgType == None: #ISO 接口
         eft = EFTPaymentsServer()
         Transaction_resp = TransactionRecord()
@@ -222,8 +241,12 @@ def Transaction(Till_Number, TransactionType):
                 if iRet[0] == 0:
                     meta = {'status': str(iRet[0]), 'msg': Utility.getResultMessage(str(iRet[0]))}
                     data = Utility.getTransactionRecord(iRet[1])
+                    Utility.insert_Offline_Txn(DateTime=nowdatetime,username=username, GatewayName=Till_Number,MID=MID, TID=TID, TransactionType=TransactionType, Amount=amount, RRN=data['RRN'], approvalCode=data['approvalCode'], respondCode=data['respondCode'], respondText=data['respondText'], Email_Subject=Email_Subject, Remark=Remark)
             else:
                 meta = {'status': iRet, 'msg': Utility.getResultMessage(str(iRet))}
+                Utility.insert_Offline_Txn(DateTime=nowdatetime, username=username, GatewayName=Till_Number, MID=MID,
+                                           TID=TID, TransactionType=TransactionType, Amount=amount, RRN=RRN, approvalCode=None,
+                                           respondCode=iRet, respondText=meta['msg'], Email_Subject=Email_Subject, Remark=Remark)
         elif TransactionType == 'VOID':
             iRet = eft.voidSale(amount, barcode, TraceNo)
             if iRet == 0:
@@ -231,8 +254,13 @@ def Transaction(Till_Number, TransactionType):
                 if iRet[0] == 0:
                     meta = {'status': str(iRet[0]), 'msg': Utility.getResultMessage(str(iRet[0]))}
                     data = Utility.getTransactionRecord(iRet[1])
+                    Utility.insert_Offline_Txn(DateTime=nowdatetime,username=username, GatewayName=Till_Number,MID=MID, TID=TID, TransactionType=TransactionType, Amount=amount, RRN=data['RRN'], approvalCode=data['approvalCode'], respondCode=data['respondCode'], respondText=data['respondText'], Email_Subject=Email_Subject, Remark=Remark)
             else:
                 meta = {'status': iRet, 'msg': Utility.getResultMessage(str(iRet))}
+                Utility.insert_Offline_Txn(DateTime=nowdatetime, username=username, GatewayName=Till_Number, MID=MID,
+                                           TID=TID, TransactionType=TransactionType, Amount=amount, RRN=RRN,
+                                           approvalCode=None,
+                                           respondCode=iRet, respondText=meta['msg'], Email_Subject=Email_Subject, Remark=Remark)
         elif TransactionType == 'QUERY':
             iRet = eft.query(RRN, ApprovalCode)
             if iRet == 0:
@@ -249,8 +277,13 @@ def Transaction(Till_Number, TransactionType):
                 if iRet[0] == 0:
                     meta = {'status': str(iRet[0]), 'msg': Utility.getResultMessage(str(iRet[0]))}
                     data = Utility.getTransactionRecord(iRet[1])
+                    Utility.insert_Offline_Txn(DateTime=nowdatetime,username=username, GatewayName=Till_Number,MID=MID, TID=TID, TransactionType=TransactionType, Amount=amount, RRN=RRN, approvalCode=data['approvalCode'], respondCode=data['respondCode'], respondText=data['respondText'], Email_Subject=Email_Subject, Remark=Remark)
             else:
                 meta = {'status': iRet, 'msg': Utility.getResultMessage(str(iRet))}
+                Utility.insert_Offline_Txn(DateTime=nowdatetime, username=username, GatewayName=Till_Number, MID=MID,
+                                           TID=TID, TransactionType=TransactionType, Amount=amount, RRN=RRN,
+                                           approvalCode=None,
+                                           respondCode=iRet, respondText=meta['msg'], Email_Subject=Email_Subject, Remark=Remark)
         elif TransactionType == 'SALEADVICE':
             iRet = eft.SaleAdvice(RRN, ecrRefNo, amount, ApprovalCode)
             if iRet == 0:
@@ -258,8 +291,13 @@ def Transaction(Till_Number, TransactionType):
                 if iRet[0] == 0:
                     meta = {'status': str(iRet[0]), 'msg': Utility.getResultMessage(str(iRet[0]))}
                     data = Utility.getTransactionRecord(iRet[1])
+                    Utility.insert_Offline_Txn(DateTime=nowdatetime,username=username, GatewayName=Till_Number,MID=MID, TID=TID, TransactionType=TransactionType, Amount=amount, RRN=data['RRN'], approvalCode=data['approvalCode'], respondCode=data['respondCode'], respondText=data['respondText'], Email_Subject=Email_Subject, Remark=Remark)
             else:
                 meta = {'status': iRet, 'msg': Utility.getResultMessage(str(iRet))}
+                Utility.insert_Offline_Txn(DateTime=nowdatetime, username=username, GatewayName=Till_Number, MID=MID,
+                                           TID=TID, TransactionType=TransactionType, Amount=amount, RRN=RRN,
+                                           approvalCode=None,
+                                           respondCode=iRet, respondText=meta['msg'], Email_Subject=Email_Subject, Remark=Remark)
         elif TransactionType == 'REVERSAL':
             iRet = eft.Reversal(RRN, barcode, amount, TraceNo)
             if iRet == 0:
@@ -267,8 +305,13 @@ def Transaction(Till_Number, TransactionType):
                 if iRet[0] == 0:
                     meta = {'status': str(iRet[0]), 'msg': Utility.getResultMessage(str(iRet[0]))}
                     data = Utility.getTransactionRecord(iRet[1])
+                    Utility.insert_Offline_Txn(DateTime=nowdatetime,username=username, GatewayName=Till_Number,MID=MID, TID=TID, TransactionType=TransactionType, Amount=amount, RRN=data['RRN'], approvalCode=data['approvalCode'], respondCode=data['respondCode'], respondText=data['respondText'], Email_Subject=Email_Subject, Remark=Remark)
             else:
                 meta = {'status': iRet, 'msg': Utility.getResultMessage(str(iRet))}
+                Utility.insert_Offline_Txn(DateTime=nowdatetime, username=username, GatewayName=Till_Number, MID=MID,
+                                           TID=TID, TransactionType=TransactionType, Amount=amount, RRN=RRN,
+                                           approvalCode=None,
+                                           respondCode=iRet, respondText=meta['msg'], Email_Subject=Email_Subject, Remark=Remark)
         elif TransactionType == 'AUTH':
             iRet = eft.AUTH(amount)
             if iRet == 0:
@@ -276,8 +319,13 @@ def Transaction(Till_Number, TransactionType):
                 if iRet[0] == 0:
                     meta = {'status': str(iRet[0]), 'msg': Utility.getResultMessage(str(iRet[0]))}
                     data = Utility.getTransactionRecord(iRet[1])
+                    Utility.insert_Offline_Txn(DateTime=nowdatetime,username=username, GatewayName=Till_Number,MID=MID, TID=TID, TransactionType=TransactionType, Amount=amount, RRN=data['RRN'], approvalCode=data['approvalCode'], respondCode=data['respondCode'], respondText=data['respondText'],Email_Subject=Email_Subject, Remark=Remark)
             else:
                 meta = {'status': iRet, 'msg': Utility.getResultMessage(str(iRet))}
+                Utility.insert_Offline_Txn(DateTime=nowdatetime, username=username, GatewayName=Till_Number, MID=MID,
+                                           TID=TID, TransactionType=TransactionType, Amount=amount, RRN=RRN,
+                                           approvalCode=None,
+                                           respondCode=iRet, respondText=meta['msg'], Email_Subject=Email_Subject, Remark=Remark)
         elif TransactionType == 'ADMINREFUND':
             iRet = eft.adminRefund(RRN, OriTID, amount, ecrRefNo)
             if iRet == 0:
@@ -285,8 +333,13 @@ def Transaction(Till_Number, TransactionType):
                 if iRet[0] == 0:
                     meta = {'status': str(iRet[0]), 'msg': Utility.getResultMessage(str(iRet[0]))}
                     data = Utility.getTransactionRecord(iRet[1])
+                    Utility.insert_Offline_Txn(DateTime=nowdatetime,username=username, GatewayName=Till_Number,MID=MID, TID=OriTID, TransactionType=TransactionType, Amount=amount, RRN=RRN, approvalCode=data['approvalCode'], respondCode=data['respondCode'], respondText=data['respondText'],Email_Subject=Email_Subject, Remark=Remark)
             else:
                 meta = {'status': iRet, 'msg': Utility.getResultMessage(str(iRet))}
+                Utility.insert_Offline_Txn(DateTime=nowdatetime, username=username, GatewayName=Till_Number, MID=MID,
+                                           TID=OriTID, TransactionType=TransactionType, Amount=amount, RRN=RRN,
+                                           approvalCode=None,
+                                           respondCode=iRet, respondText=meta['msg'], Email_Subject=Email_Subject, Remark=Remark)
 
     else:# XML接口
         XML = InterFace()
@@ -299,102 +352,52 @@ def Transaction(Till_Number, TransactionType):
                 iRet = XML.SALE(barcode, amount, ecrRefNo, OrdDesc, 0, ShopCart)
             else:
                 iRet = XML.SALE(barcode, amount, ecrRefNo, '', 0, ShopCart)
-            if iRet == True: # 交易成功
-                iRet = XML.GetResponse(XML_resp, RawRequest, RawResponse, errormessage)
-                meta = {'status': '0', 'msg': 'Success'}
-                data = Utility.getXmlResp(iRet[1], iRet[2], iRet[3])
-
-            else: #交易失败
-                status = iRet
-                iRet = XML.GetResponse(XML_resp, RawRequest, RawResponse, errormessage)
-                msg = iRet[4]
-                meta = {'status': status, 'msg': msg}
-
         elif TransactionType == 'VOID':
             iRet = XML.Void(barcode, amount, TraceNo)
-            if iRet == True:  # 成功
-                iRet = XML.GetResponse(XML_resp, RawRequest, RawResponse, errormessage)
-                meta = {'status': '0', 'msg': 'Success'}
-                data = Utility.getXmlResp(iRet[1], iRet[2], iRet[3])
-
-            else:  # 失败
-                status = iRet
-                iRet = XML.GetResponse(XML_resp, RawRequest, RawResponse, errormessage)
-                msg = iRet[4]
-                meta = {'status': status, 'msg': msg}
         elif TransactionType == 'QUERY':
             iRet = XML.QUERY(RRN, barcode, AUTH)
-            if iRet == True:  # 成功
-                iRet = XML.GetResponse(XML_resp, RawRequest, RawResponse, errormessage)
-                meta = {'status': '0', 'msg': 'Success'}
-                data = Utility.getXmlResp(iRet[1], iRet[2], iRet[3])
-
-            else:  # 失败
-                status = iRet
-                iRet = XML.GetResponse(XML_resp, RawRequest, RawResponse, errormessage)
-                msg = iRet[4]
-                meta = {'status': status, 'msg': msg}
         elif TransactionType == 'REFUND':
             iRet = XML.REFUND(RRN, amount, ecrRefNo, ApprovalCode)
-            if iRet == True:  # 成功
-                iRet = XML.GetResponse(XML_resp, RawRequest, RawResponse, errormessage)
-                meta = {'status': '0', 'msg': 'Success'}
-                data = Utility.getXmlResp(iRet[1], iRet[2], iRet[3])
-
-            else:  # 失败
-                status = iRet
-                iRet = XML.GetResponse(XML_resp, RawRequest, RawResponse, errormessage)
-                msg = iRet[4]
-                meta = {'status': status, 'msg': msg}
         elif TransactionType == 'SALEADVICE':
             iRet = XML.SALE_ADVICE(RRN, ecrRefNo,barcode, ApprovalCode)
-            if iRet == True:  # 成功
-                iRet = XML.GetResponse(XML_resp, RawRequest, RawResponse, errormessage)
-                meta = {'status': '0', 'msg': 'Success'}
-                data = Utility.getXmlResp(iRet[1], iRet[2], iRet[3])
-
-            else:  # 失败
-                status = iRet
-                iRet = XML.GetResponse(XML_resp, RawRequest, RawResponse, errormessage)
-                msg = iRet[4]
-                meta = {'status': status, 'msg': msg}
         elif TransactionType == 'REVERSAL':
             iRet = XML.REVERSAL(barcode, amount, RRN, TraceNo)
-            if iRet == True:  # 成功
-                iRet = XML.GetResponse(XML_resp, RawRequest, RawResponse, errormessage)
-                meta = {'status': '0', 'msg': 'Success'}
-                data = Utility.getXmlResp(iRet[1], iRet[2], iRet[3])
-
-            else:  # 失败
-                status = iRet
-                iRet = XML.GetResponse(XML_resp, RawRequest, RawResponse, errormessage)
-                msg = iRet[4]
-                meta = {'status': status, 'msg': msg}
         elif TransactionType == 'AUTH':
             iRet = XML.AUTH(amount, ecrRefNo, OrdDesc, 0, ShopCart)
             #iRet = XML.AUTH(amount, ecrRefNo, OrdDesc, NumOfProduct, ShopCart)
-            if iRet == True:  # 成功
-                iRet = XML.GetResponse(XML_resp, RawRequest, RawResponse, errormessage)
-                meta = {'status': '0', 'msg': 'Success'}
-                data = Utility.getXmlResp(iRet[1], iRet[2], iRet[3])
-
-            else:  # 失败
-                status = iRet
-                iRet = XML.GetResponse(XML_resp, RawRequest, RawResponse, errormessage)
-                msg = iRet[4]
-                meta = {'status': status, 'msg': msg}
         elif TransactionType == 'ADMINREFUND':
             iRet = XML.ADMIN_REFUND(RRN, amount, ecrRefNo, OriTID)
-            if iRet == True:  # 成功
-                iRet = XML.GetResponse(XML_resp, RawRequest, RawResponse, errormessage)
-                meta = {'status': '0', 'msg': 'Success'}
-                data = Utility.getXmlResp(iRet[1], iRet[2], iRet[3])
 
-            else:  # 失败
-                status = iRet
-                iRet = XML.GetResponse(XML_resp, RawRequest, RawResponse, errormessage)
-                msg = iRet[4]
-                meta = {'status': status, 'msg': msg}
+        if iRet == True:  # 成功
+            iRet = XML.GetResponse(XML_resp, RawRequest, RawResponse, errormessage)
+            meta = {'status': '0', 'msg': 'Success'}
+            data = Utility.getXmlResp(iRet[1], iRet[2], iRet[3])
+            if TransactionType == 'REFUND':
+                Utility.insert_Offline_Txn(DateTime=nowdatetime, username=username, GatewayName=Till_Number, MID=MID,
+                                           TID=TID, TransactionType=TransactionType, Amount=amount, RRN=RRN,
+                                           approvalCode=data['approvalCode'], respondCode=data['respondCode'],
+                                           respondText=data['respondText'], Email_Subject=Email_Subject, Remark=Remark)
+            elif TransactionType == 'ADMINREFUND':
+                Utility.insert_Offline_Txn(DateTime=nowdatetime, username=username, GatewayName=Till_Number, MID=MID,
+                                           TID=OriTID, TransactionType=TransactionType, Amount=amount, RRN=RRN,
+                                           approvalCode=data['approvalCode'], respondCode=data['respondCode'],
+                                           respondText=data['respondText'],Email_Subject=Email_Subject, Remark=Remark)
+            else:
+                Utility.insert_Offline_Txn(DateTime=nowdatetime, username=username, GatewayName=Till_Number, MID=MID,
+                                   TID=TID, TransactionType=TransactionType, Amount=amount, RRN=data['RRN'],
+                                   approvalCode=data['approvalCode'], respondCode=data['respondCode'],
+                                   respondText=data['respondText'], Email_Subject=Email_Subject, Remark=Remark)
+
+        else:  # 失败
+            status = iRet
+            iRet = XML.GetResponse(XML_resp, RawRequest, RawResponse, errormessage)
+            msg = iRet[4]
+            meta = {'status': status, 'msg': msg}
+            Utility.insert_Offline_Txn(DateTime=nowdatetime, username=username, GatewayName=Till_Number, MID=MID,
+                                       TID=TID, TransactionType=TransactionType, Amount=amount, RRN=RRN,
+                                       approvalCode=None,
+                                       respondCode=None, respondText=meta['msg'], URL=URL,
+                                       IP=IP, Port=Port, TPDU=TPDU)
 
     returnmessage = {'meta': meta, 'data': data}
     log.debug(returnmessage)
@@ -428,6 +431,7 @@ def BatchFor(Till_Number, BatchFor):
     table = xlsx.sheet_by_index(0)
     meta = []
     data = []
+    nowdatetime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
     if BatchFor == 'BatchForSale':
         meta = {'status': 0, 'msg': "All Account Activated"}
         amount = '10'
@@ -463,42 +467,59 @@ def BatchFor(Till_Number, BatchFor):
         for i in range(table.nrows):
             log.debug(table.row_values(i))
             if (i == 0):
-                if Till_Number == 'CUP' or Till_Number == 'BoC':
-                    data.append([table.row_values(i)[0],
-                                 table.row_values(i)[1],
-                                 table.row_values(i)[2],
-                                 table.row_values(i)[3],
-                                 table.row_values(i)[4],
-                                 'Respond Code'])
+                if Till_Number == 'CUP' or Till_Number == 'BOC':
+                    data.append(['MID','TID','Amount','RRN','ApprovalCode','Respond Code/Result','Email Subject','Remark'])
                 else:
-                    data.append([table.row_values(i)[0],
-                                 table.row_values(i)[1],
-                                 table.row_values(i)[2],
-                                 table.row_values(i)[3],
-                                 'Respond Code'])
+                    data.append(['MID','TID','Amount','RRN','Respond Code/Result','Email Subject','Remark'])
                 continue
             if table.cell(i, 0).ctype == 2:
                 MID = str(int(float(table.cell_value(i, 0))))
             else:
                 MID = table.cell_value(i, 0)
-
             if table.cell(i, 1).ctype == 2:
                 TID = str(int(float(table.cell_value(i, 1))))
             else:
                 TID = table.cell_value(i, 1)
             if table.cell(i, 2).ctype == 2:
-                Amount = str(int(round(float(table.cell_value(i, 2)*100),2)))
+                Amount = str(int(round(float(table.cell_value(i, 2) * 100),2)))
             else:
                 Amount = str(int(round(float(table.cell_value(i, 2)) * 100, 2)))
             if table.cell(i, 3).ctype == 2:
                 RRN = str(int(float(table.cell_value(i, 3))))
             else:
                 RRN = table.cell_value(i, 3)
+            if table.cell(i, 4).ctype == 2:
+                Email_Subject = str(int(float(table.cell_value(i, 4))))
+            else:
+                Email_Subject = table.cell_value(i, 4)
+            if table.cell(i, 5).ctype == 2:
+                Remark = str(int(float(table.cell_value(i, 5))))
+            else:
+                Remark = table.cell_value(i, 5)
             if Till_Number == 'CUP' or Till_Number == 'BoC':
                 if table.cell(i, 4).ctype == 2:
                     ApprovalCode = str(int(float(table.cell_value(i, 4))))
                 else:
                     ApprovalCode = table.cell_value(i, 4)
+                if table.cell(i, 5).ctype == 2:
+                    Email_Subject = str(int(float(table.cell_value(i, 5))))
+                else:
+                    Email_Subject = table.cell_value(i, 5)
+                if table.cell(i, 6).ctype == 2:
+                    Remark = str(int(float(table.cell_value(i, 6))))
+                else:
+                    Remark = table.cell_value(i, 6)
+
+            Refund_Result = Utility.check_offline_refund_txn(GateName=Till_Number, MID=MID, RRN=RRN)
+            if Refund_Result != []:
+                if Till_Number == 'CUP' or Till_Number == 'BOC':
+                    data.append([MID, TID, round(float(int(Amount) / 100), 2), RRN, ApprovalCode, 'This transaction already did the refund before. Not allow to use Batch Refund. Please use manual refund!',
+                                Refund_Result[0][11], Refund_Result[0][12]])
+                else:
+                    data.append([MID, TID, round(float(int(Amount) / 100), 2), RRN, 'This transaction already did the refund before. Not allow to use Batch Refund. Please use manual refund!', Refund_Result[0][11],
+                                Refund_Result[0][12]])
+                meta = {'status': 1, 'msg': "Some Transactions Refund Failed"}
+                continue
             eft = EFTPaymentsServer()
             Transaction_resp = TransactionRecord()
             eft.initialize(Till_Number, MID, TID, IP, Port, TPDU, COMMTYPE, Timeout)
@@ -506,12 +527,13 @@ def BatchFor(Till_Number, BatchFor):
             if iRet == 0:
                 iRet = eft.getSaleResponse(Transaction_resp)
                 if iRet[0] == 0:
+                    Utility.insert_Offline_Txn(DateTime=nowdatetime,username=username, GatewayName=Till_Number,MID=MID, TID=TID, TransactionType='REFUND', Amount=Amount, RRN=RRN, approvalCode=ApprovalCode, respondCode=iRet[1].respondCode, respondText=iRet[1].respondText,Email_Subject=Email_Subject, Remark=Remark)
                     if iRet[1].respondCode != '00':
                         meta = {'status': 1, 'msg': "Some Transactions Refund Failed"}
                     if Till_Number == 'CUP' or Till_Number == 'BoC':
-                        data.append([MID, TID, round(float(int(Amount)/100),2), RRN, ApprovalCode, iRet[1].respondCode])
+                        data.append([MID, TID, round(float(int(Amount)/100),2), RRN, ApprovalCode, f'{iRet[1].respondCode}[{iRet[1].respondText}]', Email_Subject, Remark])
                     else:
-                        data.append([MID, TID, round(float(int(Amount) / 100), 2), RRN, iRet[1].respondCode])
+                        data.append([MID, TID, round(float(int(Amount) / 100), 2), RRN, f'{iRet[1].respondCode}[{iRet[1].respondText}]', Email_Subject, Remark])
             else:
                 data.append([MID, TID, round(float(int(Amount) / 100), 2), RRN, iRet])
                 meta = {'status': 1, 'msg': "Some Transactions Refund Failed"}

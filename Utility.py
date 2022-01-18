@@ -121,6 +121,7 @@ def getXmlResp(tr, RawRequest, RawResponse):
         returndata['barcode'] = tr.CardNo
     if tr.PAN != None:
         returndata['barcode'] = tr.PAN
+    returndata['approvalCode'] = None
     if tr.ApproCode != None:
         returndata['approvalCode'] = tr.ApproCode
     if tr.ApprovedNo != None:
@@ -512,6 +513,29 @@ def SQL_script(script):
     conn = sqlite3.connect(db_name)
     cursor = conn.cursor()
     cursor.execute(script)
+    returnmData = cursor.fetchall()
+    # print(values)
+    conn.commit()
+    cursor.close()
+    conn.close()
+    return returnmData
+
+def insert_Offline_Txn(DateTime='', username='', GatewayName='', MID='', TID='',  TransactionType='', Amount='', RRN='', approvalCode='', respondCode='', respondText='',Email_Subject='', Remark=''):
+    conn = sqlite3.connect(db_name)
+    cursor = conn.cursor()
+    cmd = f'insert INTO Offline_Txn_DB VALUES("{DateTime}", "{username}", "{GatewayName}", "{MID}", "{TID}", "{TransactionType}", "{Amount}", "{RRN}", "{approvalCode}", "{respondCode}", "{respondText}", "{Email_Subject}", "{Remark}");'
+    cursor.execute(cmd)
+    # returnmData = cursor.fetchall()
+    # print(values)
+    conn.commit()
+    cursor.close()
+    conn.close()
+
+def check_offline_refund_txn(GateName='', MID='', RRN=''):
+    conn = sqlite3.connect(db_name)
+    cursor = conn.cursor()
+    cmd = f'select * from Offline_Txn_DB where Gateway_Name = "{GateName}" and MID = "{MID}" and RRN = "{RRN}" and Response_Code = "00" and TransType = "REFUND" or TransType = "ADMINREFUND";'
+    cursor.execute(cmd)
     returnmData = cursor.fetchall()
     # print(values)
     conn.commit()

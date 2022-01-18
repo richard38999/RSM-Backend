@@ -4397,3 +4397,245 @@
 
 2021-11-22 23:12:28.534:[GetResponse] errormessage: 
 2021-11-22 23:12:28.536:[GetResponse] XML_Resp: [MID]:[852999900000003] [TID]:[99999997] [RespCode]:[14] [RefNo]:[211122231227] [CardNo]:[280000000000000000] [TransType]:[SALE] [TransDate]:[20211122] [TransTime]:[231229] [ERCRFN]:[Portaltesting123] [TraceNo]:[900024] [Amount]:[000000000010] [respondText]:[Invalid Payment Code] 
+2022-01-16 16:00:05.496:[initialize] Gateway: payme
+2022-01-16 16:00:05.499:[initialize] MID: 852555550000002
+2022-01-16 16:00:05.499:[initialize] TID: 00000018
+2022-01-16 16:00:05.499:[initialize] URL: http://127.0.0.1:8889
+2022-01-16 16:00:05.499:[initialize] Timeout: 90
+2022-01-16 16:00:05.500:[initialize] COMMTYPE: 2
+2022-01-16 16:00:05.500:[initialize] PaymentType: PayMe
+2022-01-16 16:00:05.507:[SALE] Barcode: <800000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-01-16 16:00:05.508:[SALE] XML_Req: 
+2022-01-16 16:00:05.514:[SALE] PaymentType: PayMe
+2022-01-16 16:00:05.515:[SALE] Start Send the message
+2022-01-16 16:00:05.515:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852555550000002</MID><TID>00000018</TID><Amount>10</Amount><TraceNo>900092</TraceNo><CardNo>800000000000000000</CardNo><RefNo>220116160005</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220116</TransDate><TransTime>160005</TransTime></TxnReq>
+2022-01-16 16:00:07.589:[HTTP] System.Net.WebException: 無法連接至遠端伺服器 ---> System.Net.Sockets.SocketException: 無法連線，因為目標電腦拒絕連線。 127.0.0.1:8889
+   於 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   於 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 內部例外狀況堆疊追蹤的結尾 ---
+   於 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   於 System.Net.HttpWebRequest.GetRequestStream()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2022-01-16 16:00:07.589:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852555550000002</MID><TID>00000018</TID><Amount>10</Amount><TraceNo>900092</TraceNo><CardNo>800000000000000000</CardNo><RefNo>220116160005</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220116</TransDate><TransTime>160005</TransTime></TxnReq>
+2022-01-16 16:00:07.590:[GetResponse] RawResponse: 
+2022-01-16 16:00:07.590:[GetResponse] errormessage: 無法連接至遠端伺服器
+2022-01-16 16:01:35.721:[initialize] Gateway: payme
+2022-01-16 16:01:35.721:[initialize] MID: 852555550000002
+2022-01-16 16:01:35.722:[initialize] TID: 00000018
+2022-01-16 16:01:35.722:[initialize] URL: http://127.0.0.1:8889
+2022-01-16 16:01:35.722:[initialize] Timeout: 90
+2022-01-16 16:01:35.722:[initialize] COMMTYPE: 2
+2022-01-16 16:01:35.722:[initialize] PaymentType: PayMe
+2022-01-16 16:01:35.723:[SALE] Barcode: <800000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-01-16 16:01:35.723:[SALE] XML_Req: 
+2022-01-16 16:01:35.723:[SALE] PaymentType: PayMe
+2022-01-16 16:01:35.724:[SALE] Start Send the message
+2022-01-16 16:01:35.724:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852555550000002</MID><TID>00000018</TID><Amount>10</Amount><TraceNo>900092</TraceNo><CardNo>800000000000000000</CardNo><RefNo>220116160135</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220116</TransDate><TransTime>160135</TransTime></TxnReq>
+2022-01-16 16:01:37.775:[HTTP] System.Net.WebException: 無法連接至遠端伺服器 ---> System.Net.Sockets.SocketException: 無法連線，因為目標電腦拒絕連線。 127.0.0.1:8889
+   於 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   於 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 內部例外狀況堆疊追蹤的結尾 ---
+   於 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   於 System.Net.HttpWebRequest.GetRequestStream()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2022-01-16 16:01:37.775:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852555550000002</MID><TID>00000018</TID><Amount>10</Amount><TraceNo>900092</TraceNo><CardNo>800000000000000000</CardNo><RefNo>220116160135</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220116</TransDate><TransTime>160135</TransTime></TxnReq>
+2022-01-16 16:01:37.776:[GetResponse] RawResponse: 
+2022-01-16 16:01:37.776:[GetResponse] errormessage: 無法連接至遠端伺服器
+2022-01-16 16:04:45.869:[initialize] Gateway: payme
+2022-01-16 16:04:45.870:[initialize] MID: 852555550000002
+2022-01-16 16:04:45.870:[initialize] TID: 00000018
+2022-01-16 16:04:45.870:[initialize] URL: http://127.0.0.1:8889
+2022-01-16 16:04:45.870:[initialize] Timeout: 90
+2022-01-16 16:04:45.870:[initialize] COMMTYPE: 2
+2022-01-16 16:04:45.871:[initialize] PaymentType: PayMe
+2022-01-16 16:04:45.876:[SALE] Barcode: <800000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-01-16 16:04:45.877:[SALE] XML_Req: 
+2022-01-16 16:04:45.879:[SALE] PaymentType: PayMe
+2022-01-16 16:04:45.880:[SALE] Start Send the message
+2022-01-16 16:04:45.880:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852555550000002</MID><TID>00000018</TID><Amount>10</Amount><TraceNo>900092</TraceNo><CardNo>800000000000000000</CardNo><RefNo>220116160445</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220116</TransDate><TransTime>160445</TransTime></TxnReq>
+2022-01-16 16:04:47.950:[HTTP] System.Net.WebException: 無法連接至遠端伺服器 ---> System.Net.Sockets.SocketException: 無法連線，因為目標電腦拒絕連線。 127.0.0.1:8889
+   於 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   於 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 內部例外狀況堆疊追蹤的結尾 ---
+   於 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   於 System.Net.HttpWebRequest.GetRequestStream()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2022-01-16 16:04:47.950:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852555550000002</MID><TID>00000018</TID><Amount>10</Amount><TraceNo>900092</TraceNo><CardNo>800000000000000000</CardNo><RefNo>220116160445</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220116</TransDate><TransTime>160445</TransTime></TxnReq>
+2022-01-16 16:04:47.950:[GetResponse] RawResponse: 
+2022-01-16 16:04:47.951:[GetResponse] errormessage: 無法連接至遠端伺服器
+2022-01-16 16:05:42.846:[initialize] Gateway: payme
+2022-01-16 16:05:42.847:[initialize] MID: 852555550000002
+2022-01-16 16:05:42.847:[initialize] TID: 00000018
+2022-01-16 16:05:42.847:[initialize] URL: http://127.0.0.1:8889
+2022-01-16 16:05:42.848:[initialize] Timeout: 90
+2022-01-16 16:05:42.848:[initialize] COMMTYPE: 2
+2022-01-16 16:05:42.848:[initialize] PaymentType: PayMe
+2022-01-16 16:05:42.854:[SALE] Barcode: <800000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-01-16 16:05:42.855:[SALE] XML_Req: 
+2022-01-16 16:05:42.857:[SALE] PaymentType: PayMe
+2022-01-16 16:05:42.857:[SALE] Start Send the message
+2022-01-16 16:05:42.857:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852555550000002</MID><TID>00000018</TID><Amount>10</Amount><TraceNo>900092</TraceNo><CardNo>800000000000000000</CardNo><RefNo>220116160542</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220116</TransDate><TransTime>160542</TransTime></TxnReq>
+2022-01-16 16:05:44.946:[HTTP] System.Net.WebException: 無法連接至遠端伺服器 ---> System.Net.Sockets.SocketException: 無法連線，因為目標電腦拒絕連線。 127.0.0.1:8889
+   於 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   於 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 內部例外狀況堆疊追蹤的結尾 ---
+   於 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   於 System.Net.HttpWebRequest.GetRequestStream()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2022-01-16 16:05:44.947:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852555550000002</MID><TID>00000018</TID><Amount>10</Amount><TraceNo>900092</TraceNo><CardNo>800000000000000000</CardNo><RefNo>220116160542</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220116</TransDate><TransTime>160542</TransTime></TxnReq>
+2022-01-16 16:05:44.947:[GetResponse] RawResponse: 
+2022-01-16 16:05:44.947:[GetResponse] errormessage: 無法連接至遠端伺服器
+2022-01-16 16:07:48.949:[initialize] Gateway: payme
+2022-01-16 16:07:48.951:[initialize] MID: 852555550000002
+2022-01-16 16:07:48.951:[initialize] TID: 00000018
+2022-01-16 16:07:48.951:[initialize] URL: http://127.0.0.1:8889
+2022-01-16 16:07:48.951:[initialize] Timeout: 90
+2022-01-16 16:07:48.951:[initialize] COMMTYPE: 2
+2022-01-16 16:07:48.951:[initialize] PaymentType: PayMe
+2022-01-16 16:07:48.958:[SALE] Barcode: <800000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-01-16 16:07:48.959:[SALE] XML_Req: 
+2022-01-16 16:07:48.961:[SALE] PaymentType: PayMe
+2022-01-16 16:07:48.962:[SALE] Start Send the message
+2022-01-16 16:07:48.962:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852555550000002</MID><TID>00000018</TID><Amount>10</Amount><TraceNo>900092</TraceNo><CardNo>800000000000000000</CardNo><RefNo>220116160748</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220116</TransDate><TransTime>160748</TransTime></TxnReq>
+2022-01-16 16:07:51.048:[HTTP] System.Net.WebException: 無法連接至遠端伺服器 ---> System.Net.Sockets.SocketException: 無法連線，因為目標電腦拒絕連線。 127.0.0.1:8889
+   於 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   於 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+   --- 內部例外狀況堆疊追蹤的結尾 ---
+   於 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   於 System.Net.HttpWebRequest.GetRequestStream()
+   於 XML_InterFace.HTTP.Post_XML(String URL, String requestmessage, Int32 CommType, Int32 Timeout, Boolean Mutual, String certname, String keypassword, String& receivemessage, String& errormessage)
+2022-01-16 16:07:51.049:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852555550000002</MID><TID>00000018</TID><Amount>10</Amount><TraceNo>900092</TraceNo><CardNo>800000000000000000</CardNo><RefNo>220116160748</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220116</TransDate><TransTime>160748</TransTime></TxnReq>
+2022-01-16 16:07:51.049:[GetResponse] RawResponse: 
+2022-01-16 16:07:51.049:[GetResponse] errormessage: 無法連接至遠端伺服器
+2022-01-16 16:09:29.387:[initialize] Gateway: 2C
+2022-01-16 16:09:29.388:[initialize] MID: 08520001503
+2022-01-16 16:09:29.388:[initialize] TID: 51001953
+2022-01-16 16:09:29.388:[initialize] URL: https://xml1.mobipay.co:4100/eaqr2
+2022-01-16 16:09:29.388:[initialize] Timeout: 90
+2022-01-16 16:09:29.388:[initialize] COMMTYPE: 2
+2022-01-16 16:09:29.388:[initialize] PaymentType: Alipay
+2022-01-16 16:09:29.394:[SALE] Barcode: <280000000000000000>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-01-16 16:09:29.394:[SALE] XML_Req: 
+2022-01-16 16:09:29.396:[SALE] PaymentType: Alipay
+2022-01-16 16:09:29.397:[SALE] Start Send the message
+2022-01-16 16:09:29.397:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>08520001503</MID><TID>51001953</TID><Amount>10</Amount><TraceNo>900001</TraceNo><CardNo>280000000000000000</CardNo><RefNo>220116160929</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220116</TransDate><TransTime>160929</TransTime></TxnReq>
+2022-01-16 16:09:30.794:[SALE] End Send the message
+2022-01-16 16:09:30.795:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>08520001503</MID><TID>51001953</TID><RespCode>05</RespCode><ApproCode></ApproCode><RefNo>220116160929</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000010</Amount><TraceNo>900001</TraceNo><inVoiceNo></inVoiceNo><CardNo>280000000000000000</CardNo><TransType>SALE</TransType><TransDate>20220116</TransDate><TransTime>160930</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+2022-01-16 16:09:30.814:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>08520001503</MID><TID>51001953</TID><Amount>10</Amount><TraceNo>900001</TraceNo><CardNo>280000000000000000</CardNo><RefNo>220116160929</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220116</TransDate><TransTime>160929</TransTime></TxnReq>
+2022-01-16 16:09:30.814:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>08520001503</MID><TID>51001953</TID><RespCode>05</RespCode><ApproCode></ApproCode><RefNo>220116160929</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000010</Amount><TraceNo>900001</TraceNo><inVoiceNo></inVoiceNo><CardNo>280000000000000000</CardNo><TransType>SALE</TransType><TransDate>20220116</TransDate><TransTime>160930</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+2022-01-16 16:09:30.814:[GetResponse] errormessage: 
+2022-01-16 16:09:30.816:[GetResponse] XML_Resp: [MID]:[08520001503] [TID]:[51001953] [RespCode]:[05] [RefNo]:[220116160929] [CardNo]:[280000000000000000] [TransType]:[SALE] [TransDate]:[20220116] [TransTime]:[160930] [ERCRFN]:[Portaltesting123] [TraceNo]:[900001] [Amount]:[000000000010] [respondText]:[Declined] 
+2022-01-18 19:54:35.725:[initialize] Gateway: 2C
+2022-01-18 19:54:35.727:[initialize] MID: 08520001503
+2022-01-18 19:54:35.727:[initialize] TID: 51001953
+2022-01-18 19:54:35.727:[initialize] URL: https://xml1.mobipay.co:4100/eaqr2
+2022-01-18 19:54:35.727:[initialize] Timeout: 90
+2022-01-18 19:54:35.728:[initialize] COMMTYPE: 2
+2022-01-18 19:54:35.728:[initialize] PaymentType: Alipay
+2022-01-18 19:54:35.730:[SALE_ADVICE] RRN: <123123123123>, ERCRFN: <Portaltesting123>, barcode: <280000000000000000>, approvalcode: <>
+2022-01-18 19:54:37.483:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>08520001503</MID><TID>51001953</TID><CardNo>280000000000000000</CardNo><TraceNo>900002</TraceNo><RefNo>123123123123</RefNo><TransType>SALE_ADVICE</TransType></TxnReq>
+2022-01-18 19:54:37.483:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>08520001503</MID><TID>51001953</TID><RespCode>25</RespCode><TraceNo>900002</TraceNo><RefNo>220118195436</RefNo><ERCRFN></ERCRFN><Amount>000000000000</Amount><Status></Status><inVoiceNo></inVoiceNo><CardNo>280000000000000000</CardNo><TransType>SALE_ADVICE</TransType><TransDate></TransDate><TransTime></TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+2022-01-18 19:54:37.483:[GetResponse] errormessage: 
+2022-01-18 19:54:37.485:[GetResponse] XML_Resp: [MID]:[08520001503] [TID]:[51001953] [RespCode]:[25] [RefNo]:[220118195436] [CardNo]:[280000000000000000] [TransType]:[SALE_ADVICE] [TraceNo]:[900002] [Amount]:[000000000000] [respondText]:[Record Not Found] 
+2022-01-18 19:55:34.709:[initialize] Gateway: 2C
+2022-01-18 19:55:34.710:[initialize] MID: 08520001503
+2022-01-18 19:55:34.710:[initialize] TID: 51001953
+2022-01-18 19:55:34.710:[initialize] URL: https://xml1.mobipay.co:4100/eaqr2
+2022-01-18 19:55:34.710:[initialize] Timeout: 90
+2022-01-18 19:55:34.710:[initialize] COMMTYPE: 2
+2022-01-18 19:55:34.710:[initialize] PaymentType: Alipay
+2022-01-18 19:55:34.711:[SALE_ADVICE] RRN: <123123123123>, ERCRFN: <Portaltesting123>, barcode: <280000000000000000>, approvalcode: <>
+2022-01-18 19:55:36.089:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>08520001503</MID><TID>51001953</TID><CardNo>280000000000000000</CardNo><TraceNo>900003</TraceNo><RefNo>123123123123</RefNo><TransType>SALE_ADVICE</TransType></TxnReq>
+2022-01-18 19:55:36.090:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>08520001503</MID><TID>51001953</TID><RespCode>25</RespCode><TraceNo>900003</TraceNo><RefNo>220118195535</RefNo><ERCRFN></ERCRFN><Amount>000000000000</Amount><Status></Status><inVoiceNo></inVoiceNo><CardNo>280000000000000000</CardNo><TransType>SALE_ADVICE</TransType><TransDate></TransDate><TransTime></TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+2022-01-18 19:55:36.090:[GetResponse] errormessage: 
+2022-01-18 19:55:36.090:[GetResponse] XML_Resp: [MID]:[08520001503] [TID]:[51001953] [RespCode]:[25] [RefNo]:[220118195535] [CardNo]:[280000000000000000] [TransType]:[SALE_ADVICE] [TraceNo]:[900003] [Amount]:[000000000000] [respondText]:[Record Not Found] 
+2022-01-18 19:56:05.578:[initialize] Gateway: 2C
+2022-01-18 19:56:05.578:[initialize] MID: 08520001503
+2022-01-18 19:56:05.578:[initialize] TID: 51001953
+2022-01-18 19:56:05.578:[initialize] URL: https://xml1.mobipay.co:4100/eaqr2
+2022-01-18 19:56:05.578:[initialize] Timeout: 90
+2022-01-18 19:56:05.578:[initialize] COMMTYPE: 2
+2022-01-18 19:56:05.578:[initialize] PaymentType: Alipay
+2022-01-18 19:56:05.579:[SALE_ADVICE] RRN: <123123123123>, ERCRFN: <Portaltesting123>, barcode: <280000000000000000>, approvalcode: <>
+2022-01-18 19:56:06.938:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>08520001503</MID><TID>51001953</TID><CardNo>280000000000000000</CardNo><TraceNo>900004</TraceNo><RefNo>123123123123</RefNo><TransType>SALE_ADVICE</TransType></TxnReq>
+2022-01-18 19:56:06.938:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>08520001503</MID><TID>51001953</TID><RespCode>25</RespCode><TraceNo>900004</TraceNo><RefNo>220118195606</RefNo><ERCRFN></ERCRFN><Amount>000000000000</Amount><Status></Status><inVoiceNo></inVoiceNo><CardNo>280000000000000000</CardNo><TransType>SALE_ADVICE</TransType><TransDate></TransDate><TransTime></TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+2022-01-18 19:56:06.939:[GetResponse] errormessage: 
+2022-01-18 19:56:06.939:[GetResponse] XML_Resp: [MID]:[08520001503] [TID]:[51001953] [RespCode]:[25] [RefNo]:[220118195606] [CardNo]:[280000000000000000] [TransType]:[SALE_ADVICE] [TraceNo]:[900004] [Amount]:[000000000000] [respondText]:[Record Not Found] 
+2022-01-18 20:16:15.820:[initialize] Gateway: 2C
+2022-01-18 20:16:15.821:[initialize] MID: 08520001503
+2022-01-18 20:16:15.821:[initialize] TID: 51001953
+2022-01-18 20:16:15.821:[initialize] URL: https://xml1.mobipay.co:4100/eaqr2
+2022-01-18 20:16:15.821:[initialize] Timeout: 90
+2022-01-18 20:16:15.821:[initialize] COMMTYPE: 2
+2022-01-18 20:16:15.822:[initialize] PaymentType: Alipay
+2022-01-18 20:16:15.823:[QUERY] RRN: <123123123123>, barcode: <280000000000000000>, AUTH: <False>
+2022-01-18 20:16:16.930:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>08520001503</MID><TID>51001953</TID><CardNo>280000000000000000</CardNo><OldRefNo>123123123123</OldRefNo><TransType>QUERY</TransType></TxnReq>
+2022-01-18 20:16:16.930:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>08520001503</MID><TID>51001953</TID><RespCode>25</RespCode><TraceNo>000000</TraceNo><RefNo>220118201616</RefNo><ERCRFN></ERCRFN><Amount></Amount><Status></Status><inVoiceNo></inVoiceNo><CardNo></CardNo><TransType>QUERY</TransType><TransDate></TransDate><TransTime></TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+2022-01-18 20:16:16.931:[GetResponse] errormessage: 
+2022-01-18 20:16:16.933:[GetResponse] XML_Resp: [MID]:[08520001503] [TID]:[51001953] [RespCode]:[25] [RefNo]:[220118201616] [TransType]:[QUERY] [TraceNo]:[000000] [respondText]:[Record Not Found] 
+2022-01-18 23:04:33.896:[initialize] Gateway: 2C
+2022-01-18 23:04:33.896:[initialize] MID: 08520001503
+2022-01-18 23:04:33.896:[initialize] TID: 51001953
+2022-01-18 23:04:33.896:[initialize] URL: https://xml1.mobipay.co:4100/eaqr2
+2022-01-18 23:04:33.896:[initialize] Timeout: 90
+2022-01-18 23:04:33.896:[initialize] COMMTYPE: 2
+2022-01-18 23:04:33.896:[initialize] PaymentType: Alipay
+2022-01-18 23:04:33.902:[SALE] Barcode: <286456266424244941>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-01-18 23:04:33.903:[SALE] XML_Req: 
+2022-01-18 23:04:33.905:[SALE] PaymentType: Alipay
+2022-01-18 23:04:33.905:[SALE] Start Send the message
+2022-01-18 23:04:33.906:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>08520001503</MID><TID>51001953</TID><Amount>10</Amount><TraceNo>900006</TraceNo><CardNo>286456266424244941</CardNo><RefNo>220118230433</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220118</TransDate><TransTime>230433</TransTime></TxnReq>
+2022-01-18 23:04:37.325:[SALE] End Send the message
+2022-01-18 23:04:37.325:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>08520001503</MID><TID>51001953</TID><RespCode>00</RespCode><ApproCode>H75057</ApproCode><RefNo>220118230433</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000010</Amount><TraceNo>900006</TraceNo><inVoiceNo></inVoiceNo><CardNo>286456266424244941</CardNo><TransType>SALE</TransType><TransDate>20220118</TransDate><TransTime>230437</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>2022011822001404451432046494</TransID><PayID>197***@qq.*</PayID></TxnResp>
+2022-01-18 23:04:37.342:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>08520001503</MID><TID>51001953</TID><Amount>10</Amount><TraceNo>900006</TraceNo><CardNo>286456266424244941</CardNo><RefNo>220118230433</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220118</TransDate><TransTime>230433</TransTime></TxnReq>
+2022-01-18 23:04:37.342:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>08520001503</MID><TID>51001953</TID><RespCode>00</RespCode><ApproCode>H75057</ApproCode><RefNo>220118230433</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000010</Amount><TraceNo>900006</TraceNo><inVoiceNo></inVoiceNo><CardNo>286456266424244941</CardNo><TransType>SALE</TransType><TransDate>20220118</TransDate><TransTime>230437</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>2022011822001404451432046494</TransID><PayID>197***@qq.*</PayID></TxnResp>
+2022-01-18 23:04:37.343:[GetResponse] errormessage: 
+2022-01-18 23:04:37.345:[GetResponse] XML_Resp: [MID]:[08520001503] [TID]:[51001953] [RespCode]:[00] [RefNo]:[220118230433] [CardNo]:[286456266424244941] [TransType]:[SALE] [TransDate]:[20220118] [TransTime]:[230437] [ApproCode]:[H75057] [ERCRFN]:[Portaltesting123] [PayID]:[197***@qq.*] [TransID]:[2022011822001404451432046494] [TraceNo]:[900006] [Amount]:[000000000010] [respondText]:[Success] 
+2022-01-18 23:06:11.454:[initialize] Gateway: 2C
+2022-01-18 23:06:11.454:[initialize] MID: 18520010864
+2022-01-18 23:06:11.454:[initialize] TID: 61006713
+2022-01-18 23:06:11.454:[initialize] URL: https://xml1.mobipay.co:4100/eaqr2
+2022-01-18 23:06:11.454:[initialize] Timeout: 90
+2022-01-18 23:06:11.454:[initialize] COMMTYPE: 2
+2022-01-18 23:06:11.455:[initialize] PaymentType: Alipay
+2022-01-18 23:06:11.455:[SALE] Barcode: <150747754923326690>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-01-18 23:06:11.455:[SALE] XML_Req: 
+2022-01-18 23:06:11.458:[SALE] PaymentType: Alipay
+2022-01-18 23:06:11.459:[SALE] Start Send the message
+2022-01-18 23:06:11.459:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>18520010864</MID><TID>61006713</TID><Amount>10</Amount><TraceNo>900007</TraceNo><CardNo>150747754923326690</CardNo><RefNo>220118230611</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220118</TransDate><TransTime>230611</TransTime></TxnReq>
+2022-01-18 23:06:14.828:[SALE] End Send the message
+2022-01-18 23:06:14.828:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>18520010864</MID><TID>61006713</TID><RespCode>00</RespCode><ApproCode>S07860</ApproCode><RefNo>220118230611</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000010</Amount><TraceNo>900007</TraceNo><inVoiceNo></inVoiceNo><CardNo>150747754923326690</CardNo><TransType>SALE</TransType><TransDate>20220118</TransDate><TransTime>230614</TransTime><CouponAMT>000000000000</CouponAMT><NetAMT>000000000000</NetAMT><OffsetAMT>000000000000</OffsetAMT><TransID>4200001396202201183094023294</TransID><PayID></PayID></TxnResp>
+2022-01-18 23:06:14.830:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>18520010864</MID><TID>61006713</TID><Amount>10</Amount><TraceNo>900007</TraceNo><CardNo>150747754923326690</CardNo><RefNo>220118230611</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220118</TransDate><TransTime>230611</TransTime></TxnReq>
+2022-01-18 23:06:14.830:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>18520010864</MID><TID>61006713</TID><RespCode>00</RespCode><ApproCode>S07860</ApproCode><RefNo>220118230611</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000010</Amount><TraceNo>900007</TraceNo><inVoiceNo></inVoiceNo><CardNo>150747754923326690</CardNo><TransType>SALE</TransType><TransDate>20220118</TransDate><TransTime>230614</TransTime><CouponAMT>000000000000</CouponAMT><NetAMT>000000000000</NetAMT><OffsetAMT>000000000000</OffsetAMT><TransID>4200001396202201183094023294</TransID><PayID></PayID></TxnResp>
+2022-01-18 23:06:14.830:[GetResponse] errormessage: 
+2022-01-18 23:06:14.830:[GetResponse] XML_Resp: [MID]:[18520010864] [TID]:[61006713] [RespCode]:[00] [RefNo]:[220118230611] [CardNo]:[150747754923326690] [TransType]:[SALE] [TransDate]:[20220118] [TransTime]:[230614] [ApproCode]:[S07860] [ERCRFN]:[Portaltesting123] [TransID]:[4200001396202201183094023294] [CouponAMT]:[000000000000] [NetAMT]:[000000000000] [OffsetAMT]:[000000000000] [TraceNo]:[900007] [Amount]:[000000000010] [respondText]:[Success] 
+2022-01-18 23:15:32.884:[initialize] Gateway: 2C
+2022-01-18 23:15:32.885:[initialize] MID: 18520010864
+2022-01-18 23:15:32.885:[initialize] TID: 61006713
+2022-01-18 23:15:32.885:[initialize] URL: https://xml1.mobipay.co:4100/eaqr2
+2022-01-18 23:15:32.885:[initialize] Timeout: 90
+2022-01-18 23:15:32.886:[initialize] COMMTYPE: 2
+2022-01-18 23:15:32.886:[initialize] PaymentType: Alipay
+2022-01-18 23:15:32.891:[SALE] Barcode: <150641169623078027>, amount: <10>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-01-18 23:15:32.892:[SALE] XML_Req: 
+2022-01-18 23:15:32.896:[SALE] PaymentType: Alipay
+2022-01-18 23:15:32.896:[SALE] Start Send the message
+2022-01-18 23:15:32.896:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>18520010864</MID><TID>61006713</TID><Amount>10</Amount><TraceNo>900008</TraceNo><CardNo>150641169623078027</CardNo><RefNo>220118231532</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220118</TransDate><TransTime>231532</TransTime></TxnReq>
+2022-01-18 23:15:36.442:[SALE] End Send the message
+2022-01-18 23:15:36.442:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>18520010864</MID><TID>61006713</TID><RespCode>00</RespCode><ApproCode>S07882</ApproCode><RefNo>220118231532</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000010</Amount><TraceNo>900008</TraceNo><inVoiceNo></inVoiceNo><CardNo>150641169623078027</CardNo><TransType>SALE</TransType><TransDate>20220118</TransDate><TransTime>231536</TransTime><CouponAMT>000000000000</CouponAMT><NetAMT>000000000000</NetAMT><OffsetAMT>000000000000</OffsetAMT><TransID>4200001380202201183954548959</TransID><PayID></PayID></TxnResp>
+2022-01-18 23:15:36.458:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>18520010864</MID><TID>61006713</TID><Amount>10</Amount><TraceNo>900008</TraceNo><CardNo>150641169623078027</CardNo><RefNo>220118231532</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220118</TransDate><TransTime>231532</TransTime></TxnReq>
+2022-01-18 23:15:36.458:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>18520010864</MID><TID>61006713</TID><RespCode>00</RespCode><ApproCode>S07882</ApproCode><RefNo>220118231532</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000010</Amount><TraceNo>900008</TraceNo><inVoiceNo></inVoiceNo><CardNo>150641169623078027</CardNo><TransType>SALE</TransType><TransDate>20220118</TransDate><TransTime>231536</TransTime><CouponAMT>000000000000</CouponAMT><NetAMT>000000000000</NetAMT><OffsetAMT>000000000000</OffsetAMT><TransID>4200001380202201183954548959</TransID><PayID></PayID></TxnResp>
+2022-01-18 23:15:36.458:[GetResponse] errormessage: 
+2022-01-18 23:15:36.460:[GetResponse] XML_Resp: [MID]:[18520010864] [TID]:[61006713] [RespCode]:[00] [RefNo]:[220118231532] [CardNo]:[150641169623078027] [TransType]:[SALE] [TransDate]:[20220118] [TransTime]:[231536] [ApproCode]:[S07882] [ERCRFN]:[Portaltesting123] [TransID]:[4200001380202201183954548959] [CouponAMT]:[000000000000] [NetAMT]:[000000000000] [OffsetAMT]:[000000000000] [TraceNo]:[900008] [Amount]:[000000000010] [respondText]:[Success] 
+2022-01-18 23:16:26.590:[initialize] Gateway: 2C
+2022-01-18 23:16:26.590:[initialize] MID: 18520010864
+2022-01-18 23:16:26.590:[initialize] TID: 61006713
+2022-01-18 23:16:26.591:[initialize] URL: https://xml1.mobipay.co:4100/eaqr2
+2022-01-18 23:16:26.591:[initialize] Timeout: 90
+2022-01-18 23:16:26.591:[initialize] COMMTYPE: 2
+2022-01-18 23:16:26.591:[initialize] PaymentType: Alipay
+2022-01-18 23:16:26.594:[REFUND] RRN: <220118231532>, amount: <10>, ERCRFN: <Portaltesting123>, approvalcode: <>
+2022-01-18 23:16:27.630:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>18520010864</MID><TID>61006713</TID><Amount>10</Amount><OldRefNo>220118231532</OldRefNo><TraceNo>900009</TraceNo><ERCRFN>Portaltesting123</ERCRFN><TransType>REFUND</TransType><TransDate>20220118</TransDate><TransTime>231626</TransTime></TxnReq>
+2022-01-18 23:16:27.630:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>18520010864</MID><TID>61006713</TID><RespCode>70</RespCode><ApproCode></ApproCode><RefNo>aaaaaaaaaaaa</RefNo><ERCRFN></ERCRFN><Amount>000000000010</Amount><TraceNo>900009</TraceNo><inVoiceNo></inVoiceNo><CardNo>280000000000000000</CardNo><TransType>REFUND</TransType><TransDate>20220118</TransDate><TransTime>231627</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+2022-01-18 23:16:27.630:[GetResponse] errormessage: 
+2022-01-18 23:16:27.630:[GetResponse] XML_Resp: [MID]:[18520010864] [TID]:[61006713] [RespCode]:[70] [RefNo]:[aaaaaaaaaaaa] [CardNo]:[280000000000000000] [TransType]:[REFUND] [TransDate]:[20220118] [TransTime]:[231627] [TraceNo]:[900009] [Amount]:[000000000010] [respondText]:[Merchant Daily quotas] 
