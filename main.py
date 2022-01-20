@@ -396,8 +396,7 @@ def Transaction(Till_Number, TransactionType):
             Utility.insert_Offline_Txn(DateTime=nowdatetime, username=username, GatewayName=Till_Number, MID=MID,
                                        TID=TID, TransactionType=TransactionType, Amount=amount, RRN=RRN,
                                        approvalCode=None,
-                                       respondCode=None, respondText=meta['msg'], URL=URL,
-                                       IP=IP, Port=Port, TPDU=TPDU)
+                                       respondCode=None, respondText=meta['msg'])
 
     returnmessage = {'meta': meta, 'data': data}
     log.debug(returnmessage)
@@ -488,15 +487,8 @@ def BatchFor(Till_Number, BatchFor):
                 RRN = str(int(float(table.cell_value(i, 3))))
             else:
                 RRN = table.cell_value(i, 3)
-            if table.cell(i, 4).ctype == 2:
-                Email_Subject = str(int(float(table.cell_value(i, 4))))
-            else:
-                Email_Subject = table.cell_value(i, 4)
-            if table.cell(i, 5).ctype == 2:
-                Remark = str(int(float(table.cell_value(i, 5))))
-            else:
-                Remark = table.cell_value(i, 5)
-            if Till_Number == 'CUP' or Till_Number == 'BoC':
+
+            if Till_Number == 'CUP' or Till_Number == 'BOC':
                 if table.cell(i, 4).ctype == 2:
                     ApprovalCode = str(int(float(table.cell_value(i, 4))))
                 else:
@@ -509,14 +501,26 @@ def BatchFor(Till_Number, BatchFor):
                     Remark = str(int(float(table.cell_value(i, 6))))
                 else:
                     Remark = table.cell_value(i, 6)
+            else:
+                if table.cell(i, 4).ctype == 2:
+                    Email_Subject = str(int(float(table.cell_value(i, 4))))
+                else:
+                    Email_Subject = table.cell_value(i, 4)
+                if table.cell(i, 5).ctype == 2:
+                    Remark = str(int(float(table.cell_value(i, 5))))
+                else:
+                    Remark = table.cell_value(i, 5)
 
+            # request by joe, if remark is empty, default is DD MMM YYYY format, (19 JAN 2022)
+            if Remark == '' or Remark == None:
+                Remark = time.strftime("%d %b %Y", time.localtime())
             Refund_Result = Utility.check_offline_refund_txn(GateName=Till_Number, MID=MID, RRN=RRN)
             if Refund_Result != []:
                 if Till_Number == 'CUP' or Till_Number == 'BOC':
-                    data.append([MID, TID, round(float(int(Amount) / 100), 2), RRN, ApprovalCode, 'This transaction already did the refund before. Not allow to use Batch Refund. Please use manual refund!',
+                    data.append([MID, TID, round(float(int(Amount) / 100), 2), RRN, ApprovalCode, f'This transaction already did the refund by "{Refund_Result[0][1]}" on {Refund_Result[0][0]}. Not allow to use Batch Refund. Please use manual refund!',
                                 Refund_Result[0][11], Refund_Result[0][12]])
                 else:
-                    data.append([MID, TID, round(float(int(Amount) / 100), 2), RRN, 'This transaction already did the refund before. Not allow to use Batch Refund. Please use manual refund!', Refund_Result[0][11],
+                    data.append([MID, TID, round(float(int(Amount) / 100), 2), RRN, f'This transaction already did the refund by "{Refund_Result[0][1]}" on {Refund_Result[0][0]}. Not allow to use Batch Refund. Please use manual refund!', Refund_Result[0][11],
                                 Refund_Result[0][12]])
                 meta = {'status': 1, 'msg': "Some Transactions Refund Failed"}
                 continue
@@ -530,16 +534,20 @@ def BatchFor(Till_Number, BatchFor):
                     Utility.insert_Offline_Txn(DateTime=nowdatetime,username=username, GatewayName=Till_Number,MID=MID, TID=TID, TransactionType='REFUND', Amount=Amount, RRN=RRN, approvalCode=ApprovalCode, respondCode=iRet[1].respondCode, respondText=iRet[1].respondText,Email_Subject=Email_Subject, Remark=Remark)
                     if iRet[1].respondCode != '00':
                         meta = {'status': 1, 'msg': "Some Transactions Refund Failed"}
-                    if Till_Number == 'CUP' or Till_Number == 'BoC':
+                    if Till_Number == 'CUP' or Till_Number == 'BOC':
                         data.append([MID, TID, round(float(int(Amount)/100),2), RRN, ApprovalCode, f'{iRet[1].respondCode}[{iRet[1].respondText}]', Email_Subject, Remark])
                     else:
                         data.append([MID, TID, round(float(int(Amount) / 100), 2), RRN, f'{iRet[1].respondCode}[{iRet[1].respondText}]', Email_Subject, Remark])
             else:
-                data.append([MID, TID, round(float(int(Amount) / 100), 2), RRN, iRet])
+                if Till_Number == 'CUP' or Till_Number == 'BOC':
+                    data.append([MID, TID, round(float(int(Amount) / 100), 2), RRN, ApprovalCode, f'{iRet}[{Utility.getResultMessage(iRet)}]', Email_Subject, Remark])
+                else:
+                    data.append([MID, TID, round(float(int(Amount) / 100), 2), RRN,
+                                 f'{iRet}[{Utility.getResultMessage(iRet)}]', Email_Subject, Remark])
                 meta = {'status': 1, 'msg': "Some Transactions Refund Failed"}
     os.remove(filepath)
     returnmessage = {'meta': meta, 'data': data}
-    log.debug(returnmessage)
+    log.info(returnmessage)
     log.end('BatchFor')
     return jsonify(returnmessage)
 
