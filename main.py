@@ -513,7 +513,7 @@ def BatchFor(Till_Number, BatchFor):
 
             # request by joe, if remark is empty, default is DD MMM YYYY format, (19 JAN 2022)
             if Remark == '' or Remark == None:
-                Remark = time.strftime("%d %b %Y", time.localtime())
+                Remark = 'Refund on ' + time.strftime("%d %b %Y", time.localtime())
             Refund_Result = Utility.check_offline_refund_txn(GateName=Till_Number, MID=MID, RRN=RRN)
             if Refund_Result != []:
                 if Till_Number == 'CUP' or Till_Number == 'BOC':
