@@ -863,6 +863,8 @@ def VMP_Transaction(Gateway):
                 VMP_req.wallet = 'WECHAT' + wallet
             elif str(PaymentType).upper() == 'ATOME':
                 VMP_req.wallet = 'ATOME'
+            elif str(PaymentType).upper() == 'UNIONPAY':
+                VMP_req.wallet = 'UNIONPAY'
             signStr = VMP.packSignStr(VMP_req, SecretCode)
             log.debug('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
@@ -889,6 +891,8 @@ def VMP_Transaction(Gateway):
                 VMP_req.wallet = 'WECHAT' + wallet
             elif str(PaymentType).upper() == 'ATOME':
                 VMP_req.wallet = 'ATOME'
+            elif str(PaymentType).upper() == 'UNIONPAY':
+                VMP_req.wallet = 'UNIONPAY'
             signStr = VMP.packSignStr(VMP_req, SecretCode)
             log.debug(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
