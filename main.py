@@ -208,6 +208,9 @@ def Transaction(Till_Number, TransactionType):
     OriTID = request.json.get('OriTID')
     Email_Subject = request.json.get('Email_Subject')
     Remark = request.json.get('Remark')
+    if str(TransactionType).upper() == 'REFUND' or str(TransactionType).upper() == 'ADMINREFUND':
+        if Remark == '' or Remark == None:
+            Remark = 'Refund on ' + time.strftime("%d %b %Y", time.localtime())
     iRet = -1
     msg = ''
     meta = {}
@@ -664,6 +667,23 @@ def Octopus_Report(action):
         log.debug(returnmessage)
         log.end('Octopus_Report')
         return jsonify(returnmessage)
+    elif action == 'Download_YearlyReport':
+        Year = request.json.get("Year")
+        temp = Octopus.Report()
+        Yearly_Report_Status = temp.Check_YearlyReportStatus(Year)
+        if Yearly_Report_Status[0] == True:
+            result = temp.Download_YearlyReport(Year)
+            if result[0] == True:
+                meta = {'status': 0, 'msg': 'Success'}
+                data = result[1]
+            else:
+                meta = {'status': 1, 'msg': 'Failed'}
+        else:
+            meta = {'status': 1, 'msg': Yearly_Report_Status[1]}
+        returnmessage = {'meta': meta, 'data': data}
+        log.debug(returnmessage)
+        log.end('Octopus_Report')
+        return jsonify(returnmessage)
     elif action == 'UploadRawData':
         log.debug(request.files)
         files = request.files.getlist("files")
@@ -733,10 +753,15 @@ def VMP_Transaction(Gateway):
     customerInfo = request.json.get('customerInfo')
     shippingAddress = request.json.get('shippingAddress')
     billingAddress = request.json.get('billingAddress')
+    Email_Subject = request.json.get('Email_Subject')
+    Remark = request.json.get('Remark')
+    if str(TransactionType).upper() == 'REFUND':
+        if Remark == '' or Remark == None:
+            Remark = 'Refund on ' + time.strftime("%d %b %Y", time.localtime())
     items = request.json.get('items')
     iRet = -1
     meta = {}
-    data = {}
+    data = []
     signStr = ''
     RawRequest = None
     RawResponse = None
@@ -744,6 +769,25 @@ def VMP_Transaction(Gateway):
     EOPG_req = None
     VMP_req = None
     JSONMessage = None
+    msg = ''
+    nowdatetime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+    confirm_Refund = request.json.get('confirm_Refund')
+    # check refund record
+    if confirm_Refund != 'Y':
+        if str(TransactionType).upper() == 'REFUND':
+            Refund_Result = Utility.check_vmp_refund_txn(GateName=Gateway, user_confirm_key=User_Confirm_Key, out_trade_no=out_trade_no, eft_trade_no=eft_trade_no)
+            if Refund_Result != []:
+                for i in range(len(Refund_Result)):
+                    data.append({'ID': i, 'DateTime': Refund_Result[i][0], 'UserName': Refund_Result[i][1],'API_Type': Refund_Result[i][3],
+                                 'PaymentType': Refund_Result[i][4], 'TransType': Refund_Result[i][5], 'user_confirm_key': Refund_Result[i][6],
+                                 'Amount': Refund_Result[i][8],'out_trade_no': Refund_Result[i][9], 'eft_trade_no': Refund_Result[i][10],
+                                 'ResponseCode': f'{Refund_Result[i][11]}',
+                                 'Email_Subject': Refund_Result[i][13], 'Remark': Refund_Result[i][14]})
+                meta = {'status': 'confirm_Refund', 'msg': msg}
+                returnmessage = {'meta': meta, 'data': data}
+                log.info(returnmessage)
+                log.end('VMP_Transaction')
+                return jsonify(returnmessage)
     if APIType == 'EOPG': #EOPG 接口
         if return_url == '':
             return_url = URL + f'/{Gateway}/EOPG/eopg_return_addr'
@@ -1200,11 +1244,23 @@ def VMP_Transaction(Gateway):
                 log.debug('RawResponse: {0}'.format(resp.text))
                 RawResponse = str(resp.text)
                 JSONMessage = dict(x.split('=') for x in resp.text.split('&'))
+                Utility.insert_VMP_Txn(DateTime=nowdatetime, username=username, GatewayName=Gateway, API_Type=APIType,
+                                       PaymentType=PaymentType, TransType=str(TransactionType).upper(), Amount=amount,
+                                       user_confirm_key=User_Confirm_Key,
+                                       Secret_Code=SecretCode, out_trade_no=out_trade_no, eft_trade_no=eft_trade_no,
+                                       Response_Code=JSONMessage['return_status'],
+                                       Response_Text=JSONMessage['return_char'], Email_Subject=Email_Subject,
+                                       Remark=Remark)
     else:
         resp = Utility.PostToHost(URL, RawRequest, timeout=30)
         if resp.status_code == 200:
             log.debug('RawResponse: {0}'.format(resp.text.encode("utf8")))
             RawResponse = json.loads(resp.text.encode("utf8"))
+            Utility.insert_VMP_Txn(DateTime=nowdatetime, username=username, GatewayName=Gateway, API_Type=APIType,
+                                       PaymentType=PaymentType, TransType=str(TransactionType).upper(), Amount=amount, user_confirm_key=User_Confirm_Key,
+                                       Secret_Code=SecretCode,out_trade_no=out_trade_no, eft_trade_no=eft_trade_no,
+                                       Response_Code=RawResponse['return_status'], Response_Text=RawResponse['return_char'], Email_Subject=Email_Subject,
+                                       Remark=Remark)
 
     data = {'RawRequest': RawRequest, 'RawResponse': RawResponse, 'JSONMessage': JSONMessage}
     meta = {'status': 0, 'msg': 'Success'}

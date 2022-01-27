@@ -531,10 +531,41 @@ def insert_Offline_Txn(DateTime='', username='', GatewayName='', MID='', TID='',
     cursor.close()
     conn.close()
 
+def insert_VMP_Txn(DateTime='', username='', GatewayName='', API_Type='', PaymentType='',  TransType='', Amount='', user_confirm_key='', Secret_Code='', out_trade_no='', eft_trade_no='',Response_Code='', Response_Text='', Email_Subject='', Remark=''):
+    conn = sqlite3.connect(db_name)
+    cursor = conn.cursor()
+    cmd = f'insert INTO VMP_Txn_DB VALUES("{DateTime}", "{username}", "{GatewayName}", "{API_Type}", "{PaymentType}", "{TransType}", "{user_confirm_key}", "{Secret_Code}", "{Amount}", "{out_trade_no}", "{eft_trade_no}", "{Response_Code}", "{Response_Text}", "{Email_Subject}", "{Remark}");'
+    cursor.execute(cmd)
+    # returnmData = cursor.fetchall()
+    # print(values)
+    conn.commit()
+    cursor.close()
+    conn.close()
+
 def check_offline_refund_txn(GateName='', MID='', RRN=''):
     conn = sqlite3.connect(db_name)
     cursor = conn.cursor()
     cmd = f'select * from Offline_Txn_DB where Gateway_Name = "{GateName}" and MID = "{MID}" and RRN = "{RRN}" and Response_Code = "00" and TransType = "REFUND" or TransType = "ADMINREFUND";'
+    cursor.execute(cmd)
+    returnmData = cursor.fetchall()
+    # print(values)
+    conn.commit()
+    cursor.close()
+    conn.close()
+    return returnmData
+
+def check_vmp_refund_txn(GateName='', user_confirm_key='', out_trade_no='', eft_trade_no=''):
+    conn = sqlite3.connect(db_name)
+    cursor = conn.cursor()
+    cmd = ''
+    if out_trade_no != '' and eft_trade_no != '':
+        cmd = f'select * from VMP_Txn_DB where Gateway_Name = "{GateName}" and user_confirm_key = "{user_confirm_key}" and Response_Code = "00" and TransType = "REFUND" and out_trade_no = "{out_trade_no}" and eft_trade_no = "{eft_trade_no}";'
+    elif out_trade_no != '' and eft_trade_no == '':
+        cmd = f'select * from VMP_Txn_DB where Gateway_Name = "{GateName}" and user_confirm_key = "{user_confirm_key}" and Response_Code = "00" and TransType = "REFUND" and out_trade_no = "{out_trade_no}";'
+    elif out_trade_no == '' and eft_trade_no != '':
+        cmd = f'select * from VMP_Txn_DB where Gateway_Name = "{GateName}" and user_confirm_key = "{user_confirm_key}" and Response_Code = "00" and TransType = "REFUND" and eft_trade_no = "{eft_trade_no}";'
+    elif out_trade_no == '' and eft_trade_no == '':
+        cmd = f'select * from VMP_Txn_DB where Gateway_Name = "{GateName}" and user_confirm_key = "{user_confirm_key}" and Response_Code = "00" and TransType = "REFUND" and out_trade_no = "{out_trade_no}" and eft_trade_no = "{eft_trade_no}";'
     cursor.execute(cmd)
     returnmData = cursor.fetchall()
     # print(values)
