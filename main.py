@@ -484,42 +484,19 @@ def BatchFor(Till_Number, BatchFor):
                 if (i == 0):
                     data.append(['User_Confirm_Key','SecretCode','Amount','APIType', 'Payment Type','out_trade_no','eft_trade_no', 'Respond Code/Result','Email Subject','Remark'])
                     continue
-                if table.cell(i, 0).ctype == 2:
-                    User_Confirm_Key = str(int(float(table.cell_value(i, 0))))
-                else:
-                    User_Confirm_Key = table.cell_value(i, 0)
-                if table.cell(i, 1).ctype == 2:
-                    SecretCode = str(int(float(table.cell_value(i, 1))))
-                else:
-                    SecretCode = table.cell_value(i, 1)
+                User_Confirm_Key = str(table.cell_value(i, 0)).replace(' ', '')
+                SecretCode = str(table.cell_value(i, 1)).replace(' ', '')
                 if table.cell(i, 2).ctype == 2:
-                    amount = str(float(table.cell_value(i, 2)))
+                    amount = str(round(float(table.cell_value(i, 2)),2))
                 else:
-                    amount = str(table.cell_value(i, 2))
-                if table.cell(i, 3).ctype == 2:
-                    APIType = str(int(float(table.cell_value(i, 3))))
-                else:
-                    APIType = table.cell_value(i, 3)
-                if table.cell(i, 4).ctype == 2:
-                    PaymentType = str(int(float(table.cell_value(i, 4))))
-                else:
-                    PaymentType = table.cell_value(i, 4)
-                if table.cell(i, 5).ctype == 2:
-                    out_trade_no = str(int(float(table.cell_value(i, 5))))
-                else:
-                    out_trade_no = table.cell_value(i, 5)
-                if table.cell(i, 6).ctype == 2:
-                    eft_trade_no = str(int(float(table.cell_value(i, 6))))
-                else:
-                    eft_trade_no = table.cell_value(i, 6)
-                if table.cell(i, 7).ctype == 2:
-                    Email_Subject = str(int(float(table.cell_value(i, 7))))
-                else:
-                    Email_Subject = table.cell_value(i, 7)
-                if table.cell(i, 8).ctype == 2:
-                    Remark = str(int(float(table.cell_value(i, 8))))
-                else:
-                    Remark = table.cell_value(i, 8)
+                    amount = str(round(float(table.cell_value(i, 2)), 2))
+                # amount = str(table.cell_value(i, 2)).replace(' ', '')
+                APIType = str(table.cell_value(i, 3)).replace(' ', '')
+                PaymentType = str(table.cell_value(i, 4)).replace(' ', '')
+                out_trade_no = str(table.cell_value(i, 5))
+                eft_trade_no = str(table.cell_value(i, 6))
+                Email_Subject = str(table.cell_value(i, 7))
+                Remark = str(table.cell_value(i, 8))
                 URL = request.form['URL']
                 if APIType == 'WEB':
                     URL += f'/{Till_Number}/Servlet/'
