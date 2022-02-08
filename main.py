@@ -497,6 +497,8 @@ def BatchFor(Till_Number, BatchFor):
                 eft_trade_no = str(table.cell_value(i, 6))
                 Email_Subject = str(table.cell_value(i, 7))
                 Remark = str(table.cell_value(i, 8))
+                if Remark == '' or Remark == None:
+                    Remark = 'Refund on ' + time.strftime("%d %b %Y", time.localtime())
                 URL = request.form['URL']
                 if APIType == 'WEB':
                     URL += f'/{Till_Number}/Servlet/'
