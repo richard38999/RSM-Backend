@@ -37,8 +37,8 @@ CORS(app)
 @decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def login():
     log.start('login')
-    log.debug(request.headers)
-    log.debug("BODY: %s" % request.get_data())
+    log.info(request.headers)
+    log.info("BODY: %s" % request.get_data())
     # request.form = request.form.to_dict()
     username = request.json.get("username")
     password = request.json.get("password")
@@ -67,7 +67,7 @@ def login():
         meta = {'status': 'Failed', 'msg': 'Version Not Updated, please re-start browser'}
         data = {'username': username}
     returnmessage = {'meta': meta, 'data': data}
-    log.debug(returnmessage)
+    log.info(returnmessage)
     log.end('login')
     return jsonify(returnmessage)
 
@@ -76,8 +76,8 @@ def login():
 @decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def ChangePassword():
     log.start('ChangePassword')
-    log.debug(request.headers)
-    log.debug("BODY: %s" % request.get_data())
+    log.info(request.headers)
+    log.info("BODY: %s" % request.get_data())
     username = request.json.get("username")
     oldpassword = request.json.get("oldpassword")
     newpassword = request.json.get("newpassword")
@@ -85,7 +85,7 @@ def ChangePassword():
     data = {}
     meta = Utility.ChangePassword(username, oldpassword,newpassword)
     returnmessage = {'meta': meta, 'data': data}
-    log.debug(returnmessage)
+    log.info(returnmessage)
     log.end('ChangePassword')
     return jsonify(returnmessage)
 
@@ -94,14 +94,14 @@ def ChangePassword():
 @decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def userView():
     log.start('userView')
-    log.debug(request.headers)
-    log.debug("BODY: %s" % request.get_data())
+    log.info(request.headers)
+    log.info("BODY: %s" % request.get_data())
     username = request.headers.get("username")
     viewUser = request.args.get("username")
     data = Utility.userView(viewUser)
     meta = {'status': 200, 'msg': 'SUCCESS'}
     returnmessage = {'meta': meta, 'data': data}
-    log.debug(returnmessage)
+    log.info(returnmessage)
     log.end('userView')
     return jsonify(returnmessage)
 
@@ -110,14 +110,14 @@ def userView():
 @decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def menu():
     log.start('menu')
-    log.debug(request.headers)
-    log.debug("BODY: %s" % request.get_data())
+    log.info(request.headers)
+    log.info("BODY: %s" % request.get_data())
     username = request.headers.get("username")
     menuUser = request.args.get("username")
     data = Utility.get_Menu(menuUser)
     meta = {'status': 200, 'msg': 'SUCCESS'}
     returnmessage = {'meta': meta, 'data': data}
-    log.debug(returnmessage)
+    log.info(returnmessage)
     log.end('menu')
     return jsonify(returnmessage)
 
@@ -126,15 +126,15 @@ def menu():
 @decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def userlist():
     log.start('userlist')
-    log.debug(request.headers)
-    log.debug("BODY: %s" % request.get_data())
+    log.info(request.headers)
+    log.info("BODY: %s" % request.get_data())
     username = request.headers.get("username")
     pagenum = request.args.get('pagenum')
     pagesize = request.args.get('pagesize')
     data = Utility.get_userlist(int(pagenum), int(pagesize))
     meta = {'status': 200, 'msg': 'SUCCESS'}
     returnmessage = {'meta': meta, 'data': data}
-    log.debug(returnmessage)
+    log.info(returnmessage)
     log.end('userlist')
     return jsonify(returnmessage)
 
@@ -143,15 +143,15 @@ def userlist():
 @decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def updateuserstatus():
     log.start('updateuserstatus')
-    log.debug(request.headers)
-    log.debug("BODY: %s" % request.get_data())
+    log.info(request.headers)
+    log.info("BODY: %s" % request.get_data())
     username = request.headers.get("username")
     updateUsername = request.args.get('username')
     status = request.args.get('status')
     data = Utility.update_AccountStatus(updateUsername, status)
     meta = {'status': 200, 'msg': 'SUCCESS'}
     returnmessage = {'meta': meta, 'data': data}
-    log.debug(returnmessage)
+    log.info(returnmessage)
     log.end('updateuserstatus')
     return jsonify(returnmessage)
 
@@ -160,15 +160,15 @@ def updateuserstatus():
 @decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def deleteUser():
     log.start('deleteUser')
-    log.debug(request.headers)
-    log.debug("BODY: %s" % request.get_data())
+    log.info(request.headers)
+    log.info("BODY: %s" % request.get_data())
     username = request.headers.get("username")
     deleteUsername = request.args.get('username')
     status = request.args.get('status')
     data = Utility.delete_Account(deleteUsername)
     meta = {'status': 200, 'msg': 'SUCCESS'}
     returnmessage = {'meta': meta, 'data': data}
-    log.debug(returnmessage)
+    log.info(returnmessage)
     log.end('deleteUser')
     return jsonify(returnmessage)
 
@@ -177,8 +177,8 @@ def deleteUser():
 @decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def Transaction(Till_Number, TransactionType):
     log.start('Transaction')
-    log.debug(request.headers)
-    log.debug("BODY: %s" % request.get_data())
+    log.info(request.headers)
+    log.info("BODY: %s" % request.get_data())
     username = request.headers.get("username")
     MID = request.json.get('MID')
     TID = request.json.get('TID')
@@ -229,7 +229,7 @@ def Transaction(Till_Number, TransactionType):
                     data.append({'ID': i, 'DateTime': Refund_Result[i][0], 'UserName': Refund_Result[i][1], 'MID': Refund_Result[i][3], 'TID': Refund_Result[i][4], 'Amount': Refund_Result[i][6], 'RRN': Refund_Result[i][7], 'ResponseCode': f'{Refund_Result[i][9]}({Refund_Result[i][10]})', 'Email_Subject': Refund_Result[i][11], 'Remark': Refund_Result[i][12]})
                 meta = {'status': 'confirm_Refund', 'msg': msg}
                 returnmessage = {'meta': meta, 'data': data}
-                log.debug(returnmessage)
+                log.info(returnmessage)
                 log.end('Transaction')
                 return jsonify(returnmessage)
     if MsgType == 'ISO' or MsgType == None: #ISO 接口
@@ -402,7 +402,7 @@ def Transaction(Till_Number, TransactionType):
                                        respondCode=None, respondText=meta['msg'])
 
     returnmessage = {'meta': meta, 'data': data}
-    log.debug(returnmessage)
+    log.info(returnmessage)
     log.end('Transaction')
     return jsonify(returnmessage)
 
@@ -412,8 +412,8 @@ def Transaction(Till_Number, TransactionType):
 @decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def BatchFor(Till_Number, BatchFor):
     log.start('BatchFor')
-    log.debug(request.headers)
-    log.debug("BODY: %s" % request.get_data())
+    log.info(request.headers)
+    log.info("BODY: %s" % request.get_data())
     username = request.headers.get("username")
     f = request.files['file']
     datetime = time.strftime("%Y%m%d%H%M%S", time.localtime())
@@ -452,7 +452,7 @@ def BatchFor(Till_Number, BatchFor):
         amount = '10'
         barcode = '280000000000000000'
         for i in range(table.nrows):
-            log.debug(table.row_values(i))
+            log.info(table.row_values(i))
             if (i == 0):
                 data.append([table.row_values(i)[0], table.row_values(i)[1], 'Respond Code'])
                 continue
@@ -480,7 +480,7 @@ def BatchFor(Till_Number, BatchFor):
         if Till_Number == 'BOCVMP' or Till_Number == 'VMP':
             meta = {'status': 0, 'msg': "All Transactions Refund Success"}
             for i in range(table.nrows):
-                log.debug(table.row_values(i))
+                log.info(table.row_values(i))
                 if (i == 0):
                     data.append(['User_Confirm_Key','SecretCode','Amount','APIType', 'Payment Type','out_trade_no','eft_trade_no', 'Respond Code/Result','Email Subject','Remark'])
                     continue
@@ -540,7 +540,7 @@ def BatchFor(Till_Number, BatchFor):
                     elif str(PaymentType).upper() == 'UNIONPAY':
                         VMP_req.wallet = 'UNIONPAY'
                     signStr = VMP.packSignStr(VMP_req, SecretCode)
-                    log.debug(signStr)
+                    log.info(signStr)
                     VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
                     RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
                     pass
@@ -557,7 +557,7 @@ def BatchFor(Till_Number, BatchFor):
                     EOPG_req.service = 'REFUND'
                     EOPG_req.trans_amount = amount
                     signStr = VMP.packSignStr_EOPG(EOPG_req, SecretCode)
-                    log.debug(signStr)
+                    log.info(signStr)
                     EOPG_req.signature = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
                     EOPG_req.merch_refund_id = 'Refund_' + time.strftime("%Y%m%d%H%M%S", time.localtime())
                     EOPG_req.api_version = '2.9'
@@ -588,7 +588,7 @@ def BatchFor(Till_Number, BatchFor):
                     VMP_req.transaction_amount = amount
                     VMP_req.user_confirm_key = User_Confirm_Key
                     signStr = VMP.packSignStr(VMP_req, SecretCode)
-                    log.debug(signStr)
+                    log.info(signStr)
                     VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
                     RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
                     pass
@@ -605,7 +605,7 @@ def BatchFor(Till_Number, BatchFor):
                     VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
                     VMP_req.user_confirm_key = User_Confirm_Key
                     signStr = VMP.packSignStr(VMP_req, SecretCode)
-                    log.debug(signStr)
+                    log.info(signStr)
                     VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
                     RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
                     pass
@@ -641,7 +641,7 @@ def BatchFor(Till_Number, BatchFor):
                     VMP_req.transaction_amount = amount
                     VMP_req.user_confirm_key = User_Confirm_Key
                     signStr = VMP.packSignStr(VMP_req, SecretCode)
-                    log.debug(signStr)
+                    log.info(signStr)
                     VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
                     RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
                     pass
@@ -660,7 +660,7 @@ def BatchFor(Till_Number, BatchFor):
                     VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
                     VMP_req.user_confirm_key = User_Confirm_Key
                     signStr = VMP.packSignStr(VMP_req, SecretCode)
-                    log.debug(signStr)
+                    log.info(signStr)
                     VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
                     RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
                     pass
@@ -698,7 +698,7 @@ def BatchFor(Till_Number, BatchFor):
             ApprovalCode = ''
             meta = {'status': 0, 'msg': "All Transactions Refund Success"}
             for i in range(table.nrows):
-                log.debug(table.row_values(i))
+                log.info(table.row_values(i))
                 if (i == 0):
                     if Till_Number == 'CUP' or Till_Number == 'BOC':
                         data.append(['MID','TID','Amount','RRN','ApprovalCode','Respond Code/Result','Email Subject','Remark'])
@@ -790,8 +790,8 @@ def BatchFor(Till_Number, BatchFor):
 @decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def BatchForCardNo():
     log.start('BatchForCardNo')
-    log.debug(request.headers)
-    log.debug("BODY: %s" % request.get_data())
+    log.info(request.headers)
+    log.info("BODY: %s" % request.get_data())
     username = request.header.get("username")
     f = request.files['file']
     filepath = os.path.join('Batch Process/', secure_filename(f.filename))
@@ -801,7 +801,7 @@ def BatchForCardNo():
     meta = {'status': 1, 'msg': "Failed"}
     data = []
     for i in range(table.nrows):
-        log.debug(table.row_values(i))
+        log.info(table.row_values(i))
         # Column 19 == Masked CardNo
         if (i == 0):
             header = []
@@ -820,7 +820,7 @@ def BatchForCardNo():
         data.append(rowData)
     meta = {'status': 0, 'msg': "Success"}
     returnmessage = {'meta': meta, 'data': data}
-    log.debug(returnmessage)
+    log.info(returnmessage)
     log.end('BatchForCardNo')
     return jsonify(returnmessage)
 
@@ -829,8 +829,8 @@ def BatchForCardNo():
 @decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def A8_Password():
     log.start('A8_Password')
-    log.debug(request.headers)
-    # log.debug()()("BODY: %s" % request.get_data())
+    log.info(request.headers)
+    # log.info()()("BODY: %s" % request.get_data())
     #http://10.17.2.238/password/
     meta = {}
     data = {}
@@ -844,7 +844,7 @@ def A8_Password():
     data = {"password": password, "trainingmodePW": trainingmodePW}
     meta = {'status': 200, 'msg': 'success'}
     returnmessage = {'meta': meta, 'data':data }
-    log.debug(returnmessage)
+    log.info(returnmessage)
     log.end('A8_Password')
     return jsonify(returnmessage)
 
@@ -853,8 +853,8 @@ def A8_Password():
 @decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def Octopus_Report(action):
     log.start('Octopus_Report')
-    log.debug(request.headers)
-    # log.debug()()("BODY: %s" % request.get_data())
+    log.info(request.headers)
+    # log.info()()("BODY: %s" % request.get_data())
     username = request.headers.get("username")
     meta = {}
     data = {}
@@ -870,7 +870,7 @@ def Octopus_Report(action):
         else:
             meta = {'status': 1, 'msg': '{0}'.format(result[1])}
         returnmessage = {'meta': meta, 'data': data}
-        log.debug(returnmessage)
+        log.info(returnmessage)
         log.end('Octopus_Report')
         return jsonify(returnmessage)
     elif action == 'Download_SPID':
@@ -895,7 +895,7 @@ def Octopus_Report(action):
         else:
             meta = {'status': 1, 'msg': Monthly_Report_Status[1]}
         returnmessage = {'meta': meta, 'data': data}
-        log.debug(returnmessage)
+        log.info(returnmessage)
         log.end('Octopus_Report')
         return jsonify(returnmessage)
     elif action == 'Download_YearlyReport':
@@ -912,11 +912,11 @@ def Octopus_Report(action):
         else:
             meta = {'status': 1, 'msg': Yearly_Report_Status[1]}
         returnmessage = {'meta': meta, 'data': data}
-        log.debug(returnmessage)
+        log.info(returnmessage)
         log.end('Octopus_Report')
         return jsonify(returnmessage)
     elif action == 'UploadRawData':
-        log.debug(request.files)
+        log.info(request.files)
         files = request.files.getlist("files")
         # files = files.split(",")
         # files = list(filter(None, files))
@@ -934,7 +934,7 @@ def Octopus_Report(action):
                 zipObj.extractall(unzipPath)
         meta = {'status': 0, 'msg': '{}'.format('Upload Success')}
         returnmessage = {'meta': meta, 'data': data}
-        log.debug(returnmessage)
+        log.info(returnmessage)
         log.end('Octopus_Report')
         return jsonify(returnmessage)
 
@@ -943,8 +943,8 @@ def Octopus_Report(action):
 @decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def VMP_Transaction(Gateway):
     log.start('VMP_Transaction')
-    log.debug(request.headers)
-    log.debug("JSON: %s" % request.json)
+    log.info(request.headers)
+    log.info("JSON: %s" % request.json)
     username = request.headers.get("username")
     service = request.json.get('service')
     User_Confirm_Key = request.json.get('User_Confirm_Key')
@@ -990,6 +990,7 @@ def VMP_Transaction(Gateway):
         if Remark == '' or Remark == None:
             Remark = 'Refund on ' + time.strftime("%d %b %Y", time.localtime())
     items = request.json.get('items')
+    NewInterFace = request.json.get('NewInterFace')
     iRet = -1
     meta = {}
     data = []
@@ -1033,7 +1034,7 @@ def VMP_Transaction(Gateway):
             EOPG_req.trans_amount = amount
             EOPG_req.wechatWeb = wechatWeb
             signStr = VMP.packSignStr_EOPG(EOPG_req,SecretCode)
-            log.debug(signStr)
+            log.info(signStr)
             EOPG_req.signature = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             EOPG_req.app_pay = app_pay
             EOPG_req.return_url = return_url
@@ -1059,7 +1060,7 @@ def VMP_Transaction(Gateway):
             EOPG_req.service = service
             EOPG_req.trans_amount = amount
             signStr = VMP.packSignStr_EOPG(EOPG_req, SecretCode)
-            log.debug(signStr)
+            log.info(signStr)
             EOPG_req.signature = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             EOPG_req.merch_refund_id = refund_no
             EOPG_req.api_version = '2.9'
@@ -1075,7 +1076,7 @@ def VMP_Transaction(Gateway):
             EOPG_req.payment_type = PaymentType
             EOPG_req.service = service
             signStr = VMP.packSignStr_EOPG(EOPG_req, SecretCode)
-            log.debug(signStr)
+            log.info(signStr)
             EOPG_req.signature = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             EOPG_req.api_version = '2.9'
             EOPG_req.redirect = redirect
@@ -1090,7 +1091,7 @@ def VMP_Transaction(Gateway):
             EOPG_req.payment_type = PaymentType
             EOPG_req.service = service
             signStr = VMP.packSignStr_EOPG(EOPG_req, SecretCode)
-            log.debug(signStr)
+            log.info(signStr)
             EOPG_req.signature = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             EOPG_req.api_version = '2.9'
             EOPG_req.redirect = redirect
@@ -1124,7 +1125,10 @@ def VMP_Transaction(Gateway):
             else:
                 VMP_req.pay_scene = 'WEB'
             VMP_req.return_url = return_url
-            VMP_req.service = service
+            if NewInterFace and str(PaymentType).upper() == 'ALIPAY':
+                VMP_req.service = 'service.alipayplus.web.PreOrder'
+            else:
+                VMP_req.service = service
             if str(PaymentType).upper() == 'ATOME':
                 VMP_req.shippingAddress = str(shippingAddress)
             VMP_req.subject = subject
@@ -1141,7 +1145,7 @@ def VMP_Transaction(Gateway):
             elif str(PaymentType).upper() == 'UNIONPAY':
                 VMP_req.wallet = 'UNIONPAY'
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            log.debug('signStr: {0}'.format(signStr))
+            log.info('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
             pass
@@ -1156,7 +1160,10 @@ def VMP_Transaction(Gateway):
             VMP_req.pay_scene = 'WEB'
             VMP_req.reason = body
             VMP_req.return_amount = amount
-            VMP_req.service = service
+            if NewInterFace and str(PaymentType).upper() == 'ALIPAY':
+                VMP_req.service = 'service.alipayplus.web.Refund'
+            else:
+                VMP_req.service = service
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.total_fee = amount
             VMP_req.user_confirm_key = User_Confirm_Key
@@ -1169,21 +1176,26 @@ def VMP_Transaction(Gateway):
             elif str(PaymentType).upper() == 'UNIONPAY':
                 VMP_req.wallet = 'UNIONPAY'
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            log.debug(signStr)
+            log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
             pass
         elif str(TransactionType).upper() == 'QUERY':
             VMP_req = VMP.VMP_Request()
-            URL = URL + 'QRcodeTradeQuery.do'
+            if NewInterFace:
+                URL = URL + 'JSAPIService.do'
+            else:
+                URL = URL + 'QRcodeTradeQuery.do'
             VMP_req.eft_trade_no = eft_trade_no
             VMP_req.out_trade_no = out_trade_no
             VMP_req.querytype = 'OUT_TRADE'
             VMP_req.refund_no = refund_no
+            if NewInterFace:
+                VMP_req.service = 'service.common.Query'
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            log.debug(signStr)
+            log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
             pass
@@ -1205,7 +1217,10 @@ def VMP_Transaction(Gateway):
             VMP_req.paytype = PaymentType
             VMP_req.return_url = return_url
             VMP_req.scene_type = scene_type
-            VMP_req.service = service
+            if NewInterFace and str(PaymentType).upper() == 'ALIPAY':
+                VMP_req.service = 'service.alipayplus.jsapi.PreOrder'
+            else:
+                VMP_req.service = service
             VMP_req.sub_openid = sub_openid
             VMP_req.subject = subject
             VMP_req.tid = tid
@@ -1213,7 +1228,7 @@ def VMP_Transaction(Gateway):
             VMP_req.transaction_amount = amount
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            log.debug('signStr: {0}'.format(signStr))
+            log.info('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
             pass
@@ -1228,19 +1243,25 @@ def VMP_Transaction(Gateway):
             VMP_req.paytype = PaymentType
             VMP_req.refund_desc = body
             VMP_req.refund_no = refund_no
-            VMP_req.service = service
+            if NewInterFace and str(PaymentType).upper() == 'ALIPAY':
+                VMP_req.service = 'service.alipayplus.jsapi.Refund'
+            else:
+                VMP_req.service = service
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.total_fee = amount
             VMP_req.transaction_amount = amount
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            log.debug(signStr)
+            log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
             pass
         elif str(TransactionType).upper() == 'QUERY':
             VMP_req = VMP.VMP_Request()
-            URL = URL + 'QRcodeTradeQuery.do'
+            if NewInterFace:
+                URL = URL + 'CommonTradeQuery.do'
+            else:
+                URL = URL + 'QRcodeTradeQuery.do'
             VMP_req.buyertype = buyerType
             VMP_req.eft_trade_no = eft_trade_no
             VMP_req.out_trade_no = out_trade_no
@@ -1254,7 +1275,7 @@ def VMP_Transaction(Gateway):
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            log.debug(signStr)
+            log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
             pass
@@ -1284,14 +1305,17 @@ def VMP_Transaction(Gateway):
             elif str(PaymentType).upper() == 'GBPAY':
                 VMP_req.payment_type = PaymentType
                 VMP_req.paytype = PaymentType
-            VMP_req.service = service
+            if NewInterFace and str(PaymentType).upper() == 'ALIPAY':
+                VMP_req.service = 'service.alipayplus.qrcode.PreOrder'
+            else:
+                VMP_req.service = service
             VMP_req.subject = subject
             VMP_req.tid = tid
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.transaction_amount = amount
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            log.debug('signStr: {0}'.format(signStr))
+            log.info('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
             pass
@@ -1314,17 +1338,24 @@ def VMP_Transaction(Gateway):
                 VMP_req.payment_type = PaymentType
                 VMP_req.payType = PaymentType
             VMP_req.refund_no = refund_no
-            VMP_req.service = service
+            if NewInterFace and str(PaymentType).upper() == 'ALIPAY':
+                VMP_req.service = 'service.alipayplus.qrcode.Refund'
+            else:
+                VMP_req.service = service
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.transaction_amount = amount
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            log.debug(signStr)
+            log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
             pass
         elif str(TransactionType).upper() == 'QUERY':
             VMP_req = VMP.VMP_Request()
+            # if NewInterFace:
+            #     URL = URL + 'CommonTradeQuery.do'
+            # else:
+            #     URL = URL + 'JSAPIService.do'
             URL = URL + 'JSAPIService.do'
             VMP_req.eftpay_trade_no = eft_trade_no
             VMP_req.out_trade_no = out_trade_no
@@ -1345,11 +1376,15 @@ def VMP_Transaction(Gateway):
                 VMP_req.paytype = PaymentType
             VMP_req.querytype = 'OUT_TRADE'
             VMP_req.refund_no = refund_no
-            VMP_req.service = service
+            if NewInterFace and str(PaymentType).upper() == 'ALIPAY':
+                VMP_req.service = 'service.alipayplus.qrcode.Query'
+            else:
+                VMP_req.service = service
+
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            log.debug(signStr)
+            log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
             pass
@@ -1357,7 +1392,10 @@ def VMP_Transaction(Gateway):
         URL += f'/{Gateway}/Servlet/'
         if str(TransactionType).upper() == 'SALE':
             VMP_req = VMP.VMP_Request()
-            URL = URL + 'AppTradePay.do'
+            if NewInterFace:
+                URL = URL + 'CommonAppTradePay.do'
+            else:
+                URL = URL + 'AppTradePay.do'
             VMP_req.body = body
             VMP_req.buyerType = buyerType
             VMP_req.fee_type = fee_type
@@ -1375,13 +1413,16 @@ def VMP_Transaction(Gateway):
             elif str(PaymentType).upper() == 'WECHAT':
                 VMP_req.wallet = 'WECHAT' + wallet
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            log.debug('signStr: {0}'.format(signStr))
+            log.info('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
             pass
         elif str(TransactionType).upper() == 'REFUND':
             VMP_req = VMP.VMP_Request()
-            URL = URL + 'AppTradeRefund.do'
+            if NewInterFace:
+                URL = URL + 'CommonAppTradeRefund.do'
+            else:
+                URL = URL + 'AppTradeRefund.do'
             VMP_req.buyerType = buyerType
             VMP_req.eft_trade_no = eft_trade_no
             VMP_req.out_refund_no = refund_no
@@ -1391,13 +1432,16 @@ def VMP_Transaction(Gateway):
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            log.debug(signStr)
+            log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
             pass
         elif str(TransactionType).upper() == 'QUERY':
             VMP_req = VMP.VMP_Request()
-            URL = URL + 'QRcodeTradeQuery.do'
+            if NewInterFace:
+                URL = URL + 'CommonTradeQuery.do'
+            else:
+                URL = URL + 'QRcodeTradeQuery.do'
             VMP_req.eft_trade_no = eft_trade_no
             VMP_req.out_trade_no = out_trade_no
             VMP_req.querytype = 'OUT_TRADE'
@@ -1405,7 +1449,7 @@ def VMP_Transaction(Gateway):
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            log.debug(signStr)
+            log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
             pass
@@ -1431,7 +1475,7 @@ def VMP_Transaction(Gateway):
             VMP_req.transaction_amount = amount
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            log.debug('signStr: {0}'.format(signStr))
+            log.info('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
             pass
@@ -1445,11 +1489,14 @@ def VMP_Transaction(Gateway):
             VMP_req.pay_scene = 'WAP'
             VMP_req.reason = body
             VMP_req.return_amount = amount
-            VMP_req.service = service
+            if NewInterFace:
+                VMP_req.service = 'service.common.Refund'
+            else:
+                VMP_req.service = service
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            log.debug(signStr)
+            log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
             pass
@@ -1463,16 +1510,16 @@ def VMP_Transaction(Gateway):
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = VMP.packSignStr(VMP_req, SecretCode)
-            log.debug(signStr)
+            log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
             pass
-    log.debug('RawRequest: {0}'.format(RawRequest))
+    log.info('RawRequest: {0}'.format(RawRequest))
     if APIType == 'EOPG':
         if (str(TransactionType).upper()) != 'SALE':
             resp = Utility.GetToHost(RawRequest, timeout=30)
             if resp.status_code == 200:
-                log.debug('RawResponse: {0}'.format(resp.text))
+                log.info('RawResponse: {0}'.format(resp.text))
                 RawResponse = str(resp.text)
                 JSONMessage = dict(x.split('=') for x in resp.text.split('&'))
                 Utility.insert_VMP_Txn(DateTime=nowdatetime, username=username, GatewayName=Gateway, API_Type=APIType,
@@ -1485,7 +1532,7 @@ def VMP_Transaction(Gateway):
     else:
         resp = Utility.PostToHost(URL, RawRequest, timeout=30)
         if resp.status_code == 200:
-            log.debug('RawResponse: {0}'.format(resp.text.encode("utf8")))
+            log.info('RawResponse: {0}'.format(resp.text.encode("utf8")))
             RawResponse = json.loads(resp.text.encode("utf8"))
             Utility.insert_VMP_Txn(DateTime=nowdatetime, username=username, GatewayName=Gateway, API_Type=APIType,
                                        PaymentType=PaymentType, TransType=str(TransactionType).upper(), Amount=amount, user_confirm_key=User_Confirm_Key,
@@ -1496,7 +1543,7 @@ def VMP_Transaction(Gateway):
     data = {'RawRequest': RawRequest, 'RawResponse': RawResponse, 'JSONMessage': JSONMessage}
     meta = {'status': 0, 'msg': 'Success'}
     returnmessage = {'meta': meta, 'data': data}
-    log.debug(returnmessage)
+    log.info(returnmessage)
     log.end('VMP_Transaction')
     return jsonify(returnmessage)
 
@@ -1515,8 +1562,8 @@ def imagedownload(filename):
 @decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def setconfig(Till_Number,TransactionType):
     log.start('setconfig')
-    log.debug(request.headers)
-    log.debug("BODY: %s" % request.get_data())
+    log.info(request.headers)
+    log.info("BODY: %s" % request.get_data())
     username = request.headers.get("username")
     Tag = request.json.get('Tag')
     MID = request.json.get('MID')

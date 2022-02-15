@@ -135,7 +135,7 @@ def loadConfig():
 
 class Flask_Base_Config():
     JWT_SECRET_KEY = 'Testing123'
-    FrontEndVersion = '1.0.10'
+    FrontEndVersion = '1.0.11'
 
 class Flask_PROD_Config(Flask_Base_Config):
     DEBUG = False
