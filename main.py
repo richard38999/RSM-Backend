@@ -1,3 +1,4 @@
+import csv
 import decorator
 from flask import Flask,send_from_directory, request, jsonify, send_file, json
 from flask_jwt_extended import JWTManager, jwt_required
@@ -14,6 +15,7 @@ import requests
 import Octopus
 import hashlib
 import VMP
+import Spiral
 from zipfile import ZipFile
 clr.FindAssembly('DLL\\EFTPaymentsServer.dll')
 clr.AddReference('DLL\\EFTPaymentsServer')
@@ -22,10 +24,11 @@ clr.AddReference('DLL\\XML_InterFace')
 from EFTSolutions import *
 from XML_InterFace import *
 log = Log('Flask')
-app = Flask(__name__)
 ENVIRONMENT = 'DEV'
-app.config.from_object(Configuration.Flask_Config['DEV'])
-Config = Configuration.Flask_Config.get('DEV')
+# ENVIRONMENT = 'PROD'
+app = Flask(__name__)
+app.config.from_object(Configuration.Flask_Config[ENVIRONMENT])
+Config = Configuration.Flask_Config.get(ENVIRONMENT)
 
 # 設定 JWT 密鑰
 jwt = JWTManager()
@@ -170,6 +173,173 @@ def deleteUser():
     returnmessage = {'meta': meta, 'data': data}
     log.info(returnmessage)
     log.end('deleteUser')
+    return jsonify(returnmessage)
+
+@app.route("/Spiral", methods=['POST'])
+@jwt_required
+@decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
+def Spiral_Transaction():
+    log.start('Spiral_Transaction')
+    log.info(request.headers)
+    log.info("BODY: %s" % request.get_data())
+    username = request.headers.get("username")
+    cmd = request.json.get('cmd')
+    clientId = request.json.get('clientId')
+    merchantRef = request.json.get('merchantRef')
+    if merchantRef == '':
+        merchantRef = datetime.datetime.now().strftime("%Y%m%d%H%M%S%f")
+    amount = request.json.get('amount')
+    amount = round(float(amount), 2)
+    type = request.json.get('type')
+    goodsName = request.json.get('goodsName')
+    Flow = request.json.get('Flow')
+    orderId = request.json.get('orderId')
+    URL = request.json.get('URL')
+    goodsDesc = request.json.get('goodsDesc')
+    channel = request.json.get('channel')
+    cardToken = request.json.get('cardToken')
+    cardTokenSrc = request.json.get('cardTokenSrc')
+    successUrl = request.json.get('successUrl')
+    failureUrl = request.json.get('failureUrl')
+    webhookUrl = request.json.get('webhookUrl')
+    duration = request.json.get('duration')
+    duration = int(round(float(duration), 2))
+    durationHr = request.json.get('durationHr')
+    durationHr = int(round(float(durationHr), 2))
+    Email_Subject = request.json.get('Email_Subject')
+    Remark = request.json.get('Remark')
+    privateKey = request.json.get('privateKey')
+    publicKey = request.json.get('publicKey')
+    data = {}
+    RawRequest = ''
+    utcTime = Utility.local_to_utc()
+    log.info(f'utcTime: {utcTime}')
+    Payload = clientId + merchantRef + utcTime
+    log.info(f'Payload: {Payload}')
+    currentlyPath = os.getcwd()
+    cert_path = f'{currentlyPath}\\cert\\Spiral\\{privateKey}'
+    if not os.path.exists(cert_path):
+        meta = {'status': -1, 'msg': 'Certificate Not Exist'}
+        returnmessage = {'meta': meta, 'data': data}
+        return jsonify(returnmessage)
+    Signature = str(Utility.rsa_encrypt_data(data=Payload, Key_path=cert_path))
+    headers = {
+        'Spiral-Request-Datetime': utcTime,
+        'Spiral-Client-Signature': Signature
+    }
+    method = 'put'
+    Spiral_Request = Spiral.Request()
+    if Flow == 'Payment Link':
+        if cmd == 'QUERY':
+            method = 'get'
+            URL = URL + f'/merchants/{clientId}/paymentlink/{merchantRef}'
+        else:
+            Spiral_Request = Spiral.packRequest(clientId=clientId,
+                                               merchantRef=merchantRef,
+                                               amt=amount,
+                                               goodsName=goodsName,
+                                               goodsDesc=goodsDesc,
+                                               webhookUrl=webhookUrl,
+                                               durationHr=durationHr
+                                               )
+            URL = URL + f'/merchants/{clientId}/paymentlink/{merchantRef}'
+    else: # Direct
+        if cmd == 'SALE' or cmd == 'AUTH' or cmd == 'SALESESSION' or cmd == 'AUTHSESSION':
+            Spiral_Request = Spiral.packRequest(clientId=clientId,
+                                                merchantRef=merchantRef,
+                                                cmd=cmd,
+                                                type=type,
+                                                amt=amount,
+                                                goodsName=goodsName,
+                                                goodsDesc=goodsDesc,
+                                                channel=channel,
+                                                cardToken=cardToken,
+                                                cardTokenSrc=cardTokenSrc,
+                                                successUrl=successUrl,
+                                                failureUrl=failureUrl,
+                                                webhookUrl=webhookUrl,
+                                                duration=duration
+                                                )
+            URL = URL + f'/merchants/{clientId}/transactions/{merchantRef}'
+        elif cmd == 'CAPTURE' or cmd == 'REFUND':
+            Spiral_Request = Spiral.packRequest(clientId=clientId,
+                                                merchantRef=merchantRef,
+                                                cmd=cmd,
+                                                orderId=orderId,
+                                                amt=amount,
+                                                webhookUrl=webhookUrl
+                                                )
+            URL = URL + f'/merchants/{clientId}/transactions/{merchantRef}'
+        elif cmd == 'QUERY':
+            method = 'get'
+            URL = URL + f'/merchants/{clientId}/transactions/{merchantRef}'
+
+    if cmd != 'QUERY':
+        RawRequest = json.dumps(Spiral.packJsonMsg(Spiral_Request))
+    log.info(f'Raw_Request: {RawRequest}')
+    log.info(f'URL: {URL}')
+    resp = requests.request(method=method, data=RawRequest,timeout=30,url=URL, headers=headers)
+    log.info(f'resp.status_code: {resp.status_code}')
+    log.info(f'resp.text: {resp.text}')
+    if resp.status_code == 200:
+        meta = {'status': resp.status_code, 'msg': 'Success'}
+    else:
+        meta = {'status': resp.status_code, 'msg': resp.text}
+    if cmd != 'QUERY':
+        data = {'RawReqURL': URL, 'RawRequest': json.loads(RawRequest), 'RawResponse': json.loads(resp.text.encode("utf8"))}
+    else:
+        data = {'RawReqURL': URL, 'RawRequest': RawRequest, 'RawResponse': json.loads(resp.text.encode("utf8"))}
+    # data = {'RawReqURL': URL, 'RawRequest': json.loads(RawRequest), 'RawResponse': json.loads(resp.text.encode("utf8"))}
+    returnmessage = {'meta': meta, 'data': data}
+    log.info(returnmessage)
+    log.end('Spiral_Transaction')
+    return jsonify(returnmessage)
+
+@app.route("/Spiral/Certificate/<action>", methods=['GET', 'POST'])
+@jwt_required
+@decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
+def Spiral_Certificate(action):
+    log.start('Spiral_Certificate')
+    log.info(request.headers)
+    log.info("BODY: %s" % request.get_data())
+    username = request.headers.get("username")
+    certname = request.args.get('certname')
+    clientId = request.args.get('clientId')
+    meta = {}
+    data = []
+    if action == 'getCertificateList':
+        currentlyPath = os.getcwd()
+        certlist = os.listdir(f'{currentlyPath}\\cert\\Spiral')
+        for cert in certlist:
+            data.append({
+                'certname': cert
+            })
+        data = {'certlist': data, 'total': len(certlist)}
+        meta = {'status': 0, 'msg': 'SUCCESS'}
+    elif action == 'getCertData':
+        currentlyPath = os.getcwd()
+        certPath = f'{currentlyPath}\\cert\\Spiral\\{certname}'
+        with open(certPath) as certFile:
+            data = certFile.read().splitlines()
+        meta = {'status': 0, 'msg': 'SUCCESS'}
+    elif action == 'delete':
+        currentlyPath = os.getcwd()
+        certPath = f'{currentlyPath}\\cert\\Spiral\\{certname}'
+        os.remove(certPath)
+        meta = {'status': 0, 'msg': 'SUCCESS'}
+    elif action == 'UploadCertificate':
+        currentlyPath = os.getcwd()
+        certlist = os.listdir(f'{currentlyPath}\\cert\\Spiral')
+        f = request.files['file']
+        if secure_filename(f.filename) in certlist:
+            meta = {'status': -1, 'msg': 'Certificate Already Exist'}
+        else:
+            filepath = f'{currentlyPath}\\cert\\Spiral\\{secure_filename(f.filename)}'
+            f.save(filepath)
+            meta = {'status': 0, 'msg': 'SUCCESS'}
+    returnmessage = {'meta': meta, 'data': data}
+    log.info(returnmessage)
+    log.end('Spiral_Certificate')
     return jsonify(returnmessage)
 
 @app.route("/<Till_Number>/<TransactionType>", methods=['POST'])
@@ -938,6 +1108,50 @@ def Octopus_Report(action):
         log.end('Octopus_Report')
         return jsonify(returnmessage)
 
+@app.route("/PAOB/Report/<action>", methods=['POST'])
+@jwt_required
+@decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
+def PAOB_Report(action):
+    log.start('PAOB_Report')
+    log.info(request.headers)
+    # log.info()()("BODY: %s" % request.get_data())
+    username = request.headers.get("username")
+    meta = {}
+    data = {}
+    if action == 'UploadRawData':
+        log.info(request.files)
+        files = request.files.getlist("files")
+        data = []
+        for f in files:
+            filepath = os.path.join('PAOB/', secure_filename(f.filename))
+            f.save(filepath)
+            vlookupFile = ''
+            i = 1
+            with open(os.path.join('PAOB/','temp.txt')) as temp:
+                vlookupFile = temp.read().splitlines()
+                # log.info(vlookupFile)
+            with open(filepath, newline='') as csvfile:
+                rows = csv.reader(csvfile)
+                addHeader = False
+                for row in rows:
+                    # log.info(f'{i}: {row}')
+                    # log.info(row[0])
+                    # i += 1
+                    if addHeader == False:
+                        data.append(row)
+                        addHeader = True
+                    if len(row) != 0:
+                        if row[0] in vlookupFile:
+                            if row[8] == 'SALE ADVICE':
+                                row[8] = 'SALE'
+                            data.append(row)
+            os.remove(filepath)
+        meta = {'status': 0, 'msg': '{}'.format('Upload Success')}
+        returnmessage = {'meta': meta, 'data': data}
+        log.info(returnmessage)
+        log.end('PAOB_Report')
+        return jsonify(returnmessage)
+
 @app.route("/VMP/<Gateway>", methods=['POST'])
 @jwt_required
 @decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
@@ -1628,6 +1842,27 @@ def setconfig(Till_Number,TransactionType):
     billingAddress_countryCode = request.json.get('billingAddress_countryCode')
     billingAddress_postCode = request.json.get('billingAddress_postCode')
     billingAddress_lines = request.json.get('billingAddress_lines')
+    cmd = request.json.get('cmd')
+    clientId = request.json.get('clientId')
+    merchantRef = request.json.get('merchantRef')
+    type = request.json.get('type')
+    goodsName = request.json.get('goodsName')
+    Flow = request.json.get('Flow')
+    orderId = request.json.get('orderId')
+    URL = request.json.get('URL')
+    goodsDesc = request.json.get('goodsDesc')
+    channel = request.json.get('channel')
+    cardToken = request.json.get('cardToken')
+    cardTokenSrc = request.json.get('cardTokenSrc')
+    successUrl = request.json.get('successUrl')
+    failureUrl = request.json.get('failureUrl')
+    webhookUrl = request.json.get('webhookUrl')
+    duration = request.json.get('duration')
+    durationHr = request.json.get('durationHr')
+    privateKey = request.json.get('privateKey')
+    publicKey = request.json.get('publicKey')
+    JavaScriptLibrary = request.json.get('JavaScriptLibrary')
+    locale = request.json.get('locale')
 
     iRet = -1
     data = {}
@@ -1640,6 +1875,8 @@ def setconfig(Till_Number,TransactionType):
                                      return_url=return_url, app_pay=app_pay, lang=lang, goods_body=goods_body, goods_subject=goods_subject,
                                      reuse=reuse, redirect=redirect, refund_reason=refund_reason, reason=reason, mobileNumber=mobileNumber,
                                      fullName=fullName, shippingAddress_countryCode=shippingAddress_countryCode, shippingAddress_postCode=shippingAddress_postCode, shippingAddress_lines=shippingAddress_lines, billingAddress_countryCode=billingAddress_countryCode, billingAddress_postCode=billingAddress_postCode, billingAddress_lines=billingAddress_lines)
+    elif Till_Number == 'Spiral':
+        meta = Utility.setconfig_Spiral(username=username,Tag=Tag, clientId=clientId, merchantRef=merchantRef, cmd=cmd, amount=amount, type=type, goodsName=goodsName, Flow=Flow, orderId=orderId, URL=URL, goodsDesc=goodsDesc, channel=channel, cardToken=cardToken, cardTokenSrc=cardTokenSrc, successUrl=successUrl, failureUrl=failureUrl, webhookUrl=webhookUrl, duration=duration, durationHr=durationHr, privateKey=privateKey, publicKey=publicKey, JavaScriptLibrary=JavaScriptLibrary, locale=locale)
     else:
         meta = Utility.setconfig_Offline(username=username,Gateway_Name=Till_Number, Tag=Tag, MID=MID, TID=TID, TransactionType=TransactionType, PaymentType=PayType, amount=amount, barcode=barcode, ApprovalCode=ApprovalCode, RRN=RRN, TraceNo=TraceNo, OriTID=OriTID, URL=URL, IP=IP, Port=Port, TPDU=TPDU, Timeout=Timeout, MsgType=MsgType, COMMTYPE=COMMTYPE)
     returnmessage = {'meta': meta, 'data': data}

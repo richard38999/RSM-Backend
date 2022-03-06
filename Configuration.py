@@ -135,13 +135,15 @@ def loadConfig():
 
 class Flask_Base_Config():
     JWT_SECRET_KEY = 'Testing123'
-    FrontEndVersion = '1.0.11'
+    FrontEndVersion = '1.0.13'
 
 class Flask_PROD_Config(Flask_Base_Config):
+    ENV = 'production'
     DEBUG = False
     isSentEmail = True
 
 class Flask_DEV_Config(Flask_Base_Config):
+    ENV = 'development'
     DEBUG = True
     isSentEmail = False
 

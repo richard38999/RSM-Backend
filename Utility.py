@@ -1,9 +1,14 @@
+import base64
+import datetime
 import sqlite3
+import time
 import requests
 import Configuration
-
+import Crypto
+from Crypto.PublicKey import RSA
+from Crypto.Hash import SHA, SHA256
+from Crypto.Signature import PKCS1_v1_5 as PKCS1_signature, PKCS1_v1_5
 db_name = Configuration.DB_path
-
 
 def getResultMessage(iRet):
     if iRet == '0':
@@ -389,6 +394,47 @@ def GetToHost(url, timeout):
     finally:
         return req
 
+def setconfig_Spiral(username='',
+                      Tag='',
+                      clientId='',
+                      merchantRef='',
+                      cmd='',
+                      amount='',
+                      type='',
+                      goodsName='',
+                      Flow='',
+                      orderId='',
+                      URL='',
+                      goodsDesc='',
+                      channel='',
+                      cardToken='',
+                      cardTokenSrc='',
+                      successUrl='',
+                      failureUrl='',
+                      webhookUrl='',
+                      duration='',
+                      durationHr='',
+                      privateKey='',
+                      publicKey='',
+                      JavaScriptLibrary='',
+                      locale=''
+                      ):
+    returnmessage = {}
+    conn = sqlite3.connect(db_name)
+    cursor = conn.cursor()
+    cursor.execute(
+        f'select * FROM Spiral_Config where username="{username}" and Tag="{Tag}";')
+    values = cursor.fetchall()
+    if values != []:
+        cursor.close()
+        conn.close()
+        return {'status': 1, 'msg': 'Tag Already exist! Please change the Tag.'}
+    cmd = f'INSERT INTO Spiral_Config VALUES ("{username}", "{Tag}", "{clientId}", "{merchantRef}", "{cmd}", "{Flow}", "{type}", "{amount}", "{goodsName}", "{goodsDesc}", "{channel}", "{cardToken}", "{cardTokenSrc}", "{successUrl}", "{failureUrl}", "{webhookUrl}", "{duration}", "{durationHr}", "{orderId}", "{privateKey}", "{publicKey}", "{URL}", "{JavaScriptLibrary}", "{locale}");'
+    cursor.execute(cmd)
+    conn.commit()
+    cursor.close()
+    conn.close()
+    return {'status': 0, 'msg': 'Set Config Success'}
 
 def setconfig_Offline(username='',
                       Gateway_Name='',
@@ -469,13 +515,14 @@ def setconfig_VMP(username='', Gateway_Name='', Tag='', APIType='', User_Confirm
     conn.close()
     return {'status': 0, 'msg': 'Set Config Success'}
 
-
 def loadconfig(username=None, Gateway_Name=None):
     returnmessage = []
     conn = sqlite3.connect(db_name)
     cursor = conn.cursor()
     if Gateway_Name == 'VMP' or Gateway_Name == 'BOCVMP':
         cmd = f'select * FROM VMP_Config where username="{username}" and Gateway_Name="{Gateway_Name}";'
+    elif Gateway_Name == 'Spiral':
+        cmd = f'select * FROM Spiral_Config where username="{username}";'
     else:
         cmd = f'select * FROM Offline_Txn_Config where username="{username}" and Gateway_Name="{Gateway_Name}";'
     cursor.execute(cmd)
@@ -497,6 +544,9 @@ def deleteconfig(username='', Gateway_Name='', Tag=''):
         if Gateway_Name == 'VMP' or Gateway_Name == 'BOCVMP':
             cursor.execute(
                 f'DELETE from VMP_Config where username="{username}" and Gateway_Name="{Gateway_Name}" and Tag="{Tag}";')
+        elif Gateway_Name == 'Spiral':
+            cursor.execute(
+                f'DELETE from Spiral_Config where username="{username}" and Tag="{Tag}";')
         else:
             cursor.execute(
                 f'DELETE from Offline_Txn_Config where username="{username}" and Gateway_Name="{Gateway_Name}" and Tag="{Tag}";')
@@ -573,3 +623,40 @@ def check_vmp_refund_txn(GateName='', user_confirm_key='', out_trade_no='', eft_
     cursor.close()
     conn.close()
     return returnmData
+
+def local_to_utc():
+    now_stamp = time.time()
+    local_time = datetime.datetime.fromtimestamp(now_stamp)
+    time_struct = time.mktime(local_time.timetuple())
+    utc_st = datetime.datetime.utcfromtimestamp(time_struct)
+    return utc_st.strftime('%Y-%m-%dT%H:%M:%SZ')
+
+def rsa_encrypt_data(data='', Key_path=''):
+    private_key = get_key(Key_path)
+    signature = rsa_sign(data.encode(encoding='utf-8'), private_key)
+    signature = base64.b64encode(signature)
+    signature = signature.decode("UTF-8")
+    return signature
+
+def rsa_sign(plaintext, key, hash_algorithm=Crypto.Hash.SHA256):
+    """RSA 数字签名"""
+    signer = PKCS1_v1_5.new(RSA.importKey(key))
+
+    #hash算法必须要pycrypto库里的hash算法，不能直接用系统hashlib库，pycrypto是封装的hashlib
+    hash_value = hash_algorithm.new(plaintext)
+    return signer.sign(hash_value)
+
+def get_key(key_file):
+    with open(key_file) as f:
+        data = f.read()
+        # key = RSA.importKey(data)
+    return data
+
+def packJsonMsg(obj):
+    retuenStr = {}
+    for name, value in vars(obj).items():
+        if value != None and value != '':
+        # if value != None:
+            retuenStr[name] = value
+            # retuenStr.append({name: value})
+    return retuenStr

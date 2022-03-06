@@ -165,11 +165,6 @@ class VMP_Response():
     scene_type = None
     pass
 
-class Spiral_Request():
-    pass
-
-class Spiral_Response():
-    pass
 
 def packSignStr(obj, secretcode):
     retuenStr = secretcode
