@@ -189,7 +189,8 @@ def Spiral_Transaction():
     if merchantRef == '':
         merchantRef = datetime.datetime.now().strftime("%Y%m%d%H%M%S%f")
     amount = request.json.get('amount')
-    amount = round(float(amount), 2)
+    if amount != '':
+        amount = round(float(amount), 2)
     type = request.json.get('type')
     goodsName = request.json.get('goodsName')
     Flow = request.json.get('Flow')
@@ -203,9 +204,11 @@ def Spiral_Transaction():
     failureUrl = request.json.get('failureUrl')
     webhookUrl = request.json.get('webhookUrl')
     duration = request.json.get('duration')
-    duration = int(round(float(duration), 2))
+    if duration != '':
+        duration = int(round(float(duration), 2))
     durationHr = request.json.get('durationHr')
-    durationHr = int(round(float(durationHr), 2))
+    if durationHr != '':
+        durationHr = int(round(float(durationHr), 2))
     Email_Subject = request.json.get('Email_Subject')
     Remark = request.json.get('Remark')
     privateKey = request.json.get('privateKey')
