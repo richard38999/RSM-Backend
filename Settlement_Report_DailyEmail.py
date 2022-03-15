@@ -56,13 +56,15 @@ def main():
                         os.mkdir(os.getcwd() + f'\\Settlement_Report\\Settlement_Report_DailyEmail')
                     if not os.path.exists(os.getcwd() + f'\\Settlement_Report\\Settlement_Report_DailyEmail\\{i[4]}_{i[8]}'):
                         os.mkdir(os.getcwd() + f'\\Settlement_Report\\Settlement_Report_DailyEmail\\{i[4]}_{i[8]}')
-                    localpath = os.getcwd() + f'\\Settlement_Report\\Settlement_Report_DailyEmail\\{i[4]}_{i[8]}\\' + filename
-                    if i[12] == 'Y': # ZIP Attachement
-                        ziplocalpath = f'{localpath}.zip'
-                        with ZipFile(ziplocalpath, 'w') as myzip:
-                            myzip.write(localpath)
-                        localpath = ziplocalpath
+                    localpath = os.getcwd() + f'\\Settlement_Report\\Settlement_Report_DailyEmail\\{i[4]}_{i[8]}\\{filename}'
                     sftp.getSftpFile(SFTP_info[int(i[11])], remotepath=remotepath, localpath=localpath)
+                    if i[12] == 'Y': # ZIP Attachement
+                        basename = os.path.basename(localpath)
+                        file_name = os.path.splitext(basename)[0]
+                        ziplocalpath = f'Settlement_Report\\Settlement_Report_DailyEmail\\{i[4]}_{i[8]}\\{file_name}.zip'
+                        with ZipFile(ziplocalpath, 'w') as myzip:
+                            myzip.write(localpath, filename)
+                        localpath = ziplocalpath
                     MerchantemailContent = \
                     f"                   ---- Please do not reply to this email as this email address is used for broadcasting messages to clients only. ---\r\n\r\n"\
                     "Dear " + i[4] + ",\r\n\r\n"\
