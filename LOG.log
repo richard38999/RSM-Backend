@@ -4693,3 +4693,621 @@
 2022-02-23 14:29:28.357:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>344888800000001</MID><TID>28000001</TID><RespCode>00</RespCode><ApproCode>H09705</ApproCode><RefNo>220223142928</RefNo><ERCRFN></ERCRFN><Amount>000000000010</Amount><TraceNo>900027</TraceNo><inVoiceNo></inVoiceNo><CardNo>280000000000000000</CardNo><TransType>SALE</TransType><TransDate>20220223</TransDate><TransTime>142730</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>2022022314273028000001900027</TransID><PayID>test@eftpay.com.hk</PayID></TxnResp>
 2022-02-23 14:29:28.357:[GetResponse] errormessage: 
 2022-02-23 14:29:28.357:[GetResponse] XML_Resp: [MID]:[344888800000001] [TID]:[28000001] [RespCode]:[00] [RefNo]:[220223142928] [CardNo]:[280000000000000000] [TransType]:[SALE] [TransDate]:[20220223] [TransTime]:[142730] [ApproCode]:[H09705] [PayID]:[test@eftpay.com.hk] [TransID]:[2022022314273028000001900027] [TraceNo]:[900027] [Amount]:[000000000010] [respondText]:[Success] 
+2022-03-14 18:50:15.453:[initialize] Gateway: 1C
+2022-03-14 18:50:15.454:[initialize] MID: 852999900000001
+2022-03-14 18:50:15.454:[initialize] TID: 90025402
+2022-03-14 18:50:15.455:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-14 18:50:15.455:[initialize] Timeout: 90
+2022-03-14 18:50:15.455:[initialize] COMMTYPE: 2
+2022-03-14 18:50:15.455:[initialize] PaymentType: Alipay
+2022-03-14 18:50:15.461:[SALE] Barcode: <280000000000000000>, amount: <17>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-03-14 18:50:15.462:[SALE] XML_Req: 
+2022-03-14 18:50:15.468:[SALE] PaymentType: Alipay
+2022-03-14 18:50:15.469:[SALE] Start Send the message
+2022-03-14 18:50:15.469:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>17</Amount><TraceNo>900028</TraceNo><CardNo>280000000000000000</CardNo><RefNo>220314185015</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220314</TransDate><TransTime>185015</TransTime></TxnReq>
+2022-03-14 18:50:19.512:[SALE] End Send the message
+2022-03-14 18:50:19.513:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>25</RespCode><ApproCode></ApproCode><RefNo>220314185015</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000017</Amount><TraceNo>900028</TraceNo><inVoiceNo></inVoiceNo><CardNo>280000000000000000</CardNo><TransType>SALE</TransType><TransDate>20220314</TransDate><TransTime>185020</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+2022-03-14 18:50:19.528:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>17</Amount><TraceNo>900028</TraceNo><CardNo>280000000000000000</CardNo><RefNo>220314185015</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220314</TransDate><TransTime>185015</TransTime></TxnReq>
+2022-03-14 18:50:19.529:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>25</RespCode><ApproCode></ApproCode><RefNo>220314185015</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000017</Amount><TraceNo>900028</TraceNo><inVoiceNo></inVoiceNo><CardNo>280000000000000000</CardNo><TransType>SALE</TransType><TransDate>20220314</TransDate><TransTime>185020</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+2022-03-14 18:50:19.529:[GetResponse] errormessage: 
+2022-03-14 18:50:19.531:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[25] [RefNo]:[220314185015] [CardNo]:[280000000000000000] [TransType]:[SALE] [TransDate]:[20220314] [TransTime]:[185020] [ERCRFN]:[Portaltesting123] [TraceNo]:[900028] [Amount]:[000000000017] [respondText]:[Record Not Found] 
+2022-03-15 12:32:29.576:[initialize] Gateway: 1C
+2022-03-15 12:32:29.577:[initialize] MID: 852999900000001
+2022-03-15 12:32:29.577:[initialize] TID: 90025402
+2022-03-15 12:32:29.577:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:32:29.577:[initialize] Timeout: 30
+2022-03-15 12:32:29.577:[initialize] COMMTYPE: 2
+2022-03-15 12:32:29.578:[initialize] PaymentType: Alipay
+2022-03-15 12:32:29.583:[SALE] Barcode: <284749554717073270>, amount: <1000>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-03-15 12:32:29.584:[SALE] XML_Req: 
+2022-03-15 12:32:29.587:[SALE] PaymentType: Alipay
+2022-03-15 12:32:29.587:[SALE] Start Send the message
+2022-03-15 12:32:29.587:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>1000</Amount><TraceNo>900029</TraceNo><CardNo>284749554717073270</CardNo><RefNo>220315123229</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>123229</TransTime></TxnReq>
+2022-03-15 12:32:35.210:[SALE] End Send the message
+2022-03-15 12:32:35.211:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00728</ApproCode><RefNo>220315123229</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000001000</Amount><TraceNo>900029</TraceNo><inVoiceNo></inVoiceNo><CardNo>284749554717073270</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>123235</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284037095</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:32:35.229:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>1000</Amount><TraceNo>900029</TraceNo><CardNo>284749554717073270</CardNo><RefNo>220315123229</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>123229</TransTime></TxnReq>
+2022-03-15 12:32:35.229:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00728</ApproCode><RefNo>220315123229</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000001000</Amount><TraceNo>900029</TraceNo><inVoiceNo></inVoiceNo><CardNo>284749554717073270</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>123235</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284037095</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:32:35.229:[GetResponse] errormessage: 
+2022-03-15 12:32:35.231:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315123229] [CardNo]:[284749554717073270] [TransType]:[SALE] [TransDate]:[20220315] [TransTime]:[123235] [ApproCode]:[H00728] [ERCRFN]:[Portaltesting123] [TransID]:[20220315194010800100160480284037095] [TraceNo]:[900029] [Amount]:[000000001000] [respondText]:[Success] 
+2022-03-15 12:32:42.606:[initialize] Gateway: 1C
+2022-03-15 12:32:42.606:[initialize] MID: 852999900000001
+2022-03-15 12:32:42.606:[initialize] TID: 90025402
+2022-03-15 12:32:42.606:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:32:42.607:[initialize] Timeout: 30
+2022-03-15 12:32:42.607:[initialize] COMMTYPE: 2
+2022-03-15 12:32:42.607:[initialize] PaymentType: Alipay
+2022-03-15 12:32:42.609:[Void] Barcode: <284749554717073270>, amount: <1000>, TraceNo: <900029>
+2022-03-15 12:32:44.612:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>1000</Amount><OldTraceNo>900029</OldTraceNo><TraceNo>900030</TraceNo><CardNo>284749554717073270</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>123242</TransTime></TxnReq>
+2022-03-15 12:32:44.613:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode></ApproCode><RefNo>220315123229</RefNo><ERCRFN></ERCRFN><Amount>000000001000</Amount><TraceNo>900030</TraceNo><inVoiceNo></inVoiceNo><CardNo>284749554717073270</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>123244</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284037095</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:32:44.614:[GetResponse] errormessage: 
+2022-03-15 12:32:44.614:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315123229] [CardNo]:[284749554717073270] [TransType]:[VOID] [TransDate]:[20220315] [TransTime]:[123244] [TransID]:[20220315194010800100160480284037095] [TraceNo]:[900030] [Amount]:[000000001000] [respondText]:[Success] 
+2022-03-15 12:33:02.697:[initialize] Gateway: 1C
+2022-03-15 12:33:02.697:[initialize] MID: 852999900000001
+2022-03-15 12:33:02.698:[initialize] TID: 90025402
+2022-03-15 12:33:02.698:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:33:02.698:[initialize] Timeout: 30
+2022-03-15 12:33:02.698:[initialize] COMMTYPE: 2
+2022-03-15 12:33:02.698:[initialize] PaymentType: Alipay
+2022-03-15 12:33:02.698:[SALE] Barcode: <289316689384530983>, amount: <2000>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-03-15 12:33:02.699:[SALE] XML_Req: 
+2022-03-15 12:33:02.699:[SALE] PaymentType: Alipay
+2022-03-15 12:33:02.700:[SALE] Start Send the message
+2022-03-15 12:33:02.700:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>2000</Amount><TraceNo>900031</TraceNo><CardNo>289316689384530983</CardNo><RefNo>220315123302</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>123302</TransTime></TxnReq>
+2022-03-15 12:33:06.971:[SALE] End Send the message
+2022-03-15 12:33:06.971:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00729</ApproCode><RefNo>220315123302</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000002000</Amount><TraceNo>900031</TraceNo><inVoiceNo></inVoiceNo><CardNo>289316689384530983</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>123307</TransTime><CouponAMT>000000000990</CouponAMT><NetAMT>000000001010</NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284100488</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:33:06.972:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>2000</Amount><TraceNo>900031</TraceNo><CardNo>289316689384530983</CardNo><RefNo>220315123302</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>123302</TransTime></TxnReq>
+2022-03-15 12:33:06.972:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00729</ApproCode><RefNo>220315123302</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000002000</Amount><TraceNo>900031</TraceNo><inVoiceNo></inVoiceNo><CardNo>289316689384530983</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>123307</TransTime><CouponAMT>000000000990</CouponAMT><NetAMT>000000001010</NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284100488</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:33:06.972:[GetResponse] errormessage: 
+2022-03-15 12:33:06.973:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315123302] [CardNo]:[289316689384530983] [TransType]:[SALE] [TransDate]:[20220315] [TransTime]:[123307] [ApproCode]:[H00729] [ERCRFN]:[Portaltesting123] [TransID]:[20220315194010800100160480284100488] [CouponAMT]:[000000000990] [NetAMT]:[000000001010] [TraceNo]:[900031] [Amount]:[000000002000] [respondText]:[Success] 
+2022-03-15 12:45:05.261:[initialize] Gateway: 1C
+2022-03-15 12:45:05.262:[initialize] MID: 852999900000001
+2022-03-15 12:45:05.262:[initialize] TID: 90025402
+2022-03-15 12:45:05.262:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:45:05.262:[initialize] Timeout: 30
+2022-03-15 12:45:05.262:[initialize] COMMTYPE: 2
+2022-03-15 12:45:05.262:[initialize] PaymentType: Alipay
+2022-03-15 12:45:05.265:[REFUND] RRN: <220315123302>, amount: <2000>, ERCRFN: <Portaltesting123>, approvalcode: <>
+2022-03-15 12:45:07.438:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>2000</Amount><OldRefNo>220315123302</OldRefNo><TraceNo>900032</TraceNo><ERCRFN>Portaltesting123</ERCRFN><TransType>REFUND</TransType><TransDate>20220315</TransDate><TransTime>124505</TransTime></TxnReq>
+2022-03-15 12:45:07.438:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>R00730</ApproCode><RefNo>220315124505</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000002000</Amount><TraceNo>900032</TraceNo><inVoiceNo></inVoiceNo><CardNo>280000000000000000</CardNo><TransType>REFUND</TransType><TransDate>20220315</TransDate><TransTime>124507</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284100488</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:45:07.438:[GetResponse] errormessage: 
+2022-03-15 12:45:07.438:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315124505] [CardNo]:[280000000000000000] [TransType]:[REFUND] [TransDate]:[20220315] [TransTime]:[124507] [ApproCode]:[R00730] [ERCRFN]:[Portaltesting123] [TransID]:[20220315194010800100160480284100488] [TraceNo]:[900032] [Amount]:[000000002000] [respondText]:[Success] 
+2022-03-15 12:47:15.960:[initialize] Gateway: 1C
+2022-03-15 12:47:15.960:[initialize] MID: 852999900000001
+2022-03-15 12:47:15.960:[initialize] TID: 90025402
+2022-03-15 12:47:15.960:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:47:15.960:[initialize] Timeout: 30
+2022-03-15 12:47:15.961:[initialize] COMMTYPE: 2
+2022-03-15 12:47:15.961:[initialize] PaymentType: Alipay
+2022-03-15 12:47:15.961:[SALE] Barcode: <283120273198911342>, amount: <100>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-03-15 12:47:15.961:[SALE] XML_Req: 
+2022-03-15 12:47:15.961:[SALE] PaymentType: Alipay
+2022-03-15 12:47:15.962:[SALE] Start Send the message
+2022-03-15 12:47:15.962:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>100</Amount><TraceNo>900033</TraceNo><CardNo>283120273198911342</CardNo><RefNo>220315124715</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>124715</TransTime></TxnReq>
+2022-03-15 12:47:20.176:[SALE] End Send the message
+2022-03-15 12:47:20.177:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00731</ApproCode><RefNo>220315124715</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000100</Amount><TraceNo>900033</TraceNo><inVoiceNo></inVoiceNo><CardNo>283120273198911342</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>124720</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284022890</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:47:20.178:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>100</Amount><TraceNo>900033</TraceNo><CardNo>283120273198911342</CardNo><RefNo>220315124715</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>124715</TransTime></TxnReq>
+2022-03-15 12:47:20.178:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00731</ApproCode><RefNo>220315124715</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000100</Amount><TraceNo>900033</TraceNo><inVoiceNo></inVoiceNo><CardNo>283120273198911342</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>124720</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284022890</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:47:20.178:[GetResponse] errormessage: 
+2022-03-15 12:47:20.178:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315124715] [CardNo]:[283120273198911342] [TransType]:[SALE] [TransDate]:[20220315] [TransTime]:[124720] [ApproCode]:[H00731] [ERCRFN]:[Portaltesting123] [TransID]:[20220315194010800100160480284022890] [TraceNo]:[900033] [Amount]:[000000000100] [respondText]:[Success] 
+2022-03-15 12:48:14.697:[initialize] Gateway: 1C
+2022-03-15 12:48:14.698:[initialize] MID: 852999900000001
+2022-03-15 12:48:14.698:[initialize] TID: 90025402
+2022-03-15 12:48:14.698:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:48:14.698:[initialize] Timeout: 30
+2022-03-15 12:48:14.698:[initialize] COMMTYPE: 2
+2022-03-15 12:48:14.699:[initialize] PaymentType: Alipay
+2022-03-15 12:48:14.699:[Void] Barcode: <283120273198911342>, amount: <100>, TraceNo: <900033>
+2022-03-15 12:48:16.206:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>100</Amount><OldTraceNo>900033</OldTraceNo><TraceNo>900034</TraceNo><CardNo>283120273198911342</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>124814</TransTime></TxnReq>
+2022-03-15 12:48:16.206:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode></ApproCode><RefNo>220315124715</RefNo><ERCRFN></ERCRFN><Amount>000000000100</Amount><TraceNo>900034</TraceNo><inVoiceNo></inVoiceNo><CardNo>283120273198911342</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>124816</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284022890</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:48:16.207:[GetResponse] errormessage: 
+2022-03-15 12:48:16.207:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315124715] [CardNo]:[283120273198911342] [TransType]:[VOID] [TransDate]:[20220315] [TransTime]:[124816] [TransID]:[20220315194010800100160480284022890] [TraceNo]:[900034] [Amount]:[000000000100] [respondText]:[Success] 
+2022-03-15 12:48:37.373:[initialize] Gateway: 1C
+2022-03-15 12:48:37.374:[initialize] MID: 852999900000001
+2022-03-15 12:48:37.374:[initialize] TID: 90025402
+2022-03-15 12:48:37.374:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:48:37.374:[initialize] Timeout: 30
+2022-03-15 12:48:37.374:[initialize] COMMTYPE: 2
+2022-03-15 12:48:37.374:[initialize] PaymentType: Alipay
+2022-03-15 12:48:37.375:[SALE] Barcode: <2287404467472349761>, amount: <200>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-03-15 12:48:37.375:[SALE] XML_Req: 
+2022-03-15 12:48:37.375:[SALE] PaymentType: Alipay
+2022-03-15 12:48:37.376:[SALE] Start Send the message
+2022-03-15 12:48:37.376:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>200</Amount><TraceNo>900035</TraceNo><CardNo>2287404467472349761</CardNo><RefNo>220315124837</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>124837</TransTime></TxnReq>
+2022-03-15 12:48:39.708:[SALE] End Send the message
+2022-03-15 12:48:39.709:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>25</RespCode><ApproCode></ApproCode><RefNo>220315124837</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000200</Amount><TraceNo>900035</TraceNo><inVoiceNo></inVoiceNo><CardNo>2287404467472349761</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>124839</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+2022-03-15 12:48:39.712:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>200</Amount><TraceNo>900035</TraceNo><CardNo>2287404467472349761</CardNo><RefNo>220315124837</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>124837</TransTime></TxnReq>
+2022-03-15 12:48:39.712:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>25</RespCode><ApproCode></ApproCode><RefNo>220315124837</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000200</Amount><TraceNo>900035</TraceNo><inVoiceNo></inVoiceNo><CardNo>2287404467472349761</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>124839</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+2022-03-15 12:48:39.713:[GetResponse] errormessage: 
+2022-03-15 12:48:39.714:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[25] [RefNo]:[220315124837] [CardNo]:[2287404467472349761] [TransType]:[SALE] [TransDate]:[20220315] [TransTime]:[124839] [ERCRFN]:[Portaltesting123] [TraceNo]:[900035] [Amount]:[000000000200] [respondText]:[Record Not Found] 
+2022-03-15 12:48:43.968:[initialize] Gateway: 1C
+2022-03-15 12:48:43.968:[initialize] MID: 852999900000001
+2022-03-15 12:48:43.968:[initialize] TID: 90025402
+2022-03-15 12:48:43.968:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:48:43.969:[initialize] Timeout: 30
+2022-03-15 12:48:43.969:[initialize] COMMTYPE: 2
+2022-03-15 12:48:43.969:[initialize] PaymentType: Alipay
+2022-03-15 12:48:43.969:[SALE] Barcode: <287404467472349761>, amount: <200>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-03-15 12:48:43.969:[SALE] XML_Req: 
+2022-03-15 12:48:43.970:[SALE] PaymentType: Alipay
+2022-03-15 12:48:43.970:[SALE] Start Send the message
+2022-03-15 12:48:43.971:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>200</Amount><TraceNo>900036</TraceNo><CardNo>287404467472349761</CardNo><RefNo>220315124843</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>124843</TransTime></TxnReq>
+2022-03-15 12:48:48.044:[SALE] End Send the message
+2022-03-15 12:48:48.044:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00732</ApproCode><RefNo>220315124843</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000200</Amount><TraceNo>900036</TraceNo><inVoiceNo></inVoiceNo><CardNo>287404467472349761</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>124848</TransTime><CouponAMT>000000000090</CouponAMT><NetAMT>000000000110</NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284016460</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:48:48.047:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>200</Amount><TraceNo>900036</TraceNo><CardNo>287404467472349761</CardNo><RefNo>220315124843</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>124843</TransTime></TxnReq>
+2022-03-15 12:48:48.048:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00732</ApproCode><RefNo>220315124843</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000200</Amount><TraceNo>900036</TraceNo><inVoiceNo></inVoiceNo><CardNo>287404467472349761</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>124848</TransTime><CouponAMT>000000000090</CouponAMT><NetAMT>000000000110</NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284016460</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:48:48.049:[GetResponse] errormessage: 
+2022-03-15 12:48:48.049:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315124843] [CardNo]:[287404467472349761] [TransType]:[SALE] [TransDate]:[20220315] [TransTime]:[124848] [ApproCode]:[H00732] [ERCRFN]:[Portaltesting123] [TransID]:[20220315194010800100160480284016460] [CouponAMT]:[000000000090] [NetAMT]:[000000000110] [TraceNo]:[900036] [Amount]:[000000000200] [respondText]:[Success] 
+2022-03-15 12:56:05.658:[initialize] Gateway: 1C
+2022-03-15 12:56:05.659:[initialize] MID: 852999900000001
+2022-03-15 12:56:05.659:[initialize] TID: 90025402
+2022-03-15 12:56:05.659:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:56:05.659:[initialize] Timeout: 30
+2022-03-15 12:56:05.660:[initialize] COMMTYPE: 2
+2022-03-15 12:56:05.660:[initialize] PaymentType: Alipay
+2022-03-15 12:56:05.660:[Void] Barcode: <287404467472349761>, amount: <200>, TraceNo: <900036>
+2022-03-15 12:56:06.955:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>200</Amount><OldTraceNo>900036</OldTraceNo><TraceNo>900037</TraceNo><CardNo>287404467472349761</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>125605</TransTime></TxnReq>
+2022-03-15 12:56:06.955:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode></ApproCode><RefNo>220315124843</RefNo><ERCRFN></ERCRFN><Amount>000000000200</Amount><TraceNo>900037</TraceNo><inVoiceNo></inVoiceNo><CardNo>287404467472349761</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>125606</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284016460</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:56:06.956:[GetResponse] errormessage: 
+2022-03-15 12:56:06.956:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315124843] [CardNo]:[287404467472349761] [TransType]:[VOID] [TransDate]:[20220315] [TransTime]:[125606] [TransID]:[20220315194010800100160480284016460] [TraceNo]:[900037] [Amount]:[000000000200] [respondText]:[Success] 
+2022-03-15 12:57:02.774:[initialize] Gateway: 1C
+2022-03-15 12:57:02.774:[initialize] MID: 852999900000001
+2022-03-15 12:57:02.774:[initialize] TID: 90025402
+2022-03-15 12:57:02.775:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:57:02.775:[initialize] Timeout: 30
+2022-03-15 12:57:02.775:[initialize] COMMTYPE: 2
+2022-03-15 12:57:02.775:[initialize] PaymentType: Alipay
+2022-03-15 12:57:02.775:[SALE] Barcode: <280962890930695504>, amount: <101>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-03-15 12:57:02.775:[SALE] XML_Req: 
+2022-03-15 12:57:02.776:[SALE] PaymentType: Alipay
+2022-03-15 12:57:02.776:[SALE] Start Send the message
+2022-03-15 12:57:02.776:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>101</Amount><TraceNo>900038</TraceNo><CardNo>280962890930695504</CardNo><RefNo>220315125702</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125702</TransTime></TxnReq>
+2022-03-15 12:57:06.165:[SALE] End Send the message
+2022-03-15 12:57:06.165:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00733</ApproCode><RefNo>220315125702</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000101</Amount><TraceNo>900038</TraceNo><inVoiceNo></inVoiceNo><CardNo>280962890930695504</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125706</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284051939</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:57:06.166:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>101</Amount><TraceNo>900038</TraceNo><CardNo>280962890930695504</CardNo><RefNo>220315125702</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125702</TransTime></TxnReq>
+2022-03-15 12:57:06.166:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00733</ApproCode><RefNo>220315125702</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000101</Amount><TraceNo>900038</TraceNo><inVoiceNo></inVoiceNo><CardNo>280962890930695504</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125706</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284051939</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:57:06.167:[GetResponse] errormessage: 
+2022-03-15 12:57:06.167:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315125702] [CardNo]:[280962890930695504] [TransType]:[SALE] [TransDate]:[20220315] [TransTime]:[125706] [ApproCode]:[H00733] [ERCRFN]:[Portaltesting123] [TransID]:[20220315194010800100160480284051939] [TraceNo]:[900038] [Amount]:[000000000101] [respondText]:[Success] 
+2022-03-15 12:57:16.376:[initialize] Gateway: 1C
+2022-03-15 12:57:16.377:[initialize] MID: 852999900000001
+2022-03-15 12:57:16.377:[initialize] TID: 90025402
+2022-03-15 12:57:16.377:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:57:16.377:[initialize] Timeout: 30
+2022-03-15 12:57:16.377:[initialize] COMMTYPE: 2
+2022-03-15 12:57:16.377:[initialize] PaymentType: Alipay
+2022-03-15 12:57:16.378:[Void] Barcode: <280962890930695504>, amount: <101>, TraceNo: <900038>
+2022-03-15 12:57:17.789:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>101</Amount><OldTraceNo>900038</OldTraceNo><TraceNo>900039</TraceNo><CardNo>280962890930695504</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>125716</TransTime></TxnReq>
+2022-03-15 12:57:17.789:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode></ApproCode><RefNo>220315125702</RefNo><ERCRFN></ERCRFN><Amount>000000000101</Amount><TraceNo>900039</TraceNo><inVoiceNo></inVoiceNo><CardNo>280962890930695504</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>125717</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284051939</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:57:17.789:[GetResponse] errormessage: 
+2022-03-15 12:57:17.789:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315125702] [CardNo]:[280962890930695504] [TransType]:[VOID] [TransDate]:[20220315] [TransTime]:[125717] [TransID]:[20220315194010800100160480284051939] [TraceNo]:[900039] [Amount]:[000000000101] [respondText]:[Success] 
+2022-03-15 12:57:52.140:[initialize] Gateway: 1C
+2022-03-15 12:57:52.140:[initialize] MID: 852999900000001
+2022-03-15 12:57:52.140:[initialize] TID: 90025402
+2022-03-15 12:57:52.141:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:57:52.141:[initialize] Timeout: 30
+2022-03-15 12:57:52.141:[initialize] COMMTYPE: 2
+2022-03-15 12:57:52.141:[initialize] PaymentType: Alipay
+2022-03-15 12:57:52.141:[SALE] Barcode: <288641628619463487>, amount: <102>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-03-15 12:57:52.141:[SALE] XML_Req: 
+2022-03-15 12:57:52.142:[SALE] PaymentType: Alipay
+2022-03-15 12:57:52.142:[SALE] Start Send the message
+2022-03-15 12:57:52.142:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>102</Amount><TraceNo>900040</TraceNo><CardNo>288641628619463487</CardNo><RefNo>220315125752</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125752</TransTime></TxnReq>
+2022-03-15 12:57:55.474:[SALE] End Send the message
+2022-03-15 12:57:55.475:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00734</ApproCode><RefNo>220315125752</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000102</Amount><TraceNo>900040</TraceNo><inVoiceNo></inVoiceNo><CardNo>288641628619463487</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125755</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284104204</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:57:55.478:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>102</Amount><TraceNo>900040</TraceNo><CardNo>288641628619463487</CardNo><RefNo>220315125752</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125752</TransTime></TxnReq>
+2022-03-15 12:57:55.478:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00734</ApproCode><RefNo>220315125752</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000102</Amount><TraceNo>900040</TraceNo><inVoiceNo></inVoiceNo><CardNo>288641628619463487</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125755</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284104204</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:57:55.479:[GetResponse] errormessage: 
+2022-03-15 12:57:55.479:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315125752] [CardNo]:[288641628619463487] [TransType]:[SALE] [TransDate]:[20220315] [TransTime]:[125755] [ApproCode]:[H00734] [ERCRFN]:[Portaltesting123] [TransID]:[20220315194010800100160480284104204] [TraceNo]:[900040] [Amount]:[000000000102] [respondText]:[Success] 
+2022-03-15 12:57:59.822:[initialize] Gateway: 1C
+2022-03-15 12:57:59.822:[initialize] MID: 852999900000001
+2022-03-15 12:57:59.822:[initialize] TID: 90025402
+2022-03-15 12:57:59.822:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:57:59.822:[initialize] Timeout: 30
+2022-03-15 12:57:59.823:[initialize] COMMTYPE: 2
+2022-03-15 12:57:59.823:[initialize] PaymentType: Alipay
+2022-03-15 12:57:59.823:[Void] Barcode: <288641628619463487>, amount: <102>, TraceNo: <900040>
+2022-03-15 12:58:01.131:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>102</Amount><OldTraceNo>900040</OldTraceNo><TraceNo>900041</TraceNo><CardNo>288641628619463487</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>125759</TransTime></TxnReq>
+2022-03-15 12:58:01.131:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode></ApproCode><RefNo>220315125752</RefNo><ERCRFN></ERCRFN><Amount>000000000102</Amount><TraceNo>900041</TraceNo><inVoiceNo></inVoiceNo><CardNo>288641628619463487</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>125801</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284104204</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:58:01.131:[GetResponse] errormessage: 
+2022-03-15 12:58:01.131:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315125752] [CardNo]:[288641628619463487] [TransType]:[VOID] [TransDate]:[20220315] [TransTime]:[125801] [TransID]:[20220315194010800100160480284104204] [TraceNo]:[900041] [Amount]:[000000000102] [respondText]:[Success] 
+2022-03-15 12:58:12.700:[initialize] Gateway: 1C
+2022-03-15 12:58:12.701:[initialize] MID: 852999900000001
+2022-03-15 12:58:12.701:[initialize] TID: 90025402
+2022-03-15 12:58:12.701:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:58:12.701:[initialize] Timeout: 30
+2022-03-15 12:58:12.701:[initialize] COMMTYPE: 2
+2022-03-15 12:58:12.701:[initialize] PaymentType: Alipay
+2022-03-15 12:58:12.701:[SALE] Barcode: <286722146790271539>, amount: <103>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-03-15 12:58:12.701:[SALE] XML_Req: 
+2022-03-15 12:58:12.702:[SALE] PaymentType: Alipay
+2022-03-15 12:58:12.702:[SALE] Start Send the message
+2022-03-15 12:58:12.702:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>103</Amount><TraceNo>900042</TraceNo><CardNo>286722146790271539</CardNo><RefNo>220315125812</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125812</TransTime></TxnReq>
+2022-03-15 12:58:16.403:[SALE] End Send the message
+2022-03-15 12:58:16.403:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00735</ApproCode><RefNo>220315125812</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000103</Amount><TraceNo>900042</TraceNo><inVoiceNo></inVoiceNo><CardNo>286722146790271539</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125816</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284077954</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:58:16.404:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>103</Amount><TraceNo>900042</TraceNo><CardNo>286722146790271539</CardNo><RefNo>220315125812</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125812</TransTime></TxnReq>
+2022-03-15 12:58:16.404:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00735</ApproCode><RefNo>220315125812</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000103</Amount><TraceNo>900042</TraceNo><inVoiceNo></inVoiceNo><CardNo>286722146790271539</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125816</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284077954</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:58:16.404:[GetResponse] errormessage: 
+2022-03-15 12:58:16.404:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315125812] [CardNo]:[286722146790271539] [TransType]:[SALE] [TransDate]:[20220315] [TransTime]:[125816] [ApproCode]:[H00735] [ERCRFN]:[Portaltesting123] [TransID]:[20220315194010800100160480284077954] [TraceNo]:[900042] [Amount]:[000000000103] [respondText]:[Success] 
+2022-03-15 12:58:20.263:[initialize] Gateway: 1C
+2022-03-15 12:58:20.263:[initialize] MID: 852999900000001
+2022-03-15 12:58:20.264:[initialize] TID: 90025402
+2022-03-15 12:58:20.264:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:58:20.264:[initialize] Timeout: 30
+2022-03-15 12:58:20.264:[initialize] COMMTYPE: 2
+2022-03-15 12:58:20.264:[initialize] PaymentType: Alipay
+2022-03-15 12:58:20.265:[Void] Barcode: <286722146790271539>, amount: <103>, TraceNo: <900042>
+2022-03-15 12:58:21.479:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>103</Amount><OldTraceNo>900042</OldTraceNo><TraceNo>900043</TraceNo><CardNo>286722146790271539</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>125820</TransTime></TxnReq>
+2022-03-15 12:58:21.479:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode></ApproCode><RefNo>220315125812</RefNo><ERCRFN></ERCRFN><Amount>000000000103</Amount><TraceNo>900043</TraceNo><inVoiceNo></inVoiceNo><CardNo>286722146790271539</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>125821</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284077954</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:58:21.479:[GetResponse] errormessage: 
+2022-03-15 12:58:21.480:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315125812] [CardNo]:[286722146790271539] [TransType]:[VOID] [TransDate]:[20220315] [TransTime]:[125821] [TransID]:[20220315194010800100160480284077954] [TraceNo]:[900043] [Amount]:[000000000103] [respondText]:[Success] 
+2022-03-15 12:58:35.455:[initialize] Gateway: 1C
+2022-03-15 12:58:35.455:[initialize] MID: 852999900000001
+2022-03-15 12:58:35.455:[initialize] TID: 90025402
+2022-03-15 12:58:35.455:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:58:35.455:[initialize] Timeout: 30
+2022-03-15 12:58:35.456:[initialize] COMMTYPE: 2
+2022-03-15 12:58:35.456:[initialize] PaymentType: Alipay
+2022-03-15 12:58:35.456:[SALE] Barcode: <285904465972199761>, amount: <104>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-03-15 12:58:35.456:[SALE] XML_Req: 
+2022-03-15 12:58:35.456:[SALE] PaymentType: Alipay
+2022-03-15 12:58:35.457:[SALE] Start Send the message
+2022-03-15 12:58:35.457:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>104</Amount><TraceNo>900044</TraceNo><CardNo>285904465972199761</CardNo><RefNo>220315125835</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125835</TransTime></TxnReq>
+2022-03-15 12:58:38.716:[SALE] End Send the message
+2022-03-15 12:58:38.717:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00736</ApproCode><RefNo>220315125835</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000104</Amount><TraceNo>900044</TraceNo><inVoiceNo></inVoiceNo><CardNo>285904465972199761</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125838</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284053267</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:58:38.720:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>104</Amount><TraceNo>900044</TraceNo><CardNo>285904465972199761</CardNo><RefNo>220315125835</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125835</TransTime></TxnReq>
+2022-03-15 12:58:38.721:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00736</ApproCode><RefNo>220315125835</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000104</Amount><TraceNo>900044</TraceNo><inVoiceNo></inVoiceNo><CardNo>285904465972199761</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125838</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284053267</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:58:38.721:[GetResponse] errormessage: 
+2022-03-15 12:58:38.721:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315125835] [CardNo]:[285904465972199761] [TransType]:[SALE] [TransDate]:[20220315] [TransTime]:[125838] [ApproCode]:[H00736] [ERCRFN]:[Portaltesting123] [TransID]:[20220315194010800100160480284053267] [TraceNo]:[900044] [Amount]:[000000000104] [respondText]:[Success] 
+2022-03-15 12:58:44.551:[initialize] Gateway: 1C
+2022-03-15 12:58:44.551:[initialize] MID: 852999900000001
+2022-03-15 12:58:44.551:[initialize] TID: 90025402
+2022-03-15 12:58:44.551:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:58:44.552:[initialize] Timeout: 30
+2022-03-15 12:58:44.552:[initialize] COMMTYPE: 2
+2022-03-15 12:58:44.552:[initialize] PaymentType: Alipay
+2022-03-15 12:58:44.552:[Void] Barcode: <285904465972199761>, amount: <104>, TraceNo: <900044>
+2022-03-15 12:58:45.701:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>104</Amount><OldTraceNo>900044</OldTraceNo><TraceNo>900045</TraceNo><CardNo>285904465972199761</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>125844</TransTime></TxnReq>
+2022-03-15 12:58:45.701:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode></ApproCode><RefNo>220315125835</RefNo><ERCRFN></ERCRFN><Amount>000000000104</Amount><TraceNo>900045</TraceNo><inVoiceNo></inVoiceNo><CardNo>285904465972199761</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>125845</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284053267</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:58:45.701:[GetResponse] errormessage: 
+2022-03-15 12:58:45.701:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315125835] [CardNo]:[285904465972199761] [TransType]:[VOID] [TransDate]:[20220315] [TransTime]:[125845] [TransID]:[20220315194010800100160480284053267] [TraceNo]:[900045] [Amount]:[000000000104] [respondText]:[Success] 
+2022-03-15 12:58:56.558:[initialize] Gateway: 1C
+2022-03-15 12:58:56.558:[initialize] MID: 852999900000001
+2022-03-15 12:58:56.558:[initialize] TID: 90025402
+2022-03-15 12:58:56.558:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:58:56.558:[initialize] Timeout: 30
+2022-03-15 12:58:56.559:[initialize] COMMTYPE: 2
+2022-03-15 12:58:56.559:[initialize] PaymentType: Alipay
+2022-03-15 12:58:56.559:[SALE] Barcode: <280151180129614433>, amount: <110>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-03-15 12:58:56.559:[SALE] XML_Req: 
+2022-03-15 12:58:56.559:[SALE] PaymentType: Alipay
+2022-03-15 12:58:56.560:[SALE] Start Send the message
+2022-03-15 12:58:56.560:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>110</Amount><TraceNo>900046</TraceNo><CardNo>280151180129614433</CardNo><RefNo>220315125856</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125856</TransTime></TxnReq>
+2022-03-15 12:58:59.636:[SALE] End Send the message
+2022-03-15 12:58:59.636:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00737</ApproCode><RefNo>220315125856</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000110</Amount><TraceNo>900046</TraceNo><inVoiceNo></inVoiceNo><CardNo>280151180129614433</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125859</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284034315</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:58:59.637:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>110</Amount><TraceNo>900046</TraceNo><CardNo>280151180129614433</CardNo><RefNo>220315125856</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125856</TransTime></TxnReq>
+2022-03-15 12:58:59.638:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00737</ApproCode><RefNo>220315125856</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000110</Amount><TraceNo>900046</TraceNo><inVoiceNo></inVoiceNo><CardNo>280151180129614433</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125859</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284034315</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:58:59.638:[GetResponse] errormessage: 
+2022-03-15 12:58:59.638:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315125856] [CardNo]:[280151180129614433] [TransType]:[SALE] [TransDate]:[20220315] [TransTime]:[125859] [ApproCode]:[H00737] [ERCRFN]:[Portaltesting123] [TransID]:[20220315194010800100160480284034315] [TraceNo]:[900046] [Amount]:[000000000110] [respondText]:[Success] 
+2022-03-15 12:59:06.837:[initialize] Gateway: 1C
+2022-03-15 12:59:06.837:[initialize] MID: 852999900000001
+2022-03-15 12:59:06.837:[initialize] TID: 90025402
+2022-03-15 12:59:06.838:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:59:06.838:[initialize] Timeout: 30
+2022-03-15 12:59:06.838:[initialize] COMMTYPE: 2
+2022-03-15 12:59:06.838:[initialize] PaymentType: Alipay
+2022-03-15 12:59:06.838:[Void] Barcode: <280151180129614433>, amount: <110>, TraceNo: <900046>
+2022-03-15 12:59:08.036:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>110</Amount><OldTraceNo>900046</OldTraceNo><TraceNo>900047</TraceNo><CardNo>280151180129614433</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>125906</TransTime></TxnReq>
+2022-03-15 12:59:08.036:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode></ApproCode><RefNo>220315125856</RefNo><ERCRFN></ERCRFN><Amount>000000000110</Amount><TraceNo>900047</TraceNo><inVoiceNo></inVoiceNo><CardNo>280151180129614433</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>125908</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284034315</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:59:08.036:[GetResponse] errormessage: 
+2022-03-15 12:59:08.036:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315125856] [CardNo]:[280151180129614433] [TransType]:[VOID] [TransDate]:[20220315] [TransTime]:[125908] [TransID]:[20220315194010800100160480284034315] [TraceNo]:[900047] [Amount]:[000000000110] [respondText]:[Success] 
+2022-03-15 12:59:16.557:[initialize] Gateway: 1C
+2022-03-15 12:59:16.557:[initialize] MID: 852999900000001
+2022-03-15 12:59:16.557:[initialize] TID: 90025402
+2022-03-15 12:59:16.557:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:59:16.557:[initialize] Timeout: 30
+2022-03-15 12:59:16.557:[initialize] COMMTYPE: 2
+2022-03-15 12:59:16.558:[initialize] PaymentType: Alipay
+2022-03-15 12:59:16.558:[SALE] Barcode: <283889783857987293>, amount: <120>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-03-15 12:59:16.558:[SALE] XML_Req: 
+2022-03-15 12:59:16.558:[SALE] PaymentType: Alipay
+2022-03-15 12:59:16.559:[SALE] Start Send the message
+2022-03-15 12:59:16.559:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>120</Amount><TraceNo>900048</TraceNo><CardNo>283889783857987293</CardNo><RefNo>220315125916</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125916</TransTime></TxnReq>
+2022-03-15 12:59:20.321:[SALE] End Send the message
+2022-03-15 12:59:20.321:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00738</ApproCode><RefNo>220315125916</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000120</Amount><TraceNo>900048</TraceNo><inVoiceNo></inVoiceNo><CardNo>283889783857987293</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125920</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284050474</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:59:20.322:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>120</Amount><TraceNo>900048</TraceNo><CardNo>283889783857987293</CardNo><RefNo>220315125916</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125916</TransTime></TxnReq>
+2022-03-15 12:59:20.322:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00738</ApproCode><RefNo>220315125916</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000120</Amount><TraceNo>900048</TraceNo><inVoiceNo></inVoiceNo><CardNo>283889783857987293</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125920</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284050474</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:59:20.323:[GetResponse] errormessage: 
+2022-03-15 12:59:20.323:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315125916] [CardNo]:[283889783857987293] [TransType]:[SALE] [TransDate]:[20220315] [TransTime]:[125920] [ApproCode]:[H00738] [ERCRFN]:[Portaltesting123] [TransID]:[20220315194010800100160480284050474] [TraceNo]:[900048] [Amount]:[000000000120] [respondText]:[Success] 
+2022-03-15 12:59:26.996:[initialize] Gateway: 1C
+2022-03-15 12:59:26.997:[initialize] MID: 852999900000001
+2022-03-15 12:59:26.997:[initialize] TID: 90025402
+2022-03-15 12:59:26.997:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:59:26.997:[initialize] Timeout: 30
+2022-03-15 12:59:26.998:[initialize] COMMTYPE: 2
+2022-03-15 12:59:26.998:[initialize] PaymentType: Alipay
+2022-03-15 12:59:26.998:[Void] Barcode: <283889783857987293>, amount: <120>, TraceNo: <900048>
+2022-03-15 12:59:28.058:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>120</Amount><OldTraceNo>900048</OldTraceNo><TraceNo>900049</TraceNo><CardNo>283889783857987293</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>125926</TransTime></TxnReq>
+2022-03-15 12:59:28.058:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode></ApproCode><RefNo>220315125916</RefNo><ERCRFN></ERCRFN><Amount>000000000120</Amount><TraceNo>900049</TraceNo><inVoiceNo></inVoiceNo><CardNo>283889783857987293</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>125928</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284050474</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:59:28.058:[GetResponse] errormessage: 
+2022-03-15 12:59:28.058:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315125916] [CardNo]:[283889783857987293] [TransType]:[VOID] [TransDate]:[20220315] [TransTime]:[125928] [TransID]:[20220315194010800100160480284050474] [TraceNo]:[900049] [Amount]:[000000000120] [respondText]:[Success] 
+2022-03-15 12:59:39.238:[initialize] Gateway: 1C
+2022-03-15 12:59:39.238:[initialize] MID: 852999900000001
+2022-03-15 12:59:39.238:[initialize] TID: 90025402
+2022-03-15 12:59:39.238:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:59:39.238:[initialize] Timeout: 30
+2022-03-15 12:59:39.239:[initialize] COMMTYPE: 2
+2022-03-15 12:59:39.239:[initialize] PaymentType: Alipay
+2022-03-15 12:59:39.239:[SALE] Barcode: <287275977243326812>, amount: <130>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-03-15 12:59:39.239:[SALE] XML_Req: 
+2022-03-15 12:59:39.240:[SALE] PaymentType: Alipay
+2022-03-15 12:59:39.240:[SALE] Start Send the message
+2022-03-15 12:59:39.240:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>130</Amount><TraceNo>900050</TraceNo><CardNo>287275977243326812</CardNo><RefNo>220315125939</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125939</TransTime></TxnReq>
+2022-03-15 12:59:42.527:[SALE] End Send the message
+2022-03-15 12:59:42.527:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00739</ApproCode><RefNo>220315125939</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000130</Amount><TraceNo>900050</TraceNo><inVoiceNo></inVoiceNo><CardNo>287275977243326812</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125942</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284120124</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:59:42.529:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>130</Amount><TraceNo>900050</TraceNo><CardNo>287275977243326812</CardNo><RefNo>220315125939</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125939</TransTime></TxnReq>
+2022-03-15 12:59:42.529:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00739</ApproCode><RefNo>220315125939</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000130</Amount><TraceNo>900050</TraceNo><inVoiceNo></inVoiceNo><CardNo>287275977243326812</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>125942</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284120124</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:59:42.529:[GetResponse] errormessage: 
+2022-03-15 12:59:42.529:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315125939] [CardNo]:[287275977243326812] [TransType]:[SALE] [TransDate]:[20220315] [TransTime]:[125942] [ApproCode]:[H00739] [ERCRFN]:[Portaltesting123] [TransID]:[20220315194010800100160480284120124] [TraceNo]:[900050] [Amount]:[000000000130] [respondText]:[Success] 
+2022-03-15 12:59:47.654:[initialize] Gateway: 1C
+2022-03-15 12:59:47.654:[initialize] MID: 852999900000001
+2022-03-15 12:59:47.655:[initialize] TID: 90025402
+2022-03-15 12:59:47.655:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 12:59:47.655:[initialize] Timeout: 30
+2022-03-15 12:59:47.655:[initialize] COMMTYPE: 2
+2022-03-15 12:59:47.655:[initialize] PaymentType: Alipay
+2022-03-15 12:59:47.655:[Void] Barcode: <287275977243326812>, amount: <130>, TraceNo: <900050>
+2022-03-15 12:59:48.867:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>130</Amount><OldTraceNo>900050</OldTraceNo><TraceNo>900051</TraceNo><CardNo>287275977243326812</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>125947</TransTime></TxnReq>
+2022-03-15 12:59:48.867:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode></ApproCode><RefNo>220315125939</RefNo><ERCRFN></ERCRFN><Amount>000000000130</Amount><TraceNo>900051</TraceNo><inVoiceNo></inVoiceNo><CardNo>287275977243326812</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>125948</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284120124</TransID><PayID></PayID></TxnResp>
+2022-03-15 12:59:48.867:[GetResponse] errormessage: 
+2022-03-15 12:59:48.867:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315125939] [CardNo]:[287275977243326812] [TransType]:[VOID] [TransDate]:[20220315] [TransTime]:[125948] [TransID]:[20220315194010800100160480284120124] [TraceNo]:[900051] [Amount]:[000000000130] [respondText]:[Success] 
+2022-03-15 13:00:06.842:[initialize] Gateway: 1C
+2022-03-15 13:00:06.842:[initialize] MID: 852999900000001
+2022-03-15 13:00:06.842:[initialize] TID: 90025402
+2022-03-15 13:00:06.842:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 13:00:06.843:[initialize] Timeout: 30
+2022-03-15 13:00:06.843:[initialize] COMMTYPE: 2
+2022-03-15 13:00:06.843:[initialize] PaymentType: Alipay
+2022-03-15 13:00:06.843:[Void] Barcode: <287275977243326812>, amount: <130>, TraceNo: <900051>
+2022-03-15 13:00:06.893:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>130</Amount><OldTraceNo>900051</OldTraceNo><TraceNo>900052</TraceNo><CardNo>287275977243326812</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>130006</TransTime></TxnReq>
+2022-03-15 13:00:06.893:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>25</RespCode><ApproCode></ApproCode><RefNo>220315900051</RefNo><ERCRFN></ERCRFN><Amount>000000000130</Amount><TraceNo>900052</TraceNo><inVoiceNo></inVoiceNo><CardNo>287275977243326812</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>130006</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID></TransID><PayID></PayID></TxnResp>
+2022-03-15 13:00:06.893:[GetResponse] errormessage: 
+2022-03-15 13:00:06.894:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[25] [RefNo]:[220315900051] [CardNo]:[287275977243326812] [TransType]:[VOID] [TransDate]:[20220315] [TransTime]:[130006] [TraceNo]:[900052] [Amount]:[000000000130] [respondText]:[Record Not Found] 
+2022-03-15 13:00:17.765:[initialize] Gateway: 1C
+2022-03-15 13:00:17.765:[initialize] MID: 852999900000001
+2022-03-15 13:00:17.765:[initialize] TID: 90025402
+2022-03-15 13:00:17.765:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 13:00:17.766:[initialize] Timeout: 30
+2022-03-15 13:00:17.766:[initialize] COMMTYPE: 2
+2022-03-15 13:00:17.766:[initialize] PaymentType: Alipay
+2022-03-15 13:00:17.766:[SALE] Barcode: <286375456343236860>, amount: <131>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-03-15 13:00:17.766:[SALE] XML_Req: 
+2022-03-15 13:00:17.767:[SALE] PaymentType: Alipay
+2022-03-15 13:00:17.767:[SALE] Start Send the message
+2022-03-15 13:00:17.767:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>131</Amount><TraceNo>900053</TraceNo><CardNo>286375456343236860</CardNo><RefNo>220315130017</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130017</TransTime></TxnReq>
+2022-03-15 13:00:21.842:[SALE] End Send the message
+2022-03-15 13:00:21.842:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00740</ApproCode><RefNo>220315130017</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000131</Amount><TraceNo>900053</TraceNo><inVoiceNo></inVoiceNo><CardNo>286375456343236860</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130021</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284091725</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:00:21.843:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>131</Amount><TraceNo>900053</TraceNo><CardNo>286375456343236860</CardNo><RefNo>220315130017</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130017</TransTime></TxnReq>
+2022-03-15 13:00:21.843:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00740</ApproCode><RefNo>220315130017</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000131</Amount><TraceNo>900053</TraceNo><inVoiceNo></inVoiceNo><CardNo>286375456343236860</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130021</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284091725</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:00:21.843:[GetResponse] errormessage: 
+2022-03-15 13:00:21.843:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315130017] [CardNo]:[286375456343236860] [TransType]:[SALE] [TransDate]:[20220315] [TransTime]:[130021] [ApproCode]:[H00740] [ERCRFN]:[Portaltesting123] [TransID]:[20220315194010800100160480284091725] [TraceNo]:[900053] [Amount]:[000000000131] [respondText]:[Success] 
+2022-03-15 13:00:31.064:[initialize] Gateway: 1C
+2022-03-15 13:00:31.065:[initialize] MID: 852999900000001
+2022-03-15 13:00:31.065:[initialize] TID: 90025402
+2022-03-15 13:00:31.065:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 13:00:31.065:[initialize] Timeout: 30
+2022-03-15 13:00:31.065:[initialize] COMMTYPE: 2
+2022-03-15 13:00:31.065:[initialize] PaymentType: Alipay
+2022-03-15 13:00:31.066:[Void] Barcode: <286375456343236860>, amount: <131>, TraceNo: <900053>
+2022-03-15 13:00:32.509:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>131</Amount><OldTraceNo>900053</OldTraceNo><TraceNo>900054</TraceNo><CardNo>286375456343236860</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>130031</TransTime></TxnReq>
+2022-03-15 13:00:32.510:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode></ApproCode><RefNo>220315130017</RefNo><ERCRFN></ERCRFN><Amount>000000000131</Amount><TraceNo>900054</TraceNo><inVoiceNo></inVoiceNo><CardNo>286375456343236860</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>130032</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284091725</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:00:32.510:[GetResponse] errormessage: 
+2022-03-15 13:00:32.511:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315130017] [CardNo]:[286375456343236860] [TransType]:[VOID] [TransDate]:[20220315] [TransTime]:[130032] [TransID]:[20220315194010800100160480284091725] [TraceNo]:[900054] [Amount]:[000000000131] [respondText]:[Success] 
+2022-03-15 13:00:43.038:[initialize] Gateway: 1C
+2022-03-15 13:00:43.038:[initialize] MID: 852999900000001
+2022-03-15 13:00:43.038:[initialize] TID: 90025402
+2022-03-15 13:00:43.038:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 13:00:43.039:[initialize] Timeout: 30
+2022-03-15 13:00:43.039:[initialize] COMMTYPE: 2
+2022-03-15 13:00:43.039:[initialize] PaymentType: Alipay
+2022-03-15 13:00:43.039:[SALE] Barcode: <281984551952797770>, amount: <140>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-03-15 13:00:43.039:[SALE] XML_Req: 
+2022-03-15 13:00:43.040:[SALE] PaymentType: Alipay
+2022-03-15 13:00:43.040:[SALE] Start Send the message
+2022-03-15 13:00:43.041:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>140</Amount><TraceNo>900055</TraceNo><CardNo>281984551952797770</CardNo><RefNo>220315130043</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130043</TransTime></TxnReq>
+2022-03-15 13:00:46.989:[SALE] End Send the message
+2022-03-15 13:00:46.989:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00741</ApproCode><RefNo>220315130043</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000140</Amount><TraceNo>900055</TraceNo><inVoiceNo></inVoiceNo><CardNo>281984551952797770</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130047</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284021068</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:00:46.990:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>140</Amount><TraceNo>900055</TraceNo><CardNo>281984551952797770</CardNo><RefNo>220315130043</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130043</TransTime></TxnReq>
+2022-03-15 13:00:46.991:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00741</ApproCode><RefNo>220315130043</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000140</Amount><TraceNo>900055</TraceNo><inVoiceNo></inVoiceNo><CardNo>281984551952797770</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130047</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284021068</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:00:46.991:[GetResponse] errormessage: 
+2022-03-15 13:00:46.991:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315130043] [CardNo]:[281984551952797770] [TransType]:[SALE] [TransDate]:[20220315] [TransTime]:[130047] [ApproCode]:[H00741] [ERCRFN]:[Portaltesting123] [TransID]:[20220315194010800100160480284021068] [TraceNo]:[900055] [Amount]:[000000000140] [respondText]:[Success] 
+2022-03-15 13:01:00.163:[initialize] Gateway: 1C
+2022-03-15 13:01:00.164:[initialize] MID: 852999900000001
+2022-03-15 13:01:00.164:[initialize] TID: 90025402
+2022-03-15 13:01:00.164:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 13:01:00.164:[initialize] Timeout: 30
+2022-03-15 13:01:00.164:[initialize] COMMTYPE: 2
+2022-03-15 13:01:00.164:[initialize] PaymentType: Alipay
+2022-03-15 13:01:00.165:[Void] Barcode: <281984551952797770>, amount: <140>, TraceNo: <900055>
+2022-03-15 13:01:01.469:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>140</Amount><OldTraceNo>900055</OldTraceNo><TraceNo>900056</TraceNo><CardNo>281984551952797770</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>130100</TransTime></TxnReq>
+2022-03-15 13:01:01.470:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode></ApproCode><RefNo>220315130043</RefNo><ERCRFN></ERCRFN><Amount>000000000140</Amount><TraceNo>900056</TraceNo><inVoiceNo></inVoiceNo><CardNo>281984551952797770</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>130101</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284021068</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:01:01.471:[GetResponse] errormessage: 
+2022-03-15 13:01:01.471:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315130043] [CardNo]:[281984551952797770] [TransType]:[VOID] [TransDate]:[20220315] [TransTime]:[130101] [TransID]:[20220315194010800100160480284021068] [TraceNo]:[900056] [Amount]:[000000000140] [respondText]:[Success] 
+2022-03-15 13:01:10.991:[initialize] Gateway: 1C
+2022-03-15 13:01:10.991:[initialize] MID: 852999900000001
+2022-03-15 13:01:10.991:[initialize] TID: 90025402
+2022-03-15 13:01:10.992:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 13:01:10.992:[initialize] Timeout: 30
+2022-03-15 13:01:10.992:[initialize] COMMTYPE: 2
+2022-03-15 13:01:10.992:[initialize] PaymentType: Alipay
+2022-03-15 13:01:10.992:[SALE] Barcode: <285193605161118685>, amount: <150>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-03-15 13:01:10.992:[SALE] XML_Req: 
+2022-03-15 13:01:10.993:[SALE] PaymentType: Alipay
+2022-03-15 13:01:10.993:[SALE] Start Send the message
+2022-03-15 13:01:10.993:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>150</Amount><TraceNo>900057</TraceNo><CardNo>285193605161118685</CardNo><RefNo>220315130110</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130110</TransTime></TxnReq>
+2022-03-15 13:01:14.645:[SALE] End Send the message
+2022-03-15 13:01:14.646:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00742</ApproCode><RefNo>220315130110</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000150</Amount><TraceNo>900057</TraceNo><inVoiceNo></inVoiceNo><CardNo>285193605161118685</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130114</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480283996975</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:01:14.646:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>150</Amount><TraceNo>900057</TraceNo><CardNo>285193605161118685</CardNo><RefNo>220315130110</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130110</TransTime></TxnReq>
+2022-03-15 13:01:14.647:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00742</ApproCode><RefNo>220315130110</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000150</Amount><TraceNo>900057</TraceNo><inVoiceNo></inVoiceNo><CardNo>285193605161118685</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130114</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480283996975</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:01:14.647:[GetResponse] errormessage: 
+2022-03-15 13:01:14.647:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315130110] [CardNo]:[285193605161118685] [TransType]:[SALE] [TransDate]:[20220315] [TransTime]:[130114] [ApproCode]:[H00742] [ERCRFN]:[Portaltesting123] [TransID]:[20220315194010800100160480283996975] [TraceNo]:[900057] [Amount]:[000000000150] [respondText]:[Success] 
+2022-03-15 13:01:20.460:[initialize] Gateway: 1C
+2022-03-15 13:01:20.460:[initialize] MID: 852999900000001
+2022-03-15 13:01:20.460:[initialize] TID: 90025402
+2022-03-15 13:01:20.460:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 13:01:20.461:[initialize] Timeout: 30
+2022-03-15 13:01:20.461:[initialize] COMMTYPE: 2
+2022-03-15 13:01:20.461:[initialize] PaymentType: Alipay
+2022-03-15 13:01:20.461:[Void] Barcode: <285193605161118685>, amount: <150>, TraceNo: <900057>
+2022-03-15 13:01:21.857:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>150</Amount><OldTraceNo>900057</OldTraceNo><TraceNo>900058</TraceNo><CardNo>285193605161118685</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>130120</TransTime></TxnReq>
+2022-03-15 13:01:21.857:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode></ApproCode><RefNo>220315130110</RefNo><ERCRFN></ERCRFN><Amount>000000000150</Amount><TraceNo>900058</TraceNo><inVoiceNo></inVoiceNo><CardNo>285193605161118685</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>130121</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480283996975</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:01:21.858:[GetResponse] errormessage: 
+2022-03-15 13:01:21.859:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315130110] [CardNo]:[285193605161118685] [TransType]:[VOID] [TransDate]:[20220315] [TransTime]:[130121] [TransID]:[20220315194010800100160480283996975] [TraceNo]:[900058] [Amount]:[000000000150] [respondText]:[Success] 
+2022-03-15 13:01:44.946:[initialize] Gateway: 1C
+2022-03-15 13:01:44.946:[initialize] MID: 852999900000001
+2022-03-15 13:01:44.946:[initialize] TID: 90025402
+2022-03-15 13:01:44.946:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 13:01:44.947:[initialize] Timeout: 30
+2022-03-15 13:01:44.947:[initialize] COMMTYPE: 2
+2022-03-15 13:01:44.947:[initialize] PaymentType: Alipay
+2022-03-15 13:01:44.947:[SALE] Barcode: <287508187576359133>, amount: <160>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-03-15 13:01:44.947:[SALE] XML_Req: 
+2022-03-15 13:01:44.948:[SALE] PaymentType: Alipay
+2022-03-15 13:01:44.948:[SALE] Start Send the message
+2022-03-15 13:01:44.948:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>160</Amount><TraceNo>900059</TraceNo><CardNo>287508187576359133</CardNo><RefNo>220315130144</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130144</TransTime></TxnReq>
+2022-03-15 13:01:48.767:[SALE] End Send the message
+2022-03-15 13:01:48.768:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00743</ApproCode><RefNo>220315130144</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000160</Amount><TraceNo>900059</TraceNo><inVoiceNo></inVoiceNo><CardNo>287508187576359133</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130148</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284013428</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:01:48.769:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>160</Amount><TraceNo>900059</TraceNo><CardNo>287508187576359133</CardNo><RefNo>220315130144</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130144</TransTime></TxnReq>
+2022-03-15 13:01:48.769:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00743</ApproCode><RefNo>220315130144</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000160</Amount><TraceNo>900059</TraceNo><inVoiceNo></inVoiceNo><CardNo>287508187576359133</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130148</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284013428</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:01:48.769:[GetResponse] errormessage: 
+2022-03-15 13:01:48.770:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315130144] [CardNo]:[287508187576359133] [TransType]:[SALE] [TransDate]:[20220315] [TransTime]:[130148] [ApproCode]:[H00743] [ERCRFN]:[Portaltesting123] [TransID]:[20220315194010800100160480284013428] [TraceNo]:[900059] [Amount]:[000000000160] [respondText]:[Success] 
+2022-03-15 13:01:57.896:[initialize] Gateway: 1C
+2022-03-15 13:01:57.896:[initialize] MID: 852999900000001
+2022-03-15 13:01:57.896:[initialize] TID: 90025402
+2022-03-15 13:01:57.896:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 13:01:57.897:[initialize] Timeout: 30
+2022-03-15 13:01:57.897:[initialize] COMMTYPE: 2
+2022-03-15 13:01:57.897:[initialize] PaymentType: Alipay
+2022-03-15 13:01:57.897:[Void] Barcode: <287508187576359133>, amount: <160>, TraceNo: <900059>
+2022-03-15 13:01:59.166:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>160</Amount><OldTraceNo>900059</OldTraceNo><TraceNo>900060</TraceNo><CardNo>287508187576359133</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>130157</TransTime></TxnReq>
+2022-03-15 13:01:59.166:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode></ApproCode><RefNo>220315130144</RefNo><ERCRFN></ERCRFN><Amount>000000000160</Amount><TraceNo>900060</TraceNo><inVoiceNo></inVoiceNo><CardNo>287508187576359133</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>130159</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284013428</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:01:59.167:[GetResponse] errormessage: 
+2022-03-15 13:01:59.167:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315130144] [CardNo]:[287508187576359133] [TransType]:[VOID] [TransDate]:[20220315] [TransTime]:[130159] [TransID]:[20220315194010800100160480284013428] [TraceNo]:[900060] [Amount]:[000000000160] [respondText]:[Success] 
+2022-03-15 13:02:10.410:[initialize] Gateway: 1C
+2022-03-15 13:02:10.411:[initialize] MID: 852999900000001
+2022-03-15 13:02:10.411:[initialize] TID: 90025402
+2022-03-15 13:02:10.411:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 13:02:10.411:[initialize] Timeout: 30
+2022-03-15 13:02:10.411:[initialize] COMMTYPE: 2
+2022-03-15 13:02:10.411:[initialize] PaymentType: Alipay
+2022-03-15 13:02:10.412:[SALE] Barcode: <287987387955397053>, amount: <170>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-03-15 13:02:10.412:[SALE] XML_Req: 
+2022-03-15 13:02:10.412:[SALE] PaymentType: Alipay
+2022-03-15 13:02:10.412:[SALE] Start Send the message
+2022-03-15 13:02:10.413:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>170</Amount><TraceNo>900061</TraceNo><CardNo>287987387955397053</CardNo><RefNo>220315130210</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130210</TransTime></TxnReq>
+2022-03-15 13:02:14.198:[SALE] End Send the message
+2022-03-15 13:02:14.199:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00744</ApproCode><RefNo>220315130210</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000170</Amount><TraceNo>900061</TraceNo><inVoiceNo></inVoiceNo><CardNo>287987387955397053</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130214</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284011435</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:02:14.202:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>170</Amount><TraceNo>900061</TraceNo><CardNo>287987387955397053</CardNo><RefNo>220315130210</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130210</TransTime></TxnReq>
+2022-03-15 13:02:14.202:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00744</ApproCode><RefNo>220315130210</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000170</Amount><TraceNo>900061</TraceNo><inVoiceNo></inVoiceNo><CardNo>287987387955397053</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130214</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284011435</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:02:14.203:[GetResponse] errormessage: 
+2022-03-15 13:02:14.203:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315130210] [CardNo]:[287987387955397053] [TransType]:[SALE] [TransDate]:[20220315] [TransTime]:[130214] [ApproCode]:[H00744] [ERCRFN]:[Portaltesting123] [TransID]:[20220315194010800100160480284011435] [TraceNo]:[900061] [Amount]:[000000000170] [respondText]:[Success] 
+2022-03-15 13:02:18.705:[initialize] Gateway: 1C
+2022-03-15 13:02:18.705:[initialize] MID: 852999900000001
+2022-03-15 13:02:18.705:[initialize] TID: 90025402
+2022-03-15 13:02:18.706:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 13:02:18.706:[initialize] Timeout: 30
+2022-03-15 13:02:18.706:[initialize] COMMTYPE: 2
+2022-03-15 13:02:18.706:[initialize] PaymentType: Alipay
+2022-03-15 13:02:18.706:[Void] Barcode: <287987387955397053>, amount: <170>, TraceNo: <900061>
+2022-03-15 13:02:19.857:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>170</Amount><OldTraceNo>900061</OldTraceNo><TraceNo>900062</TraceNo><CardNo>287987387955397053</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>130218</TransTime></TxnReq>
+2022-03-15 13:02:19.857:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode></ApproCode><RefNo>220315130210</RefNo><ERCRFN></ERCRFN><Amount>000000000170</Amount><TraceNo>900062</TraceNo><inVoiceNo></inVoiceNo><CardNo>287987387955397053</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>130219</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284011435</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:02:19.857:[GetResponse] errormessage: 
+2022-03-15 13:02:19.857:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315130210] [CardNo]:[287987387955397053] [TransType]:[VOID] [TransDate]:[20220315] [TransTime]:[130219] [TransID]:[20220315194010800100160480284011435] [TraceNo]:[900062] [Amount]:[000000000170] [respondText]:[Success] 
+2022-03-15 13:02:31.077:[initialize] Gateway: 1C
+2022-03-15 13:02:31.078:[initialize] MID: 852999900000001
+2022-03-15 13:02:31.078:[initialize] TID: 90025402
+2022-03-15 13:02:31.078:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 13:02:31.078:[initialize] Timeout: 30
+2022-03-15 13:02:31.078:[initialize] COMMTYPE: 2
+2022-03-15 13:02:31.079:[initialize] PaymentType: Alipay
+2022-03-15 13:02:31.079:[SALE] Barcode: <285961485939195463>, amount: <210>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-03-15 13:02:31.079:[SALE] XML_Req: 
+2022-03-15 13:02:31.080:[SALE] PaymentType: Alipay
+2022-03-15 13:02:31.080:[SALE] Start Send the message
+2022-03-15 13:02:31.080:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>210</Amount><TraceNo>900063</TraceNo><CardNo>285961485939195463</CardNo><RefNo>220315130231</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130231</TransTime></TxnReq>
+2022-03-15 13:02:34.331:[SALE] End Send the message
+2022-03-15 13:02:34.331:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00745</ApproCode><RefNo>220315130231</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000210</Amount><TraceNo>900063</TraceNo><inVoiceNo></inVoiceNo><CardNo>285961485939195463</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130234</TransTime><CouponAMT>000000000090</CouponAMT><NetAMT>000000000120</NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284105699</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:02:34.332:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>210</Amount><TraceNo>900063</TraceNo><CardNo>285961485939195463</CardNo><RefNo>220315130231</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130231</TransTime></TxnReq>
+2022-03-15 13:02:34.332:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00745</ApproCode><RefNo>220315130231</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000210</Amount><TraceNo>900063</TraceNo><inVoiceNo></inVoiceNo><CardNo>285961485939195463</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130234</TransTime><CouponAMT>000000000090</CouponAMT><NetAMT>000000000120</NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284105699</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:02:34.332:[GetResponse] errormessage: 
+2022-03-15 13:02:34.333:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315130231] [CardNo]:[285961485939195463] [TransType]:[SALE] [TransDate]:[20220315] [TransTime]:[130234] [ApproCode]:[H00745] [ERCRFN]:[Portaltesting123] [TransID]:[20220315194010800100160480284105699] [CouponAMT]:[000000000090] [NetAMT]:[000000000120] [TraceNo]:[900063] [Amount]:[000000000210] [respondText]:[Success] 
+2022-03-15 13:02:47.488:[initialize] Gateway: 1C
+2022-03-15 13:02:47.488:[initialize] MID: 852999900000001
+2022-03-15 13:02:47.488:[initialize] TID: 90025402
+2022-03-15 13:02:47.488:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 13:02:47.489:[initialize] Timeout: 30
+2022-03-15 13:02:47.489:[initialize] COMMTYPE: 2
+2022-03-15 13:02:47.489:[initialize] PaymentType: Alipay
+2022-03-15 13:02:47.489:[Void] Barcode: <285961485939195463>, amount: <210>, TraceNo: <900063>
+2022-03-15 13:02:48.560:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>210</Amount><OldTraceNo>900063</OldTraceNo><TraceNo>900064</TraceNo><CardNo>285961485939195463</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>130247</TransTime></TxnReq>
+2022-03-15 13:02:48.560:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode></ApproCode><RefNo>220315130231</RefNo><ERCRFN></ERCRFN><Amount>000000000210</Amount><TraceNo>900064</TraceNo><inVoiceNo></inVoiceNo><CardNo>285961485939195463</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>130248</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284105699</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:02:48.561:[GetResponse] errormessage: 
+2022-03-15 13:02:48.561:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315130231] [CardNo]:[285961485939195463] [TransType]:[VOID] [TransDate]:[20220315] [TransTime]:[130248] [TransID]:[20220315194010800100160480284105699] [TraceNo]:[900064] [Amount]:[000000000210] [respondText]:[Success] 
+2022-03-15 13:03:40.663:[initialize] Gateway: 1C
+2022-03-15 13:03:40.663:[initialize] MID: 852999900000001
+2022-03-15 13:03:40.663:[initialize] TID: 90025402
+2022-03-15 13:03:40.663:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 13:03:40.664:[initialize] Timeout: 30
+2022-03-15 13:03:40.664:[initialize] COMMTYPE: 2
+2022-03-15 13:03:40.664:[initialize] PaymentType: Alipay
+2022-03-15 13:03:40.664:[SALE] Barcode: <289115209183510845>, amount: <190>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-03-15 13:03:40.664:[SALE] XML_Req: 
+2022-03-15 13:03:40.665:[SALE] PaymentType: Alipay
+2022-03-15 13:03:40.665:[SALE] Start Send the message
+2022-03-15 13:03:40.665:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>190</Amount><TraceNo>900065</TraceNo><CardNo>289115209183510845</CardNo><RefNo>220315130340</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130340</TransTime></TxnReq>
+2022-03-15 13:03:44.417:[SALE] End Send the message
+2022-03-15 13:03:44.418:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00746</ApproCode><RefNo>220315130340</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000190</Amount><TraceNo>900065</TraceNo><inVoiceNo></inVoiceNo><CardNo>289115209183510845</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130344</TransTime><CouponAMT>000000000090</CouponAMT><NetAMT>000000000100</NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284074261</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:03:44.418:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>190</Amount><TraceNo>900065</TraceNo><CardNo>289115209183510845</CardNo><RefNo>220315130340</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130340</TransTime></TxnReq>
+2022-03-15 13:03:44.419:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00746</ApproCode><RefNo>220315130340</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000190</Amount><TraceNo>900065</TraceNo><inVoiceNo></inVoiceNo><CardNo>289115209183510845</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>130344</TransTime><CouponAMT>000000000090</CouponAMT><NetAMT>000000000100</NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284074261</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:03:44.419:[GetResponse] errormessage: 
+2022-03-15 13:03:44.419:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315130340] [CardNo]:[289115209183510845] [TransType]:[SALE] [TransDate]:[20220315] [TransTime]:[130344] [ApproCode]:[H00746] [ERCRFN]:[Portaltesting123] [TransID]:[20220315194010800100160480284074261] [CouponAMT]:[000000000090] [NetAMT]:[000000000100] [TraceNo]:[900065] [Amount]:[000000000190] [respondText]:[Success] 
+2022-03-15 13:03:52.038:[initialize] Gateway: 1C
+2022-03-15 13:03:52.038:[initialize] MID: 852999900000001
+2022-03-15 13:03:52.038:[initialize] TID: 90025402
+2022-03-15 13:03:52.038:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 13:03:52.039:[initialize] Timeout: 30
+2022-03-15 13:03:52.039:[initialize] COMMTYPE: 2
+2022-03-15 13:03:52.039:[initialize] PaymentType: Alipay
+2022-03-15 13:03:52.039:[Void] Barcode: <289115209183510845>, amount: <190>, TraceNo: <900065>
+2022-03-15 13:03:53.098:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>190</Amount><OldTraceNo>900065</OldTraceNo><TraceNo>900066</TraceNo><CardNo>289115209183510845</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>130352</TransTime></TxnReq>
+2022-03-15 13:03:53.098:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode></ApproCode><RefNo>220315130340</RefNo><ERCRFN></ERCRFN><Amount>000000000190</Amount><TraceNo>900066</TraceNo><inVoiceNo></inVoiceNo><CardNo>289115209183510845</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>130353</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480284074261</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:03:53.098:[GetResponse] errormessage: 
+2022-03-15 13:03:53.098:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315130340] [CardNo]:[289115209183510845] [TransType]:[VOID] [TransDate]:[20220315] [TransTime]:[130353] [TransID]:[20220315194010800100160480284074261] [TraceNo]:[900066] [Amount]:[000000000190] [respondText]:[Success] 
+2022-03-15 13:40:21.405:[initialize] Gateway: 1C
+2022-03-15 13:40:21.406:[initialize] MID: 852999900000001
+2022-03-15 13:40:21.406:[initialize] TID: 90025402
+2022-03-15 13:40:21.406:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 13:40:21.406:[initialize] Timeout: 30
+2022-03-15 13:40:21.406:[initialize] COMMTYPE: 2
+2022-03-15 13:40:21.406:[initialize] PaymentType: Alipay
+2022-03-15 13:40:21.407:[SALE] Barcode: <283695223663968847>, amount: <200>, ecrRefNumber: <Portaltesting123>, OrdDesc: <>, NumOfProduct: <0>
+2022-03-15 13:40:21.407:[SALE] XML_Req: 
+2022-03-15 13:40:21.407:[SALE] PaymentType: Alipay
+2022-03-15 13:40:21.408:[SALE] Start Send the message
+2022-03-15 13:40:21.408:[SALE] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>200</Amount><TraceNo>900067</TraceNo><CardNo>283695223663968847</CardNo><RefNo>220315134021</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>134021</TransTime></TxnReq>
+2022-03-15 13:40:25.915:[SALE] End Send the message
+2022-03-15 13:40:25.916:[SALE] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00747</ApproCode><RefNo>220315134021</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000200</Amount><TraceNo>900067</TraceNo><inVoiceNo></inVoiceNo><CardNo>283695223663968847</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>134025</TransTime><CouponAMT>000000000090</CouponAMT><NetAMT>000000000110</NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480283996984</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:40:25.920:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>200</Amount><TraceNo>900067</TraceNo><CardNo>283695223663968847</CardNo><RefNo>220315134021</RefNo><ERCRFN>Portaltesting123</ERCRFN><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>134021</TransTime></TxnReq>
+2022-03-15 13:40:25.921:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode>H00747</ApproCode><RefNo>220315134021</RefNo><ERCRFN>Portaltesting123</ERCRFN><Amount>000000000200</Amount><TraceNo>900067</TraceNo><inVoiceNo></inVoiceNo><CardNo>283695223663968847</CardNo><TransType>SALE</TransType><TransDate>20220315</TransDate><TransTime>134025</TransTime><CouponAMT>000000000090</CouponAMT><NetAMT>000000000110</NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480283996984</TransID><PayID></PayID></TxnResp>
+2022-03-15 13:40:25.922:[GetResponse] errormessage: 
+2022-03-15 13:40:25.922:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315134021] [CardNo]:[283695223663968847] [TransType]:[SALE] [TransDate]:[20220315] [TransTime]:[134025] [ApproCode]:[H00747] [ERCRFN]:[Portaltesting123] [TransID]:[20220315194010800100160480283996984] [CouponAMT]:[000000000090] [NetAMT]:[000000000110] [TraceNo]:[900067] [Amount]:[000000000200] [respondText]:[Success] 
+2022-03-15 14:16:45.708:[initialize] Gateway: 1C
+2022-03-15 14:16:45.708:[initialize] MID: 852999900000001
+2022-03-15 14:16:45.708:[initialize] TID: 90025402
+2022-03-15 14:16:45.709:[initialize] URL: https://218.255.129.21:6443/payment
+2022-03-15 14:16:45.709:[initialize] Timeout: 30
+2022-03-15 14:16:45.709:[initialize] COMMTYPE: 2
+2022-03-15 14:16:45.709:[initialize] PaymentType: Alipay
+2022-03-15 14:16:45.709:[Void] Barcode: <283695223663968847>, amount: <200>, TraceNo: <900067>
+2022-03-15 14:16:47.402:[GetResponse] RawRequest: <?xml version="1.0" encoding="utf-8"?><TxnReq><MID>852999900000001</MID><TID>90025402</TID><Amount>200</Amount><OldTraceNo>900067</OldTraceNo><TraceNo>900068</TraceNo><CardNo>283695223663968847</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>141645</TransTime></TxnReq>
+2022-03-15 14:16:47.402:[GetResponse] RawResponse: <?xml version="1.0" encoding="UTF-8"?><TxnResp><MID>852999900000001</MID><TID>90025402</TID><RespCode>00</RespCode><ApproCode></ApproCode><RefNo>220315134021</RefNo><ERCRFN></ERCRFN><Amount>000000000200</Amount><TraceNo>900068</TraceNo><inVoiceNo></inVoiceNo><CardNo>283695223663968847</CardNo><TransType>VOID</TransType><TransDate>20220315</TransDate><TransTime>141647</TransTime><CouponAMT></CouponAMT><NetAMT></NetAMT><OffsetAMT></OffsetAMT><TransID>20220315194010800100160480283996984</TransID><PayID></PayID></TxnResp>
+2022-03-15 14:16:47.403:[GetResponse] errormessage: 
+2022-03-15 14:16:47.403:[GetResponse] XML_Resp: [MID]:[852999900000001] [TID]:[90025402] [RespCode]:[00] [RefNo]:[220315134021] [CardNo]:[283695223663968847] [TransType]:[VOID] [TransDate]:[20220315] [TransTime]:[141647] [TransID]:[20220315194010800100160480283996984] [TraceNo]:[900068] [Amount]:[000000000200] [respondText]:[Success] 

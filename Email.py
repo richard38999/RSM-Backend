@@ -69,9 +69,9 @@ def sentEmail(
         for i in range(5):
             with smtplib.SMTP(host=Email_info[0][1], port=int(Email_info[0][2])) as smtp:  # 設定SMTP伺服器
                 try:
-                    log.info('Start ehlo')
-                    smtp.ehlo()  # 驗證SMTP伺服器
-                    log.info('ehlo Success')
+                    # log.info('Start ehlo')
+                    # smtp.ehlo()  # 驗證SMTP伺服器
+                    # log.info('ehlo Success')
                     log.info('Start starttls')
                     smtp.starttls()  # 建立加密傳輸
                     log.info('starttls Success')

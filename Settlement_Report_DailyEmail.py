@@ -1,5 +1,6 @@
 import os
 import datetime as datetime
+from zipfile import ZipFile
 import SFTP
 import Logger
 import Configuration
@@ -42,7 +43,7 @@ def main():
     # check if now is the right time to sent report ot not?
     SentResult = Utility.SQL_script(f'select DISTINCT * from Settlement_Report_DailyEmail_Result Result LEFT JOIN Settlement_Report_DailyEmail_Config Config on Result.id = Config.id where Result.date = "{TransDatetime_8_digits}";')
     for i in SentResult:
-        if i[2] is 'N':
+        if i[2] == 'N':
             if int(time.strftime("%H%M", time.localtime())) >= int(i[6]):
                 filename = parseDateFormat(fileFormat=(i[10]), TransDatetime_8_digits=TransDatetime_8_digits, TransDatetime_6_digits=TransDatetime_6_digits)
                 remotepath = i[9] + '/' + filename
@@ -56,6 +57,11 @@ def main():
                     if not os.path.exists(os.getcwd() + f'\\Settlement_Report\\Settlement_Report_DailyEmail\\{i[4]}_{i[8]}'):
                         os.mkdir(os.getcwd() + f'\\Settlement_Report\\Settlement_Report_DailyEmail\\{i[4]}_{i[8]}')
                     localpath = os.getcwd() + f'\\Settlement_Report\\Settlement_Report_DailyEmail\\{i[4]}_{i[8]}\\' + filename
+                    if i[12] == 'Y': # ZIP Attachement
+                        ziplocalpath = f'{localpath}.zip'
+                        with ZipFile(ziplocalpath, 'w') as myzip:
+                            myzip.write(localpath)
+                        localpath = ziplocalpath
                     sftp.getSftpFile(SFTP_info[int(i[11])], remotepath=remotepath, localpath=localpath)
                     MerchantemailContent = \
                     f"                   ---- Please do not reply to this email as this email address is used for broadcasting messages to clients only. ---\r\n\r\n"\
