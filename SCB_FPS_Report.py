@@ -48,7 +48,6 @@ def main():
         Settlement_Date = sys.argv[1]
     else: # python SCB_FPS_Report.py
         Settlement_Date = datetime.datetime.now().strftime("%Y%m%d")
-    Settlement_Date = '20220321'
     Transaction_Date = (datetime.datetime.strptime(Settlement_Date,"%Y%m%d") + datetime.timedelta(days=-1)).strftime("%Y%m%d")
     email_Transaction_date = (datetime.datetime.strptime(Settlement_Date, '%Y%m%d') + datetime.timedelta(days=-1)).strftime(
         "%d/%m/%Y")
