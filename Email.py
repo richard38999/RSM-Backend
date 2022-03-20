@@ -39,10 +39,10 @@ def sentEmail(
             email["From"] = Email_from  # 寄件者
         # to_addrs = ''
         if type(Email_to) == str and len(Email_to) > 0:
-            email['to'] = Email_to  # 收件者
+            email['To'] = Email_to  # 收件者
         elif type(Email_to) == list and len(Email_to) != 0:
-            email['to'] = ';'.join(Email_to)   # 收件者
-        # email['to'] = to_addrs
+            email['To'] = ';'.join(Email_to)   # 收件者
+        # email['To'] = to_addrs
         if isHTML:
             email.attach(MIMEText(_text=Email_content, _subtype='html', _charset='utf-8'))  # 郵件HTML內容
         else:

@@ -3,6 +3,7 @@ import datetime
 import sqlite3
 import time
 import requests
+import zipfile
 import Configuration
 import Crypto
 from Crypto.PublicKey import RSA
@@ -660,3 +661,14 @@ def packJsonMsg(obj):
             retuenStr[name] = value
             # retuenStr.append({name: value})
     return retuenStr
+
+def unzip_file(file_path=None, extract_folder=None, password=None):
+    result = False
+    with zipfile.ZipFile(file_path) as file:
+        # password you pass must be in the bytes you converted 'str' into 'bytes'
+        if password != None:
+            file.extractall(path=extract_folder, pwd=bytes(password, 'utf-8'))
+        else:
+            file.extractall(path=extract_folder, pwd=password)
+        result = True
+    return result
