@@ -1339,6 +1339,8 @@ def VMP_Transaction(Gateway):
                 VMP_req.pay_scene = 'WXWEB'
             elif service == 'service.alipay.wap.PreOrder':
                 VMP_req.pay_scene = 'WAP'
+            elif service == 'service.unionpay.online.web.PreOrder':
+                VMP_req.pay_scene = 'ONLINE_WEB'
             else:
                 VMP_req.pay_scene = 'WEB'
             VMP_req.return_url = return_url

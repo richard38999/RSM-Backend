@@ -48,6 +48,7 @@ def main():
         Settlement_Date = sys.argv[1]
     else: # python SCB_FPS_Report.py
         Settlement_Date = datetime.datetime.now().strftime("%Y%m%d")
+    # Settlement_Date = '20220318'
     Transaction_Date = (datetime.datetime.strptime(Settlement_Date,"%Y%m%d") + datetime.timedelta(days=-1)).strftime("%Y%m%d")
     email_Transaction_date = (datetime.datetime.strptime(Settlement_Date, '%Y%m%d') + datetime.timedelta(days=-1)).strftime(
         "%d/%m/%Y")
@@ -115,10 +116,11 @@ def get_email_attachment():
                 log.info(f'Cc: {email_Cc}')
                 email_Bcc = msg["bcc"]
                 log.info(f'Bcc: {email_Bcc}')
-                email_subject, encoding = decode_header(msg["Subject"])[0]
-                if isinstance(email_subject, bytes):
-                    # if it's a bytes, decode to str
+                email_subject, encoding = decode_header(msg["Subject"].replace('[finance] ', ''))[0]
+                # email_subject, encoding = decode_header(msg["Subject"])
+                if encoding:
                     email_subject = email_subject.decode(encoding,'ignore')
+
                 log.info(f'Subject: {email_subject}')
                 # check email subject
                 search_subject = f'FPS Fund Collection Report - {email_Transaction_date}'
