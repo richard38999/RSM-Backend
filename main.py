@@ -1341,6 +1341,8 @@ def VMP_Transaction(Gateway):
                 VMP_req.pay_scene = 'WAP'
             elif service == 'service.unionpay.online.web.PreOrder':
                 VMP_req.pay_scene = 'ONLINE_WEB'
+            elif service == 'service.jetco.wap.PreOrder':
+                VMP_req.pay_scene = 'WAP'
             else:
                 VMP_req.pay_scene = 'WEB'
             VMP_req.return_url = return_url
@@ -1363,6 +1365,10 @@ def VMP_Transaction(Gateway):
                 VMP_req.wallet = 'ATOME'
             elif str(PaymentType).upper() == 'UNIONPAY':
                 VMP_req.wallet = 'UNIONPAY'
+            elif str(PaymentType).upper() == 'JETCO':
+                VMP_req.wallet = 'JETCOHK'
+            elif str(PaymentType).upper() == 'OCT':
+                VMP_req.wallet = 'OCT'
             signStr = VMP.packSignStr(VMP_req, SecretCode)
             log.info('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
@@ -1376,7 +1382,14 @@ def VMP_Transaction(Gateway):
             VMP_req.out_refund_no = refund_no
             VMP_req.out_trade_no = out_trade_no
             VMP_req.payType = PaymentType
-            VMP_req.pay_scene = 'WEB'
+            if service == 'service.alipay.wap.Refund':
+                VMP_req.pay_scene = 'WAP'
+            elif service == 'service.unionpay.online.web.Refund':
+                VMP_req.pay_scene = 'ONLINE_WEB'
+            elif service == 'service.jetco.wap.Refund':
+                VMP_req.pay_scene = 'WAP'
+            else:
+                VMP_req.pay_scene = 'WEB'
             VMP_req.reason = body
             VMP_req.return_amount = amount
             if NewInterFace and str(PaymentType).upper() == 'ALIPAY':
@@ -1394,6 +1407,10 @@ def VMP_Transaction(Gateway):
                 VMP_req.wallet = 'ATOME'
             elif str(PaymentType).upper() == 'UNIONPAY':
                 VMP_req.wallet = 'UNIONPAY'
+            elif str(PaymentType).upper() == 'JETCO':
+                VMP_req.wallet = 'JETCOHK'
+            elif str(PaymentType).upper() == 'OCT':
+                VMP_req.wallet = 'OCT'
             signStr = VMP.packSignStr(VMP_req, SecretCode)
             log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
