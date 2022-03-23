@@ -116,7 +116,8 @@ def get_email_attachment():
                 log.info(f'Cc: {email_Cc}')
                 email_Bcc = msg["bcc"]
                 log.info(f'Bcc: {email_Bcc}')
-                email_subject, encoding = decode_header(msg["Subject"].replace('[finance] ', ''))[0]
+                index = msg["Subject"].find('=?')
+                email_subject, encoding = decode_header(msg["Subject"][index:])[0]
                 # email_subject, encoding = decode_header(msg["Subject"])
                 if encoding:
                     email_subject = email_subject.decode(encoding,'ignore')
@@ -161,6 +162,8 @@ def get_email_attachment():
                                 # unzip file attachment
                                 if not Utility.unzip_file(file_path=attachment_filepath, extract_folder=extract_folder, password='62352233'):
                                     notify_email_content = 'unzip attachment failed'
+                                    imap.close()
+                                    imap.logout()
                                     return False
                                 has_attachment = True
                     result = True
