@@ -169,7 +169,7 @@ def get_email_attachment():
                     result = True
                     exit_flag = True
                     break
-                else: # no attachment
+                else: # no attachment 123
                     result = True
                     exit_flag = True
                     has_attachment = False
