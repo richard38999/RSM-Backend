@@ -169,6 +169,10 @@ def get_email_attachment():
                     result = True
                     exit_flag = True
                     break
+                else: # no attachment
+                    result = True
+                    exit_flag = True
+                    has_attachment = False
                 if exit_flag:
                     break
             if exit_flag:
