@@ -172,18 +172,39 @@ class Report():
 
         lastSPID = None
         Sheet_ONE = sorted(Sheet_ONE, key=itemgetter(0))
-        Sheet_ONE.insert(0,['SPID', 'Sum_of_UsageAmount', 'Sum_of_UsageCount'])
-        for i in range(len(Sheet_ONE)):
-            if i == 0:
-                continue
+        for sheet in Sheet_ONE:
             if lastSPID == None:
-                lastSPID = int(Sheet_ONE[i][0])
+                lastSPID = int(sheet[0]) # 36001
                 continue
-            if int(Sheet_ONE[i][0]) - lastSPID > 1:
-                Sheet_ONE.insert(i,[str(lastSPID + 1), 0, 0])
-                lastSPID = int(Sheet_ONE[i+1][0])
+            while int(sheet[0]) - lastSPID > 1:
+                Sheet_ONE.append([str(lastSPID + 1), 0, 0])
+                lastSPID = lastSPID + 1
             else:
-                lastSPID = int(Sheet_ONE[i][0])
+                lastSPID = lastSPID + 1
+
+        Sheet_ONE = sorted(Sheet_ONE, key=itemgetter(0))
+        Sheet_ONE.insert(0, ['SPID', 'Sum_of_UsageAmount', 'Sum_of_UsageCount'])
+        # for i in range(len(Sheet_ONE)):
+        #     if i == 0:
+        #         continue
+        #     if lastSPID == None:
+        #         lastSPID = int(Sheet_ONE[i][0])
+        #         continue
+        #
+        #     if int(Sheet_ONE[i][0]) - lastSPID > 1:
+        #         for j in range(1,(int(Sheet_ONE[i][0]) - lastSPID) + 1):
+        #             Sheet_ONE.insert(i, [str(lastSPID + 1), 0, 0])
+        #             lastSPID = int(Sheet_ONE[i + 1][0])
+        #             # lastSPID = lastSPID + 1
+        #     else:
+        #         lastSPID = lastSPID + 1
+
+            # if int(Sheet_ONE[i][0]) - lastSPID > 1:
+            #     Sheet_ONE.insert(i,[str(lastSPID + 1), 0, 0])
+            #     lastSPID = int(Sheet_ONE[i+1][0])
+            # else:
+            #     # lastSPID = int(Sheet_ONE[i][0])
+            #     lastSPID = lastSPID + 1
         returnmessage = {'Sheet_ONE': Sheet_ONE, 'Sheet_TWO': Sheet_TWO}
         status = True
         return [status, returnmessage]
