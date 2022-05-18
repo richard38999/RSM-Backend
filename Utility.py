@@ -593,10 +593,10 @@ def insert_VMP_Txn(DateTime='', username='', GatewayName='', API_Type='', Paymen
     cursor.close()
     conn.close()
 
-def check_offline_refund_txn(GateName='', MID='', RRN=''):
+def check_offline_refund_txn(GateName='', MID='', TID='', RRN=''):
     conn = sqlite3.connect(db_name)
     cursor = conn.cursor()
-    cmd = f'select * from Offline_Txn_DB where Gateway_Name = "{GateName}" and MID = "{MID}" and RRN = "{RRN}" and Response_Code = "00" and TransType = "REFUND" or TransType = "ADMINREFUND";'
+    cmd = f'select * from Offline_Txn_DB where Gateway_Name = "{GateName}" and MID = "{MID}" and TID = "{TID}" and RRN = "{RRN}" and Response_Code = "00" and TransType = "REFUND" or TransType = "ADMINREFUND";'
     cursor.execute(cmd)
     returnmData = cursor.fetchall()
     # print(values)

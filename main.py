@@ -396,7 +396,7 @@ def Transaction(Till_Number, TransactionType):
     # check refund record
     if confirm_Refund != 'Y':
         if TransactionType == 'REFUND' or TransactionType == 'ADMINREFUND':
-            Refund_Result = Utility.check_offline_refund_txn(GateName=Till_Number, MID=MID, RRN=RRN)
+            Refund_Result = Utility.check_offline_refund_txn(GateName=Till_Number, MID=MID, TID=TID, RRN=RRN)
             if Refund_Result != []:
                 for i in range(len(Refund_Result)):
                     data.append({'ID': i, 'DateTime': Refund_Result[i][0], 'UserName': Refund_Result[i][1], 'MID': Refund_Result[i][3], 'TID': Refund_Result[i][4], 'Amount': Refund_Result[i][6], 'RRN': Refund_Result[i][7], 'ResponseCode': f'{Refund_Result[i][9]}({Refund_Result[i][10]})', 'Email_Subject': Refund_Result[i][11], 'Remark': Refund_Result[i][12]})
@@ -1316,7 +1316,7 @@ def VMP_Transaction(Gateway):
             RawRequest = VMP.packGetMsg(EOPG_req, URL)
     elif APIType == 'WEB':
         if return_url == '':
-            return_url = URL + '/VMP/returnSuccess'
+            return_url = f'{URL}/{Gateway}/returnSuccess'
         URL += f'/{Gateway}/Servlet/'
         if str(TransactionType).upper() == 'SALE':
             VMP_req = VMP.VMP_Request()
@@ -1437,7 +1437,7 @@ def VMP_Transaction(Gateway):
             pass
     elif APIType == 'JSAPI':
         if return_url == '':
-            return_url = URL + '/VMP/returnSuccess'
+            return_url = f'{URL}/{Gateway}/returnSuccess'
         URL += f'/{Gateway}/Servlet/'
         if str(TransactionType).upper() == 'SALE':
             VMP_req = VMP.VMP_Request()
@@ -1517,7 +1517,7 @@ def VMP_Transaction(Gateway):
             pass
     elif APIType == 'QRCode':
         if return_url == '':
-            return_url = URL + '/VMP/returnSuccess'
+            return_url = f'{URL}/{Gateway}/returnSuccess'
         URL += f'/{Gateway}/Servlet/'
         if str(TransactionType).upper() == 'SALE':
             VMP_req = VMP.VMP_Request()
@@ -1719,7 +1719,7 @@ def VMP_Transaction(Gateway):
             pass
     elif APIType == 'Cashier':
         if return_url == '':
-            return_url = URL + '/VMP/returnSuccess'
+            return_url = f'{URL}/{Gateway}/returnSuccess'
         URL += f'/{Gateway}/Servlet/'
         if str(TransactionType).upper() == 'SALE':
             VMP_req = VMP.VMP_Request()
