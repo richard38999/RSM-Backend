@@ -657,23 +657,23 @@ def BatchFor(Till_Number, BatchFor):
                 if (i == 0):
                     data.append(['User_Confirm_Key','SecretCode','Amount','APIType', 'Payment Type','out_trade_no','eft_trade_no', 'Respond Code/Result','Email Subject','Remark'])
                     continue
-                User_Confirm_Key = str(table.cell_value(i, 0)).replace(' ', '')
-                SecretCode = str(table.cell_value(i, 1)).replace(' ', '')
+                User_Confirm_Key = str(table.cell_value(i, 0)).replace(' ', '').strip()
+                SecretCode = str(table.cell_value(i, 1)).replace(' ', '').strip()
                 if table.cell(i, 2).ctype == 2:
-                    amount = str(round(float(table.cell_value(i, 2)),2))
+                    amount = str(round(float(table.cell_value(i, 2)),2)).strip()
                 else:
-                    amount = str(round(float(table.cell_value(i, 2)), 2))
+                    amount = str(round(float(table.cell_value(i, 2)), 2)).strip()
                 # amount = str(table.cell_value(i, 2)).replace(' ', '')
-                APIType = str(table.cell_value(i, 3)).replace(' ', '')
-                PaymentType = str(table.cell_value(i, 4)).replace(' ', '')
-                out_trade_no = str(table.cell_value(i, 5))
-                eft_trade_no = str(table.cell_value(i, 6))
+                APIType = str(table.cell_value(i, 3)).replace(' ', '').upper().strip()
+                PaymentType = str(table.cell_value(i, 4)).replace(' ', '').upper().strip()
+                out_trade_no = str(table.cell_value(i, 5)).strip()
+                eft_trade_no = str(table.cell_value(i, 6)).strip()
                 Email_Subject = str(table.cell_value(i, 7))
                 Remark = str(table.cell_value(i, 8))
                 if Remark == '' or Remark == None:
                     Remark = 'Refund on ' + time.strftime("%d %b %Y", time.localtime())
                 URL = request.form['URL']
-                if APIType == 'WEB':
+                if APIType.upper() == 'WEB':
                     URL += f'/{Till_Number}/Servlet/'
                     VMP_req = VMP.VMP_Request()
                     URL = URL + 'JSAPIService.do'
@@ -717,7 +717,7 @@ def BatchFor(Till_Number, BatchFor):
                     VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
                     RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
                     pass
-                elif APIType == 'EOPG':
+                elif APIType.upper() == 'EOPG':
                     return_url = URL + f'/{Till_Number}/EOPG/eopg_return_addr'
                     URL += f'/{Till_Number}/eopg/ForexRefundRecetion'
                     EOPG_req = VMP.EOPG_Request()
@@ -737,7 +737,7 @@ def BatchFor(Till_Number, BatchFor):
                     EOPG_req.redirect = 'N'
                     EOPG_req.balance_ignore = 'N'
                     RawRequest = VMP.packGetMsg(EOPG_req, URL)
-                elif APIType == 'JSAPI':
+                elif APIType.upper() == 'JSAPI':
                     URL += f'/{Till_Number}/Servlet/'
                     VMP_req = VMP.VMP_Request()
                     URL = URL + 'JSAPIService.do'
@@ -765,7 +765,7 @@ def BatchFor(Till_Number, BatchFor):
                     VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
                     RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
                     pass
-                elif APIType == 'APP':
+                elif APIType.upper() == 'APP':
                     URL += f'/{Till_Number}/Servlet/'
                     VMP_req = VMP.VMP_Request()
                     URL = URL + 'AppTradeRefund.do'
@@ -782,7 +782,7 @@ def BatchFor(Till_Number, BatchFor):
                     VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
                     RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
                     pass
-                elif APIType == 'QRCODE':
+                elif APIType.upper() == 'QRCODE':
                     URL += f'/{Till_Number}/Servlet/'
                     VMP_req = VMP.VMP_Request()
                     URL = URL + 'JSAPIService.do'
@@ -800,7 +800,7 @@ def BatchFor(Till_Number, BatchFor):
                         VMP_req.paytype = 'ATOME'
                     elif str(PaymentType).upper() == 'UNIONPAY':
                         VMP_req.payment_type = PaymentType
-                        VMP_req.payType = 'UnionPay'
+                        VMP_req.paytype = 'UnionPay'
                     VMP_req.refund_no = 'Refund_' + time.strftime("%Y%m%d%H%M%S", time.localtime())
                     if str(PaymentType).upper() == 'ALIPAY':
                         VMP_req.service = 'service.alipay.qrcode.Refund'
@@ -809,7 +809,7 @@ def BatchFor(Till_Number, BatchFor):
                     elif str(PaymentType).upper() == 'ATOME':
                         VMP_req.service = 'service.atome.v1.qrcode.Refund'
                     elif str(PaymentType).upper() == 'UNIONPAY':
-                        VMP_req.service = 'service.unionpay.qrcode.Refund'
+                        VMP_req.service = 'service.unionpay.qrcode.csb.Refund'
                     VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
                     VMP_req.transaction_amount = amount
                     VMP_req.user_confirm_key = User_Confirm_Key
@@ -818,7 +818,7 @@ def BatchFor(Till_Number, BatchFor):
                     VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
                     RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
                     pass
-                elif APIType == 'CASHIER':
+                elif APIType.upper() == 'CASHIER':
                     URL += f'/{Till_Number}/Servlet/'
                     VMP_req = VMP.VMP_Request()
                     URL = URL + 'JSAPIService.do'
@@ -879,27 +879,27 @@ def BatchFor(Till_Number, BatchFor):
                         data.append(['MID','TID','Amount','RRN','Respond Code/Result','Email Subject','Remark'])
                     continue
                 if table.cell(i, 0).ctype == 2:
-                    MID = str(int(float(table.cell_value(i, 0))))
+                    MID = str(int(float(table.cell_value(i, 0)))).strip()
                 else:
-                    MID = table.cell_value(i, 0)
+                    MID = str(table.cell_value(i, 0)).strip()
                 if table.cell(i, 1).ctype == 2:
-                    TID = str(int(float(table.cell_value(i, 1))))
+                    TID = str(int(float(table.cell_value(i, 1)))).strip()
                 else:
-                    TID = table.cell_value(i, 1)
+                    TID = str(table.cell_value(i, 1)).strip()
                 if table.cell(i, 2).ctype == 2:
-                    Amount = str(int(round(float(table.cell_value(i, 2) * 100),2)))
+                    Amount = str(int(round(float(table.cell_value(i, 2) * 100),2))).strip()
                 else:
-                    Amount = str(int(round(float(table.cell_value(i, 2)) * 100, 2)))
+                    Amount = str(int(round(float(table.cell_value(i, 2)) * 100, 2))).strip()
                 if table.cell(i, 3).ctype == 2:
-                    RRN = str(int(float(table.cell_value(i, 3))))
+                    RRN = str(int(float(table.cell_value(i, 3)))).strip()
                 else:
-                    RRN = table.cell_value(i, 3)
+                    RRN = str(table.cell_value(i, 3)).strip()
 
                 if Till_Number == 'CUP' or Till_Number == 'BOC':
                     if table.cell(i, 4).ctype == 2:
-                        ApprovalCode = str(int(float(table.cell_value(i, 4))))
+                        ApprovalCode = str(int(float(table.cell_value(i, 4)))).strip()
                     else:
-                        ApprovalCode = table.cell_value(i, 4)
+                        ApprovalCode = str(table.cell_value(i, 4)).strip()
                     if table.cell(i, 5).ctype == 2:
                         Email_Subject = str(int(float(table.cell_value(i, 5))))
                     else:
@@ -1535,9 +1535,9 @@ def VMP_Transaction(Gateway):
                 VMP_req.payment_type = PaymentType
                 VMP_req.paytype = PaymentType
             elif str(PaymentType).upper() == 'UNIONPAY':
-                VMP_req.payType = PaymentType
-                VMP_req.pay_scene = 'QRCODE'
                 VMP_req.payment_type = PaymentType.upper()
+                VMP_req.paytype = PaymentType
+                # VMP_req.pay_scene = 'QRCODE'
             elif str(PaymentType).upper() == 'GBPAY':
                 VMP_req.payment_type = PaymentType
                 VMP_req.paytype = PaymentType
@@ -1571,8 +1571,8 @@ def VMP_Transaction(Gateway):
                 VMP_req.payment_type = PaymentType
                 VMP_req.paytype = PaymentType
             elif str(PaymentType).upper() == 'UNIONPAY':
-                VMP_req.payment_type = PaymentType
-                VMP_req.payType = PaymentType
+                VMP_req.payment_type = PaymentType.upper()
+                VMP_req.paytype = PaymentType
             VMP_req.refund_no = refund_no
             if NewInterFace and str(PaymentType).upper() == 'ALIPAY':
                 VMP_req.service = 'service.alipayplus.qrcode.Refund'
@@ -1605,8 +1605,8 @@ def VMP_Transaction(Gateway):
                 VMP_req.payment_type = PaymentType
                 VMP_req.paytype = PaymentType
             elif str(PaymentType).upper() == 'UNIONPAY':
-                VMP_req.payType = PaymentType
                 VMP_req.payment_type = 'UNIONPAY'
+                VMP_req.paytype = PaymentType
             elif str(PaymentType).upper() == 'GBPAY':
                 VMP_req.payment_type = 'GBPAY'
                 VMP_req.paytype = PaymentType
@@ -1639,8 +1639,8 @@ def VMP_Transaction(Gateway):
                 VMP_req.payment_type = PaymentType
                 VMP_req.paytype = PaymentType
             elif str(PaymentType).upper() == 'UNIONPAY':
+                VMP_req.paytype = PaymentType
                 VMP_req.payment_type = PaymentType
-                VMP_req.payType = PaymentType
             # if NewInterFace and str(PaymentType).upper() == 'ALIPAY':
             #     VMP_req.service = 'service.alipayplus.qrcode.Refund'
             # else:
