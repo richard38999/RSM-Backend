@@ -571,10 +571,10 @@ def SQL_script(script):
     conn.close()
     return returnmData
 
-def insert_Offline_Txn(DateTime='', username='', GatewayName='', MID='', TID='',  TransactionType='', Amount='', RRN='', approvalCode='', respondCode='', respondText='',Email_Subject='', Remark=''):
+def insert_Offline_Txn(DateTime='', username='', GatewayName='', MID='', TID='',  TransactionType='', Amount='', RRN='', approvalCode='', respondCode='', respondText='',Email_Subject='', Remark='', Requested_by='', Approved_by='', Requested_time='', Approved_time='', Approved_status='', BatchNo=''):
     conn = sqlite3.connect(db_name)
     cursor = conn.cursor()
-    cmd = f'insert INTO Offline_Txn_DB VALUES("{DateTime}", "{username}", "{GatewayName}", "{MID}", "{TID}", "{TransactionType}", "{Amount}", "{RRN}", "{approvalCode}", "{respondCode}", "{respondText}", "{Email_Subject}", "{Remark}");'
+    cmd = f'insert INTO Offline_Txn_DB VALUES("{DateTime}", "{username}", "{GatewayName}", "{MID}", "{TID}", "{TransactionType}", "{Amount}", "{RRN}", "{approvalCode}", "{respondCode}", "{respondText}", "{Email_Subject}", "{Remark}", "{Requested_by}", "{Approved_by}", "{Requested_time}", "{Approved_time}", "{Approved_status}", "{BatchNo}");'
     cursor.execute(cmd)
     # returnmData = cursor.fetchall()
     # print(values)
@@ -593,10 +593,13 @@ def insert_VMP_Txn(DateTime='', username='', GatewayName='', API_Type='', Paymen
     cursor.close()
     conn.close()
 
-def check_offline_refund_txn(GateName='', MID='', TID='', RRN=''):
+def check_offline_refund_txn(GateName='', MID='', TID='', RRN='', check_ResponseCode=True):
     conn = sqlite3.connect(db_name)
     cursor = conn.cursor()
-    cmd = f'select * from Offline_Txn_DB where Gateway_Name = "{GateName}" and MID = "{MID}" and TID = "{TID}" and RRN = "{RRN}" and Response_Code = "00" and TransType = "REFUND" or TransType = "ADMINREFUND";'
+    if check_ResponseCode:
+        cmd = f'select * from Offline_Txn_DB where Gateway_Name = "{GateName}" and MID = "{MID}" and TID = "{TID}" and RRN = "{RRN}" and Response_Code = "00" and TransType = "REFUND" or TransType = "ADMINREFUND";'
+    else:
+        cmd = f'select * from Offline_Txn_DB where Gateway_Name = "{GateName}" and MID = "{MID}" and TID = "{TID}" and RRN = "{RRN}" and TransType = "REFUND" or TransType = "ADMINREFUND";'
     cursor.execute(cmd)
     returnmData = cursor.fetchall()
     # print(values)

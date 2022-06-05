@@ -1,4 +1,6 @@
 import csv
+import os.path
+import sys
 import decorator
 from flask import Flask,send_from_directory, request, jsonify, send_file, json
 from flask_jwt_extended import JWTManager, jwt_required
@@ -29,12 +31,21 @@ ENVIRONMENT = 'DEV'
 app = Flask(__name__)
 app.config.from_object(Configuration.Flask_Config[ENVIRONMENT])
 Config = Configuration.Flask_Config.get(ENVIRONMENT)
-
 # 設定 JWT 密鑰
 jwt = JWTManager()
 jwt.init_app(app)
 now_date = time.strftime("%Y%m%d", time.localtime())
-CORS(app)
+
+CORS(app, supports_credentials=True)
+
+# def after_request(resp):
+#     resp.headers['Access-Control-Allow-Origin'] = '*'
+#     resp.headers['Access-Control-Allow-Headers'] = '*'
+#     resp.headers['Access-Control-Allow-Credentials'] = True
+#     resp.headers['Access-Control-Allow-Methods'] = 'HEAD, OPTIONS, GET, POST, DELETE, PUT'
+#     return resp
+#
+# app.after_request(after_request)
 
 @app.route("/login", methods=['POST'])
 @decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
@@ -1962,6 +1973,142 @@ def deleteconfig(Till_Number, Tag):
     log.info(returnmessage)
     return jsonify(returnmessage)
 
+@app.route("/Server_Management/<action>", methods=['GET'])
+@jwt_required
+@decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
+def Server_Managment(action):
+    log.start('Server_Management')
+    log.info(request.headers)
+    log.info("BODY: %s" % request.get_data())
+    username = request.headers.get("username")
+    iRet = -1
+    data = {}
+    meta = {}
+    File_Name = request.args.get('File_Name')
+    Existing_File_Name = request.args.get('Existing_File_Name')
+    New_File_Name = request.args.get('New_File_Name')
+    Current_Path = request.args.get('Current_Path')
+    if Current_Path == '' or Current_Path == None:
+        Current_Path = os.getcwd()
+    Current_Path_FilesList = []
+    if action == 'getFileslist':
+        # Current_Path_FilesList = os.listdir(Current_Path)
+        for file in os.scandir(Current_Path):
+            Current_Path_FilesList.append({'file_name': file.name, 'is_dir': file.is_dir(), 'file_size': str(format(file.stat().st_size/1024, '.2f')) + ' KB', 'last_modify_time': time.ctime(file.stat().st_mtime), 'create_file_time': time.ctime(file.stat().st_ctime)})
+        meta = {'status': 0, 'msg': 'Success'}
+    elif action == 'Download':
+        return send_file(os.path.join(Current_Path, File_Name), as_attachment=True)
+    elif action == 'LastFolder':
+        Current_Path = os.path.abspath(os.path.join(Current_Path, ".."))
+        for file in os.scandir(Current_Path):
+            Current_Path_FilesList.append({'file_name': file.name, 'is_dir': file.is_dir(), 'file_size': str(format(file.stat().st_size/1024, '.2f')) + ' KB', 'last_modify_time': time.ctime(file.stat().st_mtime), 'create_file_time': time.ctime(file.stat().st_ctime)})
+        meta = {'status': 0, 'msg': 'Success'}
+    elif action == 'EnterFolder':
+        Current_Path = os.path.join(Current_Path, File_Name)
+        for file in os.scandir(Current_Path):
+            Current_Path_FilesList.append({'file_name': file.name, 'is_dir': file.is_dir(), 'file_size': str(format(file.stat().st_size/1024, '.2f')) + ' KB', 'last_modify_time': time.ctime(file.stat().st_mtime), 'create_file_time': time.ctime(file.stat().st_ctime)})
+        meta = {'status': 0, 'msg': 'Success'}
+    elif action == 'Delete':
+        os.remove(os.path.join(Current_Path, File_Name))
+        meta = {'status': 0, 'msg': 'Success'}
+    elif action == 'Rename':
+        try:
+            os.rename(os.path.join(Current_Path, Existing_File_Name), os.path.join(Current_Path, New_File_Name))
+            meta = {'status': 0, 'msg': 'Success'}
+        except Exception as err:
+            meta = {'status': 1, 'msg': err.args[1]}
+    data = {'Current_Path': Current_Path, 'Files_List': Current_Path_FilesList}
+    returnmessage = {'meta': meta, 'data': data}
+    log.info(returnmessage)
+    return jsonify(returnmessage)
+
+@app.route("/Offline_Refund/<action>", methods=['POST'])
+@jwt_required
+@decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
+def Offline_Refund(action):
+    log.start('Offline_Refund')
+    log.info(request.headers)
+    log.info("BODY: %s" % request.get_data())
+    username = request.headers.get("username")
+    MID = request.json.get('MID')
+    TID = request.json.get('TID')
+    PayType = request.json.get('PayType')
+    amount = request.json.get('amount')
+    RRN = request.json.get('RRN')
+    IP = request.json.get('IP')
+    Port = request.json.get('Port')
+    TPDU = request.json.get('TPDU')
+    COMMTYPE = request.json.get('COMMTYPE')
+    if COMMTYPE == 'TLS':
+        COMMTYPE = 2
+    elif COMMTYPE == 'PlainText':
+        COMMTYPE = 1
+    Timeout = request.json.get('Timeout')
+    MsgType = request.json.get('MsgType')
+    TraceNo = request.json.get('TraceNo')
+    URL = request.json.get('URL')
+    OrdDesc = request.json.get('OrdDesc')
+    PayType = request.json.get('PayType')
+    NumOfProduct = request.json.get('NumOfProduct')
+    AUTH = request.json.get('AUTH')
+    shopcarts = request.json.get('AUTH')
+    OriTID = request.json.get('OriTID')
+    Email_Subject = request.json.get('Email_Subject')
+    Remark = request.json.get('Remark')
+    # Remark = 'Refund on ' + time.strftime("%d %b %Y", time.localtime())
+    iRet = -1
+    msg = ''
+    meta = {}
+    data = []
+    RawRequest = ''
+    RawResponse = ''
+    errormessage = ''
+    nowdatetime = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+    confirm_Refund_Request = request.json.get('confirm_Refund_Request')
+    BatchNo = '#' + datetime.datetime.now().strftime("%Y%m%d%H%M%S%f")
+    # check refund record
+
+    if action == 'Refund_Request':
+        if confirm_Refund_Request != 'Y':
+            Refund_Result = Utility.check_offline_refund_txn(GateName=PayType, MID=MID, TID=TID, RRN=RRN, check_ResponseCode=False)
+            if Refund_Result != []:
+                for i in range(len(Refund_Result)):
+                    data.append({'ID': i, 'DateTime': Refund_Result[i][0], 'UserName': Refund_Result[i][1],
+                                 'MID': Refund_Result[i][3], 'TID': Refund_Result[i][4],
+                                 'Amount': Refund_Result[i][6], 'RRN': Refund_Result[i][7],
+                                 'ResponseCode': f'{Refund_Result[i][9]}({Refund_Result[i][10]})',
+                                 'Email_Subject': Refund_Result[i][11], 'Remark': Refund_Result[i][12],
+                                'Requested_by': Refund_Result[i][13], 'Approved_by': Refund_Result[i][14],
+                                'Requested_time': Refund_Result[i][15], 'Approved_time': Refund_Result[i][16],
+                                 'Approved_status': Refund_Result[i][17], 'BatchNo': Refund_Result[i][18]})
+                meta = {'status': 'confirm_Refund_Request', 'msg': msg}
+                returnmessage = {'meta': meta, 'data': data}
+                log.info(returnmessage)
+                log.end('Offline_Refund')
+                return jsonify(returnmessage)
+        Utility.insert_Offline_Txn(DateTime=nowdatetime,
+                                   username=username,
+                                   GatewayName=PayType,
+                                   MID=MID, TID=TID,
+                                   TransactionType='REFUND',
+                                   Amount=amount, RRN=RRN,
+                                   Email_Subject=Email_Subject, Remark=Remark,
+                                   Requested_by=username,
+                                   Requested_time=nowdatetime,
+                                   Approved_status='Pending',
+                                   BatchNo=BatchNo)
+        meta = {'status': 0, 'msg': 'Request Refund Success, Wait for Supervisor review and approve'}
+        data = {'BatchNo': BatchNo}
+    elif action == 'send_notify_email':
+        result = Utility.SQL_script(f'select * FROM Offline_Txn_DB where BatchNo="{BatchNo}";')
+        email_content = ''
+        for i in result:
+            pass
+
+    returnmessage = {'meta': meta, 'data': data}
+    log.info(returnmessage)
+    log.end('Offline_Refund')
+    return jsonify(returnmessage)
 
 if __name__ == '__main__':
     log.start('Flask')
