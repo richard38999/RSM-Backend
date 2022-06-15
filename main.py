@@ -1663,6 +1663,41 @@ def VMP_Transaction(Gateway):
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
             pass
+        elif str(TransactionType).upper() == 'CLOSE':
+            VMP_req = VMP.VMP_Request()
+            # if NewInterFace:
+            #     URL = URL + 'CommonTradeQuery.do'
+            # else:
+            #     URL = URL + 'JSAPIService.do'
+            URL = URL + 'JSAPIService.do'
+            VMP_req.out_trade_no = out_trade_no
+            if str(PaymentType).upper() == 'ALIPAY':
+                VMP_req.payment_type = 'ALIPAY' + wallet
+                VMP_req.paytype = PaymentType
+            elif str(PaymentType).upper() == 'WECHAT':
+                VMP_req.payment_type = 'WECHAT' + wallet
+                VMP_req.paytype = PaymentType
+            elif str(PaymentType).upper() == 'ATOME':
+                VMP_req.payment_type = PaymentType
+                VMP_req.paytype = PaymentType
+            elif str(PaymentType).upper() == 'UNIONPAY':
+                VMP_req.payment_type = 'UNIONPAY'
+                VMP_req.paytype = PaymentType
+            elif str(PaymentType).upper() == 'GBPAY':
+                VMP_req.payment_type = 'GBPAY'
+                VMP_req.paytype = PaymentType
+            if NewInterFace and str(PaymentType).upper() == 'ALIPAY':
+                VMP_req.service = 'service.alipayplus.qrcode.Close'
+            else:
+                VMP_req.service = service
+
+            VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
+            VMP_req.user_confirm_key = User_Confirm_Key
+            signStr = VMP.packSignStr(VMP_req, SecretCode)
+            log.info(signStr)
+            VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
+            RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+            pass
     elif APIType == 'APP':
         URL += f'/{Gateway}/Servlet/'
         if str(TransactionType).upper() == 'SALE':

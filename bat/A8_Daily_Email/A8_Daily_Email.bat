@@ -1,2 +1,2 @@
-cd C:\Users\richard\Desktop\RSM_Package\RSM_Package\RSM-Backend
+cd C:\RSM\Backend\pythonProject
 python A8_Daily_Email.py
