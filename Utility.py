@@ -597,9 +597,9 @@ def check_offline_refund_txn(GateName='', MID='', TID='', RRN='', check_Response
     conn = sqlite3.connect(db_name)
     cursor = conn.cursor()
     if check_ResponseCode:
-        cmd = f'select * from Offline_Txn_DB where Gateway_Name = "{GateName}" and MID = "{MID}" and TID = "{TID}" and RRN = "{RRN}" and Response_Code = "00" and TransType = "REFUND" or TransType = "ADMINREFUND";'
+        cmd = f'select * from Offline_Txn_DB where Gateway_Name = "{GateName}" and MID = "{MID}" and TID = "{TID}" and RRN = "{RRN}" and Response_Code = "00" and (TransType = "REFUND" or TransType = "ADMINREFUND");'
     else:
-        cmd = f'select * from Offline_Txn_DB where Gateway_Name = "{GateName}" and MID = "{MID}" and TID = "{TID}" and RRN = "{RRN}" and TransType = "REFUND" or TransType = "ADMINREFUND";'
+        cmd = f'select * from Offline_Txn_DB where Gateway_Name = "{GateName}" and MID = "{MID}" and TID = "{TID}" and RRN = "{RRN}" and (TransType = "REFUND" or TransType = "ADMINREFUND");'
     cursor.execute(cmd)
     returnmData = cursor.fetchall()
     # print(values)
