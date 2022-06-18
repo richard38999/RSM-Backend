@@ -45,8 +45,9 @@ def main():
     for i in SentResult:
         if i[2] == 'N':
             if int(time.strftime("%H%M", time.localtime())) >= int(i[6]):
-                filename = parseDateFormat(fileFormat=(i[10]), TransDatetime_8_digits=TransDatetime_8_digits, TransDatetime_6_digits=TransDatetime_6_digits)
-                remotepath = parseDateFormat(fileFormat=(i[9]), TransDatetime_8_digits=TransDatetime_8_digits, TransDatetime_6_digits=TransDatetime_6_digits) + '/' + filename
+                filename = i[10]
+                remotepath = i[9] + '/' + filename
+                remotepath = parseDateFormat(fileFormat=remotepath, TransDatetime_8_digits=TransDatetime_8_digits, TransDatetime_6_digits=TransDatetime_6_digits)
                 if not sftp.checkSftpFile(SFTP_info[int(i[11])], remotepath=remotepath):
                     emailContent += f'{i[4]}_{i[8]} - remotepath Not Exist: {remotepath}\r\n{"-"*180}\r\n'
                     Result = False
