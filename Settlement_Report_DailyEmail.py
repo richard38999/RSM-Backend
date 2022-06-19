@@ -28,12 +28,11 @@ def main():
     emailContent = ''
     Result = 'UnConfirm'
     def parseDateFormat(fileFormat=None, TransDatetime_8_digits=None,TransDatetime_6_digits=None):
-        fileName = ''
         if str(fileFormat).find('YYYYMMDD') != -1:
-            fileName = fileFormat.replace('YYYYMMDD', TransDatetime_8_digits)
+            fileFormat = fileFormat.replace('YYYYMMDD', TransDatetime_8_digits)
         elif str(fileFormat).find('YYMMDD') != -1:
-            fileName = fileFormat.replace('YYMMDD', TransDatetime_6_digits)
-        return fileName
+            fileFormat = fileFormat.replace('YYMMDD', TransDatetime_6_digits)
+        return fileFormat
 
     if totayConfig == []:
         log.info('Write Today Config Start!')
