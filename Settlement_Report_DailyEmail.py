@@ -45,7 +45,7 @@ def main():
     for i in SentResult:
         if i[2] == 'N':
             if int(time.strftime("%H%M", time.localtime())) >= int(i[6]):
-                filename = i[10]
+                filename = parseDateFormat(fileFormat=i[10], TransDatetime_8_digits=TransDatetime_8_digits, TransDatetime_6_digits=TransDatetime_6_digits)
                 remotepath = i[9] + '/' + filename
                 remotepath = parseDateFormat(fileFormat=remotepath, TransDatetime_8_digits=TransDatetime_8_digits, TransDatetime_6_digits=TransDatetime_6_digits)
                 if not sftp.checkSftpFile(SFTP_info[int(i[11])], remotepath=remotepath):
