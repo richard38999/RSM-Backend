@@ -1214,6 +1214,8 @@ def VMP_Transaction(Gateway):
     billingAddress = request.json.get('billingAddress')
     Email_Subject = request.json.get('Email_Subject')
     Remark = request.json.get('Remark')
+    app_link = request.json.get('app_link')
+    browser = request.json.get('browser')
     if str(TransactionType).upper() == 'REFUND':
         if Remark == '' or Remark == None:
             Remark = 'Refund on ' + time.strftime("%d %b %Y", time.localtime())
@@ -1333,9 +1335,11 @@ def VMP_Transaction(Gateway):
             VMP_req = VMP.VMP_Request()
             URL = URL + 'JSAPIService.do'
             VMP_req.active_time = active_time
+            VMP_req.app_link = app_link
             if str(PaymentType).upper() == 'ATOME':
                 VMP_req.billingAddress = str(billingAddress)
             VMP_req.body = body
+            VMP_req.browser = browser
             VMP_req.buyerType = buyerType
             if str(PaymentType).upper() == 'ATOME':
                 VMP_req.customerInfo = str(customerInfo)
@@ -1354,6 +1358,8 @@ def VMP_Transaction(Gateway):
                 VMP_req.pay_scene = 'ONLINE_WEB'
             elif service == 'service.jetco.wap.PreOrder':
                 VMP_req.pay_scene = 'WAP'
+            elif service == 'service.bocpayupi.wap.PreOrder':
+                VMP_req.pay_scene = 'APP'
             else:
                 VMP_req.pay_scene = 'WEB'
             VMP_req.return_url = return_url
@@ -1376,6 +1382,8 @@ def VMP_Transaction(Gateway):
                 VMP_req.wallet = 'ATOME'
             elif str(PaymentType).upper() == 'UNIONPAY':
                 VMP_req.wallet = 'UNIONPAY'
+            elif str(PaymentType).upper() == 'BOCPAY':
+                VMP_req.wallet = 'BOCPAYUPI'
             elif str(PaymentType).upper() == 'JETCO':
                 VMP_req.wallet = 'JETCOHK'
             elif str(PaymentType).upper() == 'OCT':
@@ -1399,6 +1407,8 @@ def VMP_Transaction(Gateway):
                 VMP_req.pay_scene = 'ONLINE_WEB'
             elif service == 'service.jetco.wap.Refund':
                 VMP_req.pay_scene = 'WAP'
+            elif service == 'service.bocpayupi.wap.Refund':
+                VMP_req.pay_scene = 'APP'
             else:
                 VMP_req.pay_scene = 'WEB'
             VMP_req.reason = body
@@ -1418,6 +1428,8 @@ def VMP_Transaction(Gateway):
                 VMP_req.wallet = 'ATOME'
             elif str(PaymentType).upper() == 'UNIONPAY':
                 VMP_req.wallet = 'UNIONPAY'
+            elif str(PaymentType).upper() == 'BOCPAY':
+                VMP_req.wallet = 'BOCPAYUPI'
             elif str(PaymentType).upper() == 'JETCO':
                 VMP_req.wallet = 'JETCOHK'
             elif str(PaymentType).upper() == 'OCT':
@@ -1825,6 +1837,7 @@ def VMP_Transaction(Gateway):
             RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
             pass
     log.info('RawRequest: {0}'.format(RawRequest))
+    log.info('URL: {0}'.format(URL))
     if APIType == 'EOPG':
         if (str(TransactionType).upper()) != 'SALE':
             resp = Utility.GetToHost(RawRequest, timeout=30)
@@ -1938,6 +1951,8 @@ def setconfig(Till_Number,TransactionType):
     billingAddress_countryCode = request.json.get('billingAddress_countryCode')
     billingAddress_postCode = request.json.get('billingAddress_postCode')
     billingAddress_lines = request.json.get('billingAddress_lines')
+    app_link = request.json.get('app_link')
+    browser = request.json.get('browser')
     cmd = request.json.get('cmd')
     clientId = request.json.get('clientId')
     merchantRef = request.json.get('merchantRef')
@@ -1970,7 +1985,8 @@ def setconfig(Till_Number,TransactionType):
                                      scene_type=scene_type, openid=openid, sub_openid=sub_openid, wechatWeb=wechatWeb, active_time=active_time, URL=URL, notify_url=notify_url,
                                      return_url=return_url, app_pay=app_pay, lang=lang, goods_body=goods_body, goods_subject=goods_subject,
                                      reuse=reuse, redirect=redirect, refund_reason=refund_reason, reason=reason, mobileNumber=mobileNumber,
-                                     fullName=fullName, shippingAddress_countryCode=shippingAddress_countryCode, shippingAddress_postCode=shippingAddress_postCode, shippingAddress_lines=shippingAddress_lines, billingAddress_countryCode=billingAddress_countryCode, billingAddress_postCode=billingAddress_postCode, billingAddress_lines=billingAddress_lines)
+                                     fullName=fullName, shippingAddress_countryCode=shippingAddress_countryCode, shippingAddress_postCode=shippingAddress_postCode, shippingAddress_lines=shippingAddress_lines, billingAddress_countryCode=billingAddress_countryCode, billingAddress_postCode=billingAddress_postCode, billingAddress_lines=billingAddress_lines,
+                                     browser=browser, app_link=app_link)
     elif Till_Number == 'Spiral':
         meta = Utility.setconfig_Spiral(username=username,Tag=Tag, clientId=clientId, merchantRef=merchantRef, cmd=cmd, amount=amount, type=type, goodsName=goodsName, Flow=Flow, orderId=orderId, URL=URL, goodsDesc=goodsDesc, channel=channel, cardToken=cardToken, cardTokenSrc=cardTokenSrc, successUrl=successUrl, failureUrl=failureUrl, webhookUrl=webhookUrl, duration=duration, durationHr=durationHr, privateKey=privateKey, publicKey=publicKey, JavaScriptLibrary=JavaScriptLibrary, locale=locale)
     else:

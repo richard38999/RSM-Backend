@@ -489,7 +489,8 @@ def setconfig_VMP(username='', Gateway_Name='', Tag='', APIType='', User_Confirm
                   return_url='', app_pay='', lang='', goods_body='', goods_subject='',
                   reuse='', redirect='', refund_reason='', reason='', mobileNumber='',
                   fullName='', shippingAddress_countryCode='', shippingAddress_postCode='', shippingAddress_lines='',
-                  billingAddress_countryCode='', billingAddress_postCode='', billingAddress_lines=''):
+                  billingAddress_countryCode='', billingAddress_postCode='', billingAddress_lines='',
+                  app_link='', browser=''):
     returnmessage = {}
     conn = sqlite3.connect(db_name)
     cursor = conn.cursor()
@@ -508,7 +509,7 @@ def setconfig_VMP(username='', Gateway_Name='', Tag='', APIType='', User_Confirm
           f'"{app_pay}", "{lang}","{goods_body}", "{goods_subject}","{reuse}",' \
           f'"{redirect}", "{refund_reason}","{reason}", "{mobileNumber}","{fullName}",' \
           f'"{shippingAddress_countryCode}", "{shippingAddress_postCode}","{shippingAddress_lines}", "{billingAddress_countryCode}","{billingAddress_postCode}",'\
-          f'"{billingAddress_lines}");'
+          f'"{billingAddress_lines}", "{app_link}", "{browser}");'
     print(cmd)
     cursor.execute(cmd)
     conn.commit()
