@@ -16,10 +16,9 @@ temp = response.text.find('password')
 password = str(response.text)
 password = password[temp+10:temp+16]
 # password = '123456'
-to = ''
+to = []
 for i in Sent_To:
-    to += (i[0]) + ';'
-to = to[:len(to)-1]
+    to.append(i[0])
 
 date = time.strftime("%Y%m%d", time.localtime())
 log.info('Today: {0}'.format(date))
@@ -32,7 +31,8 @@ Email_to = to # 收件者
 log.info('Email to: {0}'.format(to))
 Email_content = "A8 Daily Password: {0}".format(password)  # 郵件純文字內容
 log.info('Email Content: {0}'.format(Email_content))
-Email.sentEmail(Email_to=to,
+Email.sentEmail(Email_to=Email_to,
+                Email_displayName='RSM System',
                 Email_subject=Email_subject,
                 Email_content=Email_content)
 # with smtplib.SMTP(host=Email_info[0][1], port=Email_info[0][2]) as smtp:  # 設定SMTP伺服器

@@ -1216,6 +1216,7 @@ def VMP_Transaction(Gateway):
     Remark = request.json.get('Remark')
     app_link = request.json.get('app_link')
     browser = request.json.get('browser')
+    pay_scene = request.json.get('pay_scene')
     if str(TransactionType).upper() == 'REFUND':
         if Remark == '' or Remark == None:
             Remark = 'Refund on ' + time.strftime("%d %b %Y", time.localtime())
@@ -1350,18 +1351,21 @@ def VMP_Transaction(Gateway):
             VMP_req.notify_url = notify_url
             VMP_req.out_trade_no = out_trade_no
             VMP_req.payType = PaymentType
-            if service == 'service.wechat.oauth2.Authorize':
-                VMP_req.pay_scene = 'WXWEB'
-            elif service == 'service.alipay.wap.PreOrder':
-                VMP_req.pay_scene = 'WAP'
-            elif service == 'service.unionpay.online.web.PreOrder':
-                VMP_req.pay_scene = 'ONLINE_WEB'
-            elif service == 'service.jetco.wap.PreOrder':
-                VMP_req.pay_scene = 'WAP'
-            elif service == 'service.bocpayupi.wap.PreOrder':
-                VMP_req.pay_scene = 'APP'
+            if pay_scene == None:
+                if service == 'service.wechat.oauth2.Authorize':
+                    VMP_req.pay_scene = 'WXWEB'
+                elif service == 'service.alipay.wap.PreOrder':
+                    VMP_req.pay_scene = 'WAP'
+                elif service == 'service.unionpay.online.web.PreOrder':
+                    VMP_req.pay_scene = 'ONLINE_WEB'
+                elif service == 'service.jetco.wap.PreOrder':
+                    VMP_req.pay_scene = 'WAP'
+                elif service == 'service.bocpayupi.wap.PreOrder':
+                    VMP_req.pay_scene = 'APP'
+                else:
+                    VMP_req.pay_scene = 'WEB'
             else:
-                VMP_req.pay_scene = 'WEB'
+                VMP_req.pay_scene = pay_scene
             VMP_req.return_url = return_url
             if NewInterFace and str(PaymentType).upper() == 'ALIPAY':
                 VMP_req.service = 'service.alipayplus.web.PreOrder'
@@ -1401,16 +1405,19 @@ def VMP_Transaction(Gateway):
             VMP_req.out_refund_no = refund_no
             VMP_req.out_trade_no = out_trade_no
             VMP_req.payType = PaymentType
-            if service == 'service.alipay.wap.Refund':
-                VMP_req.pay_scene = 'WAP'
-            elif service == 'service.unionpay.online.web.Refund':
-                VMP_req.pay_scene = 'ONLINE_WEB'
-            elif service == 'service.jetco.wap.Refund':
-                VMP_req.pay_scene = 'WAP'
-            elif service == 'service.bocpayupi.wap.Refund':
-                VMP_req.pay_scene = 'APP'
+            if pay_scene == None:
+                if service == 'service.alipay.wap.Refund':
+                    VMP_req.pay_scene = 'WAP'
+                elif service == 'service.unionpay.online.web.Refund':
+                    VMP_req.pay_scene = 'ONLINE_WEB'
+                elif service == 'service.jetco.wap.Refund':
+                    VMP_req.pay_scene = 'WAP'
+                elif service == 'service.bocpayupi.wap.Refund':
+                    VMP_req.pay_scene = 'APP'
+                else:
+                    VMP_req.pay_scene = 'WEB'
             else:
-                VMP_req.pay_scene = 'WEB'
+                VMP_req.pay_scene = pay_scene
             VMP_req.reason = body
             VMP_req.return_amount = amount
             if NewInterFace and str(PaymentType).upper() == 'ALIPAY':
@@ -1953,6 +1960,7 @@ def setconfig(Till_Number,TransactionType):
     billingAddress_lines = request.json.get('billingAddress_lines')
     app_link = request.json.get('app_link')
     browser = request.json.get('browser')
+    pay_scene = request.json.get('pay_scene')
     cmd = request.json.get('cmd')
     clientId = request.json.get('clientId')
     merchantRef = request.json.get('merchantRef')
@@ -1986,7 +1994,7 @@ def setconfig(Till_Number,TransactionType):
                                      return_url=return_url, app_pay=app_pay, lang=lang, goods_body=goods_body, goods_subject=goods_subject,
                                      reuse=reuse, redirect=redirect, refund_reason=refund_reason, reason=reason, mobileNumber=mobileNumber,
                                      fullName=fullName, shippingAddress_countryCode=shippingAddress_countryCode, shippingAddress_postCode=shippingAddress_postCode, shippingAddress_lines=shippingAddress_lines, billingAddress_countryCode=billingAddress_countryCode, billingAddress_postCode=billingAddress_postCode, billingAddress_lines=billingAddress_lines,
-                                     browser=browser, app_link=app_link)
+                                     browser=browser, app_link=app_link, pay_scene=pay_scene)
     elif Till_Number == 'Spiral':
         meta = Utility.setconfig_Spiral(username=username,Tag=Tag, clientId=clientId, merchantRef=merchantRef, cmd=cmd, amount=amount, type=type, goodsName=goodsName, Flow=Flow, orderId=orderId, URL=URL, goodsDesc=goodsDesc, channel=channel, cardToken=cardToken, cardTokenSrc=cardTokenSrc, successUrl=successUrl, failureUrl=failureUrl, webhookUrl=webhookUrl, duration=duration, durationHr=durationHr, privateKey=privateKey, publicKey=publicKey, JavaScriptLibrary=JavaScriptLibrary, locale=locale)
     else:
