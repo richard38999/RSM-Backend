@@ -42,10 +42,10 @@ def sentEmail(
             email["From"] = Email_from  # 寄件者
         to_addrs = []
         if type(Email_to) == str and len(Email_to) > 0:
-            # email['To'] = Email_to  # 收件者
+            email['To'] = Email_to  # 收件者
             to_addrs = Email_to  # 收件者
         elif type(Email_to) == list and len(Email_to) != 0:
-            # email['To'] = ';'.join(Email_to)   # 收件者
+            email['To'] = ','.join(Email_to)   # 收件者
             to_addrs = Email_to
         if isHTML:
             email.attach(MIMEText(_text=Email_content, _subtype='html', _charset='utf-8'))  # 郵件HTML內容
@@ -72,15 +72,15 @@ def sentEmail(
                     log.info(f'Email_attachement Not Exist: {att}')
         context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
         for i in range(5):
-            with smtplib.SMTP(Email_info[0][1], int(Email_info[0][2])) as smtp:  # 設定SMTP伺服器
+            with smtplib.SMTP_SSL(Email_info[0][1], int(Email_info[0][2])) as smtp:  # 設定SMTP伺服器
                 try:
                     # log.info('Start ehlo')
                     # smtp.ehlo()  # 驗證SMTP伺服器
                     # log.info('ehlo Success')
-                    log.info('Start starttls')
+                    # log.info('Start starttls')
                     smtp.set_debuglevel(True)
-                    smtp.starttls(context=context)  # 建立加密傳輸
-                    log.info('starttls Success')
+                    # smtp.starttls(context=context)  # 建立加密傳輸
+                    # log.info('starttls Success')
                     log.info('Start login')
                     smtp.login(Email_info[0][0], Email_info[0][4])  # 登入寄件者gmail
                     log.info('login Success')

@@ -1392,6 +1392,8 @@ def VMP_Transaction(Gateway):
                 VMP_req.wallet = 'JETCOHK'
             elif str(PaymentType).upper() == 'OCT':
                 VMP_req.wallet = 'OCT'
+            elif str(PaymentType).upper() == 'MPGS':
+                VMP_req.wallet = 'MPGS'
             signStr = VMP.packSignStr(VMP_req, SecretCode)
             log.info('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
@@ -1441,6 +1443,8 @@ def VMP_Transaction(Gateway):
                 VMP_req.wallet = 'JETCOHK'
             elif str(PaymentType).upper() == 'OCT':
                 VMP_req.wallet = 'OCT'
+            elif str(PaymentType).upper() == 'MPGS':
+                VMP_req.wallet = 'MPGS'
             signStr = VMP.packSignStr(VMP_req, SecretCode)
             log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()

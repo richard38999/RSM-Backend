@@ -34,7 +34,8 @@ log.info('Email Content: {0}'.format(Email_content))
 Email.sentEmail(Email_to=Email_to,
                 Email_displayName='RSM System',
                 Email_subject=Email_subject,
-                Email_content=Email_content)
+                Email_content=Email_content,
+                isHTML=True)
 # with smtplib.SMTP(host=Email_info[0][1], port=Email_info[0][2]) as smtp:  # 設定SMTP伺服器
 #     for i in range(5):
 #         try:

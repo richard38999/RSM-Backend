@@ -26,7 +26,7 @@ print(values)
 cursor.close()
 conn.close()
 '''
-DB_path = 'DataBase\\RSM_TEST.db'
+DB_path = 'DataBase\\RSM.db'
 
 def get_Merchant_Info():
     conn = sqlite3.connect(DB_path)
@@ -135,15 +135,17 @@ def loadConfig():
 
 class Flask_Base_Config():
     JWT_SECRET_KEY = 'Testing123'
-    FrontEndVersion = '1.0.23'
+    FrontEndVersion = '1.0.24'
 
 class Flask_PROD_Config(Flask_Base_Config):
     ENV = 'production'
+    # SERVER_NAME = 'rsm.eftpay.com'
     DEBUG = False
     isSentEmail = True
 
 class Flask_DEV_Config(Flask_Base_Config):
     ENV = 'development'
+    # SERVER_NAME = 'rsm.eftpay.com'
     DEBUG = True
     isSentEmail = False
 
