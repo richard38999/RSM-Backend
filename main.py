@@ -554,6 +554,10 @@ def Transaction(Till_Number, TransactionType):
             #iRet = XML.AUTH(amount, ecrRefNo, OrdDesc, NumOfProduct, ShopCart)
         elif TransactionType == 'ADMINREFUND':
             iRet = XML.ADMIN_REFUND(RRN, amount, ecrRefNo, OriTID)
+        elif TransactionType == 'GET_TOTAL':
+            iRet = XML.GET_TOTAL()
+        elif TransactionType == 'TWO_SETTLE':
+            iRet = XML.TWO_SETTLE()
 
         if iRet == True:  # 成功
             iRet = XML.GetResponse(XML_resp, RawRequest, RawResponse, errormessage)
@@ -600,8 +604,8 @@ def BatchFor(Till_Number, BatchFor):
     log.info("BODY: %s" % request.get_data())
     username = request.headers.get("username")
     f = request.files['file']
-    datetime = time.strftime("%Y%m%d%H%M%S", time.localtime())
-    filepath = os.path.join('Batch Process/', '{0}_'.format(datetime) + secure_filename(f.filename))
+    datetime_f = datetime.datetime.now().strftime("%Y%m%d%H%M%S%f")
+    filepath = os.path.join('Batch Process/', '{0}_'.format(datetime_f) + secure_filename(f.filename))
     f.save(filepath)
     URL = request.form['URL']
     IP = request.form['IP']
@@ -690,7 +694,7 @@ def BatchFor(Till_Number, BatchFor):
                     URL = URL + 'JSAPIService.do'
                     VMP_req.buyerType = 'other'
                     VMP_req.eft_trade_no = eft_trade_no
-                    VMP_req.out_refund_no = 'Refund_' + time.strftime("%Y%m%d%H%M%S", time.localtime())
+                    VMP_req.out_refund_no = 'Refund_' + datetime.datetime.now().strftime("%Y%m%d%H%M%S%f")
                     VMP_req.out_trade_no = out_trade_no
                     if str(PaymentType).upper() == 'ALIPAY':
                         VMP_req.payType = 'Alipay'
@@ -700,6 +704,14 @@ def BatchFor(Till_Number, BatchFor):
                         VMP_req.payType = 'ATOME'
                     elif str(PaymentType).upper() == 'UNIONPAY':
                         VMP_req.payType = 'UnionPay'
+                    elif str(PaymentType).upper() == 'BOCPAY':
+                        VMP_req.payType = 'BOCPay'
+                    elif str(PaymentType).upper() == 'JETCO':
+                        VMP_req.payType = 'Jetco'
+                    elif str(PaymentType).upper() == 'OCT':
+                        VMP_req.payType = 'OCT'
+                    elif str(PaymentType).upper() == 'MPGS':
+                        VMP_req.payType = 'Mpgs'
                     # VMP_req.payType = PaymentType
                     VMP_req.pay_scene = 'WEB'
                     VMP_req.reason = 'Refund'
@@ -712,6 +724,14 @@ def BatchFor(Till_Number, BatchFor):
                         VMP_req.service = 'service.atome.web.Refund'
                     elif str(PaymentType).upper() == 'UNIONPAY':
                         VMP_req.service = 'service.unionpay.web.Refund'
+                    elif str(PaymentType).upper() == 'BOCPAY':
+                        VMP_req.service = 'service.bocpayupi.wap.Refund'
+                    elif str(PaymentType).upper() == 'JETCO':
+                        VMP_req.service = 'service.jetco.wap.Refund'
+                    elif str(PaymentType).upper() == 'OCT':
+                        VMP_req.service = 'service.oct.online.Refund'
+                    elif str(PaymentType).upper() == 'MPGS':
+                        VMP_req.service = 'service.mpgs.web.Refund'
                     VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
                     VMP_req.total_fee = amount
                     VMP_req.user_confirm_key = User_Confirm_Key
@@ -723,6 +743,14 @@ def BatchFor(Till_Number, BatchFor):
                         VMP_req.wallet = 'ATOME'
                     elif str(PaymentType).upper() == 'UNIONPAY':
                         VMP_req.wallet = 'UNIONPAY'
+                    elif str(PaymentType).upper() == 'BOCPAY':
+                        VMP_req.wallet = 'BOCPAYUPI'
+                    elif str(PaymentType).upper() == 'JETCO':
+                        VMP_req.wallet = 'JETCOHK'
+                    elif str(PaymentType).upper() == 'OCT':
+                        VMP_req.wallet = 'OCT'
+                    elif str(PaymentType).upper() == 'MPGS':
+                        VMP_req.wallet = 'MPGS'
                     signStr = VMP.packSignStr(VMP_req, SecretCode)
                     log.info(signStr)
                     VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
@@ -762,7 +790,7 @@ def BatchFor(Till_Number, BatchFor):
                     elif str(PaymentType).upper() == 'WECHAT':
                         VMP_req.payType = 'WeChat'
                     VMP_req.refund_desc = 'Refund'
-                    VMP_req.refund_no = 'Refund_' + time.strftime("%Y%m%d%H%M%S", time.localtime())
+                    VMP_req.refund_no = 'Refund_' + datetime.datetime.now().strftime("%Y%m%d%H%M%S%f")
                     if str(PaymentType).upper() == 'ALIPAY':
                         VMP_req.service = 'service.alipay.jsapi.Refund'
                     elif str(PaymentType).upper() == 'WECHAT':
@@ -782,7 +810,7 @@ def BatchFor(Till_Number, BatchFor):
                     URL = URL + 'AppTradeRefund.do'
                     VMP_req.buyerType = 'other'
                     VMP_req.eft_trade_no = eft_trade_no
-                    VMP_req.out_refund_no = 'Refund_' + time.strftime("%Y%m%d%H%M%S", time.localtime())
+                    VMP_req.out_refund_no = 'Refund_' + datetime.datetime.now().strftime("%Y%m%d%H%M%S%f")
                     VMP_req.out_trade_no = out_trade_no
                     VMP_req.reason = 'Refund'
                     VMP_req.return_amount = amount
@@ -812,7 +840,7 @@ def BatchFor(Till_Number, BatchFor):
                     elif str(PaymentType).upper() == 'UNIONPAY':
                         VMP_req.payment_type = PaymentType
                         VMP_req.paytype = 'UnionPay'
-                    VMP_req.refund_no = 'Refund_' + time.strftime("%Y%m%d%H%M%S", time.localtime())
+                    VMP_req.refund_no = 'Refund_' + datetime.datetime.now().strftime("%Y%m%d%H%M%S%f")
                     if str(PaymentType).upper() == 'ALIPAY':
                         VMP_req.service = 'service.alipay.qrcode.Refund'
                     elif str(PaymentType).upper() == 'WECHAT':
@@ -835,7 +863,7 @@ def BatchFor(Till_Number, BatchFor):
                     URL = URL + 'JSAPIService.do'
                     VMP_req.buyerType = 'other'
                     VMP_req.eft_trade_no = eft_trade_no
-                    VMP_req.out_refund_no = 'Refund_' + time.strftime("%Y%m%d%H%M%S", time.localtime())
+                    VMP_req.out_refund_no = 'Refund_' + datetime.datetime.now().strftime("%Y%m%d%H%M%S%f")
                     VMP_req.out_trade_no = out_trade_no
                     VMP_req.pay_scene = 'WAP'
                     VMP_req.reason = 'Refund'
