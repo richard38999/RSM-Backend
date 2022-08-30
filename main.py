@@ -457,6 +457,15 @@ def Transaction(Till_Number, TransactionType):
                     data = Utility.getTransactionRecord(iRet[1])
             else:
                 meta = {'status': iRet, 'msg': Utility.getResultMessage(str(iRet))}
+        elif TransactionType == 'QUERY_REFUND':
+            iRet = eft.query_refund(RRN, ApprovalCode, TraceNo)
+            if iRet == 0:
+                iRet = eft.getQueryRefundResponse(Transaction_resp)
+                if iRet[0] == 0:
+                    meta = {'status': str(iRet[0]), 'msg': Utility.getResultMessage(str(iRet[0]))}
+                    data = Utility.getTransactionRecord(iRet[1])
+            else:
+                meta = {'status': iRet, 'msg': Utility.getResultMessage(str(iRet))}
         elif TransactionType == 'REFUND':
             iRet = eft.refund(RRN, amount, ecrRefNo, ApprovalCode)
             if iRet == 0:
@@ -543,6 +552,8 @@ def Transaction(Till_Number, TransactionType):
             iRet = XML.Void(barcode, amount, TraceNo)
         elif TransactionType == 'QUERY':
             iRet = XML.QUERY(RRN, barcode, AUTH)
+        elif TransactionType == 'QUERY_REFUND':
+            iRet = XML.QUERY_REFUND(RRN, ApprovalCode, TraceNo)
         elif TransactionType == 'REFUND':
             iRet = XML.REFUND(RRN, amount, ecrRefNo, ApprovalCode)
         elif TransactionType == 'SALEADVICE':

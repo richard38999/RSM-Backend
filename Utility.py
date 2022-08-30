@@ -119,8 +119,9 @@ def getXmlResp(tr, RawRequest, RawResponse):
     returndata['respondCode'] = None
     if tr.RespCode != None:
         returndata['respondCode'] = tr.RespCode
+    returndata['TransactionRespondCode'] = None
     if tr.TransactionRespondCode != None:
-        returndata['respondCode'] = tr.TransactionRespondCode
+        returndata['TransactionRespondCode'] = tr.TransactionRespondCode
 
     returndata['barcode'] = None
     if tr.CardNo != None:
