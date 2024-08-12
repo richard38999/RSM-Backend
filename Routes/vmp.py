@@ -56,6 +56,8 @@ def VMP_Transaction(Gateway):
     app_link = request.json.get('app_link')
     browser = request.json.get('browser')
     pay_scene = request.json.get('pay_scene')
+    scheme = request.json.get('scheme')
+    packageName = request.json.get('packageName')
     if str(TransactionType).upper() == 'REFUND':
         if Remark == '' or Remark == None:
             Remark = 'Refund on ' + time.strftime("%d %b %Y", time.localtime())
@@ -189,6 +191,7 @@ def VMP_Transaction(Gateway):
             VMP_req.lang = lang
             VMP_req.notify_url = notify_url
             VMP_req.out_trade_no = out_trade_no
+            VMP_req.packageName = packageName
             VMP_req.payType = PaymentType
             if pay_scene == None:
                 if service == 'service.wechat.oauth2.Authorize':
@@ -206,6 +209,7 @@ def VMP_Transaction(Gateway):
             else:
                 VMP_req.pay_scene = pay_scene
             VMP_req.return_url = return_url
+            VMP_req.scheme = scheme
             if NewInterFace and str(PaymentType).upper() == 'ALIPAY':
                 VMP_req.service = 'service.alipayplus.web.PreOrder'
             else:
@@ -221,18 +225,9 @@ def VMP_Transaction(Gateway):
                 VMP_req.wallet = 'ALIPAY' + wallet
             elif str(PaymentType).upper() == 'WECHAT':
                 VMP_req.wallet = 'WECHAT' + wallet
-            elif str(PaymentType).upper() == 'ATOME':
-                VMP_req.wallet = 'ATOME'
-            elif str(PaymentType).upper() == 'UNIONPAY':
-                VMP_req.wallet = 'UNIONPAY'
-            elif str(PaymentType).upper() == 'BOCPAY':
-                VMP_req.wallet = 'BOCPAYUPI'
-            elif str(PaymentType).upper() == 'JETCO':
-                VMP_req.wallet = 'JETCOHK'
-            elif str(PaymentType).upper() == 'OCT':
-                VMP_req.wallet = 'OCT'
-            elif str(PaymentType).upper() == 'MPGS':
-                VMP_req.wallet = 'MPGS'
+            else:
+                VMP_req.wallet = wallet
+
             signStr = VMP.packSignStr(VMP_req, SecretCode)
             log.info('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
@@ -245,6 +240,7 @@ def VMP_Transaction(Gateway):
             VMP_req.eft_trade_no = eft_trade_no
             VMP_req.out_refund_no = refund_no
             VMP_req.out_trade_no = out_trade_no
+            VMP_req.packageName = packageName
             VMP_req.payType = PaymentType
             if pay_scene == None:
                 if service == 'service.alipay.wap.Refund':
@@ -261,6 +257,7 @@ def VMP_Transaction(Gateway):
                 VMP_req.pay_scene = pay_scene
             VMP_req.reason = body
             VMP_req.return_amount = amount
+            VMP_req.scheme = scheme
             if NewInterFace and str(PaymentType).upper() == 'ALIPAY':
                 VMP_req.service = 'service.alipayplus.web.Refund'
             else:
@@ -284,6 +281,18 @@ def VMP_Transaction(Gateway):
                 VMP_req.wallet = 'OCT'
             elif str(PaymentType).upper() == 'MPGS':
                 VMP_req.wallet = 'MPGS'
+            elif str(PaymentType).upper() == 'AE':
+                VMP_req.wallet = 'AE'
+            elif str(PaymentType).upper() == 'NUVEI':
+                VMP_req.wallet = 'NUVEI'
+            elif str(PaymentType).upper() == 'PAYME':
+                VMP_req.wallet = 'PAYME'
+            elif str(PaymentType).upper() == 'BOCVMP':
+                VMP_req.wallet = 'BOCVMPUPW'
+            elif str(PaymentType).upper() == 'FDMS':
+                VMP_req.wallet = 'FDMS'
+            elif str(PaymentType).upper() == 'ICBC':
+                VMP_req.wallet = 'ICBCWAP'
             signStr = VMP.packSignStr(VMP_req, SecretCode)
             log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()

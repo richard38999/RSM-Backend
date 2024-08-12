@@ -96,6 +96,8 @@ class VMP_Request():
     items = None
     shippingAddress = None
     customerInfo = None
+    scheme = None
+    packageName = None
     pass
 class detail():
     cost_price = None
