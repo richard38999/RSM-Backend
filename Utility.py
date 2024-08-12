@@ -1,14 +1,15 @@
 import base64
 import datetime
+import hashlib
 import sqlite3
 import time
 import requests
 import zipfile
 import Configuration
-import Crypto
-from Crypto.PublicKey import RSA
-from Crypto.Hash import SHA, SHA256
-from Crypto.Signature import PKCS1_v1_5 as PKCS1_signature, PKCS1_v1_5
+# import Crypto
+# from Crypto.PublicKey import RSA
+# from Crypto.Hash import SHA, SHA256
+# from Crypto.Signature import PKCS1_v1_5 as PKCS1_signature, PKCS1_v1_5
 db_name = Configuration.DB_path
 
 def getResultMessage(iRet):
@@ -639,18 +640,22 @@ def local_to_utc():
 
 def rsa_encrypt_data(data='', Key_path=''):
     private_key = get_key(Key_path)
-    signature = rsa_sign(data.encode(encoding='utf-8'), private_key)
-    signature = base64.b64encode(signature)
-    signature = signature.decode("UTF-8")
+    # 对拼接后的字符串进行SHA-256签名
+    signature = hashlib.sha256(data.encode()).hexdigest()
+    # print("***********sha256_signature:")
+    # print(signature)
+    # signature = rsa_sign(data.encode(encoding='utf-8'), private_key)
+    # signature = base64.b64encode(signature)
+    # signature = signature.decode("UTF-8")
     return signature
 
-def rsa_sign(plaintext, key, hash_algorithm=Crypto.Hash.SHA256):
-    """RSA 数字签名"""
-    signer = PKCS1_v1_5.new(RSA.importKey(key))
-
-    #hash算法必须要pycrypto库里的hash算法，不能直接用系统hashlib库，pycrypto是封装的hashlib
-    hash_value = hash_algorithm.new(plaintext)
-    return signer.sign(hash_value)
+# def rsa_sign(plaintext, key, hash_algorithm=Crypto.Hash.SHA256):
+#     """RSA 数字签名"""
+#     signer = PKCS1_v1_5.new(RSA.importKey(key))
+#
+#     #hash算法必须要pycrypto库里的hash算法，不能直接用系统hashlib库，pycrypto是封装的hashlib
+#     hash_value = hash_algorithm.new(plaintext)
+#     return signer.sign(hash_value)
 
 def get_key(key_file):
     with open(key_file) as f:
