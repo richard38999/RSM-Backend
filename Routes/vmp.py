@@ -3,7 +3,7 @@ from Logger import *
 from flask_jwt_extended import jwt_required
 from Utility import check_vmp_refund_txn, PostToHost, insert_VMP_Txn, GetToHost
 import hashlib
-import VMP
+from VMPHelper import VMP, Util, VMP_EOPG
 log = Log('Flask')
 # @app.route("/VMP/<Gateway>", methods=['POST'])
 @jwt_required()
@@ -56,6 +56,8 @@ def VMP_Transaction(Gateway):
     app_link = request.json.get('app_link')
     browser = request.json.get('browser')
     pay_scene = request.json.get('pay_scene')
+    scheme = request.json.get('scheme')
+    packageName = request.json.get('packageName')
     if str(TransactionType).upper() == 'REFUND':
         if Remark == '' or Remark == None:
             Remark = 'Refund on ' + time.strftime("%d %b %Y", time.localtime())
@@ -95,7 +97,7 @@ def VMP_Transaction(Gateway):
             return_url = URL + f'/{Gateway}/EOPG/eopg_return_addr'
         if str(TransactionType).upper() == 'SALE':
             URL += f'/{Gateway}/eopg/ForexTradeRecetion'
-            EOPG_req = VMP.EOPG_Request()
+            EOPG_req = VMP_EOPG.EOPG_Request()
             EOPG_req.fee_type = fee_type
             EOPG_req.merch_ref_no = out_trade_no
             EOPG_req.mid = User_Confirm_Key
@@ -103,7 +105,7 @@ def VMP_Transaction(Gateway):
             EOPG_req.service = service
             EOPG_req.trans_amount = amount
             EOPG_req.wechatWeb = wechatWeb
-            signStr = VMP.packSignStr_EOPG(EOPG_req,SecretCode)
+            signStr = Util.packSignStr_EOPG(EOPG_req,SecretCode)
             log.info(signStr)
             EOPG_req.signature = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             EOPG_req.app_pay = app_pay
@@ -117,10 +119,10 @@ def VMP_Transaction(Gateway):
             EOPG_req.api_version = '2.9'
             EOPG_req.lang = lang
             EOPG_req.reuse = reuse
-            RawRequest = VMP.packGetMsg(EOPG_req, URL)
+            RawRequest = Util.packGetMsg(EOPG_req, URL)
         elif str(TransactionType).upper() == 'REFUND':
             URL += f'/{Gateway}/eopg/ForexRefundRecetion'
-            EOPG_req = VMP.EOPG_Request()
+            EOPG_req = VMP_EOPG.EOPG_Request()
             EOPG_req.merch_ref_no = out_trade_no
             EOPG_req.mid = User_Confirm_Key
             EOPG_req.payment_type = PaymentType
@@ -129,44 +131,44 @@ def VMP_Transaction(Gateway):
             EOPG_req.return_url = ''
             EOPG_req.service = service
             EOPG_req.trans_amount = amount
-            signStr = VMP.packSignStr_EOPG(EOPG_req, SecretCode)
+            signStr = Util.packSignStr_EOPG(EOPG_req, SecretCode)
             log.info(signStr)
             EOPG_req.signature = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             EOPG_req.merch_refund_id = refund_no
             EOPG_req.api_version = '2.9'
             EOPG_req.redirect = redirect
             EOPG_req.balance_ignore = 'N'
-            RawRequest = VMP.packGetMsg(EOPG_req, URL)
+            RawRequest = Util.packGetMsg(EOPG_req, URL)
             # teustubg
         elif str(TransactionType).upper() == 'QUERY':
             URL += f'/{Gateway}/eopg/ForexCheckQuery'
-            EOPG_req = VMP.EOPG_Request()
+            EOPG_req = VMP_EOPG.EOPG_Request()
             EOPG_req.merch_ref_no = out_trade_no
             EOPG_req.mid = User_Confirm_Key
             EOPG_req.payment_type = PaymentType
             EOPG_req.service = service
-            signStr = VMP.packSignStr_EOPG(EOPG_req, SecretCode)
+            signStr = Util.packSignStr_EOPG(EOPG_req, SecretCode)
             log.info(signStr)
             EOPG_req.signature = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             EOPG_req.api_version = '2.9'
             EOPG_req.redirect = redirect
             EOPG_req.return_url = return_url
-            RawRequest = VMP.packGetMsg(EOPG_req, URL)
+            RawRequest = Util.packGetMsg(EOPG_req, URL)
         elif str(TransactionType).upper() == 'QUERYREFUND':
             URL += f'/{Gateway}/eopg/ForexCheckRefund'
-            EOPG_req = VMP.EOPG_Request()
+            EOPG_req = VMP_EOPG.EOPG_Request()
             EOPG_req.merch_ref_no = out_trade_no
             EOPG_req.merch_refund_id = refund_no
             EOPG_req.mid = User_Confirm_Key
             EOPG_req.payment_type = PaymentType
             EOPG_req.service = service
-            signStr = VMP.packSignStr_EOPG(EOPG_req, SecretCode)
+            signStr = Util.packSignStr_EOPG(EOPG_req, SecretCode)
             log.info(signStr)
             EOPG_req.signature = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
             EOPG_req.api_version = '2.9'
             EOPG_req.redirect = redirect
             EOPG_req.return_url = ''
-            RawRequest = VMP.packGetMsg(EOPG_req, URL)
+            RawRequest = Util.packGetMsg(EOPG_req, URL)
     elif APIType == 'WEB':
         if return_url == '':
             return_url = f'{URL}/{Gateway}/returnSuccess'
@@ -189,6 +191,7 @@ def VMP_Transaction(Gateway):
             VMP_req.lang = lang
             VMP_req.notify_url = notify_url
             VMP_req.out_trade_no = out_trade_no
+            VMP_req.packageName = packageName
             VMP_req.payType = PaymentType
             if pay_scene == None:
                 if service == 'service.wechat.oauth2.Authorize':
@@ -206,6 +209,7 @@ def VMP_Transaction(Gateway):
             else:
                 VMP_req.pay_scene = pay_scene
             VMP_req.return_url = return_url
+            VMP_req.scheme = scheme
             if NewInterFace and str(PaymentType).upper() == 'ALIPAY':
                 VMP_req.service = 'service.alipayplus.web.PreOrder'
             else:
@@ -221,22 +225,13 @@ def VMP_Transaction(Gateway):
                 VMP_req.wallet = 'ALIPAY' + wallet
             elif str(PaymentType).upper() == 'WECHAT':
                 VMP_req.wallet = 'WECHAT' + wallet
-            elif str(PaymentType).upper() == 'ATOME':
-                VMP_req.wallet = 'ATOME'
-            elif str(PaymentType).upper() == 'UNIONPAY':
-                VMP_req.wallet = 'UNIONPAY'
-            elif str(PaymentType).upper() == 'BOCPAY':
-                VMP_req.wallet = 'BOCPAYUPI'
-            elif str(PaymentType).upper() == 'JETCO':
-                VMP_req.wallet = 'JETCOHK'
-            elif str(PaymentType).upper() == 'OCT':
-                VMP_req.wallet = 'OCT'
-            elif str(PaymentType).upper() == 'MPGS':
-                VMP_req.wallet = 'MPGS'
-            signStr = VMP.packSignStr(VMP_req, SecretCode)
+            else:
+                VMP_req.wallet = wallet
+
+            signStr = Util.packSignStr(VMP_req, SecretCode)
             log.info('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-            RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+            RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
             pass
         elif str(TransactionType).upper() == 'REFUND':
             VMP_req = VMP.VMP_Request()
@@ -245,6 +240,7 @@ def VMP_Transaction(Gateway):
             VMP_req.eft_trade_no = eft_trade_no
             VMP_req.out_refund_no = refund_no
             VMP_req.out_trade_no = out_trade_no
+            VMP_req.packageName = packageName
             VMP_req.payType = PaymentType
             if pay_scene == None:
                 if service == 'service.alipay.wap.Refund':
@@ -261,6 +257,7 @@ def VMP_Transaction(Gateway):
                 VMP_req.pay_scene = pay_scene
             VMP_req.reason = body
             VMP_req.return_amount = amount
+            VMP_req.scheme = scheme
             if NewInterFace and str(PaymentType).upper() == 'ALIPAY':
                 VMP_req.service = 'service.alipayplus.web.Refund'
             else:
@@ -284,10 +281,22 @@ def VMP_Transaction(Gateway):
                 VMP_req.wallet = 'OCT'
             elif str(PaymentType).upper() == 'MPGS':
                 VMP_req.wallet = 'MPGS'
-            signStr = VMP.packSignStr(VMP_req, SecretCode)
+            elif str(PaymentType).upper() == 'AE':
+                VMP_req.wallet = 'AE'
+            elif str(PaymentType).upper() == 'NUVEI':
+                VMP_req.wallet = 'NUVEI'
+            elif str(PaymentType).upper() == 'PAYME':
+                VMP_req.wallet = 'PAYME'
+            elif str(PaymentType).upper() == 'BOCVMP':
+                VMP_req.wallet = 'BOCVMPUPW'
+            elif str(PaymentType).upper() == 'FDMS':
+                VMP_req.wallet = 'FDMS'
+            elif str(PaymentType).upper() == 'ICBC':
+                VMP_req.wallet = 'ICBCWAP'
+            signStr = Util.packSignStr(VMP_req, SecretCode)
             log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-            RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+            RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
             pass
         elif str(TransactionType).upper() == 'QUERY':
             VMP_req = VMP.VMP_Request()
@@ -303,10 +312,10 @@ def VMP_Transaction(Gateway):
                 VMP_req.service = 'service.common.Query'
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
-            signStr = VMP.packSignStr(VMP_req, SecretCode)
+            signStr = Util.packSignStr(VMP_req, SecretCode)
             log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-            RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+            RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
             pass
     elif APIType == 'JSAPI':
         if return_url == '':
@@ -336,10 +345,10 @@ def VMP_Transaction(Gateway):
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.transaction_amount = amount
             VMP_req.user_confirm_key = User_Confirm_Key
-            signStr = VMP.packSignStr(VMP_req, SecretCode)
+            signStr = Util.packSignStr(VMP_req, SecretCode)
             log.info('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-            RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+            RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
             pass
         elif str(TransactionType).upper() == 'REFUND':
             VMP_req = VMP.VMP_Request()
@@ -360,10 +369,10 @@ def VMP_Transaction(Gateway):
             VMP_req.total_fee = amount
             VMP_req.transaction_amount = amount
             VMP_req.user_confirm_key = User_Confirm_Key
-            signStr = VMP.packSignStr(VMP_req, SecretCode)
+            signStr = Util.packSignStr(VMP_req, SecretCode)
             log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-            RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+            RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
             pass
         elif str(TransactionType).upper() == 'QUERY':
             VMP_req = VMP.VMP_Request()
@@ -383,10 +392,10 @@ def VMP_Transaction(Gateway):
             VMP_req.refund_no = refund_no
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
-            signStr = VMP.packSignStr(VMP_req, SecretCode)
+            signStr = Util.packSignStr(VMP_req, SecretCode)
             log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-            RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+            RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
             pass
     elif APIType == 'QRCode':
         if return_url == '':
@@ -427,10 +436,10 @@ def VMP_Transaction(Gateway):
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.transaction_amount = amount
             VMP_req.user_confirm_key = User_Confirm_Key
-            signStr = VMP.packSignStr(VMP_req, SecretCode)
+            signStr = Util.packSignStr(VMP_req, SecretCode)
             log.info('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-            RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+            RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
             pass
         elif str(TransactionType).upper() == 'REFUND':
             VMP_req = VMP.VMP_Request()
@@ -462,10 +471,10 @@ def VMP_Transaction(Gateway):
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.transaction_amount = amount
             VMP_req.user_confirm_key = User_Confirm_Key
-            signStr = VMP.packSignStr(VMP_req, SecretCode)
+            signStr = Util.packSignStr(VMP_req, SecretCode)
             log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-            RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+            RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
             pass
         elif str(TransactionType).upper() == 'QUERY':
             VMP_req = VMP.VMP_Request()
@@ -504,10 +513,10 @@ def VMP_Transaction(Gateway):
 
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
-            signStr = VMP.packSignStr(VMP_req, SecretCode)
+            signStr = Util.packSignStr(VMP_req, SecretCode)
             log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-            RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+            RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
             pass
         elif str(TransactionType).upper() == 'CANCEL':
             VMP_req = VMP.VMP_Request()
@@ -536,10 +545,10 @@ def VMP_Transaction(Gateway):
             #     VMP_req.service = service
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
-            signStr = VMP.packSignStr(VMP_req, SecretCode)
+            signStr = Util.packSignStr(VMP_req, SecretCode)
             log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-            RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+            RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
             pass
         elif str(TransactionType).upper() == 'CLOSE':
             VMP_req = VMP.VMP_Request()
@@ -571,10 +580,10 @@ def VMP_Transaction(Gateway):
 
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
-            signStr = VMP.packSignStr(VMP_req, SecretCode)
+            signStr = Util.packSignStr(VMP_req, SecretCode)
             log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-            RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+            RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
             pass
     elif APIType == 'APP':
         URL += f'/{Gateway}/Servlet/'
@@ -600,10 +609,10 @@ def VMP_Transaction(Gateway):
                 VMP_req.wallet = 'ALIPAY' + wallet
             elif str(PaymentType).upper() == 'WECHAT':
                 VMP_req.wallet = 'WECHAT' + wallet
-            signStr = VMP.packSignStr(VMP_req, SecretCode)
+            signStr = Util.packSignStr(VMP_req, SecretCode)
             log.info('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-            RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+            RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
             pass
         elif str(TransactionType).upper() == 'REFUND':
             VMP_req = VMP.VMP_Request()
@@ -619,10 +628,10 @@ def VMP_Transaction(Gateway):
             VMP_req.return_amount = amount
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
-            signStr = VMP.packSignStr(VMP_req, SecretCode)
+            signStr = Util.packSignStr(VMP_req, SecretCode)
             log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-            RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+            RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
             pass
         elif str(TransactionType).upper() == 'QUERY':
             VMP_req = VMP.VMP_Request()
@@ -636,10 +645,10 @@ def VMP_Transaction(Gateway):
             VMP_req.refund_no = refund_no
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
-            signStr = VMP.packSignStr(VMP_req, SecretCode)
+            signStr = Util.packSignStr(VMP_req, SecretCode)
             log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-            RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+            RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
             pass
     elif APIType == 'Cashier':
         if return_url == '':
@@ -662,10 +671,10 @@ def VMP_Transaction(Gateway):
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.transaction_amount = amount
             VMP_req.user_confirm_key = User_Confirm_Key
-            signStr = VMP.packSignStr(VMP_req, SecretCode)
+            signStr = Util.packSignStr(VMP_req, SecretCode)
             log.info('signStr: {0}'.format(signStr))
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-            RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+            RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
             pass
         elif str(TransactionType).upper() == 'REFUND':
             VMP_req = VMP.VMP_Request()
@@ -683,10 +692,10 @@ def VMP_Transaction(Gateway):
                 VMP_req.service = service
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
-            signStr = VMP.packSignStr(VMP_req, SecretCode)
+            signStr = Util.packSignStr(VMP_req, SecretCode)
             log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-            RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+            RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
             pass
         elif str(TransactionType).upper() == 'QUERY':
             VMP_req = VMP.VMP_Request()
@@ -697,10 +706,10 @@ def VMP_Transaction(Gateway):
             VMP_req.refund_no = refund_no
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
-            signStr = VMP.packSignStr(VMP_req, SecretCode)
+            signStr = Util.packSignStr(VMP_req, SecretCode)
             log.info(signStr)
             VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-            RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+            RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
             pass
     log.info('RawRequest: {0}'.format(RawRequest))
     log.info('URL: {0}'.format(URL))

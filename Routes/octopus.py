@@ -3,7 +3,9 @@ from Logger import *
 from flask_jwt_extended import jwt_required
 from zipfile import ZipFile
 from werkzeug.utils import secure_filename
-import Octopus
+from OctopusHelper.SPID import Check_SPIDStatus, Download_SPID
+from OctopusHelper.Monthly import Check_MonthlyReportStatus, Download_MonthlyReport
+from OctopusHelper.Yearly import Check_YearlyReportStatus, Download_YearlyReport
 log = Log('Flask')
 # @app.route("/Octopus/Report/<action>", methods=['POST'])
 @jwt_required()
@@ -20,8 +22,7 @@ def Octopus_Report(action):
         SPID = request.json.get("SPID")
         DateFrom = request.json.get("DateFrom")
         DateTo = request.json.get("DateTo")
-        temp = Octopus.Report()
-        result = temp.Check_SPIDStatus(SPID, DateFrom, DateTo)
+        result = Check_SPIDStatus(SPID, DateFrom, DateTo)
         if result[0] == True:
             meta = {'status': 0, 'msg': '{0}'.format(result[1])}
         else:
@@ -34,16 +35,14 @@ def Octopus_Report(action):
         SPID = request.json.get("SPID")
         DateFrom = request.json.get("DateFrom")
         DateTo = request.json.get("DateTo")
-        temp = Octopus.Report()
-        result = temp.Download_SPID(SPID, DateFrom, DateTo)
+        result = Download_SPID(SPID, DateFrom, DateTo)
         log.end('Octopus_Report')
         return send_file(result[1], as_attachment=True)
     elif action == 'Download_MonthlyReport':
         Month = request.json.get("Month")
-        temp = Octopus.Report()
-        Monthly_Report_Status = temp.Check_MonthlyReportStatus(Month)
+        Monthly_Report_Status = Check_MonthlyReportStatus(Month)
         if Monthly_Report_Status[0] == True:
-            result = temp.Download_MonthlyReport(Month)
+            result = Download_MonthlyReport(Month)
             if result[0] == True:
                 meta = {'status': 0, 'msg': 'Success'}
                 data = result[1]
@@ -57,10 +56,9 @@ def Octopus_Report(action):
         return jsonify(returnmessage)
     elif action == 'Download_YearlyReport':
         Year = request.json.get("Year")
-        temp = Octopus.Report()
-        Yearly_Report_Status = temp.Check_YearlyReportStatus(Year)
+        Yearly_Report_Status = Check_YearlyReportStatus(Year)
         if Yearly_Report_Status[0] == True:
-            result = temp.Download_YearlyReport(Year)
+            result = Download_YearlyReport(Year)
             if result[0] == True:
                 meta = {'status': 0, 'msg': 'Success'}
                 data = result[1]
