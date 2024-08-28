@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 FIELD_LENGTH = [
     64 // 8, 19, 6, 12, 12, 12, 10, 8,  # 1-8
     8, 8, 6, 6, 4, 4, 4, 4,  # 9-16
@@ -18,7 +16,6 @@ FIELD_LENGTH = [
     999, 999, 999, 999, 999, 999, 999, 999,  # 112-120
     999, 999, 999, 999, 999, 999, 999, 64 // 8,  # 121-128
 ]
-
 FIX, LLVAR, LLLVAR = 1, 2, 3
 FIELD_VAR_TYPE = [
     FIX, LLVAR, FIX, FIX, FIX, FIX, FIX, FIX,  # 1-8
@@ -38,7 +35,6 @@ FIELD_VAR_TYPE = [
     LLLVAR, LLLVAR, LLLVAR, LLLVAR, LLLVAR, LLLVAR, LLLVAR, LLLVAR,  # 112-120
     LLLVAR, LLLVAR, LLLVAR, LLLVAR, LLLVAR, LLLVAR, LLLVAR, FIX,  # 121-128
 ]
-
 TYPEA, TYPEN, TYPEXN, TYPES, TYPEAN, TYPEAS, TYPENS, TYPEANS, TYPEB, TYPEZ, TYPE63 = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
 FIELD_TYPE = [
     TYPEB, TYPEN, TYPEN, TYPEN, TYPEN, TYPEN, TYPEN, TYPEN,  # 1-8
@@ -58,7 +54,6 @@ FIELD_TYPE = [
     TYPEANS, TYPEANS, TYPEANS, TYPEANS, TYPEANS, TYPEANS, TYPEANS, TYPEANS,  # 112-120
     TYPEANS, TYPEANS, TYPEANS, TYPEANS, TYPEANS, TYPEANS, TYPEANS, TYPEB,  # 121-128
 ]
-
 RIGHT_JUSTIFIED, LEFT_JUSTIFIED = 0, 1
 FIELD_JUSTIFIED = [
     RIGHT_JUSTIFIED, LEFT_JUSTIFIED, RIGHT_JUSTIFIED, RIGHT_JUSTIFIED, RIGHT_JUSTIFIED, RIGHT_JUSTIFIED,
@@ -94,8 +89,6 @@ FIELD_JUSTIFIED = [
     RIGHT_JUSTIFIED, RIGHT_JUSTIFIED, RIGHT_JUSTIFIED, RIGHT_JUSTIFIED, RIGHT_JUSTIFIED, RIGHT_JUSTIFIED,
     RIGHT_JUSTIFIED, RIGHT_JUSTIFIED,  # 121-128
 ]
-
-
 def pack8583(dic):  # dict to byte str
     if not isinstance(dic, dict):
         raise ValueError('input type dismatch dict')
@@ -202,11 +195,10 @@ def pack8583(dic):  # dict to byte str
     data_list.insert(0, bytes(bitmap[:8]))
     data_list.insert(0, bytes.fromhex(msg_type))
     data_list.insert(0, bytes.fromhex(tpdu))
-    data_list.insert(0, bytes.fromhex(len(b''.join(data_list))))
+    data_list.insert(0, bytes.fromhex(str(len(b''.join(data_list))).zfill(4)))
     data = b''.join(data_list)
-    return data
-
-
+    RawISO8583 = data.hex().encode().decode()
+    return {'RawISO8583': RawISO8583, 'BytesData': data}
 def unpack8583(data):  # byte str to dict
     if not isinstance(data, bytes):
         raise ValueError('input type dismatch bytes')
@@ -309,8 +301,7 @@ def unpack8583(data):  # byte str to dict
     if dic.get('field_1'):
         del dic['field_1']
 
-    return dic
-
+    return {'jsonData': dic, 'RawISO8583': data.hex().encode().decode()}
 def unpackField_63(dic):
     field_63 = dic['field_63']
     Tag = ''
@@ -327,6 +318,7 @@ def unpackField_63(dic):
         dic['field_63_' + Tag] = Value
         index += Length
     return dic
+
 
 def comm(ip, port, sendData):
     import socket
@@ -352,43 +344,3 @@ def comm(ip, port, sendData):
 
     s.close()
     return recvData
-
-
-if __name__ == '__main__':
-    # sale
-    dic = {'tpdu': '6056781234',
-           'msg_type': '0200',
-           'field_2': '6200000000000000000',
-           'field_3': '000000',
-           'field_4': '1000',
-           'field_11': '1',
-           'field_22': '032',
-           'field_25': '00',
-           'field_41': '00000001',
-           'field_42': '000000000000001',
-           'field_49': '344',
-           'field_64': '1234567',
-           'field_65': '1',
-           'field_66': '2',
-           }
-
-    for i in list(dic.keys()):
-        print('{0}:{1}'.format(i, dic[i]))
-
-    data = pack8583(dic)
-    print('data:', data)
-
-    dic = unpack8583(data)
-    for i in list(dic.keys()):
-        print('{0}:{1}'.format(i, dic[i]))
-
-    data = pack8583(dic)
-    print('data:', data)
-    print('------------------------------------------')
-
-    recvData = b'\x60\x56\x78\x12\x34\x02\x00\xff\xff\xff\xff\xff\xff\xff\xe3\xc0\x00\x00\x00\x00\x00\x00\x00\x05\x22\x22\x20\x33\x33\x33\x00\x00\x00\x00\x04\x44\x00\x00\x00\x00\x05\x55\x00\x00\x00\x00\x06\x66\x00\x00\x00\x07\x77\x00\x00\x08\x88\x00\x00\x09\x99\x00\x00\x00\x00\x00\x00\x11\x22\x22\x22\x33\x33\x44\x44\x55\x55\x66\x66\x77\x77\x88\x88\x09\x99\x00\x00\x00\x11\x02\x22\x03\x33\x04\x44\x55\x66\x07\x38\x00\x00\x08\x88\x39\x00\x00\x09\x99\x30\x00\x00\x00\x00\x31\x00\x00\x00\x01\x06\x22\x22\x22\x04\x33\x33\x04\x44\x44\x04\x55\x55\x00\x04\x66\x66\x37\x37\x37\x37\x37\x37\x37\x37\x37\x37\x37\x37\x38\x38\x38\x38\x38\x00\x39\x39\x30\x30\x30\x31\x31\x31\x31\x31\x31\x31\x31\x32\x32\x32\x32\x32\x32\x00\x00\x00\x00\x00\x00\x00\x00\x00\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x33\x04\x34\x34\x34\x34\x04\x35\x35\x35\x35\x00\x04\x36\x36\x36\x36\x00\x04\x37\x37\x37\x37\x00\x04\x38\x38\x38\x38\x39\x39\x39\x30\x30\x30\x31\x31\x31\x00\x00\x32\x32\x32\x32\x32\x32\x00\x00\x00\x00\x00\x00\x33\x33\x00\x04\x34\x34\x34\x34\x00\x04\x35\x35\x35\x35\x00\x04\x36\x36\x36\x36\x00\x04\x37\x37\x37\x37\x00\x04\x38\x38\x38\x38\x00\x04\x39\x39\x39\x39\x00\x08\x33\x33\x33\x33\x33\x33\x33\x33\x31\x31\x31\x31\x31\x31\x31\x31\x01\x02'
-    dic = unpack8583(recvData)
-    print("recv")
-    for i in list(dic.keys()):
-        print('{0}:{1}'.format(i, dic[i]))
-    print('------------------------------------------')
