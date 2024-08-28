@@ -1,11 +1,14 @@
-from flask import request, jsonify
+from flask import request, jsonify, json
 from Logger import *
 from flask_jwt_extended import jwt_required
 import datetime
 from werkzeug.utils import secure_filename
-from Utility import getResultMessage, insert_Offline_Txn, convertToCardNo, check_offline_refund_txn
+from Utility import (getResultMessage, insert_Offline_Txn, convertToCardNo, check_offline_refund_txn,
+                     check_vmp_refund_txn, PostToHost, insert_VMP_Txn, GetToHost)
 import xlrd
+import hashlib
 import clr
+from VMPHelper import VMP, Util, VMP_EOPG
 clr.FindAssembly('DLL\\EFTPaymentsServer.dll')
 clr.AddReference('DLL\\EFTPaymentsServer')
 log = Log('Flask')
@@ -166,15 +169,15 @@ def BatchFor(Till_Number, BatchFor):
                         VMP_req.wallet = 'OCT'
                     elif str(PaymentType).upper() == 'MPGS':
                         VMP_req.wallet = 'MPGS'
-                    signStr = VMP.packSignStr(VMP_req, SecretCode)
+                    signStr = Util.packSignStr(VMP_req, SecretCode)
                     log.info(signStr)
                     VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-                    RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+                    RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
                     pass
                 elif APIType.upper() == 'EOPG':
                     return_url = URL + f'/{Till_Number}/EOPG/eopg_return_addr'
                     URL += f'/{Till_Number}/eopg/ForexRefundRecetion'
-                    EOPG_req = VMP.EOPG_Request()
+                    EOPG_req = VMP_EOPG.EOPG_Request()
                     EOPG_req.merch_ref_no = out_trade_no
                     EOPG_req.mid = User_Confirm_Key
                     EOPG_req.payment_type = PaymentType
@@ -183,14 +186,14 @@ def BatchFor(Till_Number, BatchFor):
                     EOPG_req.return_url = ''
                     EOPG_req.service = 'REFUND'
                     EOPG_req.trans_amount = amount
-                    signStr = VMP.packSignStr_EOPG(EOPG_req, SecretCode)
+                    signStr = Util.packSignStr_EOPG(EOPG_req, SecretCode)
                     log.info(signStr)
                     EOPG_req.signature = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
                     EOPG_req.merch_refund_id = 'Refund_' + time.strftime("%Y%m%d%H%M%S", time.localtime())
                     EOPG_req.api_version = '2.9'
                     EOPG_req.redirect = 'N'
                     EOPG_req.balance_ignore = 'N'
-                    RawRequest = VMP.packGetMsg(EOPG_req, URL)
+                    RawRequest = Util.packGetMsg(EOPG_req, URL)
                 elif APIType.upper() == 'JSAPI':
                     URL += f'/{Till_Number}/Servlet/'
                     VMP_req = VMP.VMP_Request()
@@ -214,10 +217,10 @@ def BatchFor(Till_Number, BatchFor):
                     VMP_req.total_fee = amount
                     VMP_req.transaction_amount = amount
                     VMP_req.user_confirm_key = User_Confirm_Key
-                    signStr = VMP.packSignStr(VMP_req, SecretCode)
+                    signStr = Util.packSignStr(VMP_req, SecretCode)
                     log.info(signStr)
                     VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-                    RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+                    RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
                     pass
                 elif APIType.upper() == 'APP':
                     URL += f'/{Till_Number}/Servlet/'
@@ -231,10 +234,10 @@ def BatchFor(Till_Number, BatchFor):
                     VMP_req.return_amount = amount
                     VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
                     VMP_req.user_confirm_key = User_Confirm_Key
-                    signStr = VMP.packSignStr(VMP_req, SecretCode)
+                    signStr = Util.packSignStr(VMP_req, SecretCode)
                     log.info(signStr)
                     VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-                    RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+                    RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
                     pass
                 elif APIType.upper() == 'QRCODE':
                     URL += f'/{Till_Number}/Servlet/'
@@ -267,10 +270,10 @@ def BatchFor(Till_Number, BatchFor):
                     VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
                     VMP_req.transaction_amount = amount
                     VMP_req.user_confirm_key = User_Confirm_Key
-                    signStr = VMP.packSignStr(VMP_req, SecretCode)
+                    signStr = Util.packSignStr(VMP_req, SecretCode)
                     log.info(signStr)
                     VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-                    RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+                    RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
                     pass
                 elif APIType.upper() == 'CASHIER':
                     URL += f'/{Till_Number}/Servlet/'
@@ -286,12 +289,12 @@ def BatchFor(Till_Number, BatchFor):
                     VMP_req.service = 'service.united.wap.Refund'
                     VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
                     VMP_req.user_confirm_key = User_Confirm_Key
-                    signStr = VMP.packSignStr(VMP_req, SecretCode)
+                    signStr = Util.packSignStr(VMP_req, SecretCode)
                     log.info(signStr)
                     VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
-                    RawRequest = json.dumps(VMP.packJsonMsg(VMP_req))
+                    RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
                     pass
-                Refund_Result = Utility.check_vmp_refund_txn(GateName=Till_Number, user_confirm_key=User_Confirm_Key,
+                Refund_Result = check_vmp_refund_txn(GateName=Till_Number, user_confirm_key=User_Confirm_Key,
                                                              out_trade_no=out_trade_no, eft_trade_no=eft_trade_no)
                 if Refund_Result != []:
                     data.append([User_Confirm_Key, SecretCode, amount, APIType, PaymentType, out_trade_no, eft_trade_no, f'This transaction already did the refund by "{Refund_Result[0][1]}" on {Refund_Result[0][0]}. Not allow to use Batch Refund. Please use manual refund!', Refund_Result[0][13], Refund_Result[0][14]])
@@ -299,7 +302,7 @@ def BatchFor(Till_Number, BatchFor):
                     continue
                 log.info(f'URL: {URL}')
                 log.info(f'RawRequest: {RawRequest}')
-                resp = Utility.PostToHost(URL, RawRequest, timeout=30)
+                resp = PostToHost(URL, RawRequest, timeout=30)
                 if resp.status_code == 200:
                     log.info('RawResponse: {0}'.format(resp.text.encode("utf8")))
                     RawResponse = json.loads(resp.text.encode("utf8"))
@@ -308,7 +311,7 @@ def BatchFor(Till_Number, BatchFor):
                     else:
                         meta = {'status': 1, 'msg': "Some Transactions Refund Failed"}
                         data.append([User_Confirm_Key, SecretCode, amount, APIType, PaymentType, out_trade_no, eft_trade_no, f"{RawResponse['return_status']}[{RawResponse['return_char']}]", Email_Subject, Remark])
-                    Utility.insert_VMP_Txn(DateTime=nowdatetime, username=username, GatewayName=Till_Number, API_Type=APIType,
+                    insert_VMP_Txn(DateTime=nowdatetime, username=username, GatewayName=Till_Number, API_Type=APIType,
                                            PaymentType=PaymentType, TransType='REFUND', Amount=amount,
                                            user_confirm_key=User_Confirm_Key,
                                            Secret_Code=SecretCode, out_trade_no=out_trade_no, eft_trade_no=eft_trade_no,
@@ -401,7 +404,7 @@ def BatchFor(Till_Number, BatchFor):
                             data.append([MID, TID, round(float(int(Amount) / 100), 2), RRN, f'{iRet[1].respondCode}[{iRet[1].respondText}]', Email_Subject, Remark])
                 else:
                     if Till_Number == 'CUP' or Till_Number == 'BOC':
-                        data.append([MID, TID, round(float(int(Amount) / 100), 2), RRN, ApprovalCode, f'{iRet}[{Utility.getResultMessage(iRet)}]', Email_Subject, Remark])
+                        data.append([MID, TID, round(float(int(Amount) / 100), 2), RRN, ApprovalCode, f'{iRet}[{getResultMessage(iRet)}]', Email_Subject, Remark])
                     else:
                         data.append([MID, TID, round(float(int(Amount) / 100), 2), RRN,
                                      f'{iRet}[{getResultMessage(iRet)}]', Email_Subject, Remark])
