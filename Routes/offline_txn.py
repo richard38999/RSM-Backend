@@ -10,7 +10,7 @@ clr.FindAssembly('DLL\\EFTPaymentsServer.dll')
 clr.AddReference('DLL\\EFTPaymentsServer')
 clr.FindAssembly('DLL\\XML_InterFace.dll')
 clr.AddReference('DLL\\XML_InterFace')
-from EFTSolutions import *
+from EFTSolutions import EFTPaymentsServer, TransactionRecord
 from XML_InterFace import *
 
 log = Log('Flask')
@@ -28,18 +28,20 @@ def offline_Transaction(Till_Number, TransactionType):
     amount = request.json.get('amount')
     ecrRefNo = request.json.get('ecrRefNo')
     ApprovalCode = request.json.get('ApprovalCode')
+    if ApprovalCode == None:
+        ApprovalCode = ''
     # TransactionType = request.json.get('TransactionType')
     RRN = request.json.get('RRN')
     Refund_RRN = request.json.get('Refund_RRN')
     IP = request.json.get('IP')
-    Port = request.json.get('Port')
+    Port = int(request.json.get('Port'))
     TPDU = request.json.get('TPDU')
     COMMTYPE = request.json.get('COMMTYPE')
     if COMMTYPE == 'TLS':
         COMMTYPE = 2
     elif COMMTYPE == 'PlainText':
         COMMTYPE = 1
-    Timeout = request.json.get('Timeout')
+    Timeout = int(request.json.get('Timeout'))
     MsgType = request.json.get('MsgType')
     TraceNo = request.json.get('TraceNo')
     URL = request.json.get('URL')
@@ -126,7 +128,7 @@ def offline_Transaction(Till_Number, TransactionType):
             else:
                 meta = {'status': iRet, 'msg': getResultMessage(str(iRet))}
         elif TransactionType == 'REFUND':
-            iRet = eft.refund(RRN, amount, ecrRefNo, ApprovalCode, Refund_RRN)
+            iRet = eft.refund(RRN, amount, ecrRefNo, ApprovalCode)
             if iRet == 0:
                 iRet = eft.getRefundResponse(Transaction_resp)
                 if iRet[0] == 0:

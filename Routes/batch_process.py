@@ -27,7 +27,7 @@ def BatchFor(Till_Number, BatchFor):
     f.save(filepath)
     URL = request.form['URL']
     IP = request.form['IP']
-    Port = request.form['Port']
+    Port = int(request.form['Port'])
     # return_url = request.form['return_url']
     TPDU = request.form['TPDU']
     COMMTYPE = request.form['COMMTYPE']
@@ -35,7 +35,8 @@ def BatchFor(Till_Number, BatchFor):
         COMMTYPE = 2
     elif COMMTYPE == 'PlainText':
         COMMTYPE = 1
-    Timeout = request.form['Timeout']
+    COMMTYPE = int(COMMTYPE)
+    Timeout = int(request.form['Timeout'])
     ecrRefNo = request.form['ecrRefNo']
     APIType = ''
     out_trade_no = ''
@@ -391,7 +392,7 @@ def BatchFor(Till_Number, BatchFor):
                 eft = EFTPaymentsServer()
                 Transaction_resp = TransactionRecord()
                 eft.initialize(Till_Number, MID, TID, IP, Port, TPDU, COMMTYPE, Timeout)
-                iRet = eft.refund(RRN, Amount, ecrRefNo, ApprovalCode)
+                iRet = eft.refund(RRN, int(Amount), ecrRefNo, ApprovalCode)
                 if iRet == 0:
                     iRet = eft.getSaleResponse(Transaction_resp)
                     if iRet[0] == 0:
