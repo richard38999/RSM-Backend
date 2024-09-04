@@ -20,7 +20,7 @@ def Download_MonthlyReport(str_Month):
         with open(
                 currentlyPath + '\\Octopus\\Parsefiles\\' + str
                     ((datetime.datetime.strptime(startDate, '%Y%m%d') + datetime.timedelta(days=+i)).strftime(
-                    "%Y%m%d")) + '\\SET111csv.TXT', 'r', encoding='utf-8',
+                    "%Y%m%d")) + '\\SET111csv.CSV', 'r', encoding='utf-8',
                 errors='ignore') as f:
             lines = f.readlines()
             for j in range(len(lines)):

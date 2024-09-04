@@ -119,7 +119,7 @@ def offline_Transaction(Till_Number, TransactionType):
             else:
                 meta = {'status': iRet, 'msg': getResultMessage(str(iRet))}
         elif TransactionType == 'QUERY_REFUND':
-            iRet = eft.query_refund(RRN, ApprovalCode, TraceNo, Refund_RRN)
+            iRet = eft.query_refund(RRN, ApprovalCode, TraceNo)
             if iRet == 0:
                 iRet = eft.getQueryRefundResponse(Transaction_resp)
                 if iRet[0] == 0:
@@ -184,7 +184,7 @@ def offline_Transaction(Till_Number, TransactionType):
                                            approvalCode=None,
                                            respondCode=iRet, respondText=meta['msg'], Email_Subject=Email_Subject, Remark=Remark)
         elif TransactionType == 'ADMINREFUND':
-            iRet = eft.adminRefund(RRN, OriTID, amount, ecrRefNo, Refund_RRN)
+            iRet = eft.adminRefund(RRN, OriTID, amount, ecrRefNo)
             if iRet == 0:
                 iRet = eft.getRefundResponse(Transaction_resp)
                 if iRet[0] == 0:

@@ -1,7 +1,7 @@
 from flask import request, jsonify
 from flask_jwt_extended import jwt_required
 from Logger import *
-from Utility import get_Menu, ChangePassword, update_AccountStatus, userView, get_userlist, delete_Account
+from Utility import get_Menu, UpdatePassword, update_AccountStatus, userView, get_userlist, delete_Account
 log = Log('Flask')
 
 # @app.route("/ChangePassword", methods=['POST'])
@@ -16,7 +16,7 @@ def ChangePassword():
     newpassword = request.json.get("newpassword")
     meta = {'status': 'Failed', 'msg': 'Password Not Match'}
     data = {}
-    meta = ChangePassword(username, oldpassword,newpassword)
+    meta = UpdatePassword(username, oldpassword,newpassword)
     returnmessage = {'meta': meta, 'data': data}
     log.info(returnmessage)
     log.end('ChangePassword')

@@ -356,7 +356,7 @@ def convertToCardNo(maskedCardNo):
     return returnmessage
 
 
-def ChangePassword(username, oldPassword, newPassword):
+def UpdatePassword(username, oldPassword, newPassword):
     try:
         returnmessage = ''
         conn = sqlite3.connect(db_name)

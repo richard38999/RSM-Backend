@@ -80,9 +80,9 @@ def Octopus_Report(action):
             # namefile = secure_filename(file)
             pass
             # f = request.files['files']
-            filepath = os.path.join('Octopus/Rawfiles/', secure_filename(f.filename))
+            filepath = os.path.join(os.getcwd(),'Octopus/Rawfiles/', secure_filename(f.filename))
             directory = str(f.filename).split('.')
-            unzipPath = os.path.join('Octopus/Parsefiles/', '')
+            unzipPath = os.path.join(os.getcwd(),'Octopus/Parsefiles/', '')
             # unzipPath = os.path.join('Octopus/Parsefiles/', secure_filename(directory[0]))
             f.save(filepath)
             with ZipFile(filepath, 'r') as zipObj:
