@@ -14,6 +14,10 @@ clr.AddReference('DLL\\EFTPaymentsServer')
 log = Log('Flask')
 from EFTSolutions import *
 # @app.route("/<Till_Number>/<BatchFor>/Upload", methods=['POST'])
+def str(param):
+    pass
+
+
 @jwt_required()
 # @decorator.except_output('Flask', isSendEmail=Config.isSentEmail, Email_subject='RSM System Alert!')
 def BatchFor(Till_Number, BatchFor):
@@ -25,7 +29,7 @@ def BatchFor(Till_Number, BatchFor):
     datetime_f = datetime.datetime.now().strftime("%Y%m%d%H%M%S%f")
     filepath = os.path.join('Batch Process/', '{0}_'.format(datetime_f) + secure_filename(f.filename))
     f.save(filepath)
-    URL = request.form['URL']
+    # URL = request.form['URL']
     IP = request.form['IP']
     Port = int(request.form['Port'])
     # return_url = request.form['return_url']
@@ -337,21 +341,24 @@ def BatchFor(Till_Number, BatchFor):
                         data.append(['MID','TID','Amount','RRN','Respond Code/Result','Email Subject','Remark'])
                     continue
                 if table.cell(i, 0).ctype == 2:
+                    print(table.cell_value(i, 0))
                     MID = str(int(float(table.cell_value(i, 0)))).strip()
                 else:
-                    MID = str(table.cell_value(i, 0)).strip()
+                    print(str(table.cell_value(i, 0)))
+                    print(table.cell_value(i, 0))
+                    MID = table.cell_value(i, 0).strip()
                 if table.cell(i, 1).ctype == 2:
                     TID = str(int(float(table.cell_value(i, 1)))).strip()
                 else:
-                    TID = str(table.cell_value(i, 1)).strip()
+                    TID = table.cell_value(i, 1).strip()
                 if table.cell(i, 2).ctype == 2:
-                    Amount = str(int(round(float(table.cell_value(i, 2) * 100),2))).strip()
+                    Amount = int(round(float(table.cell_value(i, 2) * 100),2))
                 else:
-                    Amount = str(int(round(float(table.cell_value(i, 2)) * 100, 2))).strip()
+                    Amount = int(round(float(table.cell_value(i, 2)) * 100, 2))
                 if table.cell(i, 3).ctype == 2:
                     RRN = str(int(float(table.cell_value(i, 3)))).strip()
                 else:
-                    RRN = str(table.cell_value(i, 3)).strip()
+                    RRN = table.cell_value(i, 3).strip()
 
                 if Till_Number == 'CUP' or Till_Number == 'BOC':
                     if table.cell(i, 4).ctype == 2:

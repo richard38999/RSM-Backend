@@ -38,7 +38,7 @@ def login():
                     data = {'username': username}
                 break
     else:
-        meta = {'status': 'Failed', 'msg': 'Version Not Updated, please re-start browser'}
+        meta = {'status': 'Failed', 'msg': 'Version Not Updated, please press F5 to refresh browser'}
         data = {'username': username}
     returnmessage = {'meta': meta, 'data': data}
     log.info(returnmessage)

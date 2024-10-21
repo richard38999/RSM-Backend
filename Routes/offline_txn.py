@@ -212,7 +212,7 @@ def offline_Transaction(Till_Number, TransactionType):
         elif TransactionType == 'VOID':
             iRet = XML.Void(barcode, amount, TraceNo)
         elif TransactionType == 'QUERY':
-            iRet = XML.QUERY(RRN, barcode, AUTH)
+            iRet = XML.QUERY(RRN, barcode)
         elif TransactionType == 'QUERY_REFUND':
             iRet = XML.QUERY_REFUND(RRN, ApprovalCode, TraceNo)
         elif TransactionType == 'REFUND':
