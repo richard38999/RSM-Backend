@@ -78,7 +78,7 @@ app.add_url_rule('/Spiral',
                  methods=['POST'])
 app.add_url_rule('/Spiral/Certificate/<action>',
                  view_func=Spiral_Certificate,
-                 methods=['POST'])
+                 methods=['GET'])
 app.add_url_rule('/A8_Password',
                  view_func=A8_Password,
                  methods=['GET'])

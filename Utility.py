@@ -525,7 +525,7 @@ def loadconfig(username=None, Gateway_Name=None):
     cursor = conn.cursor()
     if Gateway_Name == 'VMP' or Gateway_Name == 'BOCVMP':
         cmd = f'select * FROM VMP_Config where username="{username}" and Gateway_Name="{Gateway_Name}";'
-    elif Gateway_Name == 'Spiral':
+    elif Gateway_Name == 'SpiralHelper':
         cmd = f'select * FROM Spiral_Config where username="{username}";'
     else:
         cmd = f'select * FROM Offline_Txn_Config where username="{username}" and Gateway_Name="{Gateway_Name}";'
@@ -548,7 +548,7 @@ def deleteconfig(username='', Gateway_Name='', Tag=''):
         if Gateway_Name == 'VMP' or Gateway_Name == 'BOCVMP':
             cursor.execute(
                 f'DELETE from VMP_Config where username="{username}" and Gateway_Name="{Gateway_Name}" and Tag="{Tag}";')
-        elif Gateway_Name == 'Spiral':
+        elif Gateway_Name == 'SpiralHelper':
             cursor.execute(
                 f'DELETE from Spiral_Config where username="{username}" and Tag="{Tag}";')
         else:

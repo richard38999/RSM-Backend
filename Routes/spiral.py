@@ -6,7 +6,7 @@ from Logger import *
 import datetime
 from Utility import rsa_encrypt_data, local_to_utc
 from werkzeug.utils import secure_filename
-import Spiral.Spiral
+from SpiralHelper.Spiral import *
 log = Log('Flask')
 # @app.route("/Spiral", methods=['POST'])
 @jwt_required()
@@ -64,54 +64,54 @@ def Spiral_Transaction():
         'Spiral-Client-Signature': Signature
     }
     method = 'put'
-    Spiral_Request = Spiral.Request()
+    Spiral_Request = Request()
     if Flow == 'Payment Link':
         if cmd == 'QUERY':
             method = 'get'
             URL = URL + f'/merchants/{clientId}/paymentlink/{merchantRef}'
         else:
-            Spiral_Request = Spiral.packRequest(clientId=clientId,
-                                               merchantRef=merchantRef,
-                                               amt=amount,
-                                               goodsName=goodsName,
-                                               goodsDesc=goodsDesc,
-                                               webhookUrl=webhookUrl,
-                                               durationHr=durationHr
-                                               )
+            Spiral_Request = packRequest(clientId=clientId,
+                                                      merchantRef=merchantRef,
+                                                      amt=amount,
+                                                      goodsName=goodsName,
+                                                      goodsDesc=goodsDesc,
+                                                      webhookUrl=webhookUrl,
+                                                      durationHr=durationHr
+                                                      )
             URL = URL + f'/merchants/{clientId}/paymentlink/{merchantRef}'
     else: # Direct
         if cmd == 'SALE' or cmd == 'AUTH' or cmd == 'SALESESSION' or cmd == 'AUTHSESSION':
-            Spiral_Request = Spiral.packRequest(clientId=clientId,
-                                                merchantRef=merchantRef,
-                                                cmd=cmd,
-                                                type=type,
-                                                amt=amount,
-                                                goodsName=goodsName,
-                                                goodsDesc=goodsDesc,
-                                                channel=channel,
-                                                cardToken=cardToken,
-                                                cardTokenSrc=cardTokenSrc,
-                                                successUrl=successUrl,
-                                                failureUrl=failureUrl,
-                                                webhookUrl=webhookUrl,
-                                                duration=duration
-                                                )
+            Spiral_Request = packRequest(clientId=clientId,
+                                                      merchantRef=merchantRef,
+                                                      cmd=cmd,
+                                                      type=type,
+                                                      amt=amount,
+                                                      goodsName=goodsName,
+                                                      goodsDesc=goodsDesc,
+                                                      channel=channel,
+                                                      cardToken=cardToken,
+                                                      cardTokenSrc=cardTokenSrc,
+                                                      successUrl=successUrl,
+                                                      failureUrl=failureUrl,
+                                                      webhookUrl=webhookUrl,
+                                                      duration=duration
+                                                      )
             URL = URL + f'/merchants/{clientId}/transactions/{merchantRef}'
         elif cmd == 'CAPTURE' or cmd == 'REFUND':
-            Spiral_Request = Spiral.packRequest(clientId=clientId,
-                                                merchantRef=merchantRef,
-                                                cmd=cmd,
-                                                orderId=orderId,
-                                                amt=amount,
-                                                webhookUrl=webhookUrl
-                                                )
+            Spiral_Request = packRequest(clientId=clientId,
+                                                      merchantRef=merchantRef,
+                                                      cmd=cmd,
+                                                      orderId=orderId,
+                                                      amt=amount,
+                                                      webhookUrl=webhookUrl
+                                                      )
             URL = URL + f'/merchants/{clientId}/transactions/{merchantRef}'
         elif cmd == 'QUERY':
             method = 'get'
             URL = URL + f'/merchants/{clientId}/transactions/{merchantRef}'
 
     if cmd != 'QUERY':
-        RawRequest = json.dumps(Spiral.packJsonMsg(Spiral_Request))
+        RawRequest = json.dumps(packJsonMsg(Spiral_Request))
     log.info(f'Raw_Request: {RawRequest}')
     log.info(f'URL: {URL}')
     resp = requests.request(method=method, data=RawRequest,timeout=30,url=URL, headers=headers)

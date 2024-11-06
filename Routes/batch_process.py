@@ -14,8 +14,8 @@ clr.AddReference('DLL\\EFTPaymentsServer')
 log = Log('Flask')
 from EFTSolutions import *
 # @app.route("/<Till_Number>/<BatchFor>/Upload", methods=['POST'])
-def str(param):
-    pass
+# def str(param):
+#     pass
 
 
 @jwt_required()

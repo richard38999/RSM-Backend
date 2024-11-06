@@ -115,7 +115,7 @@ def set_config(Till_Number,TransactionType):
                                      reuse=reuse, redirect=redirect, refund_reason=refund_reason, reason=reason, mobileNumber=mobileNumber,
                                      fullName=fullName, shippingAddress_countryCode=shippingAddress_countryCode, shippingAddress_postCode=shippingAddress_postCode, shippingAddress_lines=shippingAddress_lines, billingAddress_countryCode=billingAddress_countryCode, billingAddress_postCode=billingAddress_postCode, billingAddress_lines=billingAddress_lines,
                                      browser=browser, app_link=app_link, pay_scene=pay_scene)
-    elif Till_Number == 'Spiral':
+    elif Till_Number == 'SpiralHelper':
         meta = setconfig_Spiral(username=username,Tag=Tag, clientId=clientId, merchantRef=merchantRef, cmd=cmd, amount=amount, type=type, goodsName=goodsName, Flow=Flow, orderId=orderId, URL=URL, goodsDesc=goodsDesc, channel=channel, cardToken=cardToken, cardTokenSrc=cardTokenSrc, successUrl=successUrl, failureUrl=failureUrl, webhookUrl=webhookUrl, duration=duration, durationHr=durationHr, privateKey=privateKey, publicKey=publicKey, JavaScriptLibrary=JavaScriptLibrary, locale=locale)
     else:
         meta = setconfig_Offline(username=username,Gateway_Name=Till_Number, Tag=Tag, MID=MID, TID=TID, TransactionType=TransactionType, PaymentType=PayType, amount=amount, barcode=barcode, ApprovalCode=ApprovalCode, RRN=RRN, TraceNo=TraceNo, OriTID=OriTID, URL=URL, IP=IP, Port=Port, TPDU=TPDU, Timeout=Timeout, MsgType=MsgType, COMMTYPE=COMMTYPE)
