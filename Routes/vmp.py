@@ -23,6 +23,10 @@ def VMP_Transaction(Gateway):
     out_trade_no = request.json.get('out_trade_no')
     if out_trade_no == '' and str(TransactionType).upper() == 'SALE':
         out_trade_no = time.strftime("%Y%m%d%H%M%S", time.localtime())
+    if out_trade_no == '' and str(TransactionType).upper() == 'APPLY':
+        out_trade_no = time.strftime("%Y%m%d%H%M%S", time.localtime())
+    if out_trade_no == '' and str(TransactionType).upper() == 'PAYMENT':
+        out_trade_no = time.strftime("%Y%m%d%H%M%S", time.localtime())
     eft_trade_no = request.json.get('eft_trade_no')
     refund_no = request.json.get('refund_no')
     if refund_no == '' and str(TransactionType).upper() == 'REFUND':
@@ -58,6 +62,8 @@ def VMP_Transaction(Gateway):
     pay_scene = request.json.get('pay_scene')
     scheme = request.json.get('scheme')
     packageName = request.json.get('packageName')
+    token_id = request.json.get('token_id')
+    agreement_id = request.json.get('agreement_id')
     if str(TransactionType).upper() == 'REFUND':
         if Remark == '' or Remark == None:
             Remark = 'Refund on ' + time.strftime("%d %b %Y", time.localtime())
@@ -704,6 +710,71 @@ def VMP_Transaction(Gateway):
             VMP_req.out_trade_no = out_trade_no
             VMP_req.querytype = 'OUT_TRADE'
             VMP_req.refund_no = refund_no
+            VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
+            VMP_req.user_confirm_key = User_Confirm_Key
+            signStr = Util.packSignStr(VMP_req, SecretCode)
+            log.info(signStr)
+            VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
+            RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
+            pass
+    elif APIType == 'Token':
+        if return_url == '':
+            return_url = f'{URL}/{Gateway}/returnSuccess'
+        URL += f'/{Gateway}/Servlet/'
+        if str(TransactionType).upper() == 'APPLY':
+            VMP_req = VMP.VMP_Request()
+            URL = URL + 'JSAPIService.do'
+            VMP_req.active_time = active_time
+            VMP_req.body = body
+            VMP_req.buyerType = buyerType
+            VMP_req.fee_type = fee_type
+            VMP_req.notify_url = notify_url
+            VMP_req.out_trade_no = out_trade_no
+            VMP_req.payType = PaymentType
+            VMP_req.pay_scene = pay_scene
+            VMP_req.return_url = return_url
+            VMP_req.service = service
+            VMP_req.subject = subject
+            VMP_req.tid = tid
+            VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
+            VMP_req.transaction_amount = amount
+            VMP_req.user_confirm_key = User_Confirm_Key
+            VMP_req.wallet = wallet
+            signStr = Util.packSignStr(VMP_req, SecretCode)
+            log.info('signStr: {0}'.format(signStr))
+            VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
+            RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
+            pass
+        elif str(TransactionType).upper() == 'PAYMENT':
+            VMP_req = VMP.VMP_Request()
+            URL = URL + 'JSAPIService.do'
+            VMP_req.agreement_id = agreement_id
+            VMP_req.body = body
+            VMP_req.buyerType = buyerType
+            VMP_req.fee_type = fee_type
+            VMP_req.out_trade_no = out_trade_no
+            if (PaymentType == 'ApplePay' or PaymentType == 'GooglePay'):
+                VMP_req.payType = 'Mpgs'
+            else:
+                VMP_req.payType = PaymentType
+            VMP_req.pay_scene = pay_scene
+            VMP_req.service = service
+            VMP_req.subject = subject
+            VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
+            VMP_req.token_id = token_id
+            VMP_req.transaction_amount = amount
+            VMP_req.user_confirm_key = User_Confirm_Key
+            VMP_req.wallet = wallet
+            signStr = Util.packSignStr(VMP_req, SecretCode)
+            log.info(signStr)
+            VMP_req.sign = hashlib.sha256(signStr.encode('utf-8')).hexdigest()
+            RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
+            pass
+        elif str(TransactionType).upper() == 'QUERY':
+            VMP_req = VMP.VMP_Request()
+            URL = URL + 'JSAPIService.do'
+            VMP_req.out_trade_no = out_trade_no
+            VMP_req.service = service
             VMP_req.time = time.strftime("%Y%m%d%H%M%S", time.localtime())
             VMP_req.user_confirm_key = User_Confirm_Key
             signStr = Util.packSignStr(VMP_req, SecretCode)
