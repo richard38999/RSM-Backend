@@ -198,7 +198,13 @@ def VMP_Transaction(Gateway):
             VMP_req.notify_url = notify_url
             VMP_req.out_trade_no = out_trade_no
             VMP_req.packageName = packageName
-            VMP_req.payType = PaymentType
+            if Gateway == "VMP":
+                if (str(PaymentType).upper() == 'BOCPAY' or str(PaymentType).upper() == 'BOC_UNIONPAY'):
+                    VMP_req.payType = "BOCVMP"
+                else:
+                    VMP_req.payType = PaymentType
+            else:
+                VMP_req.payType = PaymentType
             if pay_scene == None:
                 if service == 'service.wechat.oauth2.Authorize':
                     VMP_req.pay_scene = 'WXWEB'
@@ -247,7 +253,13 @@ def VMP_Transaction(Gateway):
             VMP_req.out_refund_no = refund_no
             VMP_req.out_trade_no = out_trade_no
             VMP_req.packageName = packageName
-            VMP_req.payType = PaymentType
+            if Gateway == "VMP":
+                if (str(PaymentType).upper() == 'BOCPAY' or str(PaymentType).upper() == 'BOC_UNIONPAY'):
+                    VMP_req.payType = "BOCVMP"
+                else:
+                    VMP_req.payType = PaymentType
+            else:
+                VMP_req.payType = PaymentType
             if pay_scene == None:
                 if service == 'service.alipay.wap.Refund':
                     VMP_req.pay_scene = 'WAP'
