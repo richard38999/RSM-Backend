@@ -444,6 +444,9 @@ def VMP_Transaction(Gateway):
             elif str(PaymentType).upper() == 'ECNY':
                 VMP_req.payment_type = PaymentType
                 VMP_req.paytype = PaymentType
+            elif str(PaymentType).upper() == 'PAYME':
+                VMP_req.payment_type = PaymentType
+                VMP_req.paytype = PaymentType
 
             if NewInterFace and str(PaymentType).upper() == 'ALIPAY':
                 VMP_req.service = 'service.alipayplus.qrcode.PreOrder'
@@ -478,6 +481,9 @@ def VMP_Transaction(Gateway):
                 VMP_req.payment_type = PaymentType.upper()
                 VMP_req.paytype = PaymentType
             elif str(PaymentType).upper() == 'ECNY':
+                VMP_req.payment_type = PaymentType
+                VMP_req.paytype = PaymentType
+            elif str(PaymentType).upper() == 'PAYME':
                 VMP_req.payment_type = PaymentType
                 VMP_req.paytype = PaymentType
 
@@ -519,6 +525,9 @@ def VMP_Transaction(Gateway):
                 VMP_req.payment_type = 'GBPAY'
                 VMP_req.paytype = PaymentType
             elif str(PaymentType).upper() == 'ECNY':
+                VMP_req.payment_type = PaymentType
+                VMP_req.paytype = PaymentType
+            elif str(PaymentType).upper() == 'PAYME':
                 VMP_req.payment_type = PaymentType
                 VMP_req.paytype = PaymentType
 
