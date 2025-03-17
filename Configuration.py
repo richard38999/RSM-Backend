@@ -26,7 +26,7 @@ print(values)
 cursor.close()
 conn.close()
 '''
-DB_path = 'DataBase\\RSM_TEST.db'
+DB_path = 'DataBase\\RSM.db'
 
 def get_Merchant_Info():
     conn = sqlite3.connect(DB_path)
@@ -135,7 +135,7 @@ def loadConfig():
 
 class Flask_Base_Config():
     JWT_SECRET_KEY = 'Testing123'
-    FrontEndVersion = '1.0.34'
+    FrontEndVersion = '1.0.36'
 
 class Flask_PROD_Config(Flask_Base_Config):
     ENV = 'production'

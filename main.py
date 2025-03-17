@@ -38,16 +38,16 @@ jwt = JWTManager()
 jwt.init_app(app)
 now_date = time.strftime("%Y%m%d", time.localtime())
 
-CORS(app, supports_credentials=True)
+# CORS(app, supports_credentials=True)
+CORS(app)
+def after_request(resp):
+    resp.headers['Access-Control-Allow-Origin'] = '*'
+    resp.headers['Access-Control-Allow-Headers'] = '*'
+    resp.headers['Access-Control-Allow-Credentials'] = True
+    resp.headers['Access-Control-Allow-Methods'] = 'HEAD, OPTIONS, GET, POST, DELETE, PUT'
+    return resp
 
-# def after_request(resp):
-#     resp.headers['Access-Control-Allow-Origin'] = '*'
-#     resp.headers['Access-Control-Allow-Headers'] = '*'
-#     resp.headers['Access-Control-Allow-Credentials'] = True
-#     resp.headers['Access-Control-Allow-Methods'] = 'HEAD, OPTIONS, GET, POST, DELETE, PUT'
-#     return resp
-#
-# app.after_request(after_request)
+app.after_request(after_request)
 
 app.add_url_rule('/login',
                  view_func=login,

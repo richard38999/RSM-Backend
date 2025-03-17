@@ -447,6 +447,9 @@ def VMP_Transaction(Gateway):
             elif str(PaymentType).upper() == 'PAYME':
                 VMP_req.payment_type = PaymentType
                 VMP_req.paytype = PaymentType
+            elif str(PaymentType).upper() == 'FPS':
+                VMP_req.payment_type = PaymentType
+                VMP_req.paytype = PaymentType
 
             if NewInterFace and str(PaymentType).upper() == 'ALIPAY':
                 VMP_req.service = 'service.alipayplus.qrcode.PreOrder'
@@ -484,6 +487,9 @@ def VMP_Transaction(Gateway):
                 VMP_req.payment_type = PaymentType
                 VMP_req.paytype = PaymentType
             elif str(PaymentType).upper() == 'PAYME':
+                VMP_req.payment_type = PaymentType
+                VMP_req.paytype = PaymentType
+            elif str(PaymentType).upper() == 'FPS':
                 VMP_req.payment_type = PaymentType
                 VMP_req.paytype = PaymentType
 
@@ -528,6 +534,9 @@ def VMP_Transaction(Gateway):
                 VMP_req.payment_type = PaymentType
                 VMP_req.paytype = PaymentType
             elif str(PaymentType).upper() == 'PAYME':
+                VMP_req.payment_type = PaymentType
+                VMP_req.paytype = PaymentType
+            elif str(PaymentType).upper() == 'FPS':
                 VMP_req.payment_type = PaymentType
                 VMP_req.paytype = PaymentType
 
@@ -812,14 +821,41 @@ def VMP_Transaction(Gateway):
                 log.info('RawResponse: {0}'.format(resp.text))
                 RawResponse = str(resp.text)
                 JSONMessage = dict(x.split('=') for x in resp.text.split('&'))
-                insert_VMP_Txn(DateTime=nowdatetime, username=username, GatewayName=Gateway, API_Type=APIType,
+                if (str(TransactionType).upper()) == 'QUERY':
+                    if (JSONMessage['trans_existed'] == 'N'): # Transaction exist
+                        insert_VMP_Txn(DateTime=nowdatetime, username=username, GatewayName=Gateway, API_Type=APIType,
+                                               PaymentType=PaymentType, TransType=str(TransactionType).upper(), Amount=amount,
+                                               user_confirm_key=User_Confirm_Key,
+                                               Secret_Code=SecretCode, out_trade_no=out_trade_no, eft_trade_no=eft_trade_no,
+                                               Response_Code=JSONMessage['trans_existed'],
+                                               Response_Text=JSONMessage['error'], Email_Subject=Email_Subject,
+                                               Remark=Remark)
+                    else: # Transaction Not exist
+                        insert_VMP_Txn(DateTime=nowdatetime, username=username, GatewayName=Gateway, API_Type=APIType,
                                        PaymentType=PaymentType, TransType=str(TransactionType).upper(), Amount=amount,
                                        user_confirm_key=User_Confirm_Key,
                                        Secret_Code=SecretCode, out_trade_no=out_trade_no, eft_trade_no=eft_trade_no,
-                                       Response_Code=JSONMessage['return_status'],
-                                       Response_Text=JSONMessage['return_char'], Email_Subject=Email_Subject,
+                                       Response_Code=JSONMessage['trans_existed'],
+                                       Response_Text=JSONMessage['trans_status'], Email_Subject=Email_Subject,
                                        Remark=Remark)
-    else:
+                elif (str(TransactionType).upper()) == 'REFUND':
+                    insert_VMP_Txn(DateTime=nowdatetime, username=username, GatewayName=Gateway, API_Type=APIType,
+                                   PaymentType=PaymentType, TransType=str(TransactionType).upper(), Amount=amount,
+                                   user_confirm_key=User_Confirm_Key,
+                                   Secret_Code=SecretCode, out_trade_no=out_trade_no, eft_trade_no=eft_trade_no,
+                                   Response_Code=JSONMessage['refund_result'],
+                                   Response_Text=JSONMessage['attach'], Email_Subject=Email_Subject,
+                                   Remark=Remark)
+                elif (str(TransactionType).upper()) == 'REFUNDQUERY':
+                    insert_VMP_Txn(DateTime=nowdatetime, username=username, GatewayName=Gateway, API_Type=APIType,
+                                   PaymentType=PaymentType, TransType=str(TransactionType).upper(), Amount=amount,
+                                   user_confirm_key=User_Confirm_Key,
+                                   Secret_Code=SecretCode, out_trade_no=out_trade_no, eft_trade_no=eft_trade_no,
+                                   Response_Code=JSONMessage['refund_status'],
+                                   Response_Text=JSONMessage['refund_reason'], Email_Subject=Email_Subject,
+                                   Remark=Remark)
+
+    else: # API Type is Normal VMP
         resp = PostToHost(URL, RawRequest, timeout=30)
         if resp.status_code == 200:
             log.info('RawResponse: {0}'.format(resp.text.encode("utf8")))
