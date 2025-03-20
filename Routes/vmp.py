@@ -776,6 +776,8 @@ def VMP_Transaction(Gateway):
             RawRequest = json.dumps(Util.packJsonMsg(VMP_req))
             pass
         elif str(TransactionType).upper() == 'PAYMENT':
+            if agreement_id == '':
+                agreement_id = 'agreement_id_' + time.strftime("%d %b %Y", time.localtime())
             VMP_req = VMP.VMP_Request()
             URL = URL + 'JSAPIService.do'
             VMP_req.agreement_id = agreement_id
@@ -783,10 +785,7 @@ def VMP_Transaction(Gateway):
             VMP_req.buyerType = buyerType
             VMP_req.fee_type = fee_type
             VMP_req.out_trade_no = out_trade_no
-            if (PaymentType == 'ApplePay' or PaymentType == 'GooglePay'):
-                VMP_req.payType = 'Mpgs'
-            else:
-                VMP_req.payType = PaymentType
+            VMP_req.payType = PaymentType
             VMP_req.pay_scene = pay_scene
             VMP_req.service = service
             VMP_req.subject = subject
