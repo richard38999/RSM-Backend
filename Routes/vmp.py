@@ -697,6 +697,7 @@ def VMP_Transaction(Gateway):
             VMP_req.body = body
             VMP_req.buyerType = buyerType
             VMP_req.fee_type = fee_type
+            VMP_req.lang = lang
             VMP_req.notify_url = notify_url
             VMP_req.out_trade_no = out_trade_no
             VMP_req.pay_scene = 'WAP'
